@@ -1,0 +1,413 @@
+{
+  "desk": "systematic",
+  "date": "2026-07-28",
+  "mandate": "Ashcroft University Endowment, USD 850m, 9-line TAA programme, 200bps ex-ante TE, quarterly rebalance",
+  "claims": [
+    {
+      "id": "welch_goyal_2008_headline",
+      "claim": "The classic equity-premium predictors have predicted poorly both in-sample and out-of-sample, are unstable, and would not have helped a real-time investor time the market.",
+      "value": "negative OOS R2 for essentially the whole set",
+      "source": "Welch & Goyal (2008), Review of Financial Studies 21(4), 1455-1508, abstract",
+      "source_url": "https://breesefine7110.tulane.edu/wp-content/uploads/sites/16/2015/10/Goyal-and-Welch-2008.pdf",
+      "status": "VERIFIED",
+      "note": "Abstract read from the author-circulated PDF: 'these models have predicted poorly both in-sample (IS) and out-of-sample (OOS) for 30 years now'."
+    },
+    {
+      "id": "welch_goyal_2008_r2oos_range",
+      "claim": "In Welch-Goyal Table 1, every one of the twelve classic monthly predictors has a negative full-sample out-of-sample R-squared against the expanding historical mean.",
+      "value": "OOS R2 from -1.78% (earnings-price) to -27.14% (stock variance); adjusted in-sample R2 from -1.18% to +1.08%",
+      "source": "Welch & Goyal (2008), RFS, Table 1, full-sample columns",
+      "source_url": "https://breesefine7110.tulane.edu/wp-content/uploads/sites/16/2015/10/Goyal-and-Welch-2008.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly from the extracted Table 1 block. Term spread: IS R2 0.16%, OOS R2 -2.42%. Default yield spread: IS R2 -1.18%, OOS R2 -3.29%. Dividend price ratio: IS 0.49%, OOS -2.06%."
+    },
+    {
+      "id": "goyal_welch_zafirov_2024",
+      "claim": "Re-examining 29 predictors from 26 papers published after 2008 plus the original 17, through end-2021, most do not survive.",
+      "value": "more than one-third fail even in-sample; of those that survive in-sample, half have poor out-of-sample performance",
+      "source": "Goyal, Welch & Zafirov (2024), 'A Comprehensive 2022 Look at the Empirical Performance of Equity Premium Prediction', RFS 37(11), 3490-3557",
+      "source_url": "https://academic.oup.com/rfs/article/37/11/3490/7749383",
+      "status": "VERIFIED",
+      "note": "Abstract text confirmed identically on the Oxford Academic listing and the Swiss Finance Institute record. Implied survival of the post-2008 crop is roughly (2/3) x (1/2) = 0.33."
+    },
+    {
+      "id": "campbell_thompson_2008_restrictions",
+      "claim": "Imposing two weak restrictions (sign restriction on the regression coefficient, non-negativity of the equity-premium forecast) makes most predictors beat the historical-mean forecast out of sample.",
+      "value": "small but positive OOS R2 for most restricted predictors",
+      "source": "Campbell & Thompson (2008), RFS 21(4), 1509-1531; NBER WP 11468",
+      "source_url": "https://www.nber.org/system/files/working_papers/w11468/w11468.pdf",
+      "status": "VERIFIED",
+      "note": "Conclusion section read directly: 'most of these predictor variables ... perform better out-of-sample than the historical average return forecast, once sensible restrictions are imposed'."
+    },
+    {
+      "id": "campbell_thompson_r2_yardstick",
+      "claim": "The correct yardstick for an out-of-sample R-squared is the squared Sharpe ratio at the same frequency, because the proportional increase in a mean-variance investor's expected return is approximately R2/S2.",
+      "value": "monthly squared Sharpe S2 = 1.2% (monthly SR 0.108, annual 0.374); a monthly R2_oos of 0.5% implies roughly a 42% proportional lift in mean-variance portfolio return",
+      "source": "Campbell & Thompson (2008), Section 2, equations (8) and (9)",
+      "source_url": "https://www.nber.org/system/files/working_papers/w11468/w11468.pdf",
+      "status": "VERIFIED",
+      "note": "Their worked example: an OOS R2 of 0.25% against S2 of 1.2% gives 0.25/1.2 = 21%, about 25bps per month for unit risk aversion or about 1% a year at risk aversion 3. Doubling the R2 to 0.5% doubles the lift to about 42%."
+    },
+    {
+      "id": "campbell_thompson_utility_gain",
+      "claim": "The utility gain to a mean-variance investor from timing expected returns is about 35% of lifetime utility.",
+      "value": "35%",
+      "source": "Campbell & Thompson (2008), as reported and benchmarked against by Moreira & Muir",
+      "source_url": "https://www.nber.org/system/files/working_papers/w22208/w22208.pdf",
+      "status": "VERIFIED",
+      "note": "Quoted in Moreira & Muir (NBER WP 22208, Section 2.4): 'Campbell and Thompson (2008) estimate that the utility gain of timing expected returns is 35% of lifetime utility.'"
+    },
+    {
+      "id": "hou_xue_zhang_2020",
+      "claim": "Large-scale replication of the published anomaly literature with microcaps controlled finds most anomalies fail.",
+      "value": "of 452 anomalies, 65% fail |t|>1.96 (replication rate 35%); 82% fail the multiple-test hurdle |t|>2.78 (replication rate 17.9%)",
+      "source": "Hou, Xue & Zhang (2020), 'Replicating Anomalies', RFS 33(5), 2019-2133",
+      "source_url": "https://global-q.org/uploads/1/2/2/6/122679606/houxuezhang2020rfs.pdf",
+      "status": "VERIFIED",
+      "note": "Abstract and Section 3.1 read directly from the authors' own hosted copy. Trading-frictions category is the worst: 102 of 106 (96%) fail. Restricting to the original shorter samples gives 65.3% failure, so the result is not driven by sample extension."
+    },
+    {
+      "id": "harvey_liu_zhu_2016",
+      "claim": "Multiple testing across the published factor zoo implies a much higher significance hurdle than t = 2.0, and a large fraction of published factors are likely false discoveries.",
+      "value": "316 factors catalogued from 313 papers; recommended hurdle t > 3.0; of 296 significant published factors, 80 to 158 (27% to 53%) are likely false discoveries depending on the correction",
+      "source": "Harvey, Liu & Zhu (2016), '...and the Cross-Section of Expected Returns', RFS 29(1), 5-68; NBER WP 20592",
+      "source_url": "https://www.nber.org/system/files/working_papers/w20592/w20592.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly: 158 false under Bonferroni, 142 under Holm, 132 under BHY(1%), 80 under BHY(5%). Authors state their count of 316 is too low, so the true hurdle is higher than 3.0."
+    },
+    {
+      "id": "mclean_pontiff_2016",
+      "claim": "Published cross-sectional predictors decay out of sample and decay further after publication.",
+      "value": "returns 26% lower out-of-sample (pre-publication), 58% lower post-publication, implying a 32% publication effect",
+      "source": "McLean & Pontiff (2016), 'Does Academic Research Destroy Stock Return Predictability?', Journal of Finance 71(1), 5-32",
+      "source_url": "https://tevgeniou.github.io/EquityRiskFactors/bibliography/AcademicReviewFactor.pdf",
+      "status": "VERIFIED",
+      "note": "97 predictors from 80 studies. The 26% is an upper bound on statistical bias. Read from the working-paper PDF abstract and Section 1."
+    },
+    {
+      "id": "jensen_kelly_pedersen_2023",
+      "claim": "A Bayesian hierarchical model of factor replication that pools information across factors and countries reaches the opposite conclusion to Hou-Xue-Zhang.",
+      "value": "82.4% replication rate in the US and 82.4% globally across 93 countries; 75.6% under a Benjamini-Yekutieli multiple-testing correction; posterior standard error 2.8%; Bayesian FDR 0.1%",
+      "source": "Jensen, Kelly & Pedersen (2023), 'Is There a Replication Crisis in Finance?', Journal of Finance 78(5), 2465-2518",
+      "source_url": "https://research-api.cbs.dk/ws/portalfiles/portal/95651880/theis_ingerslev_jensen_et_al_is_there_a_replication_crisis_in_finance_publishersversion.pdf",
+      "status": "VERIFIED",
+      "note": "Published version read directly. 82.4% = 98 replicated of 119 tested on OLS CAPM alpha. Publication-bias-robust priors lower it to 81.5%, extra conservatism to 79.8%."
+    },
+    {
+      "id": "jkp_hxz_decomposition",
+      "claim": "The gap between a 35% and an 82% replication rate is methodological and can be decomposed step by step, which is the actual finding.",
+      "value": "35% (HXZ) -> 55.6% (longer sample, 15 added factors, construction choices) -> 61.3% (drop factors the original studies themselves found insignificant) -> 82.4% (test CAPM alpha rather than raw return) -> 75.6% (BY multiple-testing) -> 82.4% (Bayesian multiple-testing)",
+      "source": "Jensen, Kelly & Pedersen (2023), Figure 1 and surrounding text",
+      "source_url": "https://research-api.cbs.dk/ws/portalfiles/portal/95651880/theis_ingerslev_jensen_et_al_is_there_a_replication_crisis_in_finance_publishersversion.pdf",
+      "status": "VERIFIED",
+      "note": "The single largest step, 61.3% to 82.4%, comes from testing the CAPM alpha instead of the raw return. HXZ's own multiple-testing number is 18%, so the full disagreement runs 18% to 82%."
+    },
+    {
+      "id": "chen_zimmermann_oos_persistence",
+      "claim": "Out-of-sample decay of published cross-sectional predictors is modest in the first years after the original sample ends.",
+      "value": "74% of in-sample long-short return persists in the first three years out of sample",
+      "source": "Chen & Zimmermann (2022), 'Publication Bias in Asset Pricing Research'",
+      "source_url": "https://arxiv.org/pdf/2209.13623",
+      "status": "VERIFIED",
+      "note": "Read directly: mean in-sample return normalised to 100bps/month, mean first-three-years-out-of-sample return 74bps/month. Standard errors around the out-of-sample window are about 10 percentage points, so publication bias is bounded loosely between 0% and 46%."
+    },
+    {
+      "id": "chen_zimmermann_hxz_critique",
+      "claim": "The standard reconciliation of Hou-Xue-Zhang with other meta-studies (microcap de-emphasis) is wrong; the real driver is misclassification of failures.",
+      "value": "only about 26% of Hou-Xue-Zhang's long-short strategies were clearly statistically significant in the original papers",
+      "source": "Chen & Zimmermann (2022), 'Publication Bias in Asset Pricing Research', Section 2.1",
+      "source_url": "https://arxiv.org/pdf/2209.13623",
+      "status": "VERIFIED",
+      "note": "This is the sharpest attack on the low-survival camp: counting a factor as a failed replication when the original authors never claimed it worked inflates the failure rate mechanically."
+    },
+    {
+      "id": "chen_zimmermann_reproduction_rate",
+      "claim": "Open Source Asset Pricing reproduces published cross-sectional predictors at near-perfect rates in-sample.",
+      "value": "98% of 161 clearly-significant original characteristics reproduce with |t| above 1.96; regression of reproduced on original t-stats has slope 0.90 and R2 83%",
+      "source": "Chen & Zimmermann, 'Open Source Cross-Sectional Asset Pricing', Critical Finance Review",
+      "source_url": "https://www.openassetpricing.com/",
+      "status": "RECALLED",
+      "note": "Figures taken from search summaries of the paper, not from the paper itself. Treat the 98% as indicative rather than audited."
+    },
+    {
+      "id": "moskowitz_ooi_pedersen_2012",
+      "claim": "Time-series momentum: the past 12-month excess return positively predicts the next month's return across futures markets.",
+      "value": "58 liquid futures and forward instruments; a diversified TSMOM portfolio delivers an annualised Sharpe ratio of about 1.1 in the authors' extended out-of-sample test",
+      "source": "Moskowitz, Ooi & Pedersen (2012), Journal of Financial Economics 104(2), 228-250",
+      "source_url": "https://w4.stern.nyu.edu/facdir/lpederse/papers/TimeSeriesMomentum.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly from the author-hosted PDF. Effect persists about a year then partially reverses. Correlation between an instrument's illiquidity and its TSMOM Sharpe is -0.16, so the result is not a liquidity artefact."
+    },
+    {
+      "id": "huang_li_wang_zhou_2020",
+      "claim": "The statistical evidence for time-series momentum does not survive proper inference.",
+      "value": "asset-by-asset regressions show little TSM in or out of sample; the pooled t-statistic of 4.34 is below bootstrap 5% critical values of 12.53 (wild) and 4.83 (pairs); the TSM strategy performs the same as a historical-sample-mean strategy that requires no predictability",
+      "source": "Huang, Li, Wang & Zhou (2020), 'Time series momentum: Is it there?', JFE 135(3), 774-794",
+      "source_url": "https://ink.library.smu.edu.sg/context/lkcsb_research/article/7520/viewcontent/Time_series_momentum_JFE_sv.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly from the published-version PDF. 55 futures contracts, 1985-2015. The pooled regression's apparent significance is largely a fixed-effects artefact: the null that all 55 assets share a mean is strongly rejected."
+    },
+    {
+      "id": "koijen_moskowitz_pedersen_vrugt_2018",
+      "claim": "Carry predicts returns cross-sectionally and in the time series across asset classes, and is not subsumed by known predictors.",
+      "value": "average carry-strategy Sharpe 0.74 across nine asset classes (0.37 for call options to 1.80 for put options); diversified global carry factor Sharpe 1.10 against 0.47 for a diversified passive long",
+      "source": "Koijen, Moskowitz, Pedersen & Vrugt (2018), 'Carry', JFE 127(2), 197-225; NBER WP 19325",
+      "source_url": "https://www.nber.org/system/files/working_papers/w19325/w19325.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. Carry is long-short and largely market-neutral, so it is not directly implementable in a long-only nine-line programme; it maps onto relative-weight tilts only."
+    },
+    {
+      "id": "asness_moskowitz_pedersen_2013",
+      "claim": "Value and momentum premia appear consistently across eight markets and asset classes with a strong common factor structure, and are negatively correlated with each other.",
+      "value": "eight markets and asset classes; three-factor global model",
+      "source": "Asness, Moskowitz & Pedersen (2013), 'Value and Momentum Everywhere', Journal of Finance 68(3), 929-985",
+      "source_url": "https://pages.stern.nyu.edu/~lpederse/papers/ValMomEverywhere.pdf",
+      "status": "VERIFIED",
+      "note": "Abstract confirmed from the author-hosted page and the AQR journal listing. The negative value-momentum correlation is the part that matters for a nine-line programme: combining the two raises effective breadth more than adding a third correlated equity line does."
+    },
+    {
+      "id": "stambaugh_1999_bias",
+      "claim": "When returns are regressed on a lagged persistent stochastic regressor such as dividend yield, the OLS estimator is biased in finite samples because the disturbance correlates with the regressor's innovation.",
+      "value": "over 1927-96 the bias equals roughly one-third of the OLS estimate in the excess-return-on-dividend-yield regression",
+      "source": "Stambaugh (1999), 'Predictive Regressions', JFE 54(3), 375-421",
+      "source_url": "https://www.sciencedirect.com/science/article/pii/S0304405X99000410",
+      "status": "RECALLED",
+      "note": "The one-third magnitude comes from search summaries, not from the paper opened in this session. The direction and mechanism are standard and not in dispute."
+    },
+    {
+      "id": "boudoukh_richardson_whitelaw_2008",
+      "claim": "Long-horizon predictability evidence built from overlapping regressions is not independent evidence, because the estimators are almost perfectly correlated across horizons under the null.",
+      "value": "analytical correlation of 99% between 1- and 2-year horizon estimators and 94% between 1- and 5-year, at dividend-yield persistence; coefficients and R2 are roughly proportional to the horizon under the null",
+      "source": "Boudoukh, Richardson & Whitelaw (2008), 'The Myth of Long-Horizon Predictability', RFS 21(4), 1577-1605",
+      "source_url": "https://pages.stern.nyu.edu/~rwhitela/papers/mlhp%20rfs08.pdf",
+      "status": "VERIFIED",
+      "note": "Abstract and Section 1 read directly. With annual dividend-yield autocorrelation 0.953 the 1- and 2-year estimators are 98.8% correlated and the 4- and 5-year estimators 99.6% correlated."
+    },
+    {
+      "id": "moreira_muir_2017",
+      "claim": "Scaling factor exposure by the inverse of last month's realised variance produces positive alphas and higher Sharpe ratios across many factors.",
+      "value": "market strategy: annualised alpha 4.86%, appraisal ratio 0.33, 25% increase in the buy-and-hold Sharpe ratio, utility gain about 65% of lifetime utility",
+      "source": "Moreira & Muir (2017), 'Volatility-Managed Portfolios', Journal of Finance 72(4), 1611-1644; NBER WP 22208",
+      "source_url": "https://www.nber.org/system/files/working_papers/w22208/w22208.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. They also report the strategy survives 1bp and 10bp transaction-cost assumptions and a 4bp add-on for high-VIX regimes. Note that the strategy is levered and rebalanced monthly."
+    },
+    {
+      "id": "cederburg_odoherty_wang_yan_2020",
+      "claim": "Volatility management does not survive real-time implementation.",
+      "value": "across 103 equity strategies, reasonable out-of-sample versions generally earn lower certainty-equivalent returns and Sharpe ratios than the original unmanaged portfolios; the cause is structural instability in the spanning regressions",
+      "source": "Cederburg, O'Doherty, Wang & Yan (2020), 'On the performance of volatility-managed portfolios', JFE 138(1), 95-117",
+      "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3357038",
+      "status": "VERIFIED",
+      "note": "Abstract text confirmed identically on the SSRN listing, the ScienceDirect record and both authors' institutional pages. The key distinction is that Moreira-Muir's spanning-regression alphas are not tradable in real time."
+    },
+    {
+      "id": "barroso_santa_clara_2015",
+      "claim": "Momentum's risk is time-varying and forecastable, and targeting constant volatility on the momentum factor removes the crashes.",
+      "value": "targeting 12% constant volatility virtually eliminates momentum crashes and nearly doubles momentum's Sharpe ratio",
+      "source": "Barroso & Santa-Clara (2015), 'Momentum has its moments', JFE 116(1), 111-120",
+      "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2041429",
+      "status": "VERIFIED",
+      "note": "Abstract confirmed across the SSRN, EconPapers and Nova/UCP repository listings. Applies to a long-short factor with fat left tails, which is not the risk profile of a long-only nine-line allocation book."
+    },
+    {
+      "id": "harvey_et_al_2018_vol_targeting",
+      "claim": "Volatility targeting helps risk assets and does little for anything else, and its main benefit is tail-shape rather than Sharpe.",
+      "value": "60 assets, daily data from 1926 to 2017; Sharpe ratio improves only for risk assets (equities and credit) and is negligible for bonds, currencies and commodities; left-tail events are less severe across all asset classes",
+      "source": "Harvey, Hoyle, Korgaonkar, Rattray, Sargaison & Van Hemert (2018), 'The Impact of Volatility Targeting', Journal of Portfolio Management 45(1), 14-33",
+      "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3175538",
+      "status": "RECALLED",
+      "note": "SSRN blocks automated fetch. The claim is taken from the abstract as reproduced on the SSRN listing and in two independent secondary summaries. Not read from the paper itself in this session."
+    },
+    {
+      "id": "liu_tang_zhou_2019",
+      "claim": "The standard volatility-timing implementation contains a look-ahead bias, and correcting it destroys the result.",
+      "value": "after correcting the bias the maximum drawdown is 68% to 93% in almost all cases and the strategy beats the market only during the financial crisis",
+      "source": "Liu, Tang & Zhou (2019/2020), 'Volatility-Managed Portfolio: Does It Really Work?', Journal of Portfolio Management 46(1), 38-51",
+      "source_url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3283395",
+      "status": "RECALLED",
+      "note": "Taken from the SSRN abstract as reproduced in search results, not from the paper. The look-ahead point (using full-sample scaling constants) is the same class of error Cederburg et al. identify."
+    },
+    {
+      "id": "engle_bollerslev_clustering",
+      "claim": "Conditional variance is autoregressive: volatility clusters and is forecastable from its own history.",
+      "value": "ARCH (Engle 1982, Econometrica) and GARCH (Bollerslev 1986, Journal of Econometrics)",
+      "source": "Engle (1982), Econometrica 50(4), 987-1007; Bollerslev (1986), Journal of Econometrics 31(3), 307-327",
+      "source_url": "https://www.jstor.org/stable/1912773",
+      "status": "RECALLED",
+      "note": "Foundational and uncontested. Cited from memory; not opened in this session."
+    },
+    {
+      "id": "corsi_2009_har_rv",
+      "claim": "A simple heterogeneous autoregressive model of realised volatility forecasts volatility with high accuracy out of sample.",
+      "value": "out-of-sample Mincer-Zarnowitz R2 for S&P 500 realised volatility of roughly 0.76 to 0.82 across 1- to 20-day horizons",
+      "source": "Corsi (2009), 'A Simple Approximate Long-Memory Model of Realized Volatility', Journal of Financial Econometrics 7(2), 174-196; author's lecture slides, SNS Pisa 2010",
+      "source_url": "https://homepage.sns.it/marmi/lezioni/corsi-pisa-2010.pdf",
+      "status": "VERIFIED",
+      "note": "Read from the author's own lecture deck, which reproduces the published in-sample and out-of-sample MZ R2 curves for HAR, HAR-CJ and LHAR-CJ over 1982-2009."
+    },
+    {
+      "id": "forecastability_asymmetry",
+      "claim": "Volatility and returns are not comparably forecastable, and the gap is roughly two orders of magnitude.",
+      "value": "R2_oos of roughly 0.76 to 0.82 for realised volatility against 0.005 or negative for the monthly equity premium",
+      "source": "Derived from Corsi (2009) and Welch & Goyal (2008) / Campbell & Thompson (2008)",
+      "source_url": "https://homepage.sns.it/marmi/lezioni/corsi-pisa-2010.pdf",
+      "status": "VERIFIED",
+      "note": "Both inputs verified separately in this evidence set. This is the single fact that separates question 3(a) from question 3(b)."
+    },
+    {
+      "id": "grinold_1989_fundamental_law",
+      "claim": "The information ratio of an unconstrained active programme is approximately the information coefficient times the square root of breadth.",
+      "value": "IR = IC x sqrt(BR)",
+      "source": "Grinold (1989), 'The Fundamental Law of Active Management', Journal of Portfolio Management 15(3), 30-37",
+      "source_url": "https://www.pm-research.com/content/iijpormgmt/15/3/30",
+      "status": "RECALLED",
+      "note": "Publisher page is paywalled. The formula is uncontested and is restated verbatim in the Clarke-de Silva-Thorley and Qian-Hua papers verified below."
+    },
+    {
+      "id": "clarke_de_silva_thorley_2002_tc",
+      "claim": "Portfolio constraints break the fundamental law; the correction is a transfer coefficient, the cross-sectional correlation between risk-adjusted active weights and risk-adjusted expected residual returns.",
+      "value": "IR = TC x IC x sqrt(BR); their simulation study puts the typical transfer coefficient in the range 0.3 to 0.8",
+      "source": "Clarke, de Silva & Thorley (2002), Financial Analysts Journal 58(5), 48-66, as restated and quoted in Zhou, 'The Fundamental Law of Active Management: Redux'",
+      "source_url": "https://math.nyu.edu/inmemoriam/avellaneda/FundamentalLawFT.pdf",
+      "status": "VERIFIED",
+      "note": "The 0.3-to-0.8 range and the definition of TC read directly from the Redux paper's Section 1, which quotes CDT's simulation study. Redux also warns that the CDT transfer coefficient does not fully capture constraint effects once IC varies over time."
+    },
+    {
+      "id": "clarke_de_silva_sapra_2004_tc_measured",
+      "claim": "Measured transfer coefficients for a realistically constrained long-only portfolio are well below one, and the long-only constraint is the single largest destroyer of information transfer.",
+      "value": "TC = 0.332 with all constraints imposed; 0.678 when the long-only constraint alone is relaxed; 0.471 when the market-cap constraint alone is relaxed; 0.347 and 0.340 for industry and sector; 0.422 for both; 0.298 when position limits are relaxed",
+      "source": "Clarke, de Silva & Sapra (2004), 'Toward More Information-Efficient Portfolios', Journal of Portfolio Management, Fall 2004, 54-63",
+      "source_url": "https://www.hillsdaleinv.com/uploads/Toward_More_Information-Efficient_Portfolios,_Roger_G._Clarke,_Harindra_de_Silva,_Steven_Sapra,_The_Journal_of_Portfolio_Management,_Fall_2004,_Pages_54-63.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. TC of 0.332 means about 33% of the information in the rankings reaches the active positions. This is a long-only equity portfolio, so it is an analogue rather than a direct read-across to a nine-line allocation book."
+    },
+    {
+      "id": "buckle_2004_effective_breadth",
+      "claim": "Breadth must be adjusted downward for correlation between bets.",
+      "value": "BR_eff = N / (1 + rho x (N - 1))",
+      "source": "Buckle (2004), 'How to calculate breadth: An evolution of the fundamental law of active portfolio management', Journal of Asset Management 4(6), 393-405",
+      "source_url": "https://link.springer.com/article/10.1057/palgrave.jam.2240118",
+      "status": "RECALLED",
+      "note": "Paywalled. Formula and attribution taken from search summaries. It is the standard effective-sample-size expression for an equicorrelated block, so the algebra is checkable independently of the paper."
+    },
+    {
+      "id": "sneddon_2020_breadth_counterpoint",
+      "claim": "The effective-breadth haircut is contested: modelling the full portfolio-construction problem suggests correlation between returns and between alphas can raise, not lower, the information ratio.",
+      "value": "return correlations and alpha correlations both increase IR in the author's design formulae and Monte Carlo results, reversing the popular belief",
+      "source": "Sneddon (2020), 'Strategy Design and the Fallacies of Breadth', Journal of Asset Management 21, 626-635; Northfield webinar, March 2021",
+      "source_url": "https://www.northinfo.com/Documents/989.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly from the webinar deck. Mechanism: inverting the covariance matrix produces negatively correlated active weights, which combine with positively correlated returns to cut risk while leaving return unchanged. This is the strongest argument against the breadth haircut applied below, and it is why the sensitivity table matters more than the point estimate."
+    },
+    {
+      "id": "grinold_kahn_ic_scale",
+      "claim": "Benchmark scale for information coefficients.",
+      "value": "a good forecaster has IC = 0.05, a great forecaster IC = 0.10, a world-class forecaster IC = 0.15; an IC above 0.20 usually signals a faulty backtest",
+      "source": "Grinold & Kahn, 'Active Portfolio Management', chapter 10 (Forecasting), as reproduced in Yan's chapter-by-chapter study notes",
+      "source_url": "https://people.brandeis.edu/~yanzp/Study%20Notes/Active%20Portfolio%20Management.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly from the notes document, which reproduces the passage. The source is a faithful summary of the book rather than the book itself; the scale is quoted identically across many secondary sources."
+    },
+    {
+      "id": "grinold_kahn_benchmark_timing_warning",
+      "claim": "Grinold and Kahn themselves state that quarterly benchmark timing has too little breadth to produce a respectable information ratio.",
+      "value": "an independent benchmark-timing forecast every quarter gives a breadth of 4; achieving a benchmark-timing information ratio of 0.5 would require an information coefficient of 0.25",
+      "source": "Grinold & Kahn, 'Active Portfolio Management', chapter 15 (Benchmark Timing), as reproduced in Yan's study notes",
+      "source_url": "https://people.brandeis.edu/~yanzp/Study%20Notes/Active%20Portfolio%20Management.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. Their required IC of 0.25 exceeds the 0.20 level they say signals a faulty backtest. This is the most directly on-point citation in this paper: the founding text of the fundamental law says a quarterly timing programme does not work, and says it about a mandate structurally identical to this one."
+    },
+    {
+      "id": "qian_hua_strategy_risk",
+      "claim": "The fundamental law understates true active risk because it ignores variation in the information coefficient itself; realised active risk is often materially above the risk model's tracking error.",
+      "value": "IR is better estimated as mean(IC) / std(IC); measured quarterly std(IC) of 2.7% and 3.4% for two equity valuation factors over 67 quarters",
+      "source": "Qian & Hua, 'Active Risk and Information Ratio', Journal of Investment Management",
+      "source_url": "https://www.panagora.com/assets/JOIM-Active-Risk-and-Information-Ratio.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. Implication for this mandate: an ex-ante 200bps tracking-error budget will be exceeded ex post whenever the signal's IC is itself unstable, which is exactly the failure mode Cederburg et al. identify in volatility management."
+    },
+    {
+      "id": "lo_2002_sharpe_se",
+      "claim": "Standard error of an estimated Sharpe ratio under IID returns.",
+      "value": "SE(SR) = sqrt((1 + SR^2 / 2) / T); at T = 60, SE = 0.137 for SR = 0.50 and 0.158 for SR = 1.00",
+      "source": "Lo (2002), 'The Statistics of Sharpe Ratios', Financial Analysts Journal 58(4), 36-52, equation (9) and Table 1",
+      "source_url": "https://traders.studentorg.berkeley.edu/papers/The-Statistics-of-Sharpe-Ratios.pdf",
+      "status": "VERIFIED",
+      "note": "Formula and Table 1 read directly. V_IID = 1 + (1/2)SR^2. The table values 0.137 and 0.158 at T=60 reproduce exactly from the formula. Serial correlation makes it worse: Lo shows annualisation by sqrt(12) inflates hedge-fund Sharpe ratios by more than 65% in some cases."
+    },
+    {
+      "id": "campbell_thompson_r2oos_definition",
+      "claim": "Definition of the out-of-sample R-squared used throughout this literature.",
+      "value": "R2_oos = 1 - sum(r_t - rhat_t)^2 / sum(r_t - rbar_t)^2, where rhat_t is the predictive-regression forecast from an expanding window through t-1 and rbar_t is the expanding-window historical mean through t-1",
+      "source": "Campbell & Thompson (2008), Section 1; identical benchmark to Welch & Goyal (2008)",
+      "source_url": "https://www.nber.org/system/files/working_papers/w11468/w11468.pdf",
+      "status": "VERIFIED",
+      "note": "Read directly. The benchmark is not zero and not a constant; it is the recursively updated historical mean, which is why R2_oos is routinely negative."
+    },
+    {
+      "id": "clark_west_2007_mspe_adjusted",
+      "claim": "Nested-model forecast comparison requires adjusting the MSPE difference for the noise the larger model introduces by estimating parameters that are zero under the null.",
+      "value": "fhat_{t+J} = (y_{t+J} - yhat1)^2 - [(y_{t+J} - yhat2)^2 - (yhat1 - yhat2)^2]; regress fhat on a constant and use the one-sided t-statistic against standard normal critical values (1.282 at 10%, 1.645 at 5%)",
+      "source": "Clark & West (2007), 'Approximately normal tests for equal predictive accuracy in nested models', Journal of Econometrics 138(1), 291-311, equations (2.1) and (3.15)",
+      "source_url": "https://www.ecb.europa.eu/events/pdf/conferences/ftworkshop05/Clark_West.pdf",
+      "status": "VERIFIED",
+      "note": "Equation (2.1) read verbatim. Model 1 is the parsimonious model (the historical mean), model 2 the predictive regression. The statistic is not asymptotically normal under their preferred conditions; normal critical values yield actual size slightly below nominal, so the test is mildly conservative. Use Newey-West standard errors for overlapping horizons."
+    },
+    {
+      "id": "implementation_cost_assumption",
+      "claim": "Blended all-in one-way execution cost for the nine implementation vehicles.",
+      "value": "approximately 8bps one-way, weighted across SPY/VTI (1-2bps), VEA/LQD/IEF (2-4bps), EEM/VNQ/HYG (4-8bps) and DBC/GSG (6-12bps), including half-spread, market impact and commission",
+      "source": "Desk assumption, calibrated to published ETF bid-ask spread ranges",
+      "source_url": "https://www.fidelity.com/learning-center/investment-products/etf/etfs-spreads-volumes",
+      "status": "RECALLED",
+      "note": "This is a desk assumption, not a literature result, and it is the least defensible input in the cost calculation. It is stated so the CIO can overrule it. At 4bps one-way the programme roughly breaks even; at 12bps it loses about 5bps a year."
+    }
+  ],
+  "predictor_survival": {
+    "low": 0.18,
+    "high": 0.82,
+    "sources": [
+      "Hou, Xue & Zhang (2020), RFS 33(5): 17.9% of 452 anomalies replicate at |t|>2.78, 35% at |t|>1.96",
+      "Jensen, Kelly & Pedersen (2023), Journal of Finance 78(5): 82.4% Bayesian replication rate in the US and across 93 countries, 75.6% under Benjamini-Yekutieli",
+      "Harvey, Liu & Zhu (2016), RFS 29(1): 27% to 53% of 296 significant published factors are likely false discoveries, implying 47% to 73% survival",
+      "McLean & Pontiff (2016), Journal of Finance 71(1): 74% of return survives out of sample, 42% survives post-publication",
+      "Goyal, Welch & Zafirov (2024), RFS 37(11): more than a third of post-2008 equity-premium predictors fail in-sample and half the remainder fail out of sample, implying roughly 33% survival",
+      "Chen & Zimmermann (2022), Publication Bias in Asset Pricing Research: 74% of in-sample return persists in the first three years out of sample; only 26% of Hou-Xue-Zhang's strategies were clearly significant in the original papers"
+    ],
+    "note": "There is no single survival rate. The published range runs from 0.18 to 0.82 and the spread is almost entirely methodological, not empirical. Four choices move the number: (1) raw return versus risk-adjusted alpha as the test statistic, which alone moves Jensen-Kelly-Pedersen from 61.3% to 82.4%; (2) whether factors the original authors themselves reported as insignificant are counted as failed replications, which Chen and Zimmermann show accounts for most of Hou-Xue-Zhang's low rate; (3) whether a frequentist multiple-testing correction or a Bayesian hierarchical prior handles the factor zoo, which is the difference between 75.6% and 82.4% inside one paper and between 35% and 18% inside another; (4) microcap treatment, which Jensen-Kelly-Pedersen show matters less than claimed (replication rates of 77.3% in mega-caps and 79.8% in large caps against 82.4% overall). For programme design the operative number is not the replication rate at all but the decay rate: McLean and Pontiff's 58% post-publication decline is the haircut that applies to any signal this desk can read about."
+  },
+  "fundamental_law": {
+    "ic": 0.03,
+    "nominal_breadth": 36,
+    "effective_breadth": 2.0,
+    "tc": 0.5,
+    "ir": 0.0212,
+    "te_budget_bps": 200,
+    "expected_alpha_bps": 4.2,
+    "cost_bps": 6.4,
+    "clears_costs": false,
+    "net_alpha_bps": -2.2,
+    "derivation": "Nominal breadth is 9 lines x 4 meetings = 36. Two haircuts apply. (1) Cross-sectional collapse: the nine lines are not nine bets. US equity, developed ex-US and EM move together (pairwise correlations roughly 0.78 to 0.87), listed real estate and high yield carry equity beta (roughly 0.72 to 0.75), investment grade sits between credit and duration, and cash is the mirror of the aggregate risk bet rather than an independent line. Taking an average pairwise correlation of 0.45 across the nine lines and applying the equicorrelated effective-sample-size expression BR_cross = N / (1 + rho(N-1)) = 9 / (1 + 0.45 x 8) = 9 / 4.6 = 1.96 independent cross-sectional bets. (2) Time-series collapse: quarterly decisions are not independent because the signals are persistent. A 12-month trend signal sampled quarterly shares three of four lookback quarters between readings, giving quarterly autocorrelation near 0.75; valuation ratios are near 0.95; carry near 0.85. A composite weighted toward the faster signals gives gamma of about 0.60. The effective number of independent draws from an AR(1) of length T is T(1-gamma)/(1+gamma) = 4 x 0.40/1.60 = 1.00 independent decisions per year. Effective breadth = 1.96 x 1.00 = 1.96, rounded to 2.0. That is 5.4% of the nominal 36, and sqrt(2.0) = 1.41 against sqrt(36) = 6.00, so the breadth term is worth 1.41 rather than 6.00. IC of 0.03: Grinold and Kahn put a good forecaster at 0.05 and a world-class forecaster at 0.15. Working independently from the prediction literature: the best-case published monthly equity-premium R2_oos after Campbell-Thompson restrictions is about 0.5%, implying a correlation of about 0.071, and Goyal-Welch-Zafirov find half the in-sample survivors fail out of sample while McLean and Pontiff measure a 58% post-publication return decline, so an honest ex-ante haircut of roughly half on that correlation lands at about 0.035. 0.03 is the conservative end of that. TC of 0.50: Clarke, de Silva and Thorley's simulations put the typical transfer coefficient at 0.3 to 0.8; Clarke, de Silva and Sapra measure 0.332 for a fully constrained long-only equity book and 0.678 when the long-only constraint alone is lifted. This mandate is long-only with no fund leverage, has per-line ranges, sleeve ranges and a 50bps minimum trade size, and four of the nine lines are asymmetrically truncated because their policy weight sits near the bottom of the range (cash 0% in 0-10%, real estate 2% in 0-6%, commodities 3% in 0-8%, high yield 5% in 0-10%). The ranges are wide relative to a 200bps budget so they bind less often than in the equity study, but the minimum trade size truncates precisely the small positions where a low-IC signal expresses itself. 0.50, mid-range. Arithmetic: IR = 0.03 x sqrt(2.0) x 0.50 = 0.03 x 1.414214 x 0.50 = 0.021213, rounded to 0.0212. Expected alpha = 0.0212 x 200bps = 4.24bps, rounded to 4.2bps a year. Cost: gross active weight at 200bps ex-ante tracking error is about 30% of NAV (roughly two effective independent bets at about 10% residual volatility each requires about 14% active weight per bet). A signal with quarterly autocorrelation 0.60 turns over a large share of the book each quarter: for a standardised AR(1), E|s_t - s_t-1| / E|s_t| = sqrt(2(1-gamma)) = 0.894, so about 89% of the active book is retraded each quarter before filtering. The 50bps minimum trade size suppresses roughly a quarter of that, leaving about 20% of NAV traded per quarter and about 80% of NAV per year. At a blended 8bps one-way all-in cost across the nine vehicles the annual bill is 80% x 8bps = 6.4bps. Net: 4.2bps of gross alpha against 6.4bps of cost, so minus 2.2bps a year, which is minus USD 187,000 on an 850m fund before any staff or governance cost. Break-even requires IC of 0.045, or effective breadth of 4.6, or TC of 0.75, holding the other two at their central values."
+  },
+  "vol_management": {
+    "forecastable": "Yes, and this is not contested. Conditional variance is autoregressive (Engle 1982, Bollerslev 1986) and realised-volatility models forecast well out of sample: Corsi's HAR-RV produces out-of-sample Mincer-Zarnowitz R-squared of roughly 0.76 to 0.82 for S&P 500 realised volatility across 1- to 20-day horizons. Set against a monthly equity-premium R2_oos of 0.005 at best and negative for most predictors, volatility is roughly two orders of magnitude more forecastable than return. Any programme that has an edge anywhere has it here.",
+    "scaling_works": "Contested, and the disagreement is about implementability rather than about the in-sample fact. Moreira and Muir (2017, JF) scale by the inverse of the prior month's realised variance and report an annualised alpha of 4.86% on the market with a 25% lift in the buy-and-hold Sharpe ratio and utility gains of about 65% of lifetime utility. Cederburg, O'Doherty, Wang and Yan (2020, JFE) test 103 equity strategies and find that the trading strategies implied by those spanning regressions are not implementable in real time; reasonable out-of-sample versions generally earn lower certainty-equivalent returns and Sharpe ratios than the unmanaged portfolios, and the cause is structural instability in the spanning regressions themselves. Liu, Tang and Zhou identify a look-ahead bias in the standard implementation and report maximum drawdowns of 68% to 93% after correcting it, with outperformance concentrated in the financial crisis. Harvey and co-authors (2018, JPM), working across 60 assets from 1926, find the Sharpe improvement is confined to equities and credit and is negligible for bonds, currencies and commodities, while the reduction in left-tail severity holds everywhere. Barroso and Santa-Clara (2015, JFE) show the clearest positive case: targeting 12% constant volatility on the momentum factor nearly doubles its Sharpe ratio, but momentum is a levered long-short factor with fat left tails, which is not this portfolio.",
+    "verdict_for_this_mandate": "Use volatility scaling to control risk, not to add return, and do not book any alpha for it. The literature that supports volatility management tests levered, monthly-rebalanced, long-short factor portfolios and takes most of its benefit from crash avoidance in the equity-shaped legs. This mandate is long-only, unlevered, rebalanced quarterly, and holds nine correlated asset-class lines, so it cannot capture the mechanism that generates the alpha in Moreira-Muir, and the real-time implementation problem identified by Cederburg et al. and Liu et al. bites harder at a quarterly frequency than at a monthly one because the volatility forecast decays fastest at short horizons. What does transfer is the Harvey et al. result on tail shape, and it transfers to the constraint the board actually set. The endowment has a hard minus 20% peak-to-trough limit against an 18% budget dependency; scaling equity exposure down when the volatility forecast rises, and taking the risk into the 0-10% cash range that the IPS explicitly created for this purpose, is the cheapest available way to defend that limit. Justify it as drawdown control under constraint 3 of the hierarchy, budget zero alpha for it, and expect it to cost a small amount in expected return in exchange."
+  },
+  "sharpe_se_n60": {
+    "sr_0_5": 0.137,
+    "sr_1_0": 0.158,
+    "formula": "SE(SR) = sqrt((1 + SR^2 / 2) / n), Lo (2002) equation (9), asymptotic under IID returns. At n = 60: SR = 0.50 gives sqrt(1.125/60) = 0.1369; SR = 1.00 gives sqrt(1.500/60) = 0.1581. Both reproduce Lo's Table 1 exactly.",
+    "annualised_sr_0_5": 0.4495,
+    "annualised_sr_1_0": 0.4564,
+    "annualised_note": "The figures above are in the units of the observation frequency. The number that belongs on the front of a report is the annualised one. An annualised Sharpe ratio of 0.50 estimated from 60 monthly observations has a monthly SR of 0.1443, a monthly standard error of 0.1298, and therefore an annualised standard error of 0.4495: a 95% confidence interval of roughly minus 0.38 to plus 1.38. An annualised Sharpe of 1.00 over the same 60 months has a standard error of 0.4564, a 95% interval of roughly 0.11 to 1.89. Five years of monthly data cannot distinguish a good manager from a bad one. Lo further shows that serial correlation makes this worse, inflating naively annualised Sharpe ratios by more than 65% in some cases."
+  },
+  "r2oos_definition": {
+    "formula": "R2_oos = 1 - [ sum_{t=t0}^{T} (r_t - rhat_t)^2 ] / [ sum_{t=t0}^{T} (r_t - rbar_t)^2 ], where r_t is the realised excess return in period t, rhat_t is the predictive-regression forecast of r_t formed with data through t-1 only and coefficients re-estimated on an expanding window through t-1, and rbar_t is the expanding-window historical mean of r through t-1. R2_oos > 0 means the predictive model beats the recursively updated historical mean. Campbell-Thompson restrictions, applied in this order: (i) if the estimated slope has the sign opposite to the theoretically expected sign, set it to zero for that forecast; (ii) if the resulting forecast of the equity premium is negative, set it to zero. Significance: Clark-West MSPE-adjusted, fhat_{t} = (r_t - rbar_t)^2 - [ (r_t - rhat_t)^2 - (rbar_t - rhat_t)^2 ], regress fhat on a constant, take the one-sided t-statistic on that constant against standard normal critical values (1.282 at 10%, 1.645 at 5%), Newey-West standard errors with lag J-1 for J-step-ahead or overlapping forecasts.",
+    "benchmark": "expanding historical mean",
+    "source_url": "https://www.nber.org/system/files/working_papers/w11468/w11468.pdf",
+    "clark_west_source_url": "https://www.ecb.europa.eu/events/pdf/conferences/ftworkshop05/Clark_West.pdf",
+    "note": "Two implementation traps. First, the benchmark must be the recursively updated mean computed with data through t-1 only, never the full-sample mean; using the full-sample mean is the single most common way a negative R2_oos is turned positive by accident. Second, R2_oos and Clark-West can disagree, and that is expected rather than a bug: Clark-West tests the null that the predictor's population coefficient is zero, so it can reject while R2_oos is negative, because a small true coefficient still costs more in estimation noise than it earns in forecast accuracy. Report both and read them as answering different questions."
+  }
+}

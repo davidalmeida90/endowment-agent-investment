@@ -1,0 +1,268 @@
+{
+  "claim": "US real GDP for 2022 Q2 was first published as a contraction on 28 July 2022 and reads as growth today. The revision did not cross zero until an annual benchmark revision more than two years later.",
+  "verdict": "CONFIRMED",
+  "as_first_published": {
+    "vintage": "2022-07-28",
+    "release": "BEA advance estimate of 2022 Q2 real GDP",
+    "q2_2022_saar_pct": -0.9342,
+    "q1_2022_saar_pct": -1.5734,
+    "two_consecutive_negative_quarters": true
+  },
+  "as_it_reads_now": {
+    "vintage": "2026-07-28",
+    "q2_2022_saar_pct": 0.6277,
+    "q1_2022_saar_pct": -1.0153,
+    "two_consecutive_negative_quarters": false
+  },
+  "sign_crossed_on_vintage": "2024-09-26",
+  "last_vintage_still_negative": "2024-09-25",
+  "days_wrong": 791,
+  "revision_pp": 1.5619,
+  "level_comparison_refused": "The chained-dollar level moved from 19,895.271 on the 2022-07-28 vintage to 21,967.045 today. Almost all of that is the 2023 rebasing of the chained index from 2012 to 2017 dollars, not a revision to activity. The comparison is made on annualised growth rates for that reason.",
+  "nber": "The NBER has never dated a recession beginning in 2022. USREC reads 0 throughout 2021 and 2022 on the current vintage. The two-negative-quarters heuristic and the NBER's dating disagreed then and disagree now.",
+  "series": [
+    {
+      "vintage": "2021-09-30",
+      "last_published_quarter": "2021-04-01",
+      "2022Q1": null,
+      "2022Q1_level": null,
+      "2022Q2": null,
+      "2022Q2_level": null,
+      "two_consecutive_negative_quarters": null
+    },
+    {
+      "vintage": "2021-12-31",
+      "last_published_quarter": "2021-07-01",
+      "2022Q1": null,
+      "2022Q1_level": null,
+      "2022Q2": null,
+      "2022Q2_level": null,
+      "two_consecutive_negative_quarters": null
+    },
+    {
+      "vintage": "2022-03-31",
+      "last_published_quarter": "2021-10-01",
+      "2022Q1": null,
+      "2022Q1_level": null,
+      "2022Q2": null,
+      "2022Q2_level": null,
+      "two_consecutive_negative_quarters": null
+    },
+    {
+      "vintage": "2022-04-28",
+      "last_published_quarter": "2022-01-01",
+      "2022Q1": -1.4141,
+      "2022Q1_level": 19735.895,
+      "2022Q2": null,
+      "2022Q2_level": null,
+      "two_consecutive_negative_quarters": null
+    },
+    {
+      "vintage": "2022-06-30",
+      "last_published_quarter": "2022-01-01",
+      "2022Q1": -1.5734,
+      "2022Q1_level": 19727.918,
+      "2022Q2": null,
+      "2022Q2_level": null,
+      "two_consecutive_negative_quarters": null
+    },
+    {
+      "vintage": "2022-07-28",
+      "last_published_quarter": "2022-04-01",
+      "2022Q1": -1.5734,
+      "2022Q1_level": 19727.918,
+      "2022Q2": -0.9342,
+      "2022Q2_level": 19681.682,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2022-08-25",
+      "last_published_quarter": "2022-04-01",
+      "2022Q1": -1.5734,
+      "2022Q1_level": 19727.918,
+      "2022Q2": -0.5757,
+      "2022Q2_level": 19699.465,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2022-09-29",
+      "last_published_quarter": "2022-04-01",
+      "2022Q1": -1.6313,
+      "2022Q1_level": 19924.088,
+      "2022Q2": -0.5773,
+      "2022Q2_level": 19895.271,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2022-09-30",
+      "last_published_quarter": "2022-04-01",
+      "2022Q1": -1.6313,
+      "2022Q1_level": 19924.088,
+      "2022Q2": -0.5773,
+      "2022Q2_level": 19895.271,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2022-12-31",
+      "last_published_quarter": "2022-07-01",
+      "2022Q1": -1.6313,
+      "2022Q1_level": 19924.088,
+      "2022Q2": -0.5773,
+      "2022Q2_level": 19895.271,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2023-03-31",
+      "last_published_quarter": "2022-10-01",
+      "2022Q1": -1.6313,
+      "2022Q1_level": 19924.088,
+      "2022Q2": -0.5773,
+      "2022Q2_level": 19895.271,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2023-06-30",
+      "last_published_quarter": "2023-01-01",
+      "2022Q1": -1.6313,
+      "2022Q1_level": 19924.088,
+      "2022Q2": -0.5773,
+      "2022Q2_level": 19895.271,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2023-09-30",
+      "last_published_quarter": "2023-04-01",
+      "2022Q1": -1.9759,
+      "2022Q1_level": 21738.871,
+      "2022Q2": -0.5639,
+      "2022Q2_level": 21708.16,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2023-12-31",
+      "last_published_quarter": "2023-07-01",
+      "2022Q1": -1.9759,
+      "2022Q1_level": 21738.871,
+      "2022Q2": -0.5639,
+      "2022Q2_level": 21708.16,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2024-03-31",
+      "last_published_quarter": "2023-10-01",
+      "2022Q1": -1.9759,
+      "2022Q1_level": 21738.871,
+      "2022Q2": -0.5639,
+      "2022Q2_level": 21708.16,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2024-06-30",
+      "last_published_quarter": "2024-01-01",
+      "2022Q1": -1.9759,
+      "2022Q1_level": 21738.871,
+      "2022Q2": -0.5639,
+      "2022Q2_level": 21708.16,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2024-09-25",
+      "last_published_quarter": "2024-04-01",
+      "2022Q1": -1.9759,
+      "2022Q1_level": 21738.871,
+      "2022Q2": -0.5639,
+      "2022Q2_level": 21708.16,
+      "two_consecutive_negative_quarters": true
+    },
+    {
+      "vintage": "2024-09-26",
+      "last_published_quarter": "2024-04-01",
+      "2022Q1": -1.0258,
+      "2022Q1_level": 21903.85,
+      "2022Q2": 0.281,
+      "2022Q2_level": 21919.222,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2024-09-30",
+      "last_published_quarter": "2024-04-01",
+      "2022Q1": -1.0258,
+      "2022Q1_level": 21903.85,
+      "2022Q2": 0.281,
+      "2022Q2_level": 21919.222,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2024-12-31",
+      "last_published_quarter": "2024-07-01",
+      "2022Q1": -1.0258,
+      "2022Q1_level": 21903.85,
+      "2022Q2": 0.281,
+      "2022Q2_level": 21919.222,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2025-03-31",
+      "last_published_quarter": "2024-10-01",
+      "2022Q1": -1.0258,
+      "2022Q1_level": 21903.85,
+      "2022Q2": 0.281,
+      "2022Q2_level": 21919.222,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2025-06-30",
+      "last_published_quarter": "2025-01-01",
+      "2022Q1": -1.0258,
+      "2022Q1_level": 21903.85,
+      "2022Q2": 0.281,
+      "2022Q2_level": 21919.222,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2025-09-30",
+      "last_published_quarter": "2025-04-01",
+      "2022Q1": -1.0153,
+      "2022Q1_level": 21932.71,
+      "2022Q2": 0.6277,
+      "2022Q2_level": 21967.045,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2025-12-31",
+      "last_published_quarter": "2025-07-01",
+      "2022Q1": -1.0153,
+      "2022Q1_level": 21932.71,
+      "2022Q2": 0.6277,
+      "2022Q2_level": 21967.045,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2026-03-31",
+      "last_published_quarter": "2025-10-01",
+      "2022Q1": -1.0153,
+      "2022Q1_level": 21932.71,
+      "2022Q2": 0.6277,
+      "2022Q2_level": 21967.045,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2026-06-30",
+      "last_published_quarter": "2026-01-01",
+      "2022Q1": -1.0153,
+      "2022Q1_level": 21932.71,
+      "2022Q2": 0.6277,
+      "2022Q2_level": 21967.045,
+      "two_consecutive_negative_quarters": false
+    },
+    {
+      "vintage": "2026-07-28",
+      "last_published_quarter": "2026-01-01",
+      "2022Q1": -1.0153,
+      "2022Q1_level": 21932.71,
+      "2022Q2": 0.6277,
+      "2022Q2_level": 21967.045,
+      "two_consecutive_negative_quarters": false
+    }
+  ]
+}

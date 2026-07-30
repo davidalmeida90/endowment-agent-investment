@@ -1,0 +1,66 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Stat rail and fact strip" subtitle="Navy rail with a diagonal ribbon, pale caps labels over large white values" viewport="820x480" -->
+<html><head><meta charset="utf-8"><title>Stat rail</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { width:820px; }
+  .split { display:flex; gap:26px; align-items:flex-start; }
+
+  /* The rail: dark navy base, a soft vertical gradient, and a diagonal ribbon
+     lightening across the top, sampled from the Kinea panel. */
+  .rail {
+    width:250px; position:relative; overflow:hidden;
+    padding:22px 20px 24px;
+    background:
+      linear-gradient(160deg, rgba(46,60,99,.55) 0%, rgba(46,60,99,0) 42%),
+      linear-gradient(180deg, #14264F 0%, #0C1E48 55%, #08183E 100%);
+  }
+  .ribbon {
+    position:absolute; top:-40px; left:-30px; width:200px; height:230px;
+    transform:skewX(-24deg);
+    background:linear-gradient(120deg, rgba(46,60,99,.45), rgba(46,60,99,0) 70%);
+    pointer-events:none;
+  }
+  .r { position:relative; padding:11px 0; border-bottom:1px solid rgba(174,185,199,.22); }
+  .r:last-child { border-bottom:0; }
+  .r .l { font-size:9px; font-weight:600; color:#AEB9C7; text-transform:uppercase; letter-spacing:.08em; }
+  .r .v { font-size:23px; font-weight:600; color:#fff; margin-top:4px; font-variant-numeric:tabular-nums lining-nums; letter-spacing:.01em; }
+  .r .v .u { font-size:14px; font-weight:400; color:#C9D2DC; margin-left:3px; }
+
+  .prose h4 { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:var(--navy); margin:0 0 8px; }
+  .prose p { font-size:12.5px; line-height:1.55; text-align:justify; margin:0 0 10px; color:#1A1F28; }
+  .strip { margin-top:22px; background:#F2EBE5; display:flex; padding:14px 0; }
+  .cell { flex:1; text-align:center; border-right:1px solid rgba(12,30,72,.14); }
+  .cell:last-child { border-right:0; }
+  .cell .v { font-size:19px; font-weight:600; color:var(--navy); font-variant-numeric:tabular-nums; }
+  .cell .l { font-size:10px; color:var(--navy); margin-top:1px; }
+</style></head>
+<body>
+  <div class="split">
+    <div class="rail">
+      <div class="ribbon"></div>
+      <div class="r"><div class="l">Net asset value / share</div><div class="v">$34.18</div></div>
+      <div class="r"><div class="l">Total net assets</div><div class="v">$1.84<span class="u">billion</span></div></div>
+      <div class="r"><div class="l">Holdings</div><div class="v">31</div></div>
+      <div class="r"><div class="l">Active share</div><div class="v">84.2<span class="u">%</span></div></div>
+      <div class="r"><div class="l">Turnover, 12 months</div><div class="v">18<span class="u">%</span></div></div>
+      <div class="r"><div class="l">Weighted holding period</div><div class="v">5.4<span class="u">years</span></div></div>
+    </div>
+    <div class="prose">
+      <h4>Position at period end</h4>
+      <p>Coldbrook Focused Equity closed June holding 31 businesses, with the ten largest
+      accounting for 46.8% of net assets. Cash stood at 2.1%. Active share of 84.2% is
+      unchanged on the quarter and remains within the 80 to 90 band the strategy has held
+      since inception.</p>
+      <p>Two positions were initiated during the month and one was exited. Portfolio
+      turnover of 18% over the trailing twelve months is consistent with an average holding
+      period above five years.</p>
+    </div>
+  </div>
+  <div class="strip">
+    <div class="cell"><div class="v">3 March 2016</div><div class="l">Inception</div></div>
+    <div class="cell"><div class="v">0.65%</div><div class="l">Management fee</div></div>
+    <div class="cell"><div class="v">0.72%</div><div class="l">Net expense ratio</div></div>
+  </div>
+</body></html>

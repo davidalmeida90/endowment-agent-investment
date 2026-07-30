@@ -1,0 +1,9 @@
+{
+  "source": "Yahoo Finance via yfinance",
+  "ticker": "LQD",
+  "first": "2009-07-01",
+  "last": "2026-07-28",
+  "rows": 4293,
+  "field_note": "adj_close is dividend and split adjusted",
+  "pulled_at": "2026-07-28T23:26:13"
+}

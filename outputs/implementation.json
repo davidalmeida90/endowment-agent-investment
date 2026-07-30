@@ -1,0 +1,831 @@
+{
+  "desk": "Implementation & Operations",
+  "paper": "desks/implementation.md",
+  "module": "taa/costs.py",
+  "check": "tests/check_implementation.py",
+  "as_of": "2026-07-28",
+  "ips_version": "7.2, effective 1 July 2026",
+  "nav_usd": 850000000.0,
+  "min_trade_pp": 0.5,
+  "min_trade_usd": 4250000.0,
+  "te_budget_bps": 200.0,
+  "policy_portfolio_vol_pct_3y": 11.1,
+  "corridor_edge_te_bps": 26.7,
+  "one_way_bps": {
+    "us_equity": 1.5,
+    "dev_ex_us": 4.0,
+    "em_equity": 8.0,
+    "ust_duration": 3.0,
+    "us_ig": 6.0,
+    "us_hy": 12.0,
+    "commodities": 25.0,
+    "listed_re": 5.0,
+    "cash": 1.0
+  },
+  "corridor_pp": {
+    "us_equity": 1.0,
+    "dev_ex_us": 1.25,
+    "em_equity": 1.0,
+    "ust_duration": 0.75,
+    "us_ig": 1.0,
+    "us_hy": 1.25,
+    "commodities": 0.75,
+    "listed_re": 0.5,
+    "cash": 0.5
+  },
+  "lines": {
+    "us_equity": {
+      "policy_pp": 38.0,
+      "range_pp": [
+        28.0,
+        48.0
+      ],
+      "primary_vehicle": "VTI",
+      "alternate_vehicles": [
+        "SPY"
+      ],
+      "quoted_spread_bps": 0.55,
+      "half_spread_bps": 0.275,
+      "one_way_bps": 1.5,
+      "cost_multiple_of_half_spread": 5.5,
+      "active_vol_pct_3y": 6.26,
+      "corridor_pp": 1.0,
+      "corridor_relative_pct": 2.6,
+      "band_pp": [
+        37.0,
+        39.0
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 6.3,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 8500000
+    },
+    "dev_ex_us": {
+      "policy_pp": 20.0,
+      "range_pp": [
+        12.0,
+        28.0
+      ],
+      "primary_vehicle": "VEA",
+      "alternate_vehicles": [
+        "EFA"
+      ],
+      "quoted_spread_bps": 1.42,
+      "half_spread_bps": 0.71,
+      "one_way_bps": 4.0,
+      "cost_multiple_of_half_spread": 5.6,
+      "active_vol_pct_3y": 6.9,
+      "corridor_pp": 1.25,
+      "corridor_relative_pct": 6.2,
+      "band_pp": [
+        18.75,
+        21.25
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 8.6,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 10625000
+    },
+    "em_equity": {
+      "policy_pp": 12.0,
+      "range_pp": [
+        5.0,
+        19.0
+      ],
+      "primary_vehicle": "VWO",
+      "alternate_vehicles": [
+        "EEM"
+      ],
+      "quoted_spread_bps": 1.7,
+      "half_spread_bps": 0.85,
+      "one_way_bps": 8.0,
+      "cost_multiple_of_half_spread": 9.4,
+      "active_vol_pct_3y": 9.26,
+      "corridor_pp": 1.0,
+      "corridor_relative_pct": 8.3,
+      "band_pp": [
+        11.0,
+        13.0
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 9.3,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 8500000
+    },
+    "ust_duration": {
+      "policy_pp": 12.0,
+      "range_pp": [
+        5.0,
+        22.0
+      ],
+      "primary_vehicle": "IEF",
+      "alternate_vehicles": [
+        "TLT"
+      ],
+      "quoted_spread_bps": 1.0,
+      "half_spread_bps": 0.5,
+      "one_way_bps": 3.0,
+      "cost_multiple_of_half_spread": 6.0,
+      "active_vol_pct_3y": 11.1,
+      "corridor_pp": 0.75,
+      "corridor_relative_pct": 6.2,
+      "band_pp": [
+        11.25,
+        12.75
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 8.3,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 6375000
+    },
+    "us_ig": {
+      "policy_pp": 8.0,
+      "range_pp": [
+        3.0,
+        13.0
+      ],
+      "primary_vehicle": "LQD",
+      "alternate_vehicles": [],
+      "quoted_spread_bps": 1.0,
+      "half_spread_bps": 0.5,
+      "one_way_bps": 6.0,
+      "cost_multiple_of_half_spread": 12.0,
+      "active_vol_pct_3y": 9.51,
+      "corridor_pp": 1.0,
+      "corridor_relative_pct": 12.5,
+      "band_pp": [
+        7.0,
+        9.0
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 9.5,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 8500000
+    },
+    "us_hy": {
+      "policy_pp": 5.0,
+      "range_pp": [
+        0.0,
+        10.0
+      ],
+      "primary_vehicle": "HYG",
+      "alternate_vehicles": [],
+      "quoted_spread_bps": 1.0,
+      "half_spread_bps": 0.5,
+      "one_way_bps": 12.0,
+      "cost_multiple_of_half_spread": 24.0,
+      "active_vol_pct_3y": 7.39,
+      "corridor_pp": 1.25,
+      "corridor_relative_pct": 25.0,
+      "band_pp": [
+        3.75,
+        6.25
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 9.2,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 10625000
+    },
+    "commodities": {
+      "policy_pp": 3.0,
+      "range_pp": [
+        0.0,
+        8.0
+      ],
+      "primary_vehicle": "DBC",
+      "alternate_vehicles": [
+        "GSG"
+      ],
+      "quoted_spread_bps": 4.0,
+      "half_spread_bps": 2.0,
+      "one_way_bps": 25.0,
+      "cost_multiple_of_half_spread": 12.5,
+      "active_vol_pct_3y": 18.7,
+      "corridor_pp": 0.75,
+      "corridor_relative_pct": 25.0,
+      "band_pp": [
+        2.25,
+        3.75
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 14.0,
+      "min_trade_binds": false,
+      "trade_at_corridor_usd": 6375000
+    },
+    "listed_re": {
+      "policy_pp": 2.0,
+      "range_pp": [
+        0.0,
+        6.0
+      ],
+      "primary_vehicle": "VNQ",
+      "alternate_vehicles": [],
+      "quoted_spread_bps": 1.02,
+      "half_spread_bps": 0.51,
+      "one_way_bps": 5.0,
+      "cost_multiple_of_half_spread": 9.8,
+      "active_vol_pct_3y": 13.17,
+      "corridor_pp": 0.5,
+      "corridor_relative_pct": 25.0,
+      "band_pp": [
+        1.5,
+        2.5
+      ],
+      "one_sided": false,
+      "corridor_te_bps_at_edge": 6.6,
+      "min_trade_binds": true,
+      "trade_at_corridor_usd": 4250000
+    },
+    "cash": {
+      "policy_pp": 0.0,
+      "range_pp": [
+        0.0,
+        10.0
+      ],
+      "primary_vehicle": "SGOV",
+      "alternate_vehicles": [
+        "BIL"
+      ],
+      "quoted_spread_bps": 1.0,
+      "half_spread_bps": 0.5,
+      "one_way_bps": 1.0,
+      "cost_multiple_of_half_spread": 2.0,
+      "active_vol_pct_3y": 11.11,
+      "corridor_pp": 0.5,
+      "corridor_relative_pct": null,
+      "band_pp": [
+        0.0,
+        0.5
+      ],
+      "one_sided": true,
+      "corridor_te_bps_at_edge": 5.6,
+      "min_trade_binds": true,
+      "trade_at_corridor_usd": 4250000
+    }
+  },
+  "vehicles": {
+    "SPY": {
+      "ticker": "SPY",
+      "line": "us_equity",
+      "role": "alternate",
+      "issuer": "State Street Investment Management",
+      "expense_ratio_pct": 0.0945,
+      "expense_ratio_basis": "gross expense ratio, prospectus, as published in the SPDR product data file",
+      "spread_bps": {
+        "value_bps": 0.14,
+        "published": "0.00%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/spdr-product-data-us-en.xlsx",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.07,
+      "adv_usd_m": {
+        "value": 35898.8,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SPY?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.02,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/spdr-product-data-us-en.xlsx",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 785173.1,
+      "close_usd": 739.09,
+      "trade_100bp_as_pct_of_adv": 0.02,
+      "notes": "Issuer figure rounds to 0.00% at two-decimal precision in percent. 0.14bp is the one-cent minimum price increment on a USD 739.09 close, which is the tightest spread the tick regime permits. Deepest book of any security in the world; the size vehicle for urgent US equity trades. SPY is a unit investment trust operating under its own exemptive order rather than Rule 6c-11, but State Street publishes the same statistic."
+    },
+    "VTI": {
+      "ticker": "VTI",
+      "line": "us_equity",
+      "role": "primary",
+      "issuer": "Vanguard",
+      "expense_ratio_pct": 0.03,
+      "expense_ratio_basis": "expense ratio as of 2026-04-28, Vanguard fund profile service",
+      "spread_bps": {
+        "value_bps": 0.55,
+        "published": "0.0055%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.275,
+      "adv_usd_m": {
+        "value": 1162.5,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VTI?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.03,
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 657250.0,
+      "close_usd": 365.99,
+      "trade_100bp_as_pct_of_adv": 0.73,
+      "notes": "Vanguard publishes the 6c-11 median to eight decimal places, so this is an unrounded figure. Adopted as the primary US equity vehicle: 6.45bp a year cheaper to hold than SPY, worth about USD 2.08m a year on a 38% policy weight, against a spread difference of four tenths of a basis point paid only on turnover."
+    },
+    "EFA": {
+      "ticker": "EFA",
+      "line": "dev_ex_us",
+      "role": "alternate",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.32,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239623/ishares-msci-eafe-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 1350.6,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/EFA?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.22,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239623/ishares-msci-eafe-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 76639.1,
+      "close_usd": 103.91,
+      "trade_100bp_as_pct_of_adv": 0.63,
+      "notes": "iShares rounds to two decimals in percent, so 0.01% is a rounded value and the true median sits between roughly 0.5bp and 1.5bp. The +0.22% premium to NAV is a stale-NAV artefact: EAFE markets closed hours before the US close, so the NAV is struck on old prices. Size vehicle."
+    },
+    "VEA": {
+      "ticker": "VEA",
+      "line": "dev_ex_us",
+      "role": "primary",
+      "issuer": "Vanguard",
+      "expense_ratio_pct": 0.03,
+      "expense_ratio_basis": "expense ratio as of 2026-04-28, Vanguard fund profile service",
+      "spread_bps": {
+        "value_bps": 1.42,
+        "published": "0.0142%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.71,
+      "adv_usd_m": {
+        "value": 733.6,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VEA?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.16,
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 226670.0,
+      "close_usd": 69.6,
+      "trade_100bp_as_pct_of_adv": 1.16,
+      "notes": "29bp a year cheaper to hold than EFA, worth about USD 4.93m a year on a 20% policy weight."
+    },
+    "EEM": {
+      "ticker": "EEM",
+      "line": "em_equity",
+      "role": "alternate",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.72,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 2.0,
+        "published": "0.02%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239637/ishares-msci-emerging-markets-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 1.0,
+      "adv_usd_m": {
+        "value": 1803.8,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/EEM?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.0,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239637/ishares-msci-emerging-markets-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 28599.5,
+      "close_usd": 63.62,
+      "trade_100bp_as_pct_of_adv": 0.47,
+      "notes": "The vehicle Angel, Broms and Gastineau (2016) used to show that the screen spread understates the realised cost: a spread of about 3bp alongside a closing price that deviated from NAV by 48bp on average through 2014, median 15bp, worst 5% at 136bp or more."
+    },
+    "VWO": {
+      "ticker": "VWO",
+      "line": "em_equity",
+      "role": "primary",
+      "issuer": "Vanguard",
+      "expense_ratio_pct": 0.06,
+      "expense_ratio_basis": "expense ratio as of 2026-02-27, Vanguard fund profile service",
+      "spread_bps": {
+        "value_bps": 1.7,
+        "published": "0.0170%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.85,
+      "adv_usd_m": {
+        "value": 452.3,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VWO?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.16,
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 120930.0,
+      "close_usd": 57.74,
+      "trade_100bp_as_pct_of_adv": 1.88,
+      "notes": "66bp a year cheaper to hold than EEM, worth about USD 6.73m a year on a 12% policy weight. VWO tracks FTSE rather than MSCI, so it includes onshore China A-shares and excludes South Korea; the desk treats that as an index choice for the Committee, not an implementation detail."
+    },
+    "IEF": {
+      "ticker": "IEF",
+      "line": "ust_duration",
+      "role": "primary",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.15,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239456/ishares-7-10-year-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 552.9,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/IEF?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.03,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239456/ishares-7-10-year-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 47268.1,
+      "close_usd": 93.28,
+      "trade_100bp_as_pct_of_adv": 1.54,
+      "notes": "13 holdings, all US Treasuries. Underlying cash market spreads are a fraction of a basis point on the run, so the wrapper adds little."
+    },
+    "TLT": {
+      "ticker": "TLT",
+      "line": "ust_duration",
+      "role": "alternate",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.15,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 2006.4,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/TLT?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.03,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239454/ishares-20-year-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 43003.1,
+      "close_usd": 83.75,
+      "trade_100bp_as_pct_of_adv": 0.42,
+      "notes": "Long-end vehicle, 3y realised volatility 13.74% against IEF's 6.54%. Used for deliberate duration tilts, not as the core duration holding."
+    },
+    "LQD": {
+      "ticker": "LQD",
+      "line": "us_ig",
+      "role": "primary",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.14,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 2894.5,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/LQD?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.01,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239566/ishares-iboxx-investment-grade-corporate-bond-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 33770.4,
+      "close_usd": 106.51,
+      "trade_100bp_as_pct_of_adv": 0.29,
+      "notes": "3,144 corporate bonds, most of which do not trade on a given day. The 1bp screen spread is the spread on the wrapper, not on the basket. USD 8.5m is 0.29% of LQD's dollar ADV, so the secondary market absorbs it and the desk pays the wrapper, but the gap is why the adopted cost is several times the half-spread."
+    },
+    "HYG": {
+      "ticker": "HYG",
+      "line": "us_hy",
+      "role": "primary",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.49,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239565/ishares-iboxx-high-yield-corporate-bond-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 2444.6,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/HYG?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.07,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239565/ishares-iboxx-high-yield-corporate-bond-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 15882.5,
+      "close_usd": 79.27,
+      "trade_100bp_as_pct_of_adv": 0.35,
+      "notes": "1,328 high yield bonds. In stress the ETF becomes the price-discovery instrument for the asset class and its own spread widens by a multiple, which is precisely when a risk-reducing trade would be wanted."
+    },
+    "DBC": {
+      "ticker": "DBC",
+      "line": "commodities",
+      "role": "primary",
+      "issuer": "Invesco",
+      "expense_ratio_pct": 0.89,
+      "expense_ratio_basis": "total expense ratio: 0.85% management fee plus 0.04% estimated futures brokerage fee; net expense ratio 0.82% after waiver",
+      "spread_bps": {
+        "value_bps": 4.0,
+        "published": "0.04%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=DBC",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 2.0,
+      "adv_usd_m": {
+        "value": 27.3,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/DBC?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": -0.44,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.invesco.com/us/financial-products/etfs/product-detail?audienceType=Investor&ticker=DBC",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 1698.7,
+      "close_usd": 29.01,
+      "trade_100bp_as_pct_of_adv": 31.14,
+      "notes": "The binding liquidity constraint in the whole programme. USD 8.5m is 31% of DBC's median dollar ADV and a full 3pp exit is USD 25.5m, close to a whole day's trading. Closed at a 43.5bp discount to NAV on 2026-07-27, a day the index fell 3.02%. A commodity pool taxed as a partnership, issuing Schedule K-1."
+    },
+    "GSG": {
+      "ticker": "GSG",
+      "line": "commodities",
+      "role": "alternate",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.75,
+      "expense_ratio_basis": "sponsor's fee, iShares product page",
+      "spread_bps": {
+        "value_bps": 3.0,
+        "published": "0.03%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239757/ishares-sp-gsci-commodityindexed-trust-fund",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 1.5,
+      "adv_usd_m": {
+        "value": 20.7,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/GSG?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": -0.5,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/239757/ishares-sp-gsci-commodityindexed-trust-fund",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 927.3,
+      "close_usd": 31.49,
+      "trade_100bp_as_pct_of_adv": 41.06,
+      "notes": "Tighter screen spread than DBC but a smaller book, USD 20.7m dollar ADV, and a far more concentrated index. Useful only to split a large commodity order across two wrappers, which raises combined capacity to roughly USD 48m a day."
+    },
+    "VNQ": {
+      "ticker": "VNQ",
+      "line": "listed_re",
+      "role": "primary",
+      "issuer": "Vanguard",
+      "expense_ratio_pct": 0.13,
+      "expense_ratio_basis": "expense ratio as of 2026-05-28, Vanguard fund profile service",
+      "spread_bps": {
+        "value_bps": 1.02,
+        "published": "0.0102%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.51,
+      "adv_usd_m": {
+        "value": 304.5,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/VNQ?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.05,
+        "as_of": "2026-07-27",
+        "source_url": "https://advisors.vanguard.com/investments/bidaskspread",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 39140.0,
+      "close_usd": 100.95,
+      "trade_100bp_as_pct_of_adv": 2.79,
+      "notes": "Underlying is listed US REITs, ordinary liquid equities. The 2% policy weight, not the vehicle, is what makes this line awkward."
+    },
+    "BIL": {
+      "ticker": "BIL",
+      "line": "cash",
+      "role": "alternate",
+      "issuer": "State Street Investment Management",
+      "expense_ratio_pct": 0.1353,
+      "expense_ratio_basis": "gross expense ratio, SPDR product data file",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/spdr-product-data-us-en.xlsx",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 846.8,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/BIL?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.0,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ssga.com/library-content/products/fund-data/etfs/us/spdr-product-data-us-en.xlsx",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 47200.2,
+      "close_usd": 91.62,
+      "trade_100bp_as_pct_of_adv": 1.0,
+      "notes": "4.53bp a year dearer than SGOV."
+    },
+    "SGOV": {
+      "ticker": "SGOV",
+      "line": "cash",
+      "role": "primary",
+      "issuer": "BlackRock iShares",
+      "expense_ratio_pct": 0.09,
+      "expense_ratio_basis": "net expense ratio, iShares product page",
+      "spread_bps": {
+        "value_bps": 1.0,
+        "published": "0.01%",
+        "measure": "30-day median bid-ask spread, SEC Rule 6c-11(c)(1)(v)",
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "half_spread_bps": 0.5,
+      "adv_usd_m": {
+        "value": 1891.4,
+        "measure": "median of close x volume over the 60 US trading sessions ended 2026-07-28",
+        "as_of": "2026-07-28",
+        "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/SGOV?range=3y&interval=1d",
+        "status": "VERIFIED"
+      },
+      "premium_discount_pct": {
+        "value": 0.0,
+        "as_of": "2026-07-27",
+        "source_url": "https://www.ishares.com/us/products/314116/ishares-0-3-month-treasury-bond-etf",
+        "status": "VERIFIED"
+      },
+      "aum_usd_m": 99749.6,
+      "close_usd": 100.65,
+      "trade_100bp_as_pct_of_adv": 0.45,
+      "notes": "0-3 month Treasury bills. 3y realised volatility 0.22%. The liquidity floor at IPS 3.4 (15% of NAV realisable in five business days) is met many times over by the whole portfolio, so cash is held for risk reduction and distribution funding, not for liquidity compliance."
+    }
+  },
+  "reporting_standard": {
+    "name": "Global Investment Performance Standards (GIPS)",
+    "chapter": "GIPS Standards for Asset Owners",
+    "edition": "2020 edition",
+    "issued": "2019-06-30",
+    "effective_date": "2020-01-01",
+    "applies_from": "reports covering periods ending on or after 2020-12-31",
+    "maintained_by": "CFA Institute",
+    "applicable_because": "The Endowment is an asset owner that does not compete for business and reports to an oversight body (Introduction p. xiii; provision 21.A.2 names endowments explicitly). An asset owner that competes for business must instead follow the GIPS Standards for Firms (21.A.24).",
+    "source_url": "https://www.gipsstandards.org/wp-content/uploads/2021/02/2020_gips_standards_asset_owners.pdf",
+    "status": "VERIFIED",
+    "benchmark_risk_statistic": {
+      "provision": "24.A.1.j",
+      "requirement": "Three-year annualised ex post standard deviation using monthly returns, for the total fund or composite AND the benchmark, as of each annual period end. Required for periods ending on or after 1 January 2011.",
+      "if_36_months_unavailable": "24.C.30 requires disclosure that it is not presented because 36 monthly returns are not available.",
+      "calculation": "Same formula for fund and benchmark (Guidance Statement on Benchmarks for Asset Owners, p. 25); periodicity and methodology must match for any additional risk measure (22.A.15)."
+    },
+    "blended_benchmark_disclosure": {
+      "provisions": [
+        "24.C.27",
+        "24.C.28"
+      ],
+      "requirement": "24.C.27: disclose the benchmark components, weights and rebalancing process, the calculation methodology, and label it clearly as a custom benchmark. 24.C.28, which is asset-owner specific: where the total fund benchmark is a blend of asset class benchmarks at policy weights, disclose the benchmark used by each asset class with its weight as of the most recent annual period end, plus general information on the investments, structure and characteristics of those benchmarks.",
+      "carve_out": "A change in the weights of the constituent benchmarks is not itself a benchmark change (Guidance Statement, p. 23)."
+    },
+    "fees": {
+      "provisions": [
+        "21.A.25",
+        "24.A.1.b",
+        "24.A.3.b",
+        "24.A.4",
+        "24.C.35"
+      ],
+      "requirement": "21.A.25 requires time-weighted returns for all total funds. 24.A.1.b requires total fund returns NET-OF-FEES, for periods beginning on or after 1 January 2015. For an asset owner, net-of-fees absorbs INVESTMENT MANAGEMENT COSTS, which the glossary defines to include internal investment office compensation, custody, data and a pro rata share of overhead. 24.A.3.b requires the return type be labelled. 24.A.4 requires full gross-of-fees returns to be identified as supplemental information. 24.C.35 requires disclosure of which return basis was used to compute the presented risk measures."
+    },
+    "track_record": {
+      "provision": "24.A.1.a",
+      "requirement": "At least one year of GIPS-compliant performance (or since inception if shorter), adding a year each year, building to a minimum of ten. The five-year opening requirement is the FIRMS rule at 4.A.1.a and does not apply to an asset owner.",
+      "sub_annual": "22.A.9: returns for periods of less than one year must not be annualised. 24.A.1.d requires the return from inception through the first annual period end where the initial period is a stub."
+    },
+    "benchmark_change": {
+      "provision": "24.C.26",
+      "requirement": "For a prospective change, disclose the date and description, for as long as returns for the prior benchmark appear in the report. For a retroactive change, disclose the date and description for a minimum of one year and for as long as it is relevant to interpreting the track record. 24.C.25 requires disclosure of why no benchmark is presented if none is. Re-designating a primary benchmark as secondary counts as a change (Guidance Statement, p. 26)."
+    },
+    "distribution": {
+      "provisions": [
+        "21.A.11",
+        "21.A.13",
+        "21.A.27"
+      ],
+      "requirement": "A GIPS Asset Owner Report must be provided to the oversight body at least once every 12 months, updated through the most recent annual period end within 12 months of that period end, and a GIPS Compliance Notification Form filed with CFA Institute annually by 30 June."
+    }
+  }
+}

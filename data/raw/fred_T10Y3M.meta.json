@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "T10Y3M",
+  "label": "10y less 3m Treasury",
+  "publication_lag_days": 0,
+  "rows": 4455,
+  "pulled_at": "2026-07-28T23:29:10"
+}

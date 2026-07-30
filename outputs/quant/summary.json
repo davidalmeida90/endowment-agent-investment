@@ -1,0 +1,23 @@
+{
+  "as_of": "2026-06-30",
+  "window": {
+    "start": "2021-07-01",
+    "end": "2026-06-30",
+    "report_date": "2026-07-28",
+    "months": 60,
+    "quarters": 20,
+    "estimation_prefix_years": 12
+  },
+  "degrees_of_freedom_signals": 10,
+  "degrees_of_freedom_evaluation": 4,
+  "composite_r2oos_pooled": -0.01611810755673382,
+  "composite_cw_t": -0.773236773768537,
+  "cells_positive": 9,
+  "cells_total": 40,
+  "recommendation": "policy weights",
+  "model_te_bps": 83.76007483246659,
+  "binding_constraint": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+  "shrinkage_delta_now": 0.16165103517586527,
+  "vol_management_verdict": "variance is forecastable in rank terms and on a proportional loss, and scaling the policy portfolio by the forecast did not improve risk-adjusted return on this window",
+  "runtime_seconds": 17.9
+}

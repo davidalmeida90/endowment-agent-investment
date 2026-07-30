@@ -1,0 +1,98 @@
+/* Coldbrook Capital design system — tokens
+   Structure follows the Kinea Creditas FII monthly report.
+   Navy carries authority. Clay carries emphasis. Everything else holds them apart. */
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700&display=swap');
+
+:root {
+  /* Core. Navy sampled from the Kinea panel: dark base, ribbon highlight in navy-soft. */
+  --navy:        #0C1E48;
+  --navy-deep:   #061842;
+  --navy-soft:   #24365A;
+
+  --clay:        #C08878;
+  --clay-deep:   #A45E52;
+  --clay-tint:   #E8D2C9;
+
+  --blush:       #F2EBE5;
+  --panel:       #E4EAEA;
+  --slate:       #7E8A9C;
+  --hairline:    #D4DBE0;
+  --paper:       #FFFFFF;
+  --ink:         #1A1F28;
+
+  /* Data series. Order is fixed: navy first, clay second. */
+  --series-1:    #0C1E48;
+  --series-2:    #C08878;
+  --series-3:    #4F86B0;
+  --series-4:    #B8C4CE;
+  --benchmark:   #7E8A9C;
+  --reference:   #A8935F;   /* dashed long-run average line, the only third hue */
+
+  /* There is no red and green in this system. Direction is carried by navy against clay,
+     by the parenthesis convention, and by position relative to a zero axis. Never by hue. */
+  --up:          #0A1B3D;   /* same as navy */
+  --down:        #C08878;   /* same as clay */
+
+  /* Type */
+  --font-sans:   'Source Sans 3', 'Museo Sans', 'Nunito Sans', system-ui, sans-serif;
+  --font-num:    'Source Sans 3', system-ui, sans-serif;
+
+  /* Web scale, rem */
+  --fs-title:    1.75rem;
+  --fs-period:   1.125rem;
+  --fs-section:  0.8125rem;
+  --fs-body:     1rem;
+  --fs-stat-lg:  1.5rem;
+  --fs-stat:     1.125rem;
+  --fs-label:    0.6875rem;
+  --fs-table:    0.8125rem;
+  --fs-foot:     0.6875rem;
+  --fs-disc:     0.5625rem;
+
+  /* Print scale, pt. Used by the report artifacts. */
+  --pt-title:    26pt;
+  --pt-period:   16pt;
+  --pt-section:  12pt;
+  --pt-body:     10pt;
+  --pt-stat-lg:  22pt;
+  --pt-stat:     17pt;
+  --pt-label:    8pt;
+  --pt-table:    9.5pt;
+  --pt-foot:     7.5pt;
+  --pt-disc:     6.5pt;
+
+  --space-1: 4px;  --space-2: 8px;  --space-3: 12px; --space-4: 16px;
+  --space-5: 24px; --space-6: 32px; --space-7: 48px; --space-8: 64px;
+
+  --radius: 0;
+}
+
+/* Nothing in this system casts a shadow. Nothing is rounded except status tags. */
+
+body { font-family: var(--font-sans); color: var(--ink); background: var(--paper); }
+
+.cb-section-head {
+  font-size: var(--fs-section);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.cb-body { font-size: var(--fs-body); line-height: 1.5; text-align: justify; }
+
+.cb-label {
+  font-size: var(--fs-label);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cb-num { font-variant-numeric: tabular-nums lining-nums; }
+
+/* Negatives are marked by parentheses, not by colour. */
+.cb-neg { color: var(--ink); }
+
+.cb-rule { border: 0; border-top: 1px solid var(--hairline); margin: 0; }

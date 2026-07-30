@@ -1,0 +1,1189 @@
+[
+  {
+    "date": "2021-09-30",
+    "scores": {
+      "us_equity": -0.08044213789824241,
+      "dev_ex_us": 0.2519864094081427,
+      "em_equity": -0.14537450175529087,
+      "ust_duration": -0.48984884440598786,
+      "us_ig": -0.5672977125258127,
+      "us_hy": 0.10560562321062356,
+      "commodities": 0.6724901226949547,
+      "listed_re": 0.8253558995058627,
+      "cash": -0.5724748582342497
+    },
+    "unconstrained": {
+      "us_equity": 0.31749087172838225,
+      "dev_ex_us": 0.23036917710691257,
+      "em_equity": 0.08798024080787822,
+      "ust_duration": 0.295222393159712,
+      "us_ig": -0.1854286108416644,
+      "us_hy": 0.33019789475330386,
+      "commodities": 0.0669447192301312,
+      "listed_re": 0.08193495086169221,
+      "cash": -0.22471163680632902
+    },
+    "constrained": {
+      "us_equity": 0.34286643406631906,
+      "dev_ex_us": 0.2429151519548121,
+      "em_equity": 0.09778487838281087,
+      "ust_duration": 0.08643353559605807,
+      "us_ig": 0.03,
+      "us_hy": 0.1,
+      "commodities": 0.04000000000000001,
+      "listed_re": 0.06,
+      "cash": 1.0860844679237968e-19
+    },
+    "active_vs_policy": {
+      "us_equity": -0.037133565933680945,
+      "dev_ex_us": 0.042915151954812075,
+      "em_equity": -0.022215121617189124,
+      "ust_duration": -0.033566464403941926,
+      "us_ig": -0.05,
+      "us_hy": 0.05,
+      "commodities": 0.010000000000000009,
+      "listed_re": 0.039999999999999994,
+      "cash": 1.0860844679237968e-19
+    },
+    "te_bps": 89.21722728181882,
+    "binding": "range:us_ig:lower(0.03), range:us_hy:upper(0.10), range:listed_re:upper(0.06), range:cash:lower(0.00), sleeve:real_assets:upper(0.10)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:upper(0.10)",
+      "range:listed_re:upper(0.06)",
+      "range:cash:lower(0.00)",
+      "sleeve:real_assets:upper(0.10)"
+    ],
+    "n_traded": 8,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2021-12-31",
+    "scores": {
+      "us_equity": -0.012888322272762856,
+      "dev_ex_us": 0.4641979479923309,
+      "em_equity": -0.20762268751594906,
+      "ust_duration": -0.3562733425344095,
+      "us_ig": -0.5591320674983576,
+      "us_hy": 0.008195448660205404,
+      "commodities": 0.49064045689395247,
+      "listed_re": 0.4924891181981153,
+      "cash": -0.3196065519231251
+    },
+    "unconstrained": {
+      "us_equity": 0.32600393342511047,
+      "dev_ex_us": 0.29484001393801085,
+      "em_equity": 0.07663352367920144,
+      "ust_duration": 0.3144090515704624,
+      "us_ig": -0.27950722346487705,
+      "us_hy": 0.26968746562902496,
+      "commodities": 0.04912612664372551,
+      "listed_re": 0.07011458831882941,
+      "cash": -0.12130747973949116
+    },
+    "constrained": {
+      "us_equity": 0.3315174825138528,
+      "dev_ex_us": 0.28,
+      "em_equity": 0.07204898189008914,
+      "ust_duration": 0.08643353559605807,
+      "us_ig": 0.03,
+      "us_hy": 0.1,
+      "commodities": 0.04000000000000001,
+      "listed_re": 0.06,
+      "cash": 1.0860844679237968e-19
+    },
+    "active_vs_policy": {
+      "us_equity": -0.04848251748614718,
+      "dev_ex_us": 0.08000000000000002,
+      "em_equity": -0.047951018109910856,
+      "ust_duration": -0.033566464403941926,
+      "us_ig": -0.05,
+      "us_hy": 0.05,
+      "commodities": 0.010000000000000009,
+      "listed_re": 0.039999999999999994,
+      "cash": 1.0860844679237968e-19
+    },
+    "te_bps": 115.49824394684921,
+    "binding": "range:dev_ex_us:upper(0.28), range:us_ig:lower(0.03), range:us_hy:upper(0.10), range:listed_re:upper(0.06), range:cash:lower(0.00), sleeve:real_assets:upper(0.10)",
+    "binding_all": [
+      "range:dev_ex_us:upper(0.28)",
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:upper(0.10)",
+      "range:listed_re:upper(0.06)",
+      "range:cash:lower(0.00)",
+      "sleeve:real_assets:upper(0.10)"
+    ],
+    "n_traded": 3,
+    "suppressed_by_min_trade": [
+      "ust_duration",
+      "us_ig",
+      "us_hy",
+      "commodities",
+      "listed_re",
+      "cash"
+    ]
+  },
+  {
+    "date": "2022-03-31",
+    "scores": {
+      "us_equity": -0.2657727017222408,
+      "dev_ex_us": 0.5080473838817579,
+      "em_equity": -0.040310054014886444,
+      "ust_duration": -0.39573505882082266,
+      "us_ig": -0.8252264076728606,
+      "us_hy": -0.06319449150206351,
+      "commodities": 0.8229059287479864,
+      "listed_re": 0.1283820965381712,
+      "cash": 0.13090330456495866
+    },
+    "unconstrained": {
+      "us_equity": 0.321207145219752,
+      "dev_ex_us": 0.28001119871541974,
+      "em_equity": 0.12071459749594501,
+      "ust_duration": 0.0997051099110704,
+      "us_ig": -0.24661726504283948,
+      "us_hy": 0.10256735194819758,
+      "commodities": 0.03256192081807391,
+      "listed_re": 0.06152061485273658,
+      "cash": 0.2283293260816433
+    },
+    "constrained": {
+      "us_equity": 0.3155619471992236,
+      "dev_ex_us": 0.26410987246145784,
+      "em_equity": 0.0976859609734179,
+      "ust_duration": 0.05,
+      "us_ig": 0.030000000000000013,
+      "us_hy": 0.06999999999999998,
+      "commodities": 0.04804094777645913,
+      "listed_re": 0.0316896523743146,
+      "cash": 0.09291161921512721
+    },
+    "active_vs_policy": {
+      "us_equity": -0.06443805280077641,
+      "dev_ex_us": 0.06410987246145783,
+      "em_equity": -0.02231403902658209,
+      "ust_duration": -0.06999999999999999,
+      "us_ig": -0.04999999999999999,
+      "us_hy": 0.019999999999999976,
+      "commodities": 0.018040947776459128,
+      "listed_re": 0.011689652374314598,
+      "cash": 0.09291161921512721
+    },
+    "te_bps": 103.65277329321684,
+    "binding": "range:ust_duration:lower(0.05), range:us_ig:lower(0.03), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:ust_duration:lower(0.05)",
+      "range:us_ig:lower(0.03)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 8,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2022-06-30",
+    "scores": {
+      "us_equity": -0.8888101975547857,
+      "dev_ex_us": 0.4901023819134616,
+      "em_equity": 0.2895784683223351,
+      "ust_duration": -0.07948439866548211,
+      "us_ig": -0.9145232843839017,
+      "us_hy": -0.28055979271698056,
+      "commodities": 0.8411527832557838,
+      "listed_re": -0.3504915083330136,
+      "cash": 0.8930355481625833
+    },
+    "unconstrained": {
+      "us_equity": 0.32339999066325953,
+      "dev_ex_us": 0.27633853073907905,
+      "em_equity": 0.15214229301292834,
+      "ust_duration": 0.04699973056706788,
+      "us_ig": -0.13735468073292095,
+      "us_hy": -0.02651567922034509,
+      "commodities": 0.015505305121664184,
+      "listed_re": 0.04851129737627214,
+      "cash": 0.3009732124730072
+    },
+    "constrained": {
+      "us_equity": 0.30841452035426253,
+      "dev_ex_us": 0.2569921154147228,
+      "em_equity": 0.12942539158251098,
+      "ust_duration": 0.0873922774672378,
+      "us_ig": 0.03,
+      "us_hy": 0.0326077225327622,
+      "commodities": 0.03513806762977993,
+      "listed_re": 0.020029905018723617,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.07158547964573747,
+      "dev_ex_us": 0.056992115414722766,
+      "em_equity": 0.009425391582510989,
+      "ust_duration": -0.0326077225327622,
+      "us_ig": -0.05,
+      "us_hy": -0.0173922774672378,
+      "commodities": 0.005138067629779933,
+      "listed_re": 2.9905018723616617e-05,
+      "cash": 0.1
+    },
+    "te_bps": 103.8055639531735,
+    "binding": "range:us_ig:lower(0.03), range:cash:upper(0.10), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:upper(0.10)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 8,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2022-09-30",
+    "scores": {
+      "us_equity": -0.9476010269903288,
+      "dev_ex_us": 0.4175513693505169,
+      "em_equity": 0.3372340692087524,
+      "ust_duration": -0.041404200659010466,
+      "us_ig": -0.8216180124083097,
+      "us_hy": -0.38400217170044976,
+      "commodities": 0.5857028014028104,
+      "listed_re": -0.505666657258727,
+      "cash": 1.3598038290547456
+    },
+    "unconstrained": {
+      "us_equity": 0.33570380970730274,
+      "dev_ex_us": 0.27755187358249517,
+      "em_equity": 0.14478350230115491,
+      "ust_duration": 0.005362335067324336,
+      "us_ig": -0.06910360076887577,
+      "us_hy": -0.05429806140259562,
+      "commodities": -0.0007792476063808,
+      "listed_re": 0.05357964407226734,
+      "cash": 0.3071997450472854
+    },
+    "constrained": {
+      "us_equity": 0.32030496134780984,
+      "dev_ex_us": 0.2569921154147228,
+      "em_equity": 0.12942539158251098,
+      "ust_duration": 0.0873922774672378,
+      "us_ig": 0.03,
+      "us_hy": 0.0326077225327622,
+      "commodities": 0.023247626636232744,
+      "listed_re": 0.020029905018723617,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.05969503865219017,
+      "dev_ex_us": 0.056992115414722766,
+      "em_equity": 0.009425391582510989,
+      "ust_duration": -0.0326077225327622,
+      "us_ig": -0.05,
+      "us_hy": -0.0173922774672378,
+      "commodities": -0.006752373363767255,
+      "listed_re": 2.9905018723616617e-05,
+      "cash": 0.1
+    },
+    "te_bps": 99.26267369331435,
+    "binding": "range:us_ig:lower(0.03), range:cash:upper(0.10), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:upper(0.10)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 2,
+    "suppressed_by_min_trade": [
+      "dev_ex_us",
+      "em_equity",
+      "ust_duration",
+      "us_ig",
+      "us_hy",
+      "listed_re"
+    ]
+  },
+  {
+    "date": "2022-12-31",
+    "scores": {
+      "us_equity": -0.8152674577557185,
+      "dev_ex_us": 0.025585439778084067,
+      "em_equity": 0.44303192391444374,
+      "ust_duration": -0.10192243047813938,
+      "us_ig": -0.8619286598604446,
+      "us_hy": -0.21793665190554798,
+      "commodities": 0.7115989853892195,
+      "listed_re": -0.5196508844019362,
+      "cash": 1.3364897353200393
+    },
+    "unconstrained": {
+      "us_equity": 0.34776923901690276,
+      "dev_ex_us": 0.24009748199209868,
+      "em_equity": 0.16034298158308263,
+      "ust_duration": 0.003982075573809751,
+      "us_ig": -0.08732796732687305,
+      "us_hy": -0.0223075012569863,
+      "commodities": 0.003149019352485228,
+      "listed_re": 0.05345639749357857,
+      "cash": 0.300838273571889
+    },
+    "constrained": {
+      "us_equity": 0.33702015697655924,
+      "dev_ex_us": 0.21744665523398501,
+      "em_equity": 0.14318771141028155,
+      "ust_duration": 0.07631087524281126,
+      "us_ig": 0.03,
+      "us_hy": 0.04452486142330725,
+      "commodities": 0.03147983469433214,
+      "listed_re": 0.020029905018723617,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.04297984302344077,
+      "dev_ex_us": 0.017446655233985003,
+      "em_equity": 0.02318771141028156,
+      "ust_duration": -0.04368912475718874,
+      "us_ig": -0.05,
+      "us_hy": -0.0054751385766927535,
+      "commodities": 0.0014798346943321397,
+      "listed_re": 2.9905018723616617e-05,
+      "cash": 0.1
+    },
+    "te_bps": 91.33374461802113,
+    "binding": "range:us_ig:lower(0.03), range:cash:upper(0.10)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:upper(0.10)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": [
+      "us_ig",
+      "listed_re",
+      "cash"
+    ]
+  },
+  {
+    "date": "2023-03-31",
+    "scores": {
+      "us_equity": -0.5751479861766018,
+      "dev_ex_us": 0.14540217856029608,
+      "em_equity": 0.35325544623941374,
+      "ust_duration": -0.10027998617394131,
+      "us_ig": -0.5848241026124985,
+      "us_hy": -0.03682454829199967,
+      "commodities": 0.03172484436180044,
+      "listed_re": -0.5309947327443045,
+      "cash": 1.2976888868378356
+    },
+    "unconstrained": {
+      "us_equity": 0.35555730168202015,
+      "dev_ex_us": 0.2525283007754481,
+      "em_equity": 0.16203865585023425,
+      "ust_duration": -0.0394481181201905,
+      "us_ig": -0.041838846766121346,
+      "us_hy": -0.01572485029595934,
+      "commodities": -0.020718401318613057,
+      "listed_re": 0.038539104941389415,
+      "cash": 0.3090668532517959
+    },
+    "constrained": {
+      "us_equity": 0.34280247017474447,
+      "dev_ex_us": 0.23278851746641274,
+      "em_equity": 0.14318771141028155,
+      "ust_duration": 0.06409805977622668,
+      "us_ig": 0.03,
+      "us_hy": 0.05590194022377331,
+      "commodities": 0.011191395929837632,
+      "listed_re": 0.020029905018723617,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.03719752982525554,
+      "dev_ex_us": 0.03278851746641273,
+      "em_equity": 0.02318771141028156,
+      "ust_duration": -0.055901940223773317,
+      "us_ig": -0.05,
+      "us_hy": 0.005901940223773307,
+      "commodities": -0.01880860407016237,
+      "listed_re": 2.9905018723616617e-05,
+      "cash": 0.1
+    },
+    "te_bps": 84.66638211877269,
+    "binding": "range:us_ig:lower(0.03), range:cash:upper(0.10), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:upper(0.10)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": [
+      "em_equity",
+      "listed_re",
+      "cash"
+    ]
+  },
+  {
+    "date": "2023-06-30",
+    "scores": {
+      "us_equity": -0.08457145201456609,
+      "dev_ex_us": 0.04215444334619743,
+      "em_equity": 0.21084333212469206,
+      "ust_duration": 0.10154241884729254,
+      "us_ig": -0.5372316162223698,
+      "us_hy": -0.008919490073043395,
+      "commodities": -0.5057081039254016,
+      "listed_re": -0.15215834954002128,
+      "cash": 0.93404881745722
+    },
+    "unconstrained": {
+      "us_equity": 0.3825540012804464,
+      "dev_ex_us": 0.2453536610726549,
+      "em_equity": 0.16574193363491233,
+      "ust_duration": 0.05979689384593881,
+      "us_ig": -0.13603081786390886,
+      "us_hy": 0.00628338234519954,
+      "commodities": -0.036926896994325525,
+      "listed_re": 0.04888659422930077,
+      "cash": 0.26434124844978635
+    },
+    "constrained": {
+      "us_equity": 0.3730762993128011,
+      "dev_ex_us": 0.21370608425819373,
+      "em_equity": 0.14318771141028155,
+      "ust_duration": 0.0810365226711367,
+      "us_ig": 0.03,
+      "us_hy": 0.038963477328863294,
+      "commodities": 0.0,
+      "listed_re": 0.020029905018723617,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.006923700687198886,
+      "dev_ex_us": 0.013706084258193724,
+      "em_equity": 0.02318771141028156,
+      "ust_duration": -0.038963477328863294,
+      "us_ig": -0.05,
+      "us_hy": -0.011036522671136709,
+      "commodities": -0.03,
+      "listed_re": 2.9905018723616617e-05,
+      "cash": 0.1
+    },
+    "te_bps": 74.72669954515898,
+    "binding": "range:us_ig:lower(0.03), range:commodities:lower(0.00), range:cash:upper(0.10), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:commodities:lower(0.00)",
+      "range:cash:upper(0.10)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": [
+      "em_equity",
+      "listed_re",
+      "cash"
+    ]
+  },
+  {
+    "date": "2023-09-30",
+    "scores": {
+      "us_equity": -0.01189880820517719,
+      "dev_ex_us": 0.11306412639565622,
+      "em_equity": 0.15553254109519155,
+      "ust_duration": 0.02063300100107701,
+      "us_ig": -0.6437385231556351,
+      "us_hy": 0.036602780845718,
+      "commodities": -0.1990262827420126,
+      "listed_re": -0.24759956407950895,
+      "cash": 0.776430728844691
+    },
+    "unconstrained": {
+      "us_equity": 0.3857499879006321,
+      "dev_ex_us": 0.2537627278985693,
+      "em_equity": 0.16186417796929375,
+      "ust_duration": 0.10616690565139292,
+      "us_ig": -0.1900272127748533,
+      "us_hy": 0.04906832616670833,
+      "commodities": -0.028212747706196403,
+      "listed_re": 0.03777691791136206,
+      "cash": 0.22385091698309284
+    },
+    "constrained": {
+      "us_equity": 0.3730762993128011,
+      "dev_ex_us": 0.2274687691644743,
+      "em_equity": 0.13575426535575486,
+      "ust_duration": 0.06850869807251692,
+      "us_ig": 0.03,
+      "us_hy": 0.05295138803719395,
+      "commodities": 0.0,
+      "listed_re": 0.012240580057258848,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.006923700687198886,
+      "dev_ex_us": 0.0274687691644743,
+      "em_equity": 0.01575426535575486,
+      "ust_duration": -0.05149130192748308,
+      "us_ig": -0.05,
+      "us_hy": 0.0029513880371939485,
+      "commodities": -0.03,
+      "listed_re": -0.0077594199427411525,
+      "cash": 0.1
+    },
+    "te_bps": 75.80674176781397,
+    "binding": "range:us_ig:lower(0.03), range:commodities:lower(0.00), range:cash:upper(0.10)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:commodities:lower(0.00)",
+      "range:cash:upper(0.10)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": [
+      "us_equity",
+      "us_ig",
+      "cash"
+    ]
+  },
+  {
+    "date": "2023-12-31",
+    "scores": {
+      "us_equity": -0.40271316304253607,
+      "dev_ex_us": -0.01306190668327381,
+      "em_equity": 0.33669791767163343,
+      "ust_duration": 0.16123100418628977,
+      "us_ig": -0.45113708909694594,
+      "us_hy": -0.10264829393090266,
+      "commodities": -0.1292713888882898,
+      "listed_re": -0.10088988372868081,
+      "cash": 0.7017928035127059
+    },
+    "unconstrained": {
+      "us_equity": 0.34921913012277317,
+      "dev_ex_us": 0.2444529291754619,
+      "em_equity": 0.19274504121344835,
+      "ust_duration": 0.1190933771972586,
+      "us_ig": -0.1570012433160814,
+      "us_hy": -0.020088304270600654,
+      "commodities": -0.0313287089596791,
+      "listed_re": 0.07460513872694696,
+      "cash": 0.22830264011047016
+    },
+    "constrained": {
+      "us_equity": 0.33147066585520035,
+      "dev_ex_us": 0.2157868146649264,
+      "em_equity": 0.16216088415574442,
+      "ust_duration": 0.10143751197659581,
+      "us_ig": 0.03,
+      "us_hy": 0.01856248802340421,
+      "commodities": 0.0,
+      "listed_re": 0.04058163532412873,
+      "cash": 0.1
+    },
+    "active_vs_policy": {
+      "us_equity": -0.04852933414479965,
+      "dev_ex_us": 0.015786814664926402,
+      "em_equity": 0.04216088415574443,
+      "ust_duration": -0.018562488023404183,
+      "us_ig": -0.05,
+      "us_hy": -0.03143751197659579,
+      "commodities": -0.03,
+      "listed_re": 0.020581635324128728,
+      "cash": 0.1
+    },
+    "te_bps": 97.63728821042892,
+    "binding": "range:us_ig:lower(0.03), range:commodities:lower(0.00), range:cash:upper(0.10), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:commodities:lower(0.00)",
+      "range:cash:upper(0.10)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2024-03-31",
+    "scores": {
+      "us_equity": -0.05624515430275298,
+      "dev_ex_us": 0.06890445904762169,
+      "em_equity": 0.3096003667735869,
+      "ust_duration": 0.10062619678614734,
+      "us_ig": -0.5647464821728787,
+      "us_hy": -0.17196327065768646,
+      "commodities": -0.06609818081196525,
+      "listed_re": -0.06593752299045222,
+      "cash": 0.44585958832837963
+    },
+    "unconstrained": {
+      "us_equity": 0.3924117908416246,
+      "dev_ex_us": 0.24152622794560846,
+      "em_equity": 0.18515323223157087,
+      "ust_duration": 0.20745012744518526,
+      "us_ig": -0.21032055456656085,
+      "us_hy": -0.026520107387288355,
+      "commodities": -0.015432062407012302,
+      "listed_re": 0.058523363246694965,
+      "cash": 0.16720798265017692
+    },
+    "constrained": {
+      "us_equity": 0.37034443480479995,
+      "dev_ex_us": 0.2157868146649264,
+      "em_equity": 0.1532419804049738,
+      "ust_duration": 0.1172282257688762,
+      "us_ig": 0.03,
+      "us_hy": 0.002771774231123779,
+      "commodities": 0.0,
+      "listed_re": 0.02472375056665762,
+      "cash": 0.08590301955864228
+    },
+    "active_vs_policy": {
+      "us_equity": -0.009655565195200055,
+      "dev_ex_us": 0.015786814664926402,
+      "em_equity": 0.03324198040497381,
+      "ust_duration": -0.0027717742311237914,
+      "us_ig": -0.05,
+      "us_hy": -0.047228225768876225,
+      "commodities": -0.03,
+      "listed_re": 0.004723750566657619,
+      "cash": 0.08590301955864228
+    },
+    "te_bps": 77.98527065961667,
+    "binding": "range:us_ig:lower(0.03), range:commodities:lower(0.00), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:commodities:lower(0.00)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": [
+      "dev_ex_us",
+      "commodities"
+    ]
+  },
+  {
+    "date": "2024-06-30",
+    "scores": {
+      "us_equity": -0.2695857326977687,
+      "dev_ex_us": -0.0574302953545717,
+      "em_equity": 0.4207340869033478,
+      "ust_duration": 0.1728929708574917,
+      "us_ig": -0.5104841261183379,
+      "us_hy": -0.17386733763302611,
+      "commodities": 0.1614993366293597,
+      "listed_re": -0.09816366719809835,
+      "cash": 0.35440476461160364
+    },
+    "unconstrained": {
+      "us_equity": 0.3672611731631507,
+      "dev_ex_us": 0.2198816122687944,
+      "em_equity": 0.20392430198620282,
+      "ust_duration": 0.2709255071045117,
+      "us_ig": -0.22525735238625055,
+      "us_hy": -0.010169797522506713,
+      "commodities": 0.009316994561720172,
+      "listed_re": 0.060770765618078024,
+      "cash": 0.10334679520629861
+    },
+    "constrained": {
+      "us_equity": 0.3462860985471815,
+      "dev_ex_us": 0.1945766013037232,
+      "em_equity": 0.17409576593605747,
+      "ust_duration": 0.1172282257688762,
+      "us_ig": 0.03,
+      "us_hy": 0.002771774231123779,
+      "commodities": 0.019990623454064244,
+      "listed_re": 0.0358892542403472,
+      "cash": 0.07916165651862651
+    },
+    "active_vs_policy": {
+      "us_equity": -0.033713901452818495,
+      "dev_ex_us": -0.00542339869627681,
+      "em_equity": 0.05409576593605747,
+      "ust_duration": -0.0027717742311237914,
+      "us_ig": -0.05,
+      "us_hy": -0.047228225768876225,
+      "commodities": -0.010009376545935755,
+      "listed_re": 0.015889254240347202,
+      "cash": 0.07916165651862651
+    },
+    "te_bps": 92.14050704046076,
+    "binding": "range:us_ig:lower(0.03), sleeve:fixed_income:lower(0.15)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "sleeve:fixed_income:lower(0.15)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": [
+      "ust_duration",
+      "us_ig",
+      "us_hy"
+    ]
+  },
+  {
+    "date": "2024-09-30",
+    "scores": {
+      "us_equity": -0.3913991756738626,
+      "dev_ex_us": -0.0945533922941097,
+      "em_equity": 0.3202426802541419,
+      "ust_duration": 0.37557569759813453,
+      "us_ig": -0.1334186866113008,
+      "us_hy": -0.08169691649278449,
+      "commodities": -0.31405520532893766,
+      "listed_re": 0.34205681251542325,
+      "cash": -0.022751813966704393
+    },
+    "unconstrained": {
+      "us_equity": 0.3073393647121344,
+      "dev_ex_us": 0.19213524676095287,
+      "em_equity": 0.1890541518510884,
+      "ust_duration": 0.4005473752484805,
+      "us_ig": -0.1639615977039488,
+      "us_hy": 0.06814875235185168,
+      "commodities": 0.016935094951591755,
+      "listed_re": 0.08775301940904433,
+      "cash": -0.09795140758119551
+    },
+    "constrained": {
+      "us_equity": 0.31174338942674473,
+      "dev_ex_us": 0.1945766013037232,
+      "em_equity": 0.17409576593605747,
+      "ust_duration": 0.21859396042237572,
+      "us_ig": 0.03,
+      "us_hy": 0.002771774231123779,
+      "commodities": 0.00843543580397179,
+      "listed_re": 0.05978307287600334,
+      "cash": 2.5975677049131875e-20
+    },
+    "active_vs_policy": {
+      "us_equity": -0.06825661057325527,
+      "dev_ex_us": -0.00542339869627681,
+      "em_equity": 0.05409576593605747,
+      "ust_duration": 0.09859396042237573,
+      "us_ig": -0.05,
+      "us_hy": -0.047228225768876225,
+      "commodities": -0.02156456419602821,
+      "listed_re": 0.03978307287600334,
+      "cash": 2.5975677049131875e-20
+    },
+    "te_bps": 125.7207027234655,
+    "binding": "range:us_ig:lower(0.03), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": [
+      "dev_ex_us",
+      "em_equity",
+      "us_hy"
+    ]
+  },
+  {
+    "date": "2024-12-31",
+    "scores": {
+      "us_equity": -0.1799291063561739,
+      "dev_ex_us": -0.16757324498727846,
+      "em_equity": 0.2820632145838935,
+      "ust_duration": 0.29207710884307914,
+      "us_ig": -0.4194895915489163,
+      "us_hy": -0.09602795116656879,
+      "commodities": 0.2495754801666319,
+      "listed_re": -0.11974871917002233,
+      "cash": 0.15905280963535523
+    },
+    "unconstrained": {
+      "us_equity": 0.38469399366633344,
+      "dev_ex_us": 0.18506427407560833,
+      "em_equity": 0.19404497480232158,
+      "ust_duration": 0.4005726649027709,
+      "us_ig": -0.2589355318476876,
+      "us_hy": 0.06266827237057021,
+      "commodities": 0.04188153647153752,
+      "listed_re": 0.039589691215581535,
+      "cash": -0.049579875657035984
+    },
+    "constrained": {
+      "us_equity": 0.3682631650191605,
+      "dev_ex_us": 0.16637197156087608,
+      "em_equity": 0.16337102109121662,
+      "ust_duration": 0.1981388827996966,
+      "us_ig": 0.03,
+      "us_hy": 0.002771774231123779,
+      "commodities": 0.044960930742466175,
+      "listed_re": 0.026122254555460286,
+      "cash": 0.0
+    },
+    "active_vs_policy": {
+      "us_equity": -0.011736834980839495,
+      "dev_ex_us": -0.033628028439123936,
+      "em_equity": 0.04337102109121663,
+      "ust_duration": 0.07813888279969661,
+      "us_ig": -0.05,
+      "us_hy": -0.047228225768876225,
+      "commodities": 0.014960930742466176,
+      "listed_re": 0.006122254555460286,
+      "cash": 0.0
+    },
+    "te_bps": 84.32851507018242,
+    "binding": "range:us_ig:lower(0.03), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:us_ig:lower(0.03)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": [
+      "us_hy"
+    ]
+  },
+  {
+    "date": "2025-03-31",
+    "scores": {
+      "us_equity": -1.1517318694522762,
+      "dev_ex_us": -0.35494261411120404,
+      "em_equity": 0.2796416912852698,
+      "ust_duration": 0.7439389249665045,
+      "us_ig": 0.01221881042656907,
+      "us_hy": -0.09065982120130896,
+      "commodities": 0.410748896830165,
+      "listed_re": -0.10614208313816738,
+      "cash": 0.2569280643944482
+    },
+    "unconstrained": {
+      "us_equity": 0.28648570882912544,
+      "dev_ex_us": 0.16868448168588146,
+      "em_equity": 0.16456950223434025,
+      "ust_duration": 0.49146167920326317,
+      "us_ig": -0.1261682860602893,
+      "us_hy": 0.04656157503037402,
+      "commodities": 0.06438405916373972,
+      "listed_re": 0.05608582912465067,
+      "cash": -0.15206454921108553
+    },
+    "constrained": {
+      "us_equity": 0.28301472655694904,
+      "dev_ex_us": 0.18546217018099131,
+      "em_equity": 0.16337102109121662,
+      "ust_duration": 0.22,
+      "us_ig": 0.03,
+      "us_hy": 0.018152082170842958,
+      "commodities": 0.044960930742466175,
+      "listed_re": 0.05503906925753383,
+      "cash": 3.009413946822607e-18
+    },
+    "active_vs_policy": {
+      "us_equity": -0.09698527344305097,
+      "dev_ex_us": -0.014537829819008696,
+      "em_equity": 0.04337102109121663,
+      "ust_duration": 0.1,
+      "us_ig": -0.05,
+      "us_hy": -0.031847917829157045,
+      "commodities": 0.014960930742466176,
+      "listed_re": 0.035039069257533834,
+      "cash": 3.009413946822607e-18
+    },
+    "te_bps": 131.0778917310688,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:cash:lower(0.00), sleeve:real_assets:upper(0.10)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:cash:lower(0.00)",
+      "sleeve:real_assets:upper(0.10)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": [
+      "em_equity",
+      "us_ig",
+      "commodities"
+    ]
+  },
+  {
+    "date": "2025-06-30",
+    "scores": {
+      "us_equity": -0.9062248325684006,
+      "dev_ex_us": -0.04571026418676522,
+      "em_equity": 0.5469895973722625,
+      "ust_duration": 0.6720228868854035,
+      "us_ig": 0.11203255666674135,
+      "us_hy": -0.02754239900728393,
+      "commodities": -0.06836062788140972,
+      "listed_re": -0.21013031076118568,
+      "cash": -0.07307660651936208
+    },
+    "unconstrained": {
+      "us_equity": 0.2850623652648215,
+      "dev_ex_us": 0.19752050666811832,
+      "em_equity": 0.16980871311922346,
+      "ust_duration": 0.5094190290621641,
+      "us_ig": -0.12231296513071248,
+      "us_hy": 0.09710730002028758,
+      "commodities": 0.05555071784510396,
+      "listed_re": 0.018447717445211575,
+      "cash": -0.21060338429421804
+    },
+    "constrained": {
+      "us_equity": 0.28301472655694904,
+      "dev_ex_us": 0.21168550361216568,
+      "em_equity": 0.17313009321878953,
+      "ust_duration": 0.22,
+      "us_ig": 0.03,
+      "us_hy": 0.018152082170842958,
+      "commodities": 0.02404195833913657,
+      "listed_re": 0.03997563610211628,
+      "cash": 0.0
+    },
+    "active_vs_policy": {
+      "us_equity": -0.09698527344305097,
+      "dev_ex_us": 0.011685503612165665,
+      "em_equity": 0.05313009321878953,
+      "ust_duration": 0.1,
+      "us_ig": -0.05,
+      "us_hy": -0.031847917829157045,
+      "commodities": -0.005958041660863427,
+      "listed_re": 0.019975636102116282,
+      "cash": 0.0
+    },
+    "te_bps": 125.38852264664655,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 4,
+    "suppressed_by_min_trade": [
+      "us_equity",
+      "ust_duration",
+      "us_hy"
+    ]
+  },
+  {
+    "date": "2025-09-30",
+    "scores": {
+      "us_equity": -0.6205916227783379,
+      "dev_ex_us": -0.0955854216973002,
+      "em_equity": 0.6917305259432512,
+      "ust_duration": 0.5581341728166093,
+      "us_ig": -0.025093431888770508,
+      "us_hy": -0.16348475728237105,
+      "commodities": 0.19162961002124956,
+      "listed_re": -0.3271920570263256,
+      "cash": -0.20954701810800497
+    },
+    "unconstrained": {
+      "us_equity": 0.33984640500434604,
+      "dev_ex_us": 0.1744112236895888,
+      "em_equity": 0.1853087580455829,
+      "ust_duration": 0.5434447439280041,
+      "us_ig": -0.1450685832588019,
+      "us_hy": 0.057959468271684494,
+      "commodities": 0.07138209198040524,
+      "listed_re": -0.002392346995834675,
+      "cash": -0.2248917606649749
+    },
+    "constrained": {
+      "us_equity": 0.31967471199922204,
+      "dev_ex_us": 0.19041231035594647,
+      "em_equity": 0.18288557887786092,
+      "ust_duration": 0.22,
+      "us_ig": 0.030000000000000027,
+      "us_hy": 0.0,
+      "commodities": 0.03349120433134424,
+      "listed_re": 0.023536194435626358,
+      "cash": 4.765972049884196e-19
+    },
+    "active_vs_policy": {
+      "us_equity": -0.060325288000777966,
+      "dev_ex_us": -0.009587689644053543,
+      "em_equity": 0.06288557887786092,
+      "ust_duration": 0.1,
+      "us_ig": -0.049999999999999975,
+      "us_hy": -0.05,
+      "commodities": 0.0034912043313442415,
+      "listed_re": 0.0035361944356263574,
+      "cash": 4.765972049884196e-19
+    },
+    "te_bps": 109.98199137931314,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:lower(0.00)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 6,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2025-12-31",
+    "scores": {
+      "us_equity": -0.6680994004693239,
+      "dev_ex_us": 0.5713984659277682,
+      "em_equity": 0.7086448387030431,
+      "ust_duration": 0.5612947690923946,
+      "us_ig": 0.02327466797137369,
+      "us_hy": -0.22949653882920906,
+      "commodities": -0.03800646422613628,
+      "listed_re": -0.4104964894789953,
+      "cash": -0.5185138486909151
+    },
+    "unconstrained": {
+      "us_equity": 0.32664569245029845,
+      "dev_ex_us": 0.26822149254491096,
+      "em_equity": 0.14698375547204054,
+      "ust_duration": 0.5232285291522916,
+      "us_ig": -0.12391394078797578,
+      "us_hy": 0.05021989432408736,
+      "commodities": 0.06760133417956879,
+      "listed_re": -0.02506541453731811,
+      "cash": -0.2339213427979046
+    },
+    "constrained": {
+      "us_equity": 0.3019652565641578,
+      "dev_ex_us": 0.2794433109831226,
+      "em_equity": 0.1443622598010186,
+      "ust_duration": 0.22,
+      "us_ig": 0.03,
+      "us_hy": 6.938893903907228e-18,
+      "commodities": 0.021502796569670395,
+      "listed_re": 0.002726376082030673,
+      "cash": 3.3587209227931827e-19
+    },
+    "active_vs_policy": {
+      "us_equity": -0.07803474343584221,
+      "dev_ex_us": 0.07944331098312257,
+      "em_equity": 0.02436225980101861,
+      "ust_duration": 0.1,
+      "us_ig": -0.05,
+      "us_hy": -0.049999999999999996,
+      "commodities": -0.008497203430329604,
+      "listed_re": -0.017273623917969327,
+      "cash": 3.3587209227931827e-19
+    },
+    "te_bps": 117.8556470887624,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:lower(0.00)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 5,
+    "suppressed_by_min_trade": []
+  },
+  {
+    "date": "2026-03-31",
+    "scores": {
+      "us_equity": -0.6004721825403574,
+      "dev_ex_us": 0.4198431625114719,
+      "em_equity": 0.6120274637052482,
+      "ust_duration": 0.3585996932806772,
+      "us_ig": -0.07498538345753603,
+      "us_hy": -0.21073144443061725,
+      "commodities": 0.08939226239656534,
+      "listed_re": -0.19838762708947513,
+      "cash": -0.39528594437597686
+    },
+    "unconstrained": {
+      "us_equity": 0.31859897760905326,
+      "dev_ex_us": 0.255107933511736,
+      "em_equity": 0.15405355737838888,
+      "ust_duration": 0.5301402657428662,
+      "us_ig": -0.15426622691877306,
+      "us_hy": 0.07142815783995346,
+      "commodities": 0.06939228301557804,
+      "listed_re": -0.015508232941736932,
+      "cash": -0.22894671523706628
+    },
+    "constrained": {
+      "us_equity": 0.2911958525381716,
+      "dev_ex_us": 0.2701367140283791,
+      "em_equity": 0.1443622598010186,
+      "ust_duration": 0.22,
+      "us_ig": 0.03,
+      "us_hy": 1.8874445070225495e-20,
+      "commodities": 0.03106332543133714,
+      "listed_re": 0.013241848201093672,
+      "cash": 0.0
+    },
+    "active_vs_policy": {
+      "us_equity": -0.08880414746182841,
+      "dev_ex_us": 0.07013671402837907,
+      "em_equity": 0.02436225980101861,
+      "ust_duration": 0.1,
+      "us_ig": -0.05,
+      "us_hy": -0.05,
+      "commodities": 0.00106332543133714,
+      "listed_re": -0.006758151798906329,
+      "cash": 0.0
+    },
+    "te_bps": 121.51235157629742,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:lower(0.00)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 4,
+    "suppressed_by_min_trade": [
+      "em_equity",
+      "ust_duration",
+      "us_ig"
+    ]
+  },
+  {
+    "date": "2026-06-30",
+    "scores": {
+      "us_equity": -0.3180359125031545,
+      "dev_ex_us": 0.21106487665844614,
+      "em_equity": 0.3891060879329928,
+      "ust_duration": 0.4028609266795537,
+      "us_ig": -0.06609650060427713,
+      "us_hy": -0.28536275517165505,
+      "commodities": -0.03898733896510099,
+      "listed_re": 0.08801120127065015,
+      "cash": -0.38256058529745507
+    },
+    "unconstrained": {
+      "us_equity": 0.3741059407065368,
+      "dev_ex_us": 0.22473249348410212,
+      "em_equity": 0.1389370973277985,
+      "ust_duration": 0.6043578940379453,
+      "us_ig": -0.17539950038694024,
+      "us_hy": -0.030106409126143402,
+      "commodities": 0.06704594438754549,
+      "listed_re": 0.004137696301921734,
+      "cash": -0.2078111567327674
+    },
+    "constrained": {
+      "us_equity": 0.32461076949438133,
+      "dev_ex_us": 0.2180142274965401,
+      "em_equity": 0.1443622598010186,
+      "ust_duration": 0.22,
+      "us_ig": 0.03,
+      "us_hy": 4.1860653127600465e-20,
+      "commodities": 0.03106332543133714,
+      "listed_re": 0.03194941777672274,
+      "cash": 4.8186763221579344e-20
+    },
+    "active_vs_policy": {
+      "us_equity": -0.05538923050561867,
+      "dev_ex_us": 0.01801422749654008,
+      "em_equity": 0.02436225980101861,
+      "ust_duration": 0.1,
+      "us_ig": -0.05,
+      "us_hy": -0.05,
+      "commodities": 0.00106332543133714,
+      "listed_re": 0.011949417776722742,
+      "cash": 4.8186763221579344e-20
+    },
+    "te_bps": 83.76007483246659,
+    "binding": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+    "binding_all": [
+      "range:ust_duration:upper(0.22)",
+      "range:us_ig:lower(0.03)",
+      "range:us_hy:lower(0.00)",
+      "range:cash:lower(0.00)"
+    ],
+    "n_traded": 3,
+    "suppressed_by_min_trade": [
+      "em_equity",
+      "ust_duration",
+      "commodities"
+    ]
+  }
+]

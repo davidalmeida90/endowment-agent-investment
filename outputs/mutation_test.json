@@ -1,0 +1,89 @@
+{
+  "baseline_exit_code": 0,
+  "baseline_tests": 12,
+  "baseline_passed": 12,
+  "mutations": [
+    {
+      "mutation": "as-of gate disabled",
+      "file": "taa/pitdata.py",
+      "disables": "the truncation that drops observations after the as-of date",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [
+        "runtime: price reads are truncated at the as-of date",
+        "runtime: publication lag is applied, not just the observation date"
+      ],
+      "crashed": false,
+      "expected_inert": false
+    },
+    {
+      "mutation": "gate truncation deleted",
+      "file": "taa/pitdata.py",
+      "disables": "the filter itself, leaving the assertion in place",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [],
+      "crashed": true,
+      "expected_inert": false
+    },
+    {
+      "mutation": "gate assertion deleted (expected inert)",
+      "file": "taa/pitdata.py",
+      "disables": "a redundant backstop behind a working filter",
+      "applied": true,
+      "suite_failed": false,
+      "caught_by": [],
+      "crashed": false,
+      "expected_inert": true
+    },
+    {
+      "mutation": "publication lag ignored",
+      "file": "taa/pitdata.py",
+      "disables": "the lag between an observation's date and its release",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [
+        "runtime: publication lag is applied, not just the observation date"
+      ],
+      "crashed": false,
+      "expected_inert": false
+    },
+    {
+      "mutation": "raw-store caller guard disabled",
+      "file": "taa/_rawstore.py",
+      "disables": "the rule that only pitdata may read the raw cache",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [
+        "runtime: raw store refuses a caller that is not pitdata"
+      ],
+      "crashed": false,
+      "expected_inert": false
+    },
+    {
+      "mutation": "investable-date check removed",
+      "file": "taa/pitdata.py",
+      "disables": "IPS 4.1, investable dates bind",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [
+        "runtime: a line is refused before its vehicle listed"
+      ],
+      "crashed": false,
+      "expected_inert": false
+    },
+    {
+      "mutation": "anachronism reason not required",
+      "file": "taa/pitdata.py",
+      "disables": "the requirement to declare a current-vintage input used historically",
+      "applied": true,
+      "suite_failed": true,
+      "caught_by": [
+        "planted: an undeclared anachronism is refused"
+      ],
+      "crashed": false,
+      "expected_inert": false
+    }
+  ],
+  "survived": []
+}

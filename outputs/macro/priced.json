@@ -1,0 +1,98 @@
+{
+  "2026-06-30": {
+    "as_of": "2026-06-30",
+    "policy_path": {
+      "spot_3m": 3.87,
+      "spot_2y": 4.14,
+      "implied_terminal_2y_horizon": 4.41,
+      "implied_change_bp": 54.0,
+      "obs_date": "2026-06-30",
+      "assumption": "the overnight rate travels linearly from the spot 3m bill to a terminal level over two years, so the 2y yield equals the mean of that path. Terminal = 2*y2 - y3m"
+    },
+    "forward_8y_in_2y": {
+      "value": 4.515,
+      "obs_date": "2026-06-30",
+      "assumption": "annually compounded, from par yields treated as zero yields. A simplification"
+    },
+    "inflation_compensation": {
+      "breakeven_10y": 2.24,
+      "real_10y": 2.2,
+      "nominal_10y_check": 4.44,
+      "quoted_nominal_10y": 4.44,
+      "obs_date": "2026-06-30"
+    },
+    "hy_credit": {
+      "available": true,
+      "oas_pct": 2.8,
+      "obs_date": "2026-06-29",
+      "implied_annual_default_rate_pct": 4.667,
+      "recovery_assumption": 0.4,
+      "assumption": "OAS = default rate x (1 - recovery), recovery 40%, and the whole spread is credit loss with no liquidity or risk premium. That upper-bounds the implied default rate: any premium you demand comes out of it"
+    },
+    "ig_credit": {
+      "available": true,
+      "oas_pct": 0.76,
+      "obs_date": "2026-06-29",
+      "implied_annual_default_rate_pct": 1.382,
+      "recovery_assumption": 0.45,
+      "assumption": "OAS = default rate x (1 - recovery), recovery 45%, and the whole spread is credit loss with no liquidity or risk premium. That upper-bounds the implied default rate: any premium you demand comes out of it"
+    },
+    "equity": {
+      "spy_trailing_12m_dividend_yield_pct": 1.108,
+      "obs_date": "2026-06-30",
+      "assumed_real_dividend_growth_pct": 2.0,
+      "real_10y": 2.2,
+      "erp_proxy_pct": 0.908,
+      "method": "trailing twelve-month dividend yield backed out of the divergence between SPY's adjusted and unadjusted close, then a Gordon construction: expected real return = D/P + assumed real growth, less the 10y TIPS yield",
+      "limitation": "a forward earnings yield needs a consensus estimate feed behind a subscription, which IPS 4.4 puts out of scope. A trailing dividend yield understates the cash returned by an index that distributes heavily through buybacks, so this proxy is conservative and its level should not be compared to a published forward ERP"
+    }
+  },
+  "2026-07-28": {
+    "as_of": "2026-07-28",
+    "policy_path": {
+      "spot_3m": 3.96,
+      "spot_2y": 4.31,
+      "implied_terminal_2y_horizon": 4.66,
+      "implied_change_bp": 70.0,
+      "obs_date": "2026-07-27",
+      "assumption": "the overnight rate travels linearly from the spot 3m bill to a terminal level over two years, so the 2y yield equals the mean of that path. Terminal = 2*y2 - y3m"
+    },
+    "forward_8y_in_2y": {
+      "value": 4.735,
+      "obs_date": "2026-07-27",
+      "assumption": "annually compounded, from par yields treated as zero yields. A simplification"
+    },
+    "inflation_compensation": {
+      "breakeven_10y": 2.2,
+      "real_10y": 2.44,
+      "nominal_10y_check": 4.64,
+      "quoted_nominal_10y": 4.65,
+      "obs_date": "2026-07-28"
+    },
+    "hy_credit": {
+      "available": true,
+      "oas_pct": 2.81,
+      "obs_date": "2026-07-27",
+      "implied_annual_default_rate_pct": 4.683,
+      "recovery_assumption": 0.4,
+      "assumption": "OAS = default rate x (1 - recovery), recovery 40%, and the whole spread is credit loss with no liquidity or risk premium. That upper-bounds the implied default rate: any premium you demand comes out of it"
+    },
+    "ig_credit": {
+      "available": true,
+      "oas_pct": 0.81,
+      "obs_date": "2026-07-27",
+      "implied_annual_default_rate_pct": 1.473,
+      "recovery_assumption": 0.45,
+      "assumption": "OAS = default rate x (1 - recovery), recovery 45%, and the whole spread is credit loss with no liquidity or risk premium. That upper-bounds the implied default rate: any premium you demand comes out of it"
+    },
+    "equity": {
+      "spy_trailing_12m_dividend_yield_pct": 1.108,
+      "obs_date": "2026-07-28",
+      "assumed_real_dividend_growth_pct": 2.0,
+      "real_10y": 2.44,
+      "erp_proxy_pct": 0.668,
+      "method": "trailing twelve-month dividend yield backed out of the divergence between SPY's adjusted and unadjusted close, then a Gordon construction: expected real return = D/P + assumed real growth, less the 10y TIPS yield",
+      "limitation": "a forward earnings yield needs a consensus estimate feed behind a subscription, which IPS 4.4 puts out of scope. A trailing dividend yield understates the cash returned by an index that distributes heavily through buybacks, so this proxy is conservative and its level should not be compared to a published forward ERP"
+    }
+  }
+}

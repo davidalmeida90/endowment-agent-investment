@@ -1,0 +1,151 @@
+{
+  "decision fields referencing a later date": {
+    "value": 0,
+    "detail": "none"
+  },
+  "decisions missing an outcome block": {
+    "value": 0,
+    "detail": ""
+  },
+  "access log entries": {
+    "value": 11104,
+    "detail": ""
+  },
+  "access log lines corrupted by concurrent writes": {
+    "value": 0,
+    "detail": "0.000% of writes"
+  },
+  "reads returning an observation after the as-of date": {
+    "value": 0,
+    "detail": ""
+  },
+  "anachronistic (current-vintage) inputs admitted": {
+    "value": 0,
+    "detail": "none"
+  },
+  "read kinds": {
+    "value": 3,
+    "detail": "{'prices': 1483, 'fred': 6413, 'macro_vintage': 3208}"
+  },
+  "meeting/series reads not using that meeting's own vintage": {
+    "value": 0,
+    "detail": "0 of 140 checked; claim vintages cannot reach a decision"
+  },
+  "extra claim vintages added by the Macro desk": {
+    "value": 6,
+    "detail": "used only for the published-print demonstration, never by a meeting"
+  },
+  "systematic desk claims": {
+    "value": 40,
+    "detail": ""
+  },
+  "of those, RECALLED rather than verified": {
+    "value": 8,
+    "detail": "20%"
+  },
+  "implementation desk RECALLED markers": {
+    "value": 0,
+    "detail": ""
+  },
+  "capital markets houses cited": {
+    "value": 8,
+    "detail": "0 without a URL"
+  },
+  "monthly observations": {
+    "value": 60,
+    "detail": ""
+  },
+  "years": {
+    "value": "5.0",
+    "detail": ""
+  },
+  "Sharpe ratio": {
+    "value": "0.762",
+    "detail": "standard error 0.453 (Lo 2002, iid)"
+  },
+  "Sharpe 95% interval": {
+    "value": "[-0.13, +1.65]",
+    "detail": "contains zero"
+  },
+  "information ratio": {
+    "value": "0.266",
+    "detail": "approx SE 0.45"
+  },
+  "IR 95% interval": {
+    "value": "[-0.61, +1.14]",
+    "detail": "contains zero"
+  },
+  "active return a year, by window": {
+    "value": "see detail",
+    "detail": "{'12m': 27.0, '24m': -21.9, '36m': 1.7, '48m': -16.4, '60m': 34.2}"
+  },
+  "window_sensitivity_bps": {
+    "12m": 27.0,
+    "24m": -21.9,
+    "36m": 1.7,
+    "48m": -16.4,
+    "60m": 34.2
+  },
+  "credit/rate series coverage": {
+    "value": "see detail",
+    "detail": "{\"BAMLC0A0CM\": {\"first\": \"2023-07-31\", \"n\": 764}, \"BAMLH0A0HYM2\": {\"first\": \"2023-07-31\", \"n\": 765}, \"BAA10Y\": {\"first\": \"2009-07-01\", \"n\": 4245}, \"DGS10\": {\"first\": \"2009-07-01\", \"n\": 4251}}"
+  },
+  "series_coverage": {
+    "BAMLC0A0CM": {
+      "first": "2023-07-31",
+      "n": 764
+    },
+    "BAMLH0A0HYM2": {
+      "first": "2023-07-31",
+      "n": 765
+    },
+    "BAA10Y": {
+      "first": "2009-07-01",
+      "n": 4245
+    },
+    "DGS10": {
+      "first": "2009-07-01",
+      "n": 4251
+    }
+  },
+  "meetings before the ICE OAS series begins": {
+    "value": "8 of 20",
+    "detail": "ran on fewer liquidity indicators"
+  },
+  "price cache begins": {
+    "value": "2009-07-01",
+    "detail": "2008 crisis is outside the replay"
+  },
+  "months with a missing line return": {
+    "value": 0,
+    "detail": "none"
+  },
+  "allocations recorded as failing compliance": {
+    "value": "0 of 20",
+    "detail": ""
+  },
+  "quarters recorded as the FUND in breach": {
+    "value": "17 of 20",
+    "detail": "reclassified from allocation failure; see AUDIT.md item 7"
+  },
+  "allocations that needed remediation": {
+    "value": "2 of 20",
+    "detail": ""
+  },
+  "committee meetings actually held": {
+    "value": 0,
+    "detail": "the record is a simulation of a rule"
+  },
+  "historical decisions that were deliberated": {
+    "value": 0,
+    "detail": "all twenty are mechanical"
+  },
+  "live decisions that were deliberated": {
+    "value": 1,
+    "detail": "the FY2027 recommendation"
+  },
+  "transaction costs": {
+    "value": "modelled",
+    "detail": "static per-line vector, no live execution"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "date": "2022-09-30",
+  "point_in_time": {
+    "gdp_saar": -0.577,
+    "gdp_saar_prior_quarter": -1.631,
+    "technical_recession": true,
+    "growth_score": 1,
+    "growth": "slowdown",
+    "regime_label": "stagflation_risk",
+    "weights": {
+      "us_equity": 0.375,
+      "dev_ex_us": 0.19,
+      "em_equity": 0.095,
+      "ust_duration": 0.075,
+      "us_ig": 0.08,
+      "us_hy": 0.03,
+      "commodities": 0.075,
+      "listed_re": 0.025,
+      "cash": 0.055
+    }
+  },
+  "current_vintage_counterfactual": {
+    "gdp_saar": 0.628,
+    "gdp_saar_prior_quarter": -1.015,
+    "technical_recession": false,
+    "growth_score": 3,
+    "growth": "expansion",
+    "regime_label": "overheat",
+    "weights": {
+      "us_equity": 0.375,
+      "dev_ex_us": 0.2,
+      "em_equity": 0.095,
+      "ust_duration": 0.055,
+      "us_ig": 0.07,
+      "us_hy": 0.05,
+      "commodities": 0.08,
+      "listed_re": 0.02,
+      "cash": 0.055
+    }
+  },
+  "weight_difference_pp": {
+    "us_equity": 0.0,
+    "dev_ex_us": 1.0,
+    "em_equity": 0.0,
+    "ust_duration": -2.0,
+    "us_ig": -1.0,
+    "us_hy": 2.0,
+    "commodities": 0.5,
+    "listed_re": -0.5,
+    "cash": 0.0
+  },
+  "note": "An acknowledged anachronism, computed to size the error. The GDP inputs are taken from the current vintage and every other input is left at its point-in-time value, so the difference is attributable to the GDP revision alone."
+}

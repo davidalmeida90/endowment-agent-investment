@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "DGS2",
+  "label": "US 2y Treasury constant maturity",
+  "publication_lag_days": 0,
+  "rows": 4454,
+  "pulled_at": "2026-07-28T23:26:19"
+}

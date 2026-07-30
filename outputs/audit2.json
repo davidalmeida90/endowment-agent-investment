@@ -1,0 +1,174 @@
+{
+  "mean size of the quant active vector": {
+    "value": "14.14pp",
+    "detail": ""
+  },
+  "mean size of the macro active vector": {
+    "value": "7.67pp",
+    "detail": ""
+  },
+  "ratio, quant to macro": {
+    "value": "1.84x",
+    "detail": "a 50/50 rule on vectors of unequal size is not a 50/50 rule on views"
+  },
+  "mean cosine, adopted vs QUANT view": {
+    "value": "+0.911",
+    "detail": ""
+  },
+  "mean cosine, adopted vs MACRO view": {
+    "value": "+0.659",
+    "detail": "the adopted allocation resembles whichever desk this is higher for"
+  },
+  "quarters where quant was the larger view": {
+    "value": "20 of 20",
+    "detail": ""
+  },
+  "benchmark, monthly rebalanced, annualised": {
+    "value": "8.262%",
+    "detail": ""
+  },
+  "benchmark, never rebalanced (drifting)": {
+    "value": "8.558%",
+    "detail": ""
+  },
+  "is the rebalanced blend harder to beat?": {
+    "value": "NO",
+    "detail": "the report asserts YES  <-- THE CLAIM IS WRONG"
+  },
+  "difference": {
+    "value": "-29.7bps",
+    "detail": ""
+  },
+  "Systematic desk assumed turnover cost": {
+    "value": "6.4bps/yr",
+    "detail": "80% turnover at 8bps one-way"
+  },
+  "realised turnover cost in the simulation": {
+    "value": "2.6bps/yr",
+    "detail": ""
+  },
+  "ratio, assumed to realised": {
+    "value": "2.5x",
+    "detail": "the desk's cost assumption is this many times what the programme actually spent"
+  },
+  "Systematic desk expected alpha": {
+    "value": "4.2bps/yr",
+    "detail": ""
+  },
+  "realised active return": {
+    "value": "21.8bps/yr",
+    "detail": ""
+  },
+  "clears costs, EX ANTE arithmetic": {
+    "value": "NO",
+    "detail": ""
+  },
+  "clears costs, REALISED on this window": {
+    "value": "YES",
+    "detail": "<-- TENSION: the two answers differ and the report leads with the first"
+  },
+  "policy portfolio worst drawdown, full cache": {
+    "value": "-22.46%",
+    "detail": "2009-08-31 to 2026-06-30"
+  },
+  "rolling 5y windows breaching the (20)% limit": {
+    "value": "46 of 144",
+    "detail": "32% of five-year windows since 2009"
+  },
+  "worst 12m loss for the policy portfolio": {
+    "value": "-18.57%",
+    "detail": ""
+  },
+  "Capital Markets finding": {
+    "value": "valuation",
+    "detail": "10y forecasts vs the 8.10% spending rule"
+  },
+  "Systematic finding": {
+    "value": "fundamental law",
+    "detail": "IC x sqrt(breadth) x TC vs cost"
+  },
+  "Quantitative finding": {
+    "value": "R2_oos",
+    "detail": "signals vs the expanding historical mean"
+  },
+  "shared input: the replication literature": {
+    "value": "YES",
+    "detail": "Systematic and Quantitative both update from the same prior"
+  },
+  "shared input: market prices": {
+    "value": "YES",
+    "detail": "Quantitative and Capital Markets both price off them"
+  },
+  "genuinely disjoint pair": {
+    "value": "CM vs Systematic",
+    "detail": "a valuation gap and a breadth/cost arithmetic share no input"
+  },
+  "independent findings, honestly counted": {
+    "value": "2 of 3",
+    "detail": "the report says three; two is the defensible count"
+  },
+  "message to Quantitative": {
+    "value": "config.RAW in signals.py",
+    "detail": "office supplied the fix (store_id)"
+  },
+  "message to Macro": {
+    "value": "credit series limitation",
+    "detail": "office supplied the substitute series"
+  },
+  "message to Implementation": {
+    "value": "unit contract",
+    "detail": "office supplied the diagnosis and the adapter"
+  },
+  "message to Risk": {
+    "value": "range_breach_inside_te",
+    "detail": "office supplied the root cause AND the forbidden fixes"
+  },
+  "desks that pushed back on an office diagnosis": {
+    "value": 0,
+    "detail": "<-- every diagnosis the office sent was adopted as sent"
+  },
+  "Macro desk assertions, self-written and self-run": {
+    "value": 688,
+    "detail": ""
+  },
+  "Implementation desk assertions": {
+    "value": 53,
+    "detail": ""
+  },
+  "Systematic desk checks": {
+    "value": 26,
+    "detail": ""
+  },
+  "Capital Markets assertions": {
+    "value": 5,
+    "detail": ""
+  },
+  "Risk desk mutants killed": {
+    "value": 13,
+    "detail": "adversarial to itself; the strongest of the five"
+  },
+  "desk checks independently re-run by the office": {
+    "value": "all",
+    "detail": "but not independently re-derived"
+  },
+  "desk checks whose ASSERTIONS the office reviewed line by line": {
+    "value": "0 of 5",
+    "detail": "<-- a desk that writes and passes its own 688 assertions is weakly evidenced"
+  },
+  "agent-dynamics episodes reported": {
+    "value": "3 of many",
+    "detail": "chosen by the office"
+  },
+  "top decisions reported": {
+    "value": "3 of 20",
+    "detail": "chosen by outcome, stated in that note"
+  },
+  "desk papers summarised in the report": {
+    "value": "6 of 6",
+    "detail": "no desk omitted"
+  },
+  "losing decisions grouped": {
+    "value": "8 of 8",
+    "detail": "grouping computed, not chosen"
+  }
+}

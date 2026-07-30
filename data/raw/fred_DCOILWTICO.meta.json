@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "DCOILWTICO",
+  "label": "WTI spot",
+  "publication_lag_days": 3,
+  "rows": 4449,
+  "pulled_at": "2026-07-28T23:26:28"
+}

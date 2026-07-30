@@ -1,0 +1,10 @@
+/* Shared frame for every preview card. Keeps cards consistent in the Design System pane. */
+html, body { margin: 0; background: #fff; }
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+.cap { font-size: 11px; color: #7E8A9C; margin-top: 6px; line-height: 1.35; }
+.nm  { font-size: 12px; font-weight: 600; margin-top: 6px; color: #1A1F28; }

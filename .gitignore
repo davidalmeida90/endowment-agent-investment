@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# Test sandbox output. tests/check_quant.py and tests/mutation_test.py point
+# TAA_OUTPUT_DIR here so a run cannot overwrite the published outputs/.
+_outputs/
+
+.DS_Store
+Thumbs.db
+.venv/
+venv/

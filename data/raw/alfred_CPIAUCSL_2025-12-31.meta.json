@@ -1,0 +1,7 @@
+{
+  "source": "ALFRED alfredgraph.csv (no key)",
+  "series": "CPIAUCSL",
+  "vintage_date": "2025-12-31",
+  "label": "CPI, all urban consumers",
+  "pulled_at": "2026-07-28T23:27:11"
+}

@@ -1,0 +1,165 @@
+{
+  "as_of": "2026-06-30",
+  "unconstrained": {
+    "us_equity": 0.3741059407065368,
+    "dev_ex_us": 0.22473249348410212,
+    "em_equity": 0.1389370973277985,
+    "ust_duration": 0.6043578940379453,
+    "us_ig": -0.17539950038694024,
+    "us_hy": -0.030106409126143402,
+    "commodities": 0.06704594438754549,
+    "listed_re": 0.004137696301921734,
+    "cash": -0.2078111567327674
+  },
+  "constrained": {
+    "us_equity": 0.32461076949438133,
+    "dev_ex_us": 0.2180142274965401,
+    "em_equity": 0.1443622598010186,
+    "ust_duration": 0.22,
+    "us_ig": 0.03,
+    "us_hy": 4.1860653127600465e-20,
+    "commodities": 0.03106332543133714,
+    "listed_re": 0.03194941777672274,
+    "cash": 4.8186763221579344e-20
+  },
+  "active_vs_policy": {
+    "us_equity": -0.05538923050561867,
+    "dev_ex_us": 0.01801422749654008,
+    "em_equity": 0.02436225980101861,
+    "ust_duration": 0.1,
+    "us_ig": -0.05,
+    "us_hy": -0.05,
+    "commodities": 0.00106332543133714,
+    "listed_re": 0.011949417776722742,
+    "cash": 4.8186763221579344e-20
+  },
+  "ex_ante_te_bps": 83.76007483246659,
+  "binding_constraint": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00)",
+  "composite_scores": {
+    "us_equity": -0.3180359125031545,
+    "dev_ex_us": 0.21106487665844614,
+    "em_equity": 0.3891060879329928,
+    "ust_duration": 0.4028609266795537,
+    "us_ig": -0.06609650060427713,
+    "us_hy": -0.28536275517165505,
+    "commodities": -0.03898733896510099,
+    "listed_re": 0.08801120127065015,
+    "cash": -0.38256058529745507
+  },
+  "confidence": "low",
+  "rationale": "The desk recommends the policy portfolio. The composite signal has a pooled out-of-sample R2 of -1.61 per cent against the expanding historical mean, negative on 6 of 8 lines, with a Clark-West t of -0.77. Across the five signals and eight risky lines, 9 of 40 cells are positive. On that evidence the estimator does not earn active risk, and the size of a tilt should follow the evidence for it rather than the size of the budget available to express it. The constrained allocation reported here is the mechanical output of the optimiser run at the full budget; it is the model's answer and it is what outputs/quant/model_path.json holds at every meeting, so that the Committee can reconstruct the record. It is not what the desk recommends carrying. The binding constraint at this date is range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00), range:cash:lower(0.00), at 84bps of ex-ante tracking error against a 200bps budget: the line ranges stop the tilt long before the budget does, although the budget is reachable in other directions (up to 249bps).",
+  "recommendation": {
+    "headline": "hold policy weights; do not spend the tracking-error budget",
+    "weights": {
+      "us_equity": 0.38,
+      "dev_ex_us": 0.2,
+      "em_equity": 0.12,
+      "ust_duration": 0.12,
+      "us_ig": 0.08,
+      "us_hy": 0.05,
+      "commodities": 0.03,
+      "listed_re": 0.02,
+      "cash": 0.0
+    },
+    "active_vs_policy": {
+      "us_equity": 0.0,
+      "dev_ex_us": 0.0,
+      "em_equity": 0.0,
+      "ust_duration": 0.0,
+      "us_ig": 0.0,
+      "us_hy": 0.0,
+      "commodities": 0.0,
+      "listed_re": 0.0,
+      "cash": 0.0
+    },
+    "ex_ante_te_bps": 0.0,
+    "basis": "composite pooled R2_oos -1.61%, 9/40 signal-line cells positive"
+  },
+  "confidence_definition": "low: the desk's own out-of-sample test does not reject the null that the signal has no forecasting power, and the point estimate is on the wrong side of zero",
+  "policy": {
+    "us_equity": 0.38,
+    "dev_ex_us": 0.2,
+    "em_equity": 0.12,
+    "ust_duration": 0.12,
+    "us_ig": 0.08,
+    "us_hy": 0.05,
+    "commodities": 0.03,
+    "listed_re": 0.02,
+    "cash": 0.0
+  },
+  "te_budget_bps": 200.0,
+  "unconstrained_te_bps": 200.0,
+  "unconstrained_inverse_vol": {
+    "us_equity": 0.3967021096231524,
+    "dev_ex_us": 0.22721476372533644,
+    "em_equity": 0.1498376773457587,
+    "ust_duration": 0.15959575543816767,
+    "us_ig": 0.10082820042902763,
+    "us_hy": 0.061275003250101365,
+    "commodities": 0.05223787582611225,
+    "listed_re": 0.04440339965139847,
+    "cash": -0.19209478528905494
+  },
+  "tilt_disagreement_bps": 236.45094871381482,
+  "constrained_pre_min_trade": {
+    "us_equity": 0.3276187432828162,
+    "dev_ex_us": 0.22247082844237526,
+    "em_equity": 0.14178023716398397,
+    "ust_duration": 0.22,
+    "us_ig": 0.030000000000000006,
+    "us_hy": 6.938893903907228e-18,
+    "commodities": 0.026317317773733324,
+    "listed_re": 0.031812873337091374,
+    "cash": 1.9368820060548334e-19
+  },
+  "projection_te_bps": 81.82799359812564,
+  "scale_to_budget": 1.0,
+  "binding_constraints_all": [
+    "range:ust_duration:upper(0.22)",
+    "range:us_ig:lower(0.03)",
+    "range:us_hy:lower(0.00)",
+    "range:cash:lower(0.00)"
+  ],
+  "first_binding_limit": "range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00)",
+  "min_trade": {
+    "n_traded": 3,
+    "threshold_pp": 0.5,
+    "suppressed": [
+      "em_equity",
+      "ust_duration",
+      "commodities"
+    ],
+    "rounds": 3,
+    "hard_constraint_override": false,
+    "residual_sub_threshold_trades": []
+  },
+  "max_attainable_te": {
+    "as_of": "2026-06-30",
+    "max_te_bps_within_ranges": 248.50997762152105,
+    "te_budget_bps": 200.0,
+    "budget_attainable": true,
+    "n_starts": 400
+  },
+  "total_vol_bps": 1193.9687321443785,
+  "policy_vol_bps": 1213.243449815611,
+  "optimiser": "risk-metric projection of the unconstrained tilt, then scaled x1.00 to the first binding limit (range:ust_duration:upper(0.22), range:us_ig:lower(0.03), range:us_hy:lower(0.00))",
+  "feasibility": {
+    "ok": true,
+    "failures": [],
+    "te_bps": 83.76007483246659,
+    "liquid_within_5d": 0.9999999999999999
+  },
+  "horizon": "twelve months from 30 June 2026, reviewed quarterly (IPS 2.2)",
+  "prior_holding": {
+    "us_equity": 0.2911958525381716,
+    "dev_ex_us": 0.2701367140283791,
+    "em_equity": 0.1443622598010186,
+    "ust_duration": 0.22,
+    "us_ig": 0.03,
+    "us_hy": 1.8874445070225495e-20,
+    "commodities": 0.03106332543133714,
+    "listed_re": 0.013241848201093672,
+    "cash": 0.0
+  },
+  "prior_holding_source": "the constrained model allocation set at the 31 March 2026 meeting, chained through outputs/quant/model_path.json"
+}

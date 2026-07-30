@@ -1,0 +1,208 @@
+{
+  "as_of": "2026-07-28",
+  "sources": [
+    {
+      "house": "Vanguard",
+      "title": "Vanguard Capital Markets Model (VCMM) return forecasts / Setting realistic expectations",
+      "vintage": "2026-06-30 (equity lines); 2025-09-30 (fixed income, commodities, REITs)",
+      "url": "https://corporate.vanguard.com/content/corporatesite/us/en/corp/vemo/vemo-return-forecasts.html",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "J.P. Morgan",
+      "title": "2026 Long-Term Capital Market Assumptions, 30th annual edition (Executive Summary)",
+      "vintage": "2025-09-30",
+      "url": "https://am.jpmorgan.com/us/en/asset-management/institutional/insights/portfolio-insights/ltcma/",
+      "basis": "10y nominal geometric (published as annualised compound over a 10-15y horizon)"
+    },
+    {
+      "house": "BlackRock",
+      "title": "BlackRock Investment Institute Capital Market Assumptions, May 2026 update, USD, 'Starting point' scenario",
+      "vintage": "2026-03-31",
+      "url": "https://www.blackrock.com/institutions/en-us/insights/thought-leadership/capital-market-assumptions",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "Invesco",
+      "title": "2026 Invesco Capital Market Assumptions, Q1 update, USD (Figure 6)",
+      "vintage": "2025-12-31",
+      "url": "https://www.invesco.com/content/dam/invesco/emea/en/pdf/invesco-capital-market-assumption-usd.pdf",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "Northern Trust",
+      "title": "Northern Trust Asset Management Capital Market Assumptions, 2026 edition, 10-year outlook",
+      "vintage": "2025-09-30",
+      "url": "https://ntam.northerntrust.com/content/dam/northerntrust/investment-management/global/en/documents/thought-leadership/2026/cma/2026-capital-market-assumptions-report.pdf",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "Schwab",
+      "title": "Schwab's 2026 Long-Term Capital Market Expectations",
+      "vintage": "2025-10-31",
+      "url": "https://www.schwab.com/learn/story/schwabs-long-term-capital-market-expectations",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "Research Affiliates",
+      "title": "Research Affiliates Asset Allocation Interactive, as reported by Morningstar (RA's own tool requires a login and so fails the public-data test)",
+      "vintage": "2025-12-31",
+      "url": "https://www.morningstar.com/markets/experts-forecast-stock-bond-returns-2026-edition",
+      "basis": "10y nominal geometric"
+    },
+    {
+      "house": "GMO",
+      "title": "GMO 7-Year Asset Class Forecast, as reported by Morningstar. Memo reference only, excluded from the medians because the horizon is 7 years and the basis is real",
+      "vintage": "2025-11",
+      "url": "https://www.morningstar.com/markets/experts-forecast-stock-bond-returns-2026-edition",
+      "basis": "7y real geometric, converted to nominal at the 2.21% 10y breakeven (FRED T10YIE, 2026-07-27)"
+    }
+  ],
+  "lines": {
+    "us_equity": {
+      "policy_weight": 0.38,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.052},
+        {"house": "J.P. Morgan", "value": 0.067},
+        {"house": "BlackRock", "value": 0.0847},
+        {"house": "Invesco", "value": 0.050},
+        {"house": "Northern Trust", "value": 0.068},
+        {"house": "Schwab", "value": 0.059},
+        {"house": "Research Affiliates", "value": 0.031}
+      ],
+      "adopted": 0.059,
+      "median": 0.059,
+      "min": 0.031,
+      "max": 0.0847,
+      "note": "Proxies: MSCI USA / S&P 500 / Russell 3000. Vanguard is the midpoint of its published 4.2%-6.2% range at 30 Jun 2026. Dispersion is 537bp, the widest of any line. GMO's 7-year forecast of -6.0% real (-3.9% nominal at a 2.21% breakeven) sits far below this range and is carried as a memo, not in the median."
+    },
+    "dev_ex_us": {
+      "policy_weight": 0.20,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.055},
+        {"house": "J.P. Morgan", "value": 0.075},
+        {"house": "BlackRock", "value": 0.0804},
+        {"house": "Invesco", "value": 0.072},
+        {"house": "Northern Trust", "value": 0.0636},
+        {"house": "Schwab", "value": 0.070},
+        {"house": "Research Affiliates", "value": 0.077}
+      ],
+      "adopted": 0.072,
+      "median": 0.072,
+      "min": 0.055,
+      "max": 0.0804,
+      "note": "Proxies: MSCI EAFE / MSCI World ex-US. Northern Trust publishes no EAFE aggregate; 6.36% is a desk construction from its published regional numbers at approximate EAFE weights (Europe ex-UK 5.7% at 47%, UK 6.2% at 15%, Japan 7.3% at 23%, Australia 7.7% at 8%, other 6.5% at 7%). BlackRock's MSCI World ex-US includes Canada, EAFE does not."
+    },
+    "em_equity": {
+      "policy_weight": 0.12,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.030},
+        {"house": "J.P. Morgan", "value": 0.078},
+        {"house": "BlackRock", "value": 0.0727},
+        {"house": "Invesco", "value": 0.061},
+        {"house": "Northern Trust", "value": 0.069},
+        {"house": "Research Affiliates", "value": 0.075}
+      ],
+      "adopted": 0.07085,
+      "median": 0.07085,
+      "min": 0.030,
+      "max": 0.078,
+      "note": "Proxy MSCI Emerging Markets, USD unhedged. Vanguard at 3.0% is the freshest reading (30 Jun 2026, cut from 3.6%-5.6% three months earlier after the post-ceasefire EM rally) and the lowest. The other five readings pre-date that rally by six to ten months, so the median is likely biased high. Quantified in the vintage sensitivity in the paper."
+    },
+    "ust_duration": {
+      "policy_weight": 0.12,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.042},
+        {"house": "J.P. Morgan", "value": 0.046},
+        {"house": "BlackRock", "value": 0.0463},
+        {"house": "Invesco", "value": 0.040},
+        {"house": "Northern Trust", "value": 0.046}
+      ],
+      "adopted": 0.046,
+      "median": 0.046,
+      "min": 0.040,
+      "max": 0.0463,
+      "note": "Mapped to each house's broad US Treasury index. J.P. Morgan is its 10-year UST return forecast, BlackRock its US government all-maturities, Invesco its intermediate Treasury, Northern Trust the Bloomberg US Treasury index. A TLT-weighted implementation would sit higher: the same houses' long-Treasury numbers are 5.2% (J.P. Morgan), 5.33% (BlackRock) and 5.8% (Invesco)."
+    },
+    "us_ig": {
+      "policy_weight": 0.08,
+      "forecasts": [
+        {"house": "J.P. Morgan", "value": 0.052},
+        {"house": "BlackRock", "value": 0.0541},
+        {"house": "Invesco", "value": 0.052},
+        {"house": "Northern Trust", "value": 0.051}
+      ],
+      "adopted": 0.052,
+      "median": 0.052,
+      "min": 0.051,
+      "max": 0.0541,
+      "note": "Proxy Bloomberg US Corporate / US Credit. Tightest dispersion of any line at 31bp, because all four are building starting yield off the same curve and the same 81bp index OAS. Vanguard publishes no standalone IG credit line at the vintage available."
+    },
+    "us_hy": {
+      "policy_weight": 0.05,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.050},
+        {"house": "J.P. Morgan", "value": 0.061},
+        {"house": "BlackRock", "value": 0.0646},
+        {"house": "Invesco", "value": 0.054},
+        {"house": "Northern Trust", "value": 0.055}
+      ],
+      "adopted": 0.055,
+      "median": 0.055,
+      "min": 0.050,
+      "max": 0.0646,
+      "note": "Proxy Bloomberg US High Yield. The 146bp dispersion is almost entirely a disagreement about the default and loss assumption, not about the starting yield."
+    },
+    "commodities": {
+      "policy_weight": 0.03,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.056},
+        {"house": "J.P. Morgan", "value": 0.046},
+        {"house": "Invesco", "value": 0.060}
+      ],
+      "adopted": 0.056,
+      "median": 0.056,
+      "min": 0.046,
+      "max": 0.060,
+      "note": "Broad commodity futures baskets (S&P GSCI / Bloomberg Commodity). BlackRock publishes no USD commodity line. Northern Trust's 6.4% global natural resources figure is deliberately excluded: it is a listed-equity forecast, not a futures forecast, and DBC/GSG do not hold equities."
+    },
+    "listed_re": {
+      "policy_weight": 0.02,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.036},
+        {"house": "J.P. Morgan", "value": 0.088},
+        {"house": "BlackRock", "value": 0.0659},
+        {"house": "Invesco", "value": 0.071},
+        {"house": "Northern Trust", "value": 0.062}
+      ],
+      "adopted": 0.0659,
+      "median": 0.0659,
+      "min": 0.036,
+      "max": 0.088,
+      "note": "520bp dispersion, driven by index definition rather than by view. Vanguard and J.P. Morgan quote US REITs; BlackRock, Invesco and Northern Trust quote developed or global listed real estate. J.P. Morgan's 8.8% is stated leveraged and net of fees. VNQ is US-only, so Vanguard and J.P. Morgan are the closest matches and they are 520bp apart. At a 2% weight, 100bp on this line moves the policy return by 2bp."
+    },
+    "cash": {
+      "policy_weight": 0.00,
+      "forecasts": [
+        {"house": "Vanguard", "value": 0.034},
+        {"house": "J.P. Morgan", "value": 0.031},
+        {"house": "BlackRock", "value": 0.0359},
+        {"house": "Invesco", "value": 0.032},
+        {"house": "Northern Trust", "value": 0.033},
+        {"house": "Schwab", "value": 0.033}
+      ],
+      "adopted": 0.033,
+      "median": 0.033,
+      "min": 0.031,
+      "max": 0.0359,
+      "note": "3-month T-bill proxies. Policy weight is zero so this line contributes nothing to the headline, but it is the reference rate for the tactical cash range of 0-10% and for every risk-premium statement in this paper."
+    }
+  },
+  "policy_expected_return": {
+    "adopted": 0.06075,
+    "low": 0.03986,
+    "high": 0.0743
+  },
+  "required_return": 0.081,
+  "gap_bps": -202.5
+}

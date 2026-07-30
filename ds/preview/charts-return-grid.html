@@ -1,0 +1,35 @@
+<!doctype html>
+<!-- @dsCard group="Charts" name="Monthly return grid" subtitle="Months across, years down, benchmark under each year, no colour coding" viewport="880x320" -->
+<html><head><meta charset="utf-8"><title>Monthly return grid</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { width:880px; }
+  h4 { font-size:12.5px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:#0A1B3D; margin:0 0 10px; }
+  table { width:100%; border-collapse:collapse; font-size:11.5px; font-variant-numeric:tabular-nums lining-nums; }
+  th { background:#C08878; color:#fff; font-weight:600; padding:7px 4px; text-align:right; font-size:10.5px; }
+  th:first-child { text-align:left; padding-left:9px; }
+  td { padding:6px 4px; text-align:right; color:#1A1F28; }
+  td:first-child { text-align:left; padding-left:9px; font-weight:600; color:#0A1B3D; }
+  tr.bm td { color:#7E8A9C; font-size:10.5px; }
+  tr.bm td:first-child { font-weight:400; color:#7E8A9C; }
+  tr.yr td { border-top:1px solid #D4DBE0; }
+  .tot { font-weight:600; background:#F2EBE5; }
+  tr.bm .tot { font-weight:400; background:#F7F3EF; }
+  .fn { font-size:10px; color:#7E8A9C; margin-top:9px; }
+</style></head>
+<body>
+  <h4>Monthly returns, net of fees</h4>
+  <table>
+    <tr><th></th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun</th><th>Jul</th><th>Aug</th><th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th><th>Year</th></tr>
+    <tr class="yr"><td>2026</td><td>3.12</td><td>(1.84)</td><td>2.47</td><td>1.09</td><td>(0.62)</td><td>2.88</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="tot">7.28</td></tr>
+    <tr class="bm"><td>S&amp;P 500</td><td>2.84</td><td>(2.11)</td><td>2.19</td><td>0.94</td><td>(0.38)</td><td>2.41</td><td></td><td></td><td></td><td></td><td></td><td></td><td class="tot">5.79</td></tr>
+    <tr class="yr"><td>2025</td><td>1.94</td><td>0.71</td><td>(3.06)</td><td>4.22</td><td>1.38</td><td>0.94</td><td>(1.17)</td><td>2.63</td><td>(0.88)</td><td>3.41</td><td>1.76</td><td>(0.44)</td><td class="tot">11.74</td></tr>
+    <tr class="bm"><td>S&amp;P 500</td><td>1.62</td><td>0.88</td><td>(2.74)</td><td>3.86</td><td>1.11</td><td>1.24</td><td>(0.93)</td><td>2.08</td><td>(1.24)</td><td>2.97</td><td>1.44</td><td>(0.31)</td><td class="tot">10.32</td></tr>
+    <tr class="yr"><td>2024</td><td>(0.42)</td><td>2.18</td><td>1.61</td><td>(2.34)</td><td>3.09</td><td>0.87</td><td>1.44</td><td>(1.62)</td><td>2.21</td><td>(0.71)</td><td>4.06</td><td>1.12</td><td class="tot">11.86</td></tr>
+    <tr class="bm"><td>S&amp;P 500</td><td>(0.18)</td><td>1.94</td><td>1.33</td><td>(2.61)</td><td>2.74</td><td>1.06</td><td>1.18</td><td>(1.31)</td><td>1.87</td><td>(0.94)</td><td>3.62</td><td>0.98</td><td class="tot">9.94</td></tr>
+    <tr class="yr"><td>2023</td><td>2.71</td><td>(1.09)</td><td>0.94</td><td>1.86</td><td>(0.53)</td><td>2.42</td><td>1.31</td><td>(2.08)</td><td>(1.14)</td><td>0.62</td><td>3.88</td><td>2.04</td><td class="tot">11.31</td></tr>
+    <tr class="bm"><td>S&amp;P 500</td><td>2.44</td><td>(1.31)</td><td>0.71</td><td>1.52</td><td>(0.88)</td><td>2.16</td><td>1.09</td><td>(1.74)</td><td>(1.42)</td><td>0.44</td><td>3.41</td><td>1.78</td><td class="tot">8.42</td></tr>
+  </table>
+  <div class="fn">Negatives are shown in parentheses. Direction is never carried by colour, which keeps the grid readable in greyscale and for colour blind readers. Hypothetical performance, illustrative only.</div>
+</body></html>

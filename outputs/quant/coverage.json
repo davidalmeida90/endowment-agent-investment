@@ -1,0 +1,189 @@
+{
+  "as_of": "2026-06-30",
+  "signals": {
+    "momentum": {
+      "raw_first": {
+        "us_equity": "2010-08-31",
+        "dev_ex_us": "2010-08-31",
+        "em_equity": "2010-08-31",
+        "ust_duration": "2010-08-31",
+        "us_ig": "2010-08-31",
+        "us_hy": "2010-08-31",
+        "commodities": "2010-08-31",
+        "listed_re": "2010-08-31",
+        "cash": "2010-08-31"
+      },
+      "z_first": {
+        "us_equity": "2013-07-31",
+        "dev_ex_us": "2013-07-31",
+        "em_equity": "2013-07-31",
+        "ust_duration": "2013-07-31",
+        "us_ig": "2013-07-31",
+        "us_hy": "2013-07-31",
+        "commodities": "2013-07-31",
+        "listed_re": "2013-07-31",
+        "cash": "2013-07-31"
+      },
+      "missing_meetings": {}
+    },
+    "trend": {
+      "raw_first": {
+        "us_equity": "2010-04-30",
+        "dev_ex_us": "2010-04-30",
+        "em_equity": "2010-04-30",
+        "ust_duration": "2010-04-30",
+        "us_ig": "2010-04-30",
+        "us_hy": "2010-04-30",
+        "commodities": "2010-04-30",
+        "listed_re": "2010-04-30",
+        "cash": "2010-04-30"
+      },
+      "z_first": {
+        "us_equity": "2013-03-31",
+        "dev_ex_us": "2013-03-31",
+        "em_equity": "2013-03-31",
+        "ust_duration": "2013-03-31",
+        "us_ig": "2013-03-31",
+        "us_hy": "2013-03-31",
+        "commodities": "2013-03-31",
+        "listed_re": "2013-03-31",
+        "cash": "2013-03-31"
+      },
+      "missing_meetings": {}
+    },
+    "carry": {
+      "raw_first": {
+        "us_equity": "2010-07-31",
+        "dev_ex_us": "2010-07-31",
+        "em_equity": "2010-07-31",
+        "ust_duration": "2009-08-31",
+        "us_ig": "2009-08-31",
+        "us_hy": "2009-08-31",
+        "commodities": "2010-07-31",
+        "listed_re": "2010-07-31",
+        "cash": "2009-08-31"
+      },
+      "z_first": {
+        "us_equity": "2013-06-30",
+        "dev_ex_us": "2013-06-30",
+        "em_equity": "2013-06-30",
+        "ust_duration": "2012-07-31",
+        "us_ig": "2012-07-31",
+        "us_hy": "2012-07-31",
+        "commodities": "2013-06-30",
+        "listed_re": "2013-06-30",
+        "cash": "2012-07-31"
+      },
+      "missing_meetings": {}
+    },
+    "reversal": {
+      "raw_first": {
+        "us_equity": "2014-08-31",
+        "dev_ex_us": "2014-08-31",
+        "em_equity": "2014-08-31",
+        "ust_duration": "2014-08-31",
+        "us_ig": "2014-08-31",
+        "us_hy": "2014-08-31",
+        "commodities": "2014-08-31",
+        "listed_re": "2014-08-31",
+        "cash": "2014-08-31"
+      },
+      "z_first": {
+        "us_equity": "2017-07-31",
+        "dev_ex_us": "2017-07-31",
+        "em_equity": "2017-07-31",
+        "ust_duration": "2017-07-31",
+        "us_ig": "2017-07-31",
+        "us_hy": "2017-07-31",
+        "commodities": "2017-07-31",
+        "listed_re": "2017-07-31",
+        "cash": "2017-07-31"
+      },
+      "missing_meetings": {}
+    },
+    "volatility": {
+      "raw_first": {
+        "us_equity": "2010-07-31",
+        "dev_ex_us": "2010-07-31",
+        "em_equity": "2010-07-31",
+        "ust_duration": "2010-07-31",
+        "us_ig": "2010-07-31",
+        "us_hy": "2010-07-31",
+        "commodities": "2010-07-31",
+        "listed_re": "2010-07-31",
+        "cash": "2010-07-31"
+      },
+      "z_first": {
+        "us_equity": "2013-06-30",
+        "dev_ex_us": "2013-06-30",
+        "em_equity": "2013-06-30",
+        "ust_duration": "2013-06-30",
+        "us_ig": "2013-06-30",
+        "us_hy": "2013-06-30",
+        "commodities": "2013-06-30",
+        "listed_re": "2013-06-30",
+        "cash": "2013-06-30"
+      },
+      "missing_meetings": {}
+    },
+    "carry_dy": {
+      "raw_first": {
+        "us_equity": "2010-07-31",
+        "dev_ex_us": "2010-07-31",
+        "em_equity": "2010-07-31",
+        "ust_duration": "2010-07-31",
+        "us_ig": "2010-07-31",
+        "us_hy": "2010-07-31",
+        "commodities": "2010-07-31",
+        "listed_re": "2010-07-31",
+        "cash": "2010-07-31"
+      },
+      "z_first": {
+        "us_equity": "2013-06-30",
+        "dev_ex_us": "2013-06-30",
+        "em_equity": "2013-06-30",
+        "ust_duration": "2013-06-30",
+        "us_ig": "2013-06-30",
+        "us_hy": "2013-06-30",
+        "commodities": "2013-06-30",
+        "listed_re": "2013-06-30",
+        "cash": "2013-06-30"
+      },
+      "missing_meetings": {}
+    }
+  },
+  "carry_sources": {
+    "us_equity": "vehicle distribution yield",
+    "dev_ex_us": "vehicle distribution yield",
+    "em_equity": "vehicle distribution yield",
+    "ust_duration": "DFII10",
+    "us_ig": "AAA10Y",
+    "us_hy": "BAA10Y",
+    "commodities": "vehicle distribution yield",
+    "listed_re": "vehicle distribution yield",
+    "cash": "DGS3MO"
+  },
+  "excluded_series": {
+    "BAMLC0A0CM": {
+      "line": "us_ig",
+      "first_observation": "2023-07-31",
+      "observations": 764,
+      "meetings_covered": 12,
+      "meetings_total": 20,
+      "used": false,
+      "reason": "free FRED endpoint serves a rolling three-year window; the series does not reach the start of the study window, so it cannot support a signal evaluated across it",
+      "substitute": "AAA10Y"
+    },
+    "BAMLH0A0HYM2": {
+      "line": "us_hy",
+      "first_observation": "2023-07-31",
+      "observations": 765,
+      "meetings_covered": 12,
+      "meetings_total": 20,
+      "used": false,
+      "reason": "free FRED endpoint serves a rolling three-year window; the series does not reach the start of the study window, so it cannot support a signal evaluated across it",
+      "substitute": "BAA10Y"
+    }
+  },
+  "meetings_total": 20
+}

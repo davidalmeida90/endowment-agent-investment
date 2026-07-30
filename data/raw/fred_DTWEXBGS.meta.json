@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "DTWEXBGS",
+  "label": "Broad dollar index",
+  "publication_lag_days": 1,
+  "rows": 4453,
+  "pulled_at": "2026-07-28T23:26:27"
+}

@@ -1,0 +1,63 @@
+{
+  "as_of": "2026-06-30",
+  "regime": "overheat",
+  "regime_axes": {
+    "growth": "expansion",
+    "inflation": "above_target",
+    "policy": "neutral",
+    "liquidity": "ample"
+  },
+  "weights": {
+    "us_equity": 0.36,
+    "dev_ex_us": 0.2,
+    "em_equity": 0.11,
+    "ust_duration": 0.055,
+    "us_ig": 0.07,
+    "us_hy": 0.035,
+    "commodities": 0.08,
+    "listed_re": 0.02,
+    "cash": 0.07
+  },
+  "active_vs_policy": {
+    "us_equity": -2.0,
+    "dev_ex_us": 0.0,
+    "em_equity": -1.0,
+    "ust_duration": -6.5,
+    "us_ig": -1.0,
+    "us_hy": -1.5,
+    "commodities": 5.0,
+    "listed_re": 0.0,
+    "cash": 7.0
+  },
+  "binding_constraint": "line commodities upper 8%",
+  "binding_constraints_all": [
+    "line commodities upper 8%"
+  ],
+  "untraded_below_min_trade": [
+    "listed_re"
+  ],
+  "modifiers_applied": [
+    "policy_loose_tightening_priced",
+    "credit_rich",
+    "breakeven_below_core"
+  ],
+  "conviction": {
+    "us_equity": "medium",
+    "dev_ex_us": "none",
+    "em_equity": "low",
+    "ust_duration": "high",
+    "us_ig": "low",
+    "us_hy": "medium",
+    "commodities": "high",
+    "listed_re": "none",
+    "cash": "high"
+  },
+  "rationale": "Overheat. Growth is expansion on the 30 June vintage (growth score 4 of a possible 4: real GDP 2.09% annualised for 2026 Q1, payrolls averaging 188k over three months, a Sahm gap of 0.10pp, industrial production 1.67% year on year), and inflation is above target and firming (core PCE 3.41% year on year with a 3.52% three-month annualised run rate). The position that follows is not a growth call. It is a call on the price of two things. First, policy: the 3-month bill at 3.87% against core PCE at 3.41% is a real policy rate of 0.46%, below any plausible neutral, so the stance is neutral rather than restrictive and the disinflation consensus expects has to arrive without help from the Fed. Second, inflation compensation: a 10-year breakeven of 2.24% prices CPI at 2.24% for a decade, below the Survey of Professional Forecasters' own 2.40% long-run median, while realised core runs 3.41%. The portfolio is therefore short nominal duration (6.5pp), long commodities to the line limit (5.0pp) and long cash (7.0pp), which is the only line paid to wait while the curve prices 54bp of tightening over two years. Credit is trimmed (1.5pp of high yield) because a 2.80% option-adjusted spread at the 17th percentile of its available history leaves roughly 70bp over a long-run expected loss. US equity is trimmed 2pp on the price of the entry rather than on the outlook: the dividend-based equity risk premium proxy is 0.91%, the lowest of the twenty meeting dates and down from 4.26% at the first. Developed ex-US and listed real estate are held at policy because this desk has no view on them, and a desk with a view on all nine lines has a view on none of them.",
+  "sleeves": {
+    "equity": 0.67,
+    "fixed_income": 0.16,
+    "real_assets": 0.1
+  },
+  "tracking_error_note": "Ex-ante tracking error against the policy portfolio is not computed here. It requires a covariance matrix, which is a risk model, which is the Quantitative desk's instrument and not this desk's. If this tilt breaches the 200bp budget it is truncated to the constraint under IPS 3.6 rank 4, by the mandate rather than by argument.",
+  "vintage_note": "All macro inputs read from the ALFRED vintage current on 2026-06-30. Real GDP last published quarter 2026-01-01; unemployment 2026-05-01; payrolls 2026-05-01; core PCE 2026-05-01. Market series are quoted, not revised, and are gated at the as-of date. No current-vintage (static) input is used in this read, so there is no anachronism to declare."
+}

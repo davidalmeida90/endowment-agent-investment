@@ -1,0 +1,4954 @@
+{
+  "generated": "2026-07-29T00:26:43",
+  "window": {
+    "start": "2021-07-01",
+    "end": "2026-06-30",
+    "report_date": "2026-07-28",
+    "months": 60,
+    "quarters": 20,
+    "estimation_prefix_years": 12
+  },
+  "rule": {
+    "quant_weight": 0.5,
+    "macro_weight": 0.5,
+    "description": "Equal weight on two independently reached active vectors, scaled to the tracking-error budget, truncated to every permitted range, filtered by the 50bps minimum trade, and gated by the compliance test.",
+    "all_historical_decisions_are_mechanical": true
+  },
+  "missing_observations": {},
+  "monthly": {
+    "dates": [
+      "2021-07-31",
+      "2021-08-31",
+      "2021-09-30",
+      "2021-10-31",
+      "2021-11-30",
+      "2021-12-31",
+      "2022-01-31",
+      "2022-02-28",
+      "2022-03-31",
+      "2022-04-30",
+      "2022-05-31",
+      "2022-06-30",
+      "2022-07-31",
+      "2022-08-31",
+      "2022-09-30",
+      "2022-10-31",
+      "2022-11-30",
+      "2022-12-31",
+      "2023-01-31",
+      "2023-02-28",
+      "2023-03-31",
+      "2023-04-30",
+      "2023-05-31",
+      "2023-06-30",
+      "2023-07-31",
+      "2023-08-31",
+      "2023-09-30",
+      "2023-10-31",
+      "2023-11-30",
+      "2023-12-31",
+      "2024-01-31",
+      "2024-02-29",
+      "2024-03-31",
+      "2024-04-30",
+      "2024-05-31",
+      "2024-06-30",
+      "2024-07-31",
+      "2024-08-31",
+      "2024-09-30",
+      "2024-10-31",
+      "2024-11-30",
+      "2024-12-31",
+      "2025-01-31",
+      "2025-02-28",
+      "2025-03-31",
+      "2025-04-30",
+      "2025-05-31",
+      "2025-06-30",
+      "2025-07-31",
+      "2025-08-31",
+      "2025-09-30",
+      "2025-10-31",
+      "2025-11-30",
+      "2025-12-31",
+      "2026-01-31",
+      "2026-02-28",
+      "2026-03-31",
+      "2026-04-30",
+      "2026-05-31",
+      "2026-06-30"
+    ],
+    "strategy": [
+      0.007949,
+      0.015633,
+      -0.030913,
+      0.037484,
+      -0.020709,
+      0.034001,
+      -0.032794,
+      -0.022943,
+      0.013545,
+      -0.056666,
+      0.01024,
+      -0.065244,
+      0.049865,
+      -0.038109,
+      -0.079647,
+      0.041531,
+      0.074032,
+      -0.032414,
+      0.061739,
+      -0.03347,
+      0.029182,
+      0.011898,
+      -0.016243,
+      0.040985,
+      0.029739,
+      -0.024192,
+      -0.034627,
+      -0.022454,
+      0.071244,
+      0.043143,
+      -0.003048,
+      0.03004,
+      0.026629,
+      -0.028459,
+      0.036135,
+      0.015909,
+      0.01836,
+      0.020924,
+      0.022318,
+      -0.026833,
+      0.020865,
+      -0.022451,
+      0.024961,
+      0.008592,
+      -0.015848,
+      0.000562,
+      0.034392,
+      0.0367,
+      0.003544,
+      0.02419,
+      0.029347,
+      0.017407,
+      0.002422,
+      0.007967,
+      0.032349,
+      0.023432,
+      -0.045195,
+      0.067028,
+      0.029759,
+      -0.005593
+    ],
+    "benchmark": [
+      0.007949,
+      0.01558,
+      -0.03176,
+      0.03721,
+      -0.019443,
+      0.032594,
+      -0.033389,
+      -0.024515,
+      0.007438,
+      -0.065841,
+      0.009081,
+      -0.066257,
+      0.056497,
+      -0.041303,
+      -0.084442,
+      0.041856,
+      0.079208,
+      -0.034415,
+      0.065467,
+      -0.0355,
+      0.032288,
+      0.012337,
+      -0.015615,
+      0.040885,
+      0.027938,
+      -0.024552,
+      -0.037481,
+      -0.024035,
+      0.07615,
+      0.043254,
+      -0.001108,
+      0.026851,
+      0.02684,
+      -0.030202,
+      0.037253,
+      0.015395,
+      0.018311,
+      0.020878,
+      0.021387,
+      -0.024957,
+      0.022551,
+      -0.023478,
+      0.025432,
+      0.008981,
+      -0.019783,
+      0.002308,
+      0.038519,
+      0.038703,
+      0.005546,
+      0.023799,
+      0.029358,
+      0.01667,
+      0.00312,
+      0.006679,
+      0.028643,
+      0.018959,
+      -0.047105,
+      0.070575,
+      0.032682,
+      -0.004345
+    ],
+    "active": [
+      0.0,
+      5.3e-05,
+      0.000848,
+      0.000274,
+      -0.001266,
+      0.001408,
+      0.000596,
+      0.001572,
+      0.006107,
+      0.009176,
+      0.001159,
+      0.001012,
+      -0.006632,
+      0.003194,
+      0.004795,
+      -0.000325,
+      -0.005176,
+      0.002001,
+      -0.003728,
+      0.00203,
+      -0.003106,
+      -0.000439,
+      -0.000628,
+      0.0001,
+      0.001801,
+      0.00036,
+      0.002853,
+      0.001582,
+      -0.004906,
+      -0.000111,
+      -0.00194,
+      0.003189,
+      -0.000211,
+      0.001743,
+      -0.001118,
+      0.000513,
+      4.9e-05,
+      4.6e-05,
+      0.000931,
+      -0.001875,
+      -0.001687,
+      0.001027,
+      -0.000472,
+      -0.000389,
+      0.003935,
+      -0.001747,
+      -0.004127,
+      -0.002003,
+      -0.002002,
+      0.00039,
+      -1e-05,
+      0.000737,
+      -0.000699,
+      0.001288,
+      0.003706,
+      0.004473,
+      0.00191,
+      -0.003547,
+      -0.002924,
+      -0.001248
+    ]
+  },
+  "weight_path": [
+    {
+      "us_equity": 0.38,
+      "dev_ex_us": 0.2,
+      "em_equity": 0.12,
+      "ust_duration": 0.12,
+      "us_ig": 0.08,
+      "us_hy": 0.05,
+      "commodities": 0.03,
+      "listed_re": 0.02,
+      "cash": 0.0
+    },
+    {
+      "us_equity": 0.38621,
+      "dev_ex_us": 0.19996,
+      "em_equity": 0.11139,
+      "ust_duration": 0.12142,
+      "us_ig": 0.0805,
+      "us_hy": 0.04966,
+      "commodities": 0.03015,
+      "listed_re": 0.02072,
+      "cash": 0.0
+    },
+    {
+      "us_equity": 0.37237,
+      "dev_ex_us": 0.20683,
+      "em_equity": 0.1114,
+      "ust_duration": 0.10866,
+      "us_ig": 0.07133,
+      "us_hy": 0.0556,
+      "commodities": 0.03957,
+      "listed_re": 0.02631,
+      "cash": 0.00794
+    },
+    {
+      "us_equity": 0.36632,
+      "dev_ex_us": 0.20645,
+      "em_equity": 0.11049,
+      "ust_duration": 0.11033,
+      "us_ig": 0.07249,
+      "us_hy": 0.05716,
+      "commodities": 0.04296,
+      "listed_re": 0.02561,
+      "cash": 0.00819
+    },
+    {
+      "us_equity": 0.37786,
+      "dev_ex_us": 0.20532,
+      "em_equity": 0.10764,
+      "ust_duration": 0.10588,
+      "us_ig": 0.07024,
+      "us_hy": 0.05492,
+      "commodities": 0.04381,
+      "listed_re": 0.02644,
+      "cash": 0.0079
+    },
+    {
+      "us_equity": 0.37062,
+      "dev_ex_us": 0.21228,
+      "em_equity": 0.10543,
+      "ust_duration": 0.1093,
+      "us_ig": 0.07164,
+      "us_hy": 0.05543,
+      "commodities": 0.04081,
+      "listed_re": 0.02643,
+      "cash": 0.00806
+    },
+    {
+      "us_equity": 0.37501,
+      "dev_ex_us": 0.21431,
+      "em_equity": 0.1035,
+      "ust_duration": 0.10515,
+      "us_ig": 0.06926,
+      "us_hy": 0.05483,
+      "commodities": 0.04211,
+      "listed_re": 0.02804,
+      "cash": 0.0078
+    },
+    {
+      "us_equity": 0.36728,
+      "dev_ex_us": 0.21352,
+      "em_equity": 0.10698,
+      "ust_duration": 0.10642,
+      "us_ig": 0.06904,
+      "us_hy": 0.05518,
+      "commodities": 0.04697,
+      "listed_re": 0.02655,
+      "cash": 0.00806
+    },
+    {
+      "us_equity": 0.33716,
+      "dev_ex_us": 0.23157,
+      "em_equity": 0.10477,
+      "ust_duration": 0.05121,
+      "us_ig": 0.04956,
+      "us_hy": 0.05599,
+      "commodities": 0.06373,
+      "listed_re": 0.02623,
+      "cash": 0.07978
+    },
+    {
+      "us_equity": 0.34513,
+      "dev_ex_us": 0.22965,
+      "em_equity": 0.09986,
+      "ust_duration": 0.04847,
+      "us_ig": 0.04748,
+      "us_hy": 0.05453,
+      "commodities": 0.06864,
+      "listed_re": 0.0275,
+      "cash": 0.07874
+    },
+    {
+      "us_equity": 0.33375,
+      "dev_ex_us": 0.22704,
+      "em_equity": 0.09937,
+      "ust_duration": 0.04921,
+      "us_ig": 0.04696,
+      "us_hy": 0.05539,
+      "commodities": 0.07686,
+      "listed_re": 0.02796,
+      "cash": 0.08346
+    },
+    {
+      "us_equity": 0.34193,
+      "dev_ex_us": 0.22922,
+      "em_equity": 0.11248,
+      "ust_duration": 0.07165,
+      "us_ig": 0.04735,
+      "us_hy": 0.04161,
+      "commodities": 0.05802,
+      "listed_re": 0.02013,
+      "cash": 0.0776
+    },
+    {
+      "us_equity": 0.3356,
+      "dev_ex_us": 0.2237,
+      "em_equity": 0.11412,
+      "ust_duration": 0.07598,
+      "us_ig": 0.04882,
+      "us_hy": 0.04137,
+      "commodities": 0.05741,
+      "listed_re": 0.01993,
+      "cash": 0.08308
+    },
+    {
+      "us_equity": 0.3491,
+      "dev_ex_us": 0.22409,
+      "em_equity": 0.10832,
+      "ust_duration": 0.07452,
+      "us_ig": 0.04856,
+      "us_hy": 0.04204,
+      "commodities": 0.0536,
+      "listed_re": 0.02062,
+      "cash": 0.07916
+    },
+    {
+      "us_equity": 0.34812,
+      "dev_ex_us": 0.21871,
+      "em_equity": 0.11112,
+      "ust_duration": 0.08094,
+      "us_ig": 0.05391,
+      "us_hy": 0.02971,
+      "commodities": 0.05489,
+      "listed_re": 0.02015,
+      "cash": 0.08245
+    },
+    {
+      "us_equity": 0.34327,
+      "dev_ex_us": 0.21572,
+      "em_equity": 0.1068,
+      "ust_duration": 0.08378,
+      "us_ig": 0.05508,
+      "us_hy": 0.03107,
+      "commodities": 0.05544,
+      "listed_re": 0.01907,
+      "cash": 0.08977
+    },
+    {
+      "us_equity": 0.35637,
+      "dev_ex_us": 0.21932,
+      "em_equity": 0.10051,
+      "ust_duration": 0.07926,
+      "us_ig": 0.05249,
+      "us_hy": 0.03084,
+      "commodities": 0.05592,
+      "listed_re": 0.01895,
+      "cash": 0.08633
+    },
+    {
+      "us_equity": 0.35556,
+      "dev_ex_us": 0.20864,
+      "em_equity": 0.11902,
+      "ust_duration": 0.07647,
+      "us_ig": 0.05212,
+      "us_hy": 0.04997,
+      "commodities": 0.05284,
+      "listed_re": 0.01873,
+      "cash": 0.06666
+    },
+    {
+      "us_equity": 0.34627,
+      "dev_ex_us": 0.21171,
+      "em_equity": 0.11976,
+      "ust_duration": 0.07785,
+      "us_ig": 0.05303,
+      "us_hy": 0.05074,
+      "commodities": 0.05312,
+      "listed_re": 0.01838,
+      "cash": 0.06914
+    },
+    {
+      "us_equity": 0.34665,
+      "dev_ex_us": 0.21735,
+      "em_equity": 0.12309,
+      "ust_duration": 0.07595,
+      "us_ig": 0.05252,
+      "us_hy": 0.04954,
+      "commodities": 0.05048,
+      "listed_re": 0.01912,
+      "cash": 0.0653
+    },
+    {
+      "us_equity": 0.34964,
+      "dev_ex_us": 0.21797,
+      "em_equity": 0.12534,
+      "ust_duration": 0.06838,
+      "us_ig": 0.05207,
+      "us_hy": 0.05029,
+      "commodities": 0.0499,
+      "listed_re": 0.01862,
+      "cash": 0.0678
+    },
+    {
+      "us_equity": 0.35232,
+      "dev_ex_us": 0.21841,
+      "em_equity": 0.12571,
+      "ust_duration": 0.06892,
+      "us_ig": 0.05254,
+      "us_hy": 0.04983,
+      "commodities": 0.04844,
+      "listed_re": 0.0177,
+      "cash": 0.06614
+    },
+    {
+      "us_equity": 0.35373,
+      "dev_ex_us": 0.22218,
+      "em_equity": 0.12319,
+      "ust_duration": 0.06866,
+      "us_ig": 0.05224,
+      "us_hy": 0.04934,
+      "commodities": 0.04751,
+      "listed_re": 0.01755,
+      "cash": 0.0656
+    },
+    {
+      "us_equity": 0.36709,
+      "dev_ex_us": 0.2084,
+      "em_equity": 0.12222,
+      "ust_duration": 0.0892,
+      "us_ig": 0.04576,
+      "us_hy": 0.03809,
+      "commodities": 0.0452,
+      "listed_re": 0.01713,
+      "cash": 0.06693
+    },
+    {
+      "us_equity": 0.37547,
+      "dev_ex_us": 0.20914,
+      "em_equity": 0.12257,
+      "ust_duration": 0.08461,
+      "us_ig": 0.04431,
+      "us_hy": 0.03724,
+      "commodities": 0.0447,
+      "listed_re": 0.01738,
+      "cash": 0.06459
+    },
+    {
+      "us_equity": 0.37657,
+      "dev_ex_us": 0.20859,
+      "em_equity": 0.12622,
+      "ust_duration": 0.08163,
+      "us_ig": 0.04305,
+      "us_hy": 0.03657,
+      "commodities": 0.04719,
+      "listed_re": 0.01722,
+      "cash": 0.06297
+    },
+    {
+      "us_equity": 0.37014,
+      "dev_ex_us": 0.2125,
+      "em_equity": 0.12077,
+      "ust_duration": 0.08304,
+      "us_ig": 0.04358,
+      "us_hy": 0.0578,
+      "commodities": 0.04015,
+      "listed_re": 0.01705,
+      "cash": 0.05495
+    },
+    {
+      "us_equity": 0.36521,
+      "dev_ex_us": 0.21208,
+      "em_equity": 0.1212,
+      "ust_duration": 0.08332,
+      "us_ig": 0.04353,
+      "us_hy": 0.0589,
+      "commodities": 0.04222,
+      "listed_re": 0.01638,
+      "cash": 0.05715
+    },
+    {
+      "us_equity": 0.36549,
+      "dev_ex_us": 0.21066,
+      "em_equity": 0.1199,
+      "ust_duration": 0.08359,
+      "us_ig": 0.04346,
+      "us_hy": 0.05963,
+      "commodities": 0.04241,
+      "listed_re": 0.01615,
+      "cash": 0.05871
+    },
+    {
+      "us_equity": 0.37235,
+      "dev_ex_us": 0.21281,
+      "em_equity": 0.14909,
+      "ust_duration": 0.09947,
+      "us_ig": 0.04364,
+      "us_hy": 0.03004,
+      "commodities": 0.00813,
+      "listed_re": 0.02941,
+      "cash": 0.05506
+    },
+    {
+      "us_equity": 0.3732,
+      "dev_ex_us": 0.21489,
+      "em_equity": 0.148,
+      "ust_duration": 0.09894,
+      "us_ig": 0.04387,
+      "us_hy": 0.02971,
+      "commodities": 0.00753,
+      "listed_re": 0.03086,
+      "cash": 0.05301
+    },
+    {
+      "us_equity": 0.3803,
+      "dev_ex_us": 0.21458,
+      "em_equity": 0.14173,
+      "ust_duration": 0.09931,
+      "us_ig": 0.04381,
+      "us_hy": 0.02984,
+      "commodities": 0.00766,
+      "listed_re": 0.02939,
+      "cash": 0.05339
+    },
+    {
+      "us_equity": 0.36673,
+      "dev_ex_us": 0.20596,
+      "em_equity": 0.13213,
+      "ust_duration": 0.11576,
+      "us_ig": 0.04171,
+      "us_hy": 0.01793,
+      "commodities": 0.03864,
+      "listed_re": 0.02909,
+      "cash": 0.05207
+    },
+    {
+      "us_equity": 0.36886,
+      "dev_ex_us": 0.20737,
+      "em_equity": 0.13219,
+      "ust_duration": 0.11357,
+      "us_ig": 0.04125,
+      "us_hy": 0.01765,
+      "commodities": 0.03931,
+      "listed_re": 0.02889,
+      "cash": 0.05092
+    },
+    {
+      "us_equity": 0.36435,
+      "dev_ex_us": 0.20652,
+      "em_equity": 0.13577,
+      "ust_duration": 0.11324,
+      "us_ig": 0.04108,
+      "us_hy": 0.01792,
+      "commodities": 0.04111,
+      "listed_re": 0.02737,
+      "cash": 0.05264
+    },
+    {
+      "us_equity": 0.36943,
+      "dev_ex_us": 0.19626,
+      "em_equity": 0.14817,
+      "ust_duration": 0.13292,
+      "us_ig": 0.05145,
+      "us_hy": 0.01758,
+      "commodities": 0.01309,
+      "listed_re": 0.02762,
+      "cash": 0.04348
+    },
+    {
+      "us_equity": 0.37644,
+      "dev_ex_us": 0.18964,
+      "em_equity": 0.14965,
+      "ust_duration": 0.13241,
+      "us_ig": 0.05094,
+      "us_hy": 0.01738,
+      "commodities": 0.01286,
+      "listed_re": 0.0277,
+      "cash": 0.04297
+    },
+    {
+      "us_equity": 0.37413,
+      "dev_ex_us": 0.19104,
+      "em_equity": 0.1482,
+      "ust_duration": 0.13379,
+      "us_ig": 0.05134,
+      "us_hy": 0.01747,
+      "commodities": 0.01228,
+      "listed_re": 0.02936,
+      "cash": 0.04239
+    },
+    {
+      "us_equity": 0.35119,
+      "dev_ex_us": 0.19323,
+      "em_equity": 0.14658,
+      "ust_duration": 0.18991,
+      "us_ig": 0.05123,
+      "us_hy": 0.01738,
+      "commodities": 0.01178,
+      "listed_re": 0.03026,
+      "cash": 0.00845
+    },
+    {
+      "us_equity": 0.35073,
+      "dev_ex_us": 0.19049,
+      "em_equity": 0.15161,
+      "ust_duration": 0.18833,
+      "us_ig": 0.05109,
+      "us_hy": 0.01729,
+      "commodities": 0.0116,
+      "listed_re": 0.03056,
+      "cash": 0.0083
+    },
+    {
+      "us_equity": 0.35718,
+      "dev_ex_us": 0.18542,
+      "em_equity": 0.151,
+      "ust_duration": 0.18696,
+      "us_ig": 0.05083,
+      "us_hy": 0.01759,
+      "commodities": 0.01209,
+      "listed_re": 0.03035,
+      "cash": 0.00857
+    },
+    {
+      "us_equity": 0.37075,
+      "dev_ex_us": 0.18105,
+      "em_equity": 0.1296,
+      "ust_duration": 0.1457,
+      "us_ig": 0.05069,
+      "us_hy": 0.01752,
+      "commodities": 0.05869,
+      "listed_re": 0.02573,
+      "cash": 0.02026
+    },
+    {
+      "us_equity": 0.37008,
+      "dev_ex_us": 0.17972,
+      "em_equity": 0.13031,
+      "ust_duration": 0.14566,
+      "us_ig": 0.05046,
+      "us_hy": 0.01778,
+      "commodities": 0.06106,
+      "listed_re": 0.02412,
+      "cash": 0.02081
+    },
+    {
+      "us_equity": 0.37077,
+      "dev_ex_us": 0.18376,
+      "em_equity": 0.12987,
+      "ust_duration": 0.14299,
+      "us_ig": 0.04951,
+      "us_hy": 0.01758,
+      "commodities": 0.06122,
+      "listed_re": 0.02392,
+      "cash": 0.02037
+    },
+    {
+      "us_equity": 0.32,
+      "dev_ex_us": 0.1928,
+      "em_equity": 0.13626,
+      "ust_duration": 0.165,
+      "us_ig": 0.045,
+      "us_hy": 0.03594,
+      "commodities": 0.0552,
+      "listed_re": 0.0423,
+      "cash": 0.0075
+    },
+    {
+      "us_equity": 0.30701,
+      "dev_ex_us": 0.19625,
+      "em_equity": 0.14001,
+      "ust_duration": 0.16822,
+      "us_ig": 0.04551,
+      "us_hy": 0.03612,
+      "commodities": 0.05736,
+      "listed_re": 0.04186,
+      "cash": 0.00765
+    },
+    {
+      "us_equity": 0.30418,
+      "dev_ex_us": 0.20339,
+      "em_equity": 0.14012,
+      "ust_duration": 0.1699,
+      "us_ig": 0.04536,
+      "us_hy": 0.03614,
+      "commodities": 0.05241,
+      "listed_re": 0.04082,
+      "cash": 0.00767
+    },
+    {
+      "us_equity": 0.31255,
+      "dev_ex_us": 0.1994,
+      "em_equity": 0.14091,
+      "ust_duration": 0.21041,
+      "us_ig": 0.06014,
+      "us_hy": 0.02054,
+      "commodities": 0.02026,
+      "listed_re": 0.02836,
+      "cash": 0.00744
+    },
+    {
+      "us_equity": 0.31694,
+      "dev_ex_us": 0.19693,
+      "em_equity": 0.14543,
+      "ust_duration": 0.20618,
+      "us_ig": 0.05921,
+      "us_hy": 0.02017,
+      "commodities": 0.02041,
+      "listed_re": 0.02754,
+      "cash": 0.0072
+    },
+    {
+      "us_equity": 0.32309,
+      "dev_ex_us": 0.19213,
+      "em_equity": 0.14587,
+      "ust_duration": 0.20423,
+      "us_ig": 0.05895,
+      "us_hy": 0.02013,
+      "commodities": 0.02093,
+      "listed_re": 0.02747,
+      "cash": 0.0072
+    },
+    {
+      "us_equity": 0.34081,
+      "dev_ex_us": 0.19608,
+      "em_equity": 0.14624,
+      "ust_duration": 0.16473,
+      "us_ig": 0.04495,
+      "us_hy": 0.01987,
+      "commodities": 0.04988,
+      "listed_re": 0.02248,
+      "cash": 0.01497
+    },
+    {
+      "us_equity": 0.34286,
+      "dev_ex_us": 0.1944,
+      "em_equity": 0.15214,
+      "ust_duration": 0.16106,
+      "us_ig": 0.04448,
+      "us_hy": 0.01947,
+      "commodities": 0.04915,
+      "listed_re": 0.02185,
+      "cash": 0.01459
+    },
+    {
+      "us_equity": 0.34502,
+      "dev_ex_us": 0.19337,
+      "em_equity": 0.15486,
+      "ust_duration": 0.15943,
+      "us_ig": 0.04378,
+      "us_hy": 0.01914,
+      "commodities": 0.04906,
+      "listed_re": 0.02095,
+      "cash": 0.01439
+    },
+    {
+      "us_equity": 0.32244,
+      "dev_ex_us": 0.2375,
+      "em_equity": 0.13385,
+      "ust_duration": 0.15473,
+      "us_ig": 0.04971,
+      "us_hy": 0.01923,
+      "commodities": 0.04933,
+      "listed_re": 0.01349,
+      "cash": 0.01973
+    },
+    {
+      "us_equity": 0.32013,
+      "dev_ex_us": 0.242,
+      "em_equity": 0.13565,
+      "ust_duration": 0.15233,
+      "us_ig": 0.04895,
+      "us_hy": 0.01918,
+      "commodities": 0.04904,
+      "listed_re": 0.01309,
+      "cash": 0.01963
+    },
+    {
+      "us_equity": 0.31467,
+      "dev_ex_us": 0.24591,
+      "em_equity": 0.14194,
+      "ust_duration": 0.14722,
+      "us_ig": 0.04758,
+      "us_hy": 0.01869,
+      "commodities": 0.05191,
+      "listed_re": 0.01301,
+      "cash": 0.01908
+    },
+    {
+      "us_equity": 0.32464,
+      "dev_ex_us": 0.22802,
+      "em_equity": 0.12824,
+      "ust_duration": 0.16379,
+      "us_ig": 0.05469,
+      "us_hy": 0.01826,
+      "commodities": 0.04472,
+      "listed_re": 0.01895,
+      "cash": 0.01869
+    },
+    {
+      "us_equity": 0.3232,
+      "dev_ex_us": 0.2201,
+      "em_equity": 0.12187,
+      "ust_duration": 0.16755,
+      "us_ig": 0.05609,
+      "us_hy": 0.01894,
+      "commodities": 0.05402,
+      "listed_re": 0.01859,
+      "cash": 0.01963
+    },
+    {
+      "us_equity": 0.33472,
+      "dev_ex_us": 0.2173,
+      "em_equity": 0.1287,
+      "ust_duration": 0.15679,
+      "us_ig": 0.05272,
+      "us_hy": 0.01802,
+      "commodities": 0.05439,
+      "listed_re": 0.01892,
+      "cash": 0.01845
+    },
+    {
+      "us_equity": 0.34215,
+      "dev_ex_us": 0.21613,
+      "em_equity": 0.12554,
+      "ust_duration": 0.13598,
+      "us_ig": 0.05163,
+      "us_hy": 0.01758,
+      "commodities": 0.05006,
+      "listed_re": 0.02599,
+      "cash": 0.03493
+    }
+  ],
+  "decisions": [
+    {
+      "n": 1,
+      "date": "2021-09-30",
+      "fiscal_year": "FY2022",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.391579,
+        "dev_ex_us": 0.199728,
+        "em_equity": 0.111397,
+        "ust_duration": 0.119083,
+        "us_ig": 0.078984,
+        "us_hy": 0.049191,
+        "commodities": 0.029199,
+        "listed_re": 0.02084,
+        "cash": 0.0
+      },
+      "weights_after": {
+        "us_equity": 0.372367,
+        "dev_ex_us": 0.206828,
+        "em_equity": 0.111397,
+        "ust_duration": 0.108664,
+        "us_ig": 0.071327,
+        "us_hy": 0.055598,
+        "commodities": 0.039568,
+        "listed_re": 0.02631,
+        "cash": 0.00794
+      },
+      "active_after_bps": {
+        "us_equity": -76.3,
+        "dev_ex_us": 68.3,
+        "em_equity": -86.0,
+        "ust_duration": -113.4,
+        "us_ig": -86.7,
+        "us_hy": 56.0,
+        "commodities": 95.7,
+        "listed_re": 63.1,
+        "cash": 79.4
+      },
+      "trades_pp": {
+        "commodities": 1.037,
+        "us_equity": -1.921,
+        "ust_duration": -1.042,
+        "us_hy": 0.641,
+        "listed_re": 0.547,
+        "cash": 0.794,
+        "us_ig": -0.766,
+        "dev_ex_us": 0.71
+      },
+      "turnover_pp": 3.729,
+      "cost_bps": 0.51,
+      "quant_allocation": {
+        "us_equity": 0.342866,
+        "dev_ex_us": 0.242915,
+        "em_equity": 0.097785,
+        "ust_duration": 0.086434,
+        "us_ig": 0.03,
+        "us_hy": 0.1,
+        "commodities": 0.04,
+        "listed_re": 0.06,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.075,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.05
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 650.0,
+      "signal_readings": {
+        "us_equity": -0.0804,
+        "dev_ex_us": 0.252,
+        "em_equity": -0.1454,
+        "ust_duration": -0.4898,
+        "us_ig": -0.5673,
+        "us_hy": 0.1056,
+        "commodities": 0.6725,
+        "listed_re": 0.8254,
+        "cash": -0.5725
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "high",
+        "policy": "accommodative",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 71.3,
+      "te_after_bps": 22.5,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_stress",
+      "all_binding": [
+        "drawdown_stress",
+        "drawdown_ex_ante",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 2,
+        "fund_in_breach": [
+          "drawdown_ex_ante"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with high inflation and accommodative policy, classified overheat. The composite signal was strongest on Listed real estate at +0.83, Commodities at +0.67, T-bills at -0.57. The reconciled allocation moved US equity (1.9)pp; US Treasury duration (1.0)pp; Commodities 1.0pp. The binding constraint at this meeting was drawdown_stress.",
+      "inputs_cited": [
+        {
+          "name": "composite score, Listed real estate",
+          "value": 0.825
+        },
+        {
+          "name": "composite score, Commodities",
+          "value": 0.672
+        },
+        {
+          "name": "composite score, T-bills",
+          "value": -0.572
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 71.3
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on T-bills stands at -0.57. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "cash",
+          "level": -0.572,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on US investment grade stands at -0.57. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.567,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 3.5,
+        "months_held": 3,
+        "strategy_return_pct": 5.054,
+        "benchmark_return_pct": 5.019,
+        "cost_bps": 0.51,
+        "verdict": "too small to tell"
+      }
+    },
+    {
+      "n": 2,
+      "date": "2021-12-31",
+      "fiscal_year": "FY2022",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.382747,
+        "dev_ex_us": 0.200156,
+        "em_equity": 0.105428,
+        "ust_duration": 0.109296,
+        "us_ig": 0.071641,
+        "us_hy": 0.055426,
+        "commodities": 0.040813,
+        "listed_re": 0.02643,
+        "cash": 0.008062
+      },
+      "weights_after": {
+        "us_equity": 0.370623,
+        "dev_ex_us": 0.212279,
+        "em_equity": 0.105428,
+        "ust_duration": 0.109296,
+        "us_ig": 0.071641,
+        "us_hy": 0.055426,
+        "commodities": 0.040813,
+        "listed_re": 0.02643,
+        "cash": 0.008062
+      },
+      "active_after_bps": {
+        "us_equity": -93.8,
+        "dev_ex_us": 122.8,
+        "em_equity": -145.7,
+        "ust_duration": -107.0,
+        "us_ig": -83.6,
+        "us_hy": 54.3,
+        "commodities": 108.1,
+        "listed_re": 64.3,
+        "cash": 80.6
+      },
+      "trades_pp": {
+        "us_equity": -1.212,
+        "dev_ex_us": 1.212
+      },
+      "turnover_pp": 1.212,
+      "cost_bps": 0.07,
+      "quant_allocation": {
+        "us_equity": 0.331812,
+        "dev_ex_us": 0.28,
+        "em_equity": 0.071059,
+        "ust_duration": 0.087129,
+        "us_ig": 0.03,
+        "us_hy": 0.1,
+        "commodities": 0.043667,
+        "listed_re": 0.056333,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.055,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.07
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 800.0,
+      "signal_readings": {
+        "us_equity": -0.0129,
+        "dev_ex_us": 0.4642,
+        "em_equity": -0.2076,
+        "ust_duration": -0.3563,
+        "us_ig": -0.5591,
+        "us_hy": 0.0082,
+        "commodities": 0.4906,
+        "listed_re": 0.4925,
+        "cash": -0.3196
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "high",
+        "policy": "accommodative",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 87.0,
+      "te_after_bps": 28.3,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_stress",
+      "all_binding": [
+        "drawdown_stress",
+        "drawdown_ex_ante",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 2,
+        "fund_in_breach": [
+          "drawdown_ex_ante"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with high inflation and accommodative policy, classified overheat. The composite signal was strongest on US investment grade at -0.56, Listed real estate at +0.49, Commodities at +0.49. The reconciled allocation moved Developed ex-US 1.2pp; US equity (1.2)pp. The binding constraint at this meeting was drawdown_stress.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.559
+        },
+        {
+          "name": "composite score, Listed real estate",
+          "value": 0.492
+        },
+        {
+          "name": "composite score, Commodities",
+          "value": 0.491
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 87.0
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.56. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.559,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on Listed real estate stands at +0.49. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "listed_re",
+          "level": 0.492,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on T-bills stands at -0.57. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.31960655192312504,
+          "happened": false
+        },
+        {
+          "text": "Composite on US investment grade stands at -0.57. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5591320674983576,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 78.9,
+        "months_held": 3,
+        "strategy_return_pct": -4.218,
+        "benchmark_return_pct": -5.007,
+        "cost_bps": 0.07,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 3,
+      "date": "2022-03-31",
+      "fiscal_year": "FY2022",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.364805,
+        "dev_ex_us": 0.211044,
+        "em_equity": 0.104766,
+        "ust_duration": 0.108583,
+        "us_ig": 0.069153,
+        "us_hy": 0.055992,
+        "commodities": 0.05118,
+        "listed_re": 0.026228,
+        "cash": 0.008249
+      },
+      "weights_after": {
+        "us_equity": 0.337161,
+        "dev_ex_us": 0.231573,
+        "em_equity": 0.104766,
+        "ust_duration": 0.051214,
+        "us_ig": 0.049561,
+        "us_hy": 0.055992,
+        "commodities": 0.063726,
+        "listed_re": 0.026228,
+        "cash": 0.079778
+      },
+      "active_after_bps": {
+        "us_equity": -428.4,
+        "dev_ex_us": 315.7,
+        "em_equity": -152.3,
+        "ust_duration": -687.9,
+        "us_ig": -304.4,
+        "us_hy": 59.9,
+        "commodities": 337.3,
+        "listed_re": 62.3,
+        "cash": 797.8
+      },
+      "trades_pp": {
+        "commodities": 1.255,
+        "us_equity": -2.764,
+        "ust_duration": -5.737,
+        "cash": 7.153,
+        "us_ig": -1.959,
+        "dev_ex_us": 2.053
+      },
+      "turnover_pp": 10.46,
+      "cost_bps": 0.8,
+      "quant_allocation": {
+        "us_equity": 0.315562,
+        "dev_ex_us": 0.26411,
+        "em_equity": 0.097686,
+        "ust_duration": 0.05,
+        "us_ig": 0.03,
+        "us_hy": 0.07,
+        "commodities": 0.048041,
+        "listed_re": 0.03169,
+        "cash": 0.092912
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.055,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.07
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 641.1,
+      "signal_readings": {
+        "us_equity": -0.2658,
+        "dev_ex_us": 0.508,
+        "em_equity": -0.0403,
+        "ust_duration": -0.3957,
+        "us_ig": -0.8252,
+        "us_hy": -0.0632,
+        "commodities": 0.8229,
+        "listed_re": 0.1284,
+        "cash": 0.1309
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "high",
+        "policy": "accommodative",
+        "liquidity": "neutral"
+      },
+      "te_before_bps": 92.6,
+      "te_after_bps": 92.7,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_stress",
+      "all_binding": [
+        "drawdown_stress",
+        "leverage_gross",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [],
+        "raw_verdict": "PASS-WITH-DISCLOSURE",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with high inflation and accommodative policy, classified overheat. The composite signal was strongest on US investment grade at -0.83, Commodities at +0.82, Developed ex-US at +0.51. The reconciled allocation moved T-bills 7.2pp; US Treasury duration (5.7)pp; US equity (2.8)pp. The binding constraint at this meeting was drawdown_stress.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.825
+        },
+        {
+          "name": "composite score, Commodities",
+          "value": 0.823
+        },
+        {
+          "name": "composite score, Developed ex-US",
+          "value": 0.508
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 92.6
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.51. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "dev_ex_us",
+          "level": 0.508,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on US Treasury duration stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "ust_duration",
+          "level": -0.396,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.56. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.8252264076728607,
+          "happened": true
+        },
+        {
+          "text": "Composite on Listed real estate stands at +0.49. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.12838209653817112,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 106.3,
+        "months_held": 3,
+        "strategy_return_pct": -10.918,
+        "benchmark_return_pct": -11.981,
+        "cost_bps": 0.8,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 4,
+      "date": "2022-06-30",
+      "fiscal_year": "FY2022",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.331116,
+        "dev_ex_us": 0.229219,
+        "em_equity": 0.098964,
+        "ust_duration": 0.049016,
+        "us_ig": 0.04735,
+        "us_hy": 0.05572,
+        "commodities": 0.079596,
+        "listed_re": 0.026377,
+        "cash": 0.082643
+      },
+      "weights_after": {
+        "us_equity": 0.341931,
+        "dev_ex_us": 0.229219,
+        "em_equity": 0.112484,
+        "ust_duration": 0.071651,
+        "us_ig": 0.04735,
+        "us_hy": 0.041607,
+        "commodities": 0.058023,
+        "listed_re": 0.020131,
+        "cash": 0.077603
+      },
+      "active_after_bps": {
+        "us_equity": -380.7,
+        "dev_ex_us": 292.2,
+        "em_equity": -75.2,
+        "ust_duration": -483.5,
+        "us_ig": -326.5,
+        "us_hy": -83.9,
+        "commodities": 280.2,
+        "listed_re": 1.3,
+        "cash": 776.0
+      },
+      "trades_pp": {
+        "commodities": -2.157,
+        "us_equity": 1.081,
+        "ust_duration": 2.264,
+        "us_hy": -1.411,
+        "listed_re": -0.625,
+        "cash": -0.504,
+        "em_equity": 1.352
+      },
+      "turnover_pp": 4.697,
+      "cost_bps": 0.94,
+      "quant_allocation": {
+        "us_equity": 0.308426,
+        "dev_ex_us": 0.256997,
+        "em_equity": 0.129423,
+        "ust_duration": 0.087389,
+        "us_ig": 0.030009,
+        "us_hy": 0.032621,
+        "commodities": 0.035141,
+        "listed_re": 0.02,
+        "cash": 0.099994
+      },
+      "macro_allocation": {
+        "us_equity": 0.375,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.095,
+        "ust_duration": 0.055,
+        "us_ig": 0.07,
+        "us_hy": 0.05,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.055
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 665.7,
+      "signal_readings": {
+        "us_equity": -0.8888,
+        "dev_ex_us": 0.4901,
+        "em_equity": 0.2896,
+        "ust_duration": -0.0795,
+        "us_ig": -0.9145,
+        "us_hy": -0.2806,
+        "commodities": 0.8412,
+        "listed_re": -0.3505,
+        "cash": 0.893
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "accommodative",
+        "liquidity": "stressed"
+      },
+      "te_before_bps": 84.6,
+      "te_after_bps": 85.7,
+      "truncated_to_budget": false,
+      "binding_constraint": "leverage_gross",
+      "all_binding": [
+        "leverage_gross",
+        "min_trade",
+        "drawdown_stress",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [],
+        "raw_verdict": "PASS-WITH-DISCLOSURE",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and accommodative policy, classified overheat. The composite signal was strongest on US investment grade at -0.91, T-bills at +0.89, US equity at -0.89. The reconciled allocation moved US Treasury duration 2.3pp; Commodities (2.2)pp; US high yield (1.4)pp. The binding constraint at this meeting was leverage_gross.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.915
+        },
+        {
+          "name": "composite score, T-bills",
+          "value": 0.893
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.889
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 84.6
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.49. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "dev_ex_us",
+          "level": 0.49,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.35. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "listed_re",
+          "level": -0.35,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (8.7)% against the 20% board limit.",
+          "metric": "drawdown",
+          "level": -0.0872,
+          "trigger": -0.2,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.51. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.49010238191346156,
+          "happened": false
+        },
+        {
+          "text": "Composite on US Treasury duration stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.07948439866548218,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 20.9,
+        "months_held": 3,
+        "strategy_return_pct": -7.058,
+        "benchmark_return_pct": -7.267,
+        "cost_bps": 0.94,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 5,
+      "date": "2022-09-30",
+      "fiscal_year": "FY2023",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.348119,
+        "dev_ex_us": 0.218715,
+        "em_equity": 0.111116,
+        "ust_duration": 0.074484,
+        "us_ig": 0.048251,
+        "us_hy": 0.041826,
+        "commodities": 0.054888,
+        "listed_re": 0.020147,
+        "cash": 0.082454
+      },
+      "weights_after": {
+        "us_equity": 0.348119,
+        "dev_ex_us": 0.218715,
+        "em_equity": 0.111116,
+        "ust_duration": 0.080937,
+        "us_ig": 0.053915,
+        "us_hy": 0.029709,
+        "commodities": 0.054888,
+        "listed_re": 0.020147,
+        "cash": 0.082454
+      },
+      "active_after_bps": {
+        "us_equity": -318.8,
+        "dev_ex_us": 187.1,
+        "em_equity": -88.8,
+        "ust_duration": -390.6,
+        "us_ig": -260.9,
+        "us_hy": -202.9,
+        "commodities": 248.9,
+        "listed_re": 1.5,
+        "cash": 824.5
+      },
+      "trades_pp": {
+        "ust_duration": 0.645,
+        "us_hy": -1.212,
+        "us_ig": 0.566
+      },
+      "turnover_pp": 1.212,
+      "cost_bps": 0.2,
+      "quant_allocation": {
+        "us_equity": 0.319839,
+        "dev_ex_us": 0.255649,
+        "em_equity": 0.130564,
+        "ust_duration": 0.090148,
+        "us_ig": 0.030704,
+        "us_hy": 0.031033,
+        "commodities": 0.023132,
+        "listed_re": 0.02,
+        "cash": 0.098931
+      },
+      "macro_allocation": {
+        "us_equity": 0.375,
+        "dev_ex_us": 0.19,
+        "em_equity": 0.095,
+        "ust_duration": 0.075,
+        "us_ig": 0.08,
+        "us_hy": 0.03,
+        "commodities": 0.075,
+        "listed_re": 0.025,
+        "cash": 0.055
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 656.5,
+      "signal_readings": {
+        "us_equity": -0.9476,
+        "dev_ex_us": 0.4176,
+        "em_equity": 0.3372,
+        "ust_duration": -0.0414,
+        "us_ig": -0.8216,
+        "us_hy": -0.384,
+        "commodities": 0.5857,
+        "listed_re": -0.5057,
+        "cash": 1.3598
+      },
+      "regime": {
+        "label": "stagflation_risk",
+        "growth": "slowdown",
+        "inflation": "high",
+        "policy": "neutral",
+        "liquidity": "stressed"
+      },
+      "te_before_bps": 76.4,
+      "te_after_bps": 85.3,
+      "truncated_to_budget": false,
+      "binding_constraint": "leverage_gross",
+      "all_binding": [
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [],
+        "raw_verdict": "PASS-WITH-DISCLOSURE",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was slowdown growth with high inflation and neutral policy, classified stagflation_risk. The composite signal was strongest on T-bills at +1.36, US equity at -0.95, US investment grade at -0.82. The reconciled allocation moved US high yield (1.2)pp; US Treasury duration 0.6pp; US investment grade 0.6pp. The binding constraint at this meeting was leverage_gross.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 1.36
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.948
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.822
+        },
+        {
+          "name": "regime read",
+          "value": "stagflation_risk"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 76.4
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Commodities stands at +0.59. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "commodities",
+          "level": 0.586,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "listed_re",
+          "level": -0.506,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (13.8)% against the 20% board limit.",
+          "metric": "drawdown",
+          "level": -0.1384,
+          "trigger": -0.2,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.49. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.41755136935051684,
+          "happened": false
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.35. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.505666657258727,
+          "happened": false
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (8.7)% against the 20% board limit.",
+          "metric": "drawdown",
+          "observed": -0.1384,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -33.1,
+        "months_held": 3,
+        "strategy_return_pct": 8.238,
+        "benchmark_return_pct": 8.568,
+        "cost_bps": 0.2,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 6,
+      "date": "2022-12-31",
+      "fiscal_year": "FY2023",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.350251,
+        "dev_ex_us": 0.231096,
+        "em_equity": 0.108171,
+        "ust_duration": 0.076467,
+        "us_ig": 0.052117,
+        "us_hy": 0.029697,
+        "commodities": 0.052836,
+        "listed_re": 0.018732,
+        "cash": 0.080632
+      },
+      "weights_after": {
+        "us_equity": 0.355556,
+        "dev_ex_us": 0.20864,
+        "em_equity": 0.119023,
+        "ust_duration": 0.076467,
+        "us_ig": 0.052117,
+        "us_hy": 0.049972,
+        "commodities": 0.052836,
+        "listed_re": 0.018732,
+        "cash": 0.066657
+      },
+      "active_after_bps": {
+        "us_equity": -244.4,
+        "dev_ex_us": 86.4,
+        "em_equity": -9.8,
+        "ust_duration": -435.3,
+        "us_ig": -278.8,
+        "us_hy": -0.3,
+        "commodities": 228.4,
+        "listed_re": -12.7,
+        "cash": 666.6
+      },
+      "trades_pp": {
+        "us_equity": 0.53,
+        "us_hy": 2.028,
+        "cash": -1.398,
+        "dev_ex_us": -2.246,
+        "em_equity": 1.085
+      },
+      "turnover_pp": 3.643,
+      "cost_bps": 0.44,
+      "quant_allocation": {
+        "us_equity": 0.336126,
+        "dev_ex_us": 0.217341,
+        "em_equity": 0.143075,
+        "ust_duration": 0.075106,
+        "us_ig": 0.03,
+        "us_hy": 0.05,
+        "commodities": 0.03,
+        "listed_re": 0.02,
+        "cash": 0.098352
+      },
+      "macro_allocation": {
+        "us_equity": 0.375,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.095,
+        "ust_duration": 0.075,
+        "us_ig": 0.07,
+        "us_hy": 0.05,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.035
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 633.5,
+      "signal_readings": {
+        "us_equity": -0.8153,
+        "dev_ex_us": 0.0256,
+        "em_equity": 0.443,
+        "ust_duration": -0.1019,
+        "us_ig": -0.8619,
+        "us_hy": -0.2179,
+        "commodities": 0.7116,
+        "listed_re": -0.5197,
+        "cash": 1.3365
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "neutral",
+        "liquidity": "neutral"
+      },
+      "te_before_bps": 77.9,
+      "te_after_bps": 75.0,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross",
+        "drawdown_stress",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and neutral policy, classified overheat. The composite signal was strongest on T-bills at +1.34, US investment grade at -0.86, US equity at -0.82. The reconciled allocation moved Developed ex-US (2.2)pp; US high yield 2.0pp; T-bills (1.4)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 1.336
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.862
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.815
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 77.9
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Listed real estate stands at -0.52. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "listed_re",
+          "level": -0.52,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on Emerging markets stands at +0.44. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "em_equity",
+          "level": 0.443,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (11.3)% against the 20% board limit.",
+          "metric": "drawdown",
+          "level": -0.1129,
+          "trigger": -0.2,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Commodities stands at +0.59. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.7115989853892194,
+          "happened": true
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5196508844019363,
+          "happened": false
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (13.8)% against the 20% board limit.",
+          "metric": "drawdown",
+          "observed": -0.1129,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -46.7,
+        "months_held": 3,
+        "strategy_return_pct": 5.615,
+        "benchmark_return_pct": 6.082,
+        "cost_bps": 0.44,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 7,
+      "date": "2023-03-31",
+      "fiscal_year": "FY2023",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.349636,
+        "dev_ex_us": 0.217965,
+        "em_equity": 0.117718,
+        "ust_duration": 0.076008,
+        "us_ig": 0.052072,
+        "us_hy": 0.050288,
+        "commodities": 0.049897,
+        "listed_re": 0.018618,
+        "cash": 0.067797
+      },
+      "weights_after": {
+        "us_equity": 0.349636,
+        "dev_ex_us": 0.217965,
+        "em_equity": 0.125344,
+        "ust_duration": 0.068382,
+        "us_ig": 0.052072,
+        "us_hy": 0.050288,
+        "commodities": 0.049897,
+        "listed_re": 0.018618,
+        "cash": 0.067797
+      },
+      "active_after_bps": {
+        "us_equity": -303.6,
+        "dev_ex_us": 179.7,
+        "em_equity": 53.4,
+        "ust_duration": -516.2,
+        "us_ig": -279.3,
+        "us_hy": 2.9,
+        "commodities": 199.0,
+        "listed_re": -13.8,
+        "cash": 678.0
+      },
+      "trades_pp": {
+        "ust_duration": -0.763,
+        "em_equity": 0.763
+      },
+      "turnover_pp": 0.763,
+      "cost_bps": 0.08,
+      "quant_allocation": {
+        "us_equity": 0.342657,
+        "dev_ex_us": 0.231999,
+        "em_equity": 0.144625,
+        "ust_duration": 0.064361,
+        "us_ig": 0.03,
+        "us_hy": 0.055639,
+        "commodities": 0.011142,
+        "listed_re": 0.02,
+        "cash": 0.099577
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.075,
+        "us_ig": 0.07,
+        "us_hy": 0.05,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.035
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 688.6,
+      "signal_readings": {
+        "us_equity": -0.5751,
+        "dev_ex_us": 0.1454,
+        "em_equity": 0.3533,
+        "ust_duration": -0.1003,
+        "us_ig": -0.5848,
+        "us_hy": -0.0368,
+        "commodities": 0.0317,
+        "listed_re": -0.531,
+        "cash": 1.2977
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "high",
+        "policy": "neutral",
+        "liquidity": "neutral"
+      },
+      "te_before_bps": 73.7,
+      "te_after_bps": 79.2,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "drawdown_stress",
+        "leverage_gross",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with high inflation and neutral policy, classified overheat. The composite signal was strongest on T-bills at +1.30, US investment grade at -0.58, US equity at -0.58. The reconciled allocation moved Emerging markets 0.8pp; US Treasury duration (0.8)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 1.298
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.585
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.575
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 73.7
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.58. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.585,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on US equity stands at -0.58. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_equity",
+          "level": -0.575,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (11.9)% against the 20% board limit.",
+          "metric": "drawdown",
+          "level": -0.1192,
+          "trigger": -0.2,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Listed real estate stands at -0.52. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5309947327443044,
+          "happened": false
+        },
+        {
+          "text": "Composite on Emerging markets stands at +0.44. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.35325544623941385,
+          "happened": false
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (11.3)% against the 20% board limit.",
+          "metric": "drawdown",
+          "observed": -0.1192,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -10.1,
+        "months_held": 3,
+        "strategy_return_pct": 3.626,
+        "benchmark_return_pct": 3.727,
+        "cost_bps": 0.08,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 8,
+      "date": "2023-06-30",
+      "fiscal_year": "FY2023",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.361235,
+        "dev_ex_us": 0.216798,
+        "em_equity": 0.122216,
+        "ust_duration": 0.06879,
+        "us_ig": 0.052161,
+        "us_hy": 0.049542,
+        "commodities": 0.045198,
+        "listed_re": 0.01713,
+        "cash": 0.06693
+      },
+      "weights_after": {
+        "us_equity": 0.367086,
+        "dev_ex_us": 0.208399,
+        "em_equity": 0.122216,
+        "ust_duration": 0.089198,
+        "us_ig": 0.045756,
+        "us_hy": 0.038088,
+        "commodities": 0.045198,
+        "listed_re": 0.01713,
+        "cash": 0.06693
+      },
+      "active_after_bps": {
+        "us_equity": -129.1,
+        "dev_ex_us": 84.0,
+        "em_equity": 22.2,
+        "ust_duration": -308.0,
+        "us_ig": -342.4,
+        "us_hy": -119.1,
+        "commodities": 152.0,
+        "listed_re": -28.7,
+        "cash": 669.3
+      },
+      "trades_pp": {
+        "us_equity": 0.585,
+        "ust_duration": 2.041,
+        "us_hy": -1.145,
+        "us_ig": -0.641,
+        "dev_ex_us": -0.84
+      },
+      "turnover_pp": 2.626,
+      "cost_bps": 0.28,
+      "quant_allocation": {
+        "us_equity": 0.373595,
+        "dev_ex_us": 0.215416,
+        "em_equity": 0.140304,
+        "ust_duration": 0.081386,
+        "us_ig": 0.030458,
+        "us_hy": 0.039292,
+        "commodities": 0.000175,
+        "listed_re": 0.02,
+        "cash": 0.099375
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.095,
+        "us_ig": 0.06,
+        "us_hy": 0.035,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.04
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 798.3,
+      "signal_readings": {
+        "us_equity": -0.0846,
+        "dev_ex_us": 0.0422,
+        "em_equity": 0.2108,
+        "ust_duration": 0.1015,
+        "us_ig": -0.5372,
+        "us_hy": -0.0089,
+        "commodities": -0.5057,
+        "listed_re": -0.1522,
+        "cash": 0.934
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "high",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 61.1,
+      "te_after_bps": 65.3,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross",
+        "drawdown_stress",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with high inflation and restrictive policy, classified overheat. The composite signal was strongest on T-bills at +0.93, US investment grade at -0.54, Commodities at -0.51. The reconciled allocation moved US Treasury duration 2.0pp; US high yield (1.1)pp; Developed ex-US (0.8)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 0.934
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.537
+        },
+        {
+          "name": "composite score, Commodities",
+          "value": -0.506
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 61.1
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.54. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.537,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on Commodities stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "commodities",
+          "level": -0.506,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (9.8)% against the 20% board limit.",
+          "metric": "drawdown",
+          "level": -0.0976,
+          "trigger": -0.2,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.58. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5372316162223698,
+          "happened": false
+        },
+        {
+          "text": "Composite on US equity stands at -0.58. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.0845714520145661,
+          "happened": false
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (11.9)% against the 20% board limit.",
+          "metric": "drawdown",
+          "observed": -0.0976,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 49.1,
+        "months_held": 3,
+        "strategy_return_pct": -2.997,
+        "benchmark_return_pct": -3.488,
+        "cost_bps": 0.28,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 9,
+      "date": "2023-09-30",
+      "fiscal_year": "FY2024",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.37963,
+        "dev_ex_us": 0.205347,
+        "em_equity": 0.120774,
+        "ust_duration": 0.083042,
+        "us_ig": 0.043578,
+        "us_hy": 0.037542,
+        "commodities": 0.048186,
+        "listed_re": 0.017054,
+        "cash": 0.064847
+      },
+      "weights_after": {
+        "us_equity": 0.370144,
+        "dev_ex_us": 0.212503,
+        "em_equity": 0.120774,
+        "ust_duration": 0.083042,
+        "us_ig": 0.043578,
+        "us_hy": 0.057799,
+        "commodities": 0.040154,
+        "listed_re": 0.017054,
+        "cash": 0.054952
+      },
+      "active_after_bps": {
+        "us_equity": -98.6,
+        "dev_ex_us": 125.0,
+        "em_equity": 7.7,
+        "ust_duration": -369.6,
+        "us_ig": -364.2,
+        "us_hy": 78.0,
+        "commodities": 101.5,
+        "listed_re": -29.5,
+        "cash": 549.5
+      },
+      "trades_pp": {
+        "commodities": -0.803,
+        "us_equity": -0.949,
+        "us_hy": 2.026,
+        "cash": -0.989,
+        "dev_ex_us": 0.716
+      },
+      "turnover_pp": 2.741,
+      "cost_bps": 0.5,
+      "quant_allocation": {
+        "us_equity": 0.38,
+        "dev_ex_us": 0.224794,
+        "em_equity": 0.135366,
+        "ust_duration": 0.07,
+        "us_ig": 0.03,
+        "us_hy": 0.05,
+        "commodities": 6.4e-05,
+        "listed_re": 0.010173,
+        "cash": 0.099604
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.095,
+        "us_ig": 0.06,
+        "us_hy": 0.065,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.01
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 896.0,
+      "signal_readings": {
+        "us_equity": -0.0119,
+        "dev_ex_us": 0.1131,
+        "em_equity": 0.1555,
+        "ust_duration": 0.0206,
+        "us_ig": -0.6437,
+        "us_hy": 0.0366,
+        "commodities": -0.199,
+        "listed_re": -0.2476,
+        "cash": 0.7764
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 58.5,
+      "te_after_bps": 58.4,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "drawdown_stress",
+        "leverage_gross",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and restrictive policy, classified overheat. The composite signal was strongest on T-bills at +0.78, US investment grade at -0.64, Listed real estate at -0.25. The reconciled allocation moved US high yield 2.0pp; T-bills (1.0)pp; US equity (0.9)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 0.776
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.644
+        },
+        {
+          "name": "composite score, Listed real estate",
+          "value": -0.248
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 58.5
+        }
+      ],
+      "watch": [
+        {
+          "text": "No reading stood close enough to a threshold to be worth watching into the next meeting.",
+          "metric": "none",
+          "level": 0.0,
+          "trigger": 0.0,
+          "direction": "none"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.54. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.6437385231556351,
+          "happened": true
+        },
+        {
+          "text": "Composite on Commodities stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.1990262827420126,
+          "happened": false
+        },
+        {
+          "text": "Peak-to-trough drawdown stands at (9.8)% against the 20% board limit.",
+          "metric": "drawdown",
+          "observed": -0.0561,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -33.4,
+        "months_held": 3,
+        "strategy_return_pct": 9.237,
+        "benchmark_return_pct": 9.571,
+        "cost_bps": 0.5,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 10,
+      "date": "2023-12-31",
+      "fiscal_year": "FY2024",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.372351,
+        "dev_ex_us": 0.21281,
+        "em_equity": 0.120652,
+        "ust_duration": 0.081582,
+        "us_ig": 0.043641,
+        "us_hy": 0.058382,
+        "commodities": 0.038619,
+        "listed_re": 0.016898,
+        "cash": 0.055064
+      },
+      "weights_after": {
+        "us_equity": 0.372351,
+        "dev_ex_us": 0.21281,
+        "em_equity": 0.149088,
+        "ust_duration": 0.099466,
+        "us_ig": 0.043641,
+        "us_hy": 0.03004,
+        "commodities": 0.008126,
+        "listed_re": 0.029414,
+        "cash": 0.055064
+      },
+      "active_after_bps": {
+        "us_equity": -76.5,
+        "dev_ex_us": 128.1,
+        "em_equity": 290.9,
+        "ust_duration": -205.3,
+        "us_ig": -363.6,
+        "us_hy": -199.6,
+        "commodities": -218.7,
+        "listed_re": 94.1,
+        "cash": 550.6
+      },
+      "trades_pp": {
+        "commodities": -3.049,
+        "ust_duration": 1.788,
+        "us_hy": -2.834,
+        "listed_re": 1.252,
+        "em_equity": 2.844
+      },
+      "turnover_pp": 5.884,
+      "cost_bps": 1.45,
+      "quant_allocation": {
+        "us_equity": 0.331471,
+        "dev_ex_us": 0.215787,
+        "em_equity": 0.162161,
+        "ust_duration": 0.101438,
+        "us_ig": 0.03,
+        "us_hy": 0.018562,
+        "commodities": 0.0,
+        "listed_re": 0.040582,
+        "cash": 0.1
+      },
+      "macro_allocation": {
+        "us_equity": 0.41,
+        "dev_ex_us": 0.21,
+        "em_equity": 0.14,
+        "ust_duration": 0.1,
+        "us_ig": 0.05,
+        "us_hy": 0.045,
+        "commodities": 0.02,
+        "listed_re": 0.02,
+        "cash": 0.005
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 950.0,
+      "signal_readings": {
+        "us_equity": -0.4027,
+        "dev_ex_us": -0.0131,
+        "em_equity": 0.3367,
+        "ust_duration": 0.1612,
+        "us_ig": -0.4511,
+        "us_hy": -0.1026,
+        "commodities": -0.1293,
+        "listed_re": -0.1009,
+        "cash": 0.7018
+      },
+      "regime": {
+        "label": "goldilocks",
+        "growth": "expansion",
+        "inflation": "at_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 52.1,
+      "te_after_bps": 50.8,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "drawdown_stress",
+        "leverage_gross",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with at_target inflation and restrictive policy, classified goldilocks. The composite signal was strongest on T-bills at +0.70, US investment grade at -0.45, US equity at -0.40. The reconciled allocation moved Commodities (3.0)pp; Emerging markets 2.8pp; US high yield (2.8)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, T-bills",
+          "value": 0.702
+        },
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.451
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.403
+        },
+        {
+          "name": "regime read",
+          "value": "goldilocks"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 52.1
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.45. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.451,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on US equity stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_equity",
+          "level": -0.403,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "No reading stood close enough to a threshold to be worth watching into the next meeting.",
+          "metric": "none",
+          "observed": null,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 10.0,
+        "months_held": 3,
+        "strategy_return_pct": 5.424,
+        "benchmark_return_pct": 5.324,
+        "cost_bps": 1.45,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 11,
+      "date": "2024-03-31",
+      "fiscal_year": "FY2024",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.388476,
+        "dev_ex_us": 0.214542,
+        "em_equity": 0.143332,
+        "ust_duration": 0.094406,
+        "us_ig": 0.04171,
+        "us_hy": 0.029056,
+        "commodities": 0.007319,
+        "listed_re": 0.029093,
+        "cash": 0.052067
+      },
+      "weights_after": {
+        "us_equity": 0.366728,
+        "dev_ex_us": 0.205956,
+        "em_equity": 0.132128,
+        "ust_duration": 0.115758,
+        "us_ig": 0.04171,
+        "us_hy": 0.017925,
+        "commodities": 0.038635,
+        "listed_re": 0.029093,
+        "cash": 0.052067
+      },
+      "active_after_bps": {
+        "us_equity": -132.7,
+        "dev_ex_us": 59.6,
+        "em_equity": 121.3,
+        "ust_duration": -42.4,
+        "us_ig": -382.9,
+        "us_hy": -320.7,
+        "commodities": 86.4,
+        "listed_re": 90.9,
+        "cash": 520.7
+      },
+      "trades_pp": {
+        "commodities": 3.132,
+        "us_equity": -2.175,
+        "ust_duration": 2.135,
+        "us_hy": -1.113,
+        "dev_ex_us": -0.859,
+        "em_equity": -1.12
+      },
+      "turnover_pp": 5.267,
+      "cost_bps": 1.14,
+      "quant_allocation": {
+        "us_equity": 0.371793,
+        "dev_ex_us": 0.211256,
+        "em_equity": 0.153401,
+        "ust_duration": 0.12,
+        "us_ig": 0.03,
+        "us_hy": 0.0,
+        "commodities": 0.005047,
+        "listed_re": 0.025069,
+        "cash": 0.083434
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.11,
+        "us_ig": 0.06,
+        "us_hy": 0.035,
+        "commodities": 0.07,
+        "listed_re": 0.025,
+        "cash": 0.03
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 649.5,
+      "signal_readings": {
+        "us_equity": -0.0562,
+        "dev_ex_us": 0.0689,
+        "em_equity": 0.3096,
+        "ust_duration": 0.1006,
+        "us_ig": -0.5647,
+        "us_hy": -0.172,
+        "commodities": -0.0661,
+        "listed_re": -0.0659,
+        "cash": 0.4459
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 56.6,
+      "te_after_bps": 54.1,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross",
+        "drawdown_ex_ante",
+        "drawdown_stress"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and restrictive policy, classified overheat. The composite signal was strongest on US investment grade at -0.56, T-bills at +0.45, Emerging markets at +0.31. The reconciled allocation moved Commodities 3.1pp; US equity (2.2)pp; US Treasury duration 2.1pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.565
+        },
+        {
+          "name": "composite score, T-bills",
+          "value": 0.446
+        },
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.31
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 56.6
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.56. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.565,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on T-bills stands at +0.45. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "cash",
+          "level": 0.446,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.45. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5647464821728787,
+          "happened": false
+        },
+        {
+          "text": "Composite on US equity stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.05624515430275301,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 12.5,
+        "months_held": 3,
+        "strategy_return_pct": 2.266,
+        "benchmark_return_pct": 2.141,
+        "cost_bps": 1.14,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 12,
+      "date": "2024-06-30",
+      "fiscal_year": "FY2024",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.369433,
+        "dev_ex_us": 0.209405,
+        "em_equity": 0.133591,
+        "ust_duration": 0.111256,
+        "us_ig": 0.040526,
+        "us_hy": 0.017578,
+        "commodities": 0.039556,
+        "listed_re": 0.027622,
+        "cash": 0.051034
+      },
+      "weights_after": {
+        "us_equity": 0.369433,
+        "dev_ex_us": 0.196256,
+        "em_equity": 0.148168,
+        "ust_duration": 0.132916,
+        "us_ig": 0.051449,
+        "us_hy": 0.017578,
+        "commodities": 0.013093,
+        "listed_re": 0.027622,
+        "cash": 0.043485
+      },
+      "active_after_bps": {
+        "us_equity": -105.7,
+        "dev_ex_us": -37.4,
+        "em_equity": 281.7,
+        "ust_duration": 129.2,
+        "us_ig": -285.5,
+        "us_hy": -324.2,
+        "commodities": -169.1,
+        "listed_re": 76.2,
+        "cash": 434.8
+      },
+      "trades_pp": {
+        "commodities": -2.646,
+        "ust_duration": 2.166,
+        "cash": -0.755,
+        "us_ig": 1.092,
+        "dev_ex_us": -1.315,
+        "em_equity": 1.458
+      },
+      "turnover_pp": 4.716,
+      "cost_bps": 0.97,
+      "quant_allocation": {
+        "us_equity": 0.346702,
+        "dev_ex_us": 0.194634,
+        "em_equity": 0.17414,
+        "ust_duration": 0.12,
+        "us_ig": 0.03,
+        "us_hy": 0.0,
+        "commodities": 0.020456,
+        "listed_re": 0.03588,
+        "cash": 0.078188
+      },
+      "macro_allocation": {
+        "us_equity": 0.385,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.125,
+        "ust_duration": 0.15,
+        "us_ig": 0.075,
+        "us_hy": 0.035,
+        "commodities": 0.01,
+        "listed_re": 0.01,
+        "cash": 0.01
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 681.9,
+      "signal_readings": {
+        "us_equity": -0.2696,
+        "dev_ex_us": -0.0574,
+        "em_equity": 0.4207,
+        "ust_duration": 0.1729,
+        "us_ig": -0.5105,
+        "us_hy": -0.1739,
+        "commodities": 0.1615,
+        "listed_re": -0.0982,
+        "cash": 0.3544
+      },
+      "regime": {
+        "label": "soft_landing",
+        "growth": "slowdown",
+        "inflation": "at_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 58.3,
+      "te_after_bps": 53.8,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross",
+        "drawdown_ex_ante"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was slowdown growth with at_target inflation and restrictive policy, classified soft_landing. The composite signal was strongest on US investment grade at -0.51, Emerging markets at +0.42, T-bills at +0.35. The reconciled allocation moved Commodities (2.6)pp; US Treasury duration 2.2pp; Emerging markets 1.5pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.51
+        },
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.421
+        },
+        {
+          "name": "composite score, T-bills",
+          "value": 0.354
+        },
+        {
+          "name": "regime read",
+          "value": "soft_landing"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 58.3
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.51,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on Emerging markets stands at +0.42. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "em_equity",
+          "level": 0.421,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.56. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.5104841261183379,
+          "happened": false
+        },
+        {
+          "text": "Composite on T-bills stands at +0.45. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.3544047646116037,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 10.7,
+        "months_held": 3,
+        "strategy_return_pct": 6.287,
+        "benchmark_return_pct": 6.18,
+        "cost_bps": 0.97,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 13,
+      "date": "2024-09-30",
+      "fiscal_year": "FY2025",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.375026,
+        "dev_ex_us": 0.193228,
+        "em_equity": 0.146578,
+        "ust_duration": 0.132816,
+        "us_ig": 0.05123,
+        "us_hy": 0.017379,
+        "commodities": 0.011777,
+        "listed_re": 0.030256,
+        "cash": 0.041709
+      },
+      "weights_after": {
+        "us_equity": 0.35119,
+        "dev_ex_us": 0.193228,
+        "em_equity": 0.146578,
+        "ust_duration": 0.189908,
+        "us_ig": 0.05123,
+        "us_hy": 0.017379,
+        "commodities": 0.011777,
+        "listed_re": 0.030256,
+        "cash": 0.008453
+      },
+      "active_after_bps": {
+        "us_equity": -288.1,
+        "dev_ex_us": -67.7,
+        "em_equity": 265.8,
+        "ust_duration": 699.1,
+        "us_ig": -287.7,
+        "us_hy": -326.2,
+        "commodities": -182.2,
+        "listed_re": 102.6,
+        "cash": 84.5
+      },
+      "trades_pp": {
+        "us_equity": -2.384,
+        "ust_duration": 5.709,
+        "cash": -3.326
+      },
+      "turnover_pp": 5.709,
+      "cost_bps": 0.24,
+      "quant_allocation": {
+        "us_equity": 0.31243,
+        "dev_ex_us": 0.193614,
+        "em_equity": 0.17522,
+        "ust_duration": 0.22,
+        "us_ig": 0.03,
+        "us_hy": 0.0,
+        "commodities": 0.008736,
+        "listed_re": 0.06,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.385,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.125,
+        "ust_duration": 0.15,
+        "us_ig": 0.075,
+        "us_hy": 0.035,
+        "commodities": 0.01,
+        "listed_re": 0.01,
+        "cash": 0.01
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 725.7,
+      "signal_readings": {
+        "us_equity": -0.3914,
+        "dev_ex_us": -0.0946,
+        "em_equity": 0.3202,
+        "ust_duration": 0.3756,
+        "us_ig": -0.1334,
+        "us_hy": -0.0817,
+        "commodities": -0.3141,
+        "listed_re": 0.3421,
+        "cash": -0.0228
+      },
+      "regime": {
+        "label": "soft_landing",
+        "growth": "slowdown",
+        "inflation": "below_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 79.4,
+      "te_after_bps": 82.1,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was slowdown growth with below_target inflation and restrictive policy, classified soft_landing. The composite signal was strongest on US equity at -0.39, US Treasury duration at +0.38, Listed real estate at +0.34. The reconciled allocation moved US Treasury duration 5.7pp; T-bills (3.3)pp; US equity (2.4)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US equity",
+          "value": -0.391
+        },
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.376
+        },
+        {
+          "name": "composite score, Listed real estate",
+          "value": 0.342
+        },
+        {
+          "name": "regime read",
+          "value": "soft_landing"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 79.4
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US equity stands at -0.39. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_equity",
+          "level": -0.391,
+          "trigger": -0.6,
+          "direction": "below"
+        },
+        {
+          "text": "Composite on US Treasury duration stands at +0.38. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "ust_duration",
+          "level": 0.376,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.51. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.13341868661130085,
+          "happened": false
+        },
+        {
+          "text": "Composite on Emerging markets stands at +0.42. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.3202426802541418,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -24.6,
+        "months_held": 3,
+        "strategy_return_pct": -2.883,
+        "benchmark_return_pct": -2.638,
+        "cost_bps": 0.24,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 14,
+      "date": "2024-12-31",
+      "fiscal_year": "FY2025",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.370749,
+        "dev_ex_us": 0.181054,
+        "em_equity": 0.143951,
+        "ust_duration": 0.185012,
+        "us_ig": 0.050687,
+        "us_hy": 0.017517,
+        "commodities": 0.011611,
+        "listed_re": 0.030997,
+        "cash": 0.008422
+      },
+      "weights_after": {
+        "us_equity": 0.370749,
+        "dev_ex_us": 0.181054,
+        "em_equity": 0.129604,
+        "ust_duration": 0.145703,
+        "us_ig": 0.050687,
+        "us_hy": 0.017517,
+        "commodities": 0.05869,
+        "listed_re": 0.025734,
+        "cash": 0.020262
+      },
+      "active_after_bps": {
+        "us_equity": -92.5,
+        "dev_ex_us": -189.5,
+        "em_equity": 96.0,
+        "ust_duration": 257.0,
+        "us_ig": -293.1,
+        "us_hy": -324.8,
+        "commodities": 286.9,
+        "listed_re": 57.3,
+        "cash": 202.6
+      },
+      "trades_pp": {
+        "commodities": 4.708,
+        "ust_duration": -3.931,
+        "listed_re": -0.526,
+        "cash": 1.184,
+        "em_equity": -1.435
+      },
+      "turnover_pp": 5.892,
+      "cost_bps": 1.45,
+      "quant_allocation": {
+        "us_equity": 0.368789,
+        "dev_ex_us": 0.166554,
+        "em_equity": 0.163544,
+        "ust_duration": 0.199588,
+        "us_ig": 0.03,
+        "us_hy": 0.0,
+        "commodities": 0.0453,
+        "listed_re": 0.026225,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.375,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.095,
+        "ust_duration": 0.09,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.07,
+        "listed_re": 0.025,
+        "cash": 0.04
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1095.9,
+      "signal_readings": {
+        "us_equity": -0.1799,
+        "dev_ex_us": -0.1676,
+        "em_equity": 0.2821,
+        "ust_duration": 0.2921,
+        "us_ig": -0.4195,
+        "us_hy": -0.096,
+        "commodities": 0.2496,
+        "listed_re": -0.1197,
+        "cash": 0.1591
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 63.9,
+      "te_after_bps": 66.7,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and restrictive policy, classified overheat. The composite signal was strongest on US investment grade at -0.42, US Treasury duration at +0.29, Emerging markets at +0.28. The reconciled allocation moved Commodities 4.7pp; US Treasury duration (3.9)pp; Emerging markets (1.4)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US investment grade",
+          "value": -0.419
+        },
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.292
+        },
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.282
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 63.9
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US investment grade stands at -0.42. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "us_ig",
+          "level": -0.419,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US equity stands at -0.39. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.1799291063561739,
+          "happened": false
+        },
+        {
+          "text": "Composite on US Treasury duration stands at +0.38. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.29207710884307914,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 32.1,
+        "months_held": 3,
+        "strategy_return_pct": 1.738,
+        "benchmark_return_pct": 1.417,
+        "cost_bps": 1.45,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 15,
+      "date": "2025-03-31",
+      "fiscal_year": "FY2025",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.362943,
+        "dev_ex_us": 0.187578,
+        "em_equity": 0.130245,
+        "ust_duration": 0.145742,
+        "us_ig": 0.050255,
+        "us_hy": 0.017599,
+        "commodities": 0.060782,
+        "listed_re": 0.024592,
+        "cash": 0.020264
+      },
+      "weights_after": {
+        "us_equity": 0.32,
+        "dev_ex_us": 0.1928,
+        "em_equity": 0.136257,
+        "ust_duration": 0.165,
+        "us_ig": 0.045,
+        "us_hy": 0.035943,
+        "commodities": 0.055202,
+        "listed_re": 0.042298,
+        "cash": 0.0075
+      },
+      "active_after_bps": {
+        "us_equity": -600.0,
+        "dev_ex_us": -72.0,
+        "em_equity": 162.6,
+        "ust_duration": 450.0,
+        "us_ig": -350.0,
+        "us_hy": -140.6,
+        "commodities": 252.0,
+        "listed_re": 223.0,
+        "cash": 75.0
+      },
+      "trades_pp": {
+        "commodities": -0.558,
+        "us_equity": -4.294,
+        "ust_duration": 1.926,
+        "us_hy": 1.834,
+        "listed_re": 1.771,
+        "cash": -1.276,
+        "us_ig": -0.526,
+        "dev_ex_us": 0.522,
+        "em_equity": 0.601
+      },
+      "turnover_pp": 6.654,
+      "cost_bps": 0.68,
+      "quant_allocation": {
+        "us_equity": 0.28,
+        "dev_ex_us": 0.1856,
+        "em_equity": 0.162514,
+        "ust_duration": 0.22,
+        "us_ig": 0.03,
+        "us_hy": 0.021886,
+        "commodities": 0.040403,
+        "listed_re": 0.059597,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.11,
+        "us_ig": 0.06,
+        "us_hy": 0.05,
+        "commodities": 0.07,
+        "listed_re": 0.025,
+        "cash": 0.015
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1100.0,
+      "signal_readings": {
+        "us_equity": -1.1517,
+        "dev_ex_us": -0.3549,
+        "em_equity": 0.2796,
+        "ust_duration": 0.7439,
+        "us_ig": 0.0122,
+        "us_hy": -0.0907,
+        "commodities": 0.4107,
+        "listed_re": -0.1061,
+        "cash": 0.2569
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "restrictive",
+        "liquidity": "neutral"
+      },
+      "te_before_bps": 85.7,
+      "te_after_bps": 85.7,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and restrictive policy, classified overheat. The composite signal was strongest on US equity at -1.15, US Treasury duration at +0.74, Commodities at +0.41. The reconciled allocation moved US equity (4.3)pp; US Treasury duration 1.9pp; US high yield 1.8pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US equity",
+          "value": -1.152
+        },
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.744
+        },
+        {
+          "name": "composite score, Commodities",
+          "value": 0.411
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 85.7
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Commodities stands at +0.41. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "commodities",
+          "level": 0.411,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on Developed ex-US stands at -0.35. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "dev_ex_us",
+          "level": -0.355,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US investment grade stands at -0.42. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.012218810426569058,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -82.5,
+        "months_held": 3,
+        "strategy_return_pct": 7.296,
+        "benchmark_return_pct": 8.12,
+        "cost_bps": 0.68,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 16,
+      "date": "2025-06-30",
+      "fiscal_year": "FY2025",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.312549,
+        "dev_ex_us": 0.206046,
+        "em_equity": 0.140914,
+        "ust_duration": 0.162215,
+        "us_ig": 0.043944,
+        "us_hy": 0.035556,
+        "commodities": 0.051433,
+        "listed_re": 0.039905,
+        "cash": 0.007439
+      },
+      "weights_after": {
+        "us_equity": 0.312549,
+        "dev_ex_us": 0.199401,
+        "em_equity": 0.140914,
+        "ust_duration": 0.210406,
+        "us_ig": 0.060136,
+        "us_hy": 0.020539,
+        "commodities": 0.020258,
+        "listed_re": 0.028358,
+        "cash": 0.007439
+      },
+      "active_after_bps": {
+        "us_equity": -674.5,
+        "dev_ex_us": -6.0,
+        "em_equity": 209.1,
+        "ust_duration": 904.1,
+        "us_ig": -198.6,
+        "us_hy": -294.6,
+        "commodities": -97.4,
+        "listed_re": 83.6,
+        "cash": 74.4
+      },
+      "trades_pp": {
+        "commodities": -3.117,
+        "ust_duration": 4.819,
+        "us_hy": -1.502,
+        "listed_re": -1.155,
+        "us_ig": 1.619,
+        "dev_ex_us": -0.665
+      },
+      "turnover_pp": 6.438,
+      "cost_bps": 1.29,
+      "quant_allocation": {
+        "us_equity": 0.28,
+        "dev_ex_us": 0.213688,
+        "em_equity": 0.173991,
+        "ust_duration": 0.22,
+        "us_ig": 0.03,
+        "us_hy": 0.01582,
+        "commodities": 0.024982,
+        "listed_re": 0.041519,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.35,
+        "dev_ex_us": 0.185,
+        "em_equity": 0.1,
+        "ust_duration": 0.2,
+        "us_ig": 0.09,
+        "us_hy": 0.025,
+        "commodities": 0.015,
+        "listed_re": 0.015,
+        "cash": 0.02
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 739.9,
+      "signal_readings": {
+        "us_equity": -0.9062,
+        "dev_ex_us": -0.0457,
+        "em_equity": 0.547,
+        "ust_duration": 0.672,
+        "us_ig": 0.112,
+        "us_hy": -0.0275,
+        "commodities": -0.0684,
+        "listed_re": -0.2101,
+        "cash": -0.0731
+      },
+      "regime": {
+        "label": "disinflationary_slump",
+        "growth": "stall",
+        "inflation": "below_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 100.1,
+      "te_after_bps": 101.4,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was stall growth with below_target inflation and restrictive policy, classified disinflationary_slump. The composite signal was strongest on US equity at -0.91, US Treasury duration at +0.67, Emerging markets at +0.55. The reconciled allocation moved US Treasury duration 4.8pp; Commodities (3.1)pp; US investment grade 1.6pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US equity",
+          "value": -0.906
+        },
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.672
+        },
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.547
+        },
+        {
+          "name": "regime read",
+          "value": "disinflationary_slump"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 100.1
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Emerging markets stands at +0.55. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "em_equity",
+          "level": 0.547,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "US Treasury duration at 21.0% sits within one point of its 22% ceiling.",
+          "metric": "range",
+          "line": "ust_duration",
+          "level": 0.2104,
+          "trigger": 0.22,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Commodities stands at +0.41. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.06836062788140967,
+          "happened": false
+        },
+        {
+          "text": "Composite on Developed ex-US stands at -0.35. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.04571026418676519,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -17.2,
+        "months_held": 3,
+        "strategy_return_pct": 5.798,
+        "benchmark_return_pct": 5.97,
+        "cost_bps": 1.29,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 17,
+      "date": "2025-09-30",
+      "fiscal_year": "FY2026",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.321934,
+        "dev_ex_us": 0.196076,
+        "em_equity": 0.146241,
+        "ust_duration": 0.202697,
+        "us_ig": 0.058154,
+        "us_hy": 0.019871,
+        "commodities": 0.02022,
+        "listed_re": 0.027751,
+        "cash": 0.007055
+      },
+      "weights_after": {
+        "us_equity": 0.340812,
+        "dev_ex_us": 0.196076,
+        "em_equity": 0.146241,
+        "ust_duration": 0.164731,
+        "us_ig": 0.044946,
+        "us_hy": 0.019871,
+        "commodities": 0.049878,
+        "listed_re": 0.022478,
+        "cash": 0.014967
+      },
+      "active_after_bps": {
+        "us_equity": -391.9,
+        "dev_ex_us": -39.2,
+        "em_equity": 262.4,
+        "ust_duration": 447.3,
+        "us_ig": -350.5,
+        "us_hy": -301.3,
+        "commodities": 198.8,
+        "listed_re": 24.8,
+        "cash": 149.7
+      },
+      "trades_pp": {
+        "commodities": 2.966,
+        "us_equity": 1.888,
+        "ust_duration": -3.797,
+        "listed_re": -0.527,
+        "cash": 0.791,
+        "us_ig": -1.321
+      },
+      "turnover_pp": 5.645,
+      "cost_bps": 1.0,
+      "quant_allocation": {
+        "us_equity": 0.321779,
+        "dev_ex_us": 0.191832,
+        "em_equity": 0.183645,
+        "ust_duration": 0.219771,
+        "us_ig": 0.03,
+        "us_hy": 0.002974,
+        "commodities": 0.03,
+        "listed_re": 0.02,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.11,
+        "us_ig": 0.06,
+        "us_hy": 0.035,
+        "commodities": 0.07,
+        "listed_re": 0.025,
+        "cash": 0.03
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1097.7,
+      "signal_readings": {
+        "us_equity": -0.6206,
+        "dev_ex_us": -0.0956,
+        "em_equity": 0.6917,
+        "ust_duration": 0.5581,
+        "us_ig": -0.0251,
+        "us_hy": -0.1635,
+        "commodities": 0.1916,
+        "listed_re": -0.3272,
+        "cash": -0.2095
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "restrictive",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 72.0,
+      "te_after_bps": 71.6,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and restrictive policy, classified overheat. The composite signal was strongest on Emerging markets at +0.69, US equity at -0.62, US Treasury duration at +0.56. The reconciled allocation moved US Treasury duration (3.8)pp; Commodities 3.0pp; US equity 1.9pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.692
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.621
+        },
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.558
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 72.0
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US Treasury duration stands at +0.56. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "ust_duration",
+          "level": 0.558,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.33. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "listed_re",
+          "level": -0.327,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Emerging markets stands at +0.55. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.6917305259432514,
+          "happened": true
+        },
+        {
+          "text": "US Treasury duration at 21.0% sits within one point of its 22% ceiling.",
+          "metric": "range",
+          "observed": 0.1647,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 13.4,
+        "months_held": 3,
+        "strategy_return_pct": 2.8,
+        "benchmark_return_pct": 2.665,
+        "cost_bps": 1.0,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 18,
+      "date": "2025-12-31",
+      "fiscal_year": "FY2026",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.34486,
+        "dev_ex_us": 0.19433,
+        "em_equity": 0.151749,
+        "ust_duration": 0.160617,
+        "us_ig": 0.044085,
+        "us_hy": 0.019235,
+        "commodities": 0.049325,
+        "listed_re": 0.021404,
+        "cash": 0.014395
+      },
+      "weights_after": {
+        "us_equity": 0.322437,
+        "dev_ex_us": 0.237501,
+        "em_equity": 0.133846,
+        "ust_duration": 0.154725,
+        "us_ig": 0.049711,
+        "us_hy": 0.019235,
+        "commodities": 0.049325,
+        "listed_re": 0.013494,
+        "cash": 0.019726
+      },
+      "active_after_bps": {
+        "us_equity": -575.6,
+        "dev_ex_us": 375.0,
+        "em_equity": 138.5,
+        "ust_duration": 347.3,
+        "us_ig": -302.9,
+        "us_hy": -307.7,
+        "commodities": 193.3,
+        "listed_re": -65.1,
+        "cash": 197.3
+      },
+      "trades_pp": {
+        "us_equity": -2.242,
+        "ust_duration": -0.589,
+        "listed_re": -0.791,
+        "cash": 0.533,
+        "us_ig": 0.563,
+        "dev_ex_us": 4.317,
+        "em_equity": -1.79
+      },
+      "turnover_pp": 5.413,
+      "cost_bps": 0.45,
+      "quant_allocation": {
+        "us_equity": 0.301965,
+        "dev_ex_us": 0.279443,
+        "em_equity": 0.144362,
+        "ust_duration": 0.22,
+        "us_ig": 0.03,
+        "us_hy": 0.0,
+        "commodities": 0.021503,
+        "listed_re": 0.002726,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.345,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.125,
+        "ust_duration": 0.09,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.07,
+        "listed_re": 0.025,
+        "cash": 0.04
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1300.0,
+      "signal_readings": {
+        "us_equity": -0.6681,
+        "dev_ex_us": 0.5714,
+        "em_equity": 0.7086,
+        "ust_duration": 0.5613,
+        "us_ig": 0.0233,
+        "us_hy": -0.2295,
+        "commodities": -0.038,
+        "listed_re": -0.4105,
+        "cash": -0.5185
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "neutral",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 78.1,
+      "te_after_bps": 80.9,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and neutral policy, classified overheat. The composite signal was strongest on Emerging markets at +0.71, US equity at -0.67, Developed ex-US at +0.57. The reconciled allocation moved Developed ex-US 4.3pp; US equity (2.2)pp; Emerging markets (1.8)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.709
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.668
+        },
+        {
+          "name": "composite score, Developed ex-US",
+          "value": 0.571
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 78.1
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.57. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "dev_ex_us",
+          "level": 0.571,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on US Treasury duration stands at +0.56. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "ust_duration",
+          "level": 0.561,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on US Treasury duration stands at +0.56. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.5612947690923946,
+          "happened": false
+        },
+        {
+          "text": "Composite on Listed real estate stands at -0.33. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.4104964894789953,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 100.2,
+        "months_held": 3,
+        "strategy_return_pct": 0.879,
+        "benchmark_return_pct": -0.123,
+        "cost_bps": 0.45,
+        "verdict": "helped"
+      }
+    },
+    {
+      "n": 19,
+      "date": "2026-03-31",
+      "fiscal_year": "FY2026",
+      "kind": "unwind",
+      "weights_before": {
+        "us_equity": 0.304806,
+        "dev_ex_us": 0.251351,
+        "em_equity": 0.146859,
+        "ust_duration": 0.147399,
+        "us_ig": 0.047133,
+        "us_hy": 0.01826,
+        "commodities": 0.052109,
+        "listed_re": 0.013395,
+        "cash": 0.018689
+      },
+      "weights_after": {
+        "us_equity": 0.324644,
+        "dev_ex_us": 0.228017,
+        "em_equity": 0.128237,
+        "ust_duration": 0.163787,
+        "us_ig": 0.054693,
+        "us_hy": 0.01826,
+        "commodities": 0.044722,
+        "listed_re": 0.018951,
+        "cash": 0.018689
+      },
+      "active_after_bps": {
+        "us_equity": -553.6,
+        "dev_ex_us": 280.2,
+        "em_equity": 82.4,
+        "ust_duration": 437.9,
+        "us_ig": -253.1,
+        "us_hy": -317.4,
+        "commodities": 147.2,
+        "listed_re": -10.5,
+        "cash": 186.9
+      },
+      "trades_pp": {
+        "commodities": -0.739,
+        "us_equity": 1.984,
+        "ust_duration": 1.639,
+        "listed_re": 0.556,
+        "us_ig": 0.756,
+        "dev_ex_us": -2.333,
+        "em_equity": -1.862
+      },
+      "turnover_pp": 4.934,
+      "cost_bps": 0.58,
+      "quant_allocation": {
+        "us_equity": 0.290901,
+        "dev_ex_us": 0.267788,
+        "em_equity": 0.147875,
+        "ust_duration": 0.218906,
+        "us_ig": 0.03,
+        "us_hy": 0.001176,
+        "commodities": 0.03,
+        "listed_re": 0.013353,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.19,
+        "em_equity": 0.11,
+        "ust_duration": 0.11,
+        "us_ig": 0.08,
+        "us_hy": 0.03,
+        "commodities": 0.06,
+        "listed_re": 0.025,
+        "cash": 0.035
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1089.1,
+      "signal_readings": {
+        "us_equity": -0.6005,
+        "dev_ex_us": 0.4198,
+        "em_equity": 0.612,
+        "ust_duration": 0.3586,
+        "us_ig": -0.075,
+        "us_hy": -0.2107,
+        "commodities": 0.0894,
+        "listed_re": -0.1984,
+        "cash": -0.3953
+      },
+      "regime": {
+        "label": "stagflation_risk",
+        "growth": "slowdown",
+        "inflation": "high",
+        "policy": "neutral",
+        "liquidity": "neutral"
+      },
+      "te_before_bps": 74.5,
+      "te_after_bps": 75.2,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was slowdown growth with high inflation and neutral policy, classified stagflation_risk. The composite signal was strongest on Emerging markets at +0.61, US equity at -0.60, Developed ex-US at +0.42. The reconciled allocation moved Developed ex-US (2.3)pp; US equity 2.0pp; Emerging markets (1.9)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.612
+        },
+        {
+          "name": "composite score, US equity",
+          "value": -0.6
+        },
+        {
+          "name": "composite score, Developed ex-US",
+          "value": 0.42
+        },
+        {
+          "name": "regime read",
+          "value": "stagflation_risk"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 74.5
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.42. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "dev_ex_us",
+          "level": 0.42,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on T-bills stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "cash",
+          "level": -0.395,
+          "trigger": -0.6,
+          "direction": "below"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.57. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.4198431625114719,
+          "happened": false
+        },
+        {
+          "text": "Composite on US Treasury duration stands at +0.56. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.3585996932806772,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": -81.2,
+        "months_held": 3,
+        "strategy_return_pct": 9.264,
+        "benchmark_return_pct": 10.076,
+        "cost_bps": 0.58,
+        "verdict": "hurt"
+      }
+    },
+    {
+      "n": 20,
+      "date": "2026-06-30",
+      "fiscal_year": "FY2026",
+      "kind": "tilt",
+      "weights_before": {
+        "us_equity": 0.342153,
+        "dev_ex_us": 0.216132,
+        "em_equity": 0.133984,
+        "ust_duration": 0.152229,
+        "us_ig": 0.051634,
+        "us_hy": 0.017576,
+        "commodities": 0.050064,
+        "listed_re": 0.018257,
+        "cash": 0.017972
+      },
+      "weights_after": {
+        "us_equity": 0.342153,
+        "dev_ex_us": 0.216132,
+        "em_equity": 0.125541,
+        "ust_duration": 0.13598,
+        "us_ig": 0.051634,
+        "us_hy": 0.017576,
+        "commodities": 0.050064,
+        "listed_re": 0.025988,
+        "cash": 0.034934
+      },
+      "active_after_bps": {
+        "us_equity": -378.5,
+        "dev_ex_us": 161.3,
+        "em_equity": 55.4,
+        "ust_duration": 159.8,
+        "us_ig": -283.7,
+        "us_hy": -324.2,
+        "commodities": 200.6,
+        "listed_re": 59.9,
+        "cash": 349.3
+      },
+      "trades_pp": {
+        "ust_duration": -1.625,
+        "listed_re": 0.773,
+        "cash": 1.696,
+        "em_equity": -0.844
+      },
+      "turnover_pp": 2.469,
+      "cost_bps": 0.17,
+      "quant_allocation": {
+        "us_equity": 0.326671,
+        "dev_ex_us": 0.222609,
+        "em_equity": 0.141147,
+        "ust_duration": 0.217086,
+        "us_ig": 0.030451,
+        "us_hy": 0.0,
+        "commodities": 0.03,
+        "listed_re": 0.032036,
+        "cash": 0.0
+      },
+      "macro_allocation": {
+        "us_equity": 0.36,
+        "dev_ex_us": 0.2,
+        "em_equity": 0.11,
+        "ust_duration": 0.055,
+        "us_ig": 0.07,
+        "us_hy": 0.035,
+        "commodities": 0.08,
+        "listed_re": 0.02,
+        "cash": 0.07
+      },
+      "desks_agreed": false,
+      "max_desk_disagreement_bps": 1620.9,
+      "signal_readings": {
+        "us_equity": -0.318,
+        "dev_ex_us": 0.2111,
+        "em_equity": 0.3891,
+        "ust_duration": 0.4029,
+        "us_ig": -0.0661,
+        "us_hy": -0.2854,
+        "commodities": -0.039,
+        "listed_re": 0.088,
+        "cash": -0.3826
+      },
+      "regime": {
+        "label": "overheat",
+        "growth": "expansion",
+        "inflation": "above_target",
+        "policy": "neutral",
+        "liquidity": "ample"
+      },
+      "te_before_bps": 73.5,
+      "te_after_bps": 67.2,
+      "truncated_to_budget": false,
+      "binding_constraint": "drawdown_realised",
+      "all_binding": [
+        "drawdown_realised",
+        "leverage_gross"
+      ],
+      "compliance": {
+        "passed": true,
+        "failed": [],
+        "remediation_rounds": 0,
+        "fund_in_breach": [
+          "drawdown_realised"
+        ],
+        "raw_verdict": "FAIL",
+        "disclosures_required": 1
+      },
+      "reason": "The regime read on the vintages available at this date was expansion growth with above_target inflation and neutral policy, classified overheat. The composite signal was strongest on US Treasury duration at +0.40, Emerging markets at +0.39, T-bills at -0.38. The reconciled allocation moved T-bills 1.7pp; US Treasury duration (1.6)pp; Emerging markets (0.8)pp. The binding constraint at this meeting was drawdown_realised.",
+      "inputs_cited": [
+        {
+          "name": "composite score, US Treasury duration",
+          "value": 0.403
+        },
+        {
+          "name": "composite score, Emerging markets",
+          "value": 0.389
+        },
+        {
+          "name": "composite score, T-bills",
+          "value": -0.383
+        },
+        {
+          "name": "regime read",
+          "value": "overheat"
+        },
+        {
+          "name": "ex ante tracking error before",
+          "value": 73.5
+        }
+      ],
+      "watch": [
+        {
+          "text": "Composite on US Treasury duration stands at +0.40. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "ust_duration",
+          "level": 0.403,
+          "trigger": 0.6,
+          "direction": "above"
+        },
+        {
+          "text": "Composite on Emerging markets stands at +0.39. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "line": "em_equity",
+          "level": 0.389,
+          "trigger": 0.6,
+          "direction": "above"
+        }
+      ],
+      "watch_resolution": [
+        {
+          "text": "Composite on Developed ex-US stands at +0.42. A move beyond ++0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": 0.21106487665844614,
+          "happened": false
+        },
+        {
+          "text": "Composite on T-bills stands at -0.40. A move beyond -0.60 would carry the line past the tilt threshold.",
+          "metric": "composite",
+          "observed": -0.38256058529745507,
+          "happened": false
+        }
+      ],
+      "anachronisms": [],
+      "outcome": {
+        "active_return_bps": 0.0,
+        "months_held": 0,
+        "strategy_return_pct": 0.0,
+        "benchmark_return_pct": 0.0,
+        "cost_bps": 0.17,
+        "verdict": "too small to tell"
+      }
+    }
+  ],
+  "summary": {
+    "label": "Since inception",
+    "months": 60,
+    "period_start": "2021-07-31",
+    "period_end": "2026-06-30",
+    "annualised": true,
+    "portfolio": {
+      "cumulative_return": 0.5108694435342229,
+      "return": 0.0860389159834638,
+      "stdev": 0.11765453093853509,
+      "max_drawdown": -0.20697971910452628,
+      "max_drawdown_peak": "2021-12-31",
+      "max_drawdown_trough": "2022-09-30",
+      "sharpe": 0.7618690492421015,
+      "sharpe_stderr": 0.4525892586753198,
+      "downside_deviation": 0.07457204536127493,
+      "best_month": 0.07403201769367314,
+      "worst_month": -0.07964725964198212
+    },
+    "benchmark": {
+      "cumulative_return": 0.4872110392702622,
+      "return": 0.0826161965422918,
+      "stdev": 0.12329360585163587,
+      "max_drawdown": -0.22464589979062355,
+      "max_drawdown_peak": "2021-12-31",
+      "max_drawdown_trough": "2022-09-30",
+      "sharpe": 0.7066818690568059,
+      "sharpe_stderr": 0.4518425174037744,
+      "downside_deviation": 0.07896063772536466,
+      "best_month": 0.07920774438263702,
+      "worst_month": -0.0844424101039189
+    },
+    "active": {
+      "cumulative_return": 0.02365840426396071,
+      "return": 0.0034227194411720063,
+      "arithmetic_return": 0.002507989799179984,
+      "tracking_error": 0.009423086148292143,
+      "information_ratio": 0.26615375893963744,
+      "hit_rate": 0.55,
+      "beta": 0.952388352148754,
+      "alpha": 0.006656362006272787,
+      "best_month": 0.009175815158642978,
+      "worst_month": -0.006632409553214556
+    },
+    "drawdown_limit": -0.2,
+    "te_budget_bps": 200.0
+  },
+  "periods": [
+    {
+      "label": "3 months",
+      "months": 3,
+      "period_start": "2026-04-30",
+      "period_end": "2026-06-30",
+      "annualised": false,
+      "portfolio": {
+        "cumulative_return": 0.0926359678641584,
+        "return": 0.0926359678641584,
+        "stdev": 0.12579708828034167,
+        "max_drawdown": -0.005592720302254994,
+        "max_drawdown_peak": "2026-05-31",
+        "max_drawdown_trough": "2026-06-30",
+        "sharpe": 2.8997098756153528,
+        "sharpe_stderr": 2.3240882571717307,
+        "downside_deviation": NaN,
+        "best_month": 0.06702782214347941,
+        "worst_month": -0.005592720302255017
+      },
+      "benchmark": {
+        "cumulative_return": 0.10075992238509679,
+        "return": 0.10075992238509679,
+        "stdev": 0.12976686300487233,
+        "max_drawdown": -0.004344732111717264,
+        "max_drawdown_peak": "2026-05-31",
+        "max_drawdown_trough": "2026-06-30",
+        "sharpe": 3.048914989206316,
+        "sharpe_stderr": 2.35569814886539,
+        "downside_deviation": NaN,
+        "best_month": 0.07057453536070145,
+        "worst_month": -0.004344732111717228
+      },
+      "active": {
+        "cumulative_return": -0.008123954520938392,
+        "return": -0.008123954520938392,
+        "arithmetic_return": -0.03087307450767479,
+        "tracking_error": 0.00411825515585458,
+        "information_ratio": -7.4966395571156195,
+        "hit_rate": 0.0,
+        "beta": 0.9693727517844278,
+        "alpha": -0.018755460910270638,
+        "best_month": -0.001247988190537789,
+        "worst_month": -0.003546713217222039
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "1 year",
+      "months": 12,
+      "period_start": "2025-07-31",
+      "period_end": "2026-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.19879753374631526,
+        "return": 0.19879753374631526,
+        "stdev": 0.09327772614591417,
+        "max_drawdown": -0.045195405763109764,
+        "max_drawdown_peak": "2026-02-28",
+        "max_drawdown_trough": "2026-03-31",
+        "sharpe": 2.001080332879442,
+        "sharpe_stderr": 1.0802068185197395,
+        "downside_deviation": 0.04756511199460919,
+        "best_month": 0.06702782214347941,
+        "worst_month": -0.04519540576310992
+      },
+      "benchmark": {
+        "cumulative_return": 0.19609776003651724,
+        "return": 0.19609776003651724,
+        "stdev": 0.09583282708539445,
+        "max_drawdown": -0.047104944667119786,
+        "max_drawdown_peak": "2026-02-28",
+        "max_drawdown_trough": "2026-03-31",
+        "sharpe": 1.9260887149731603,
+        "sharpe_stderr": 1.0745118608378053,
+        "downside_deviation": 0.04940834499866679,
+        "best_month": 0.07057453536070145,
+        "worst_month": -0.04710494466711984
+      },
+      "active": {
+        "cumulative_return": 0.0026997737097980146,
+        "return": 0.0026997737097980146,
+        "arithmetic_return": 0.0020736965131509626,
+        "tracking_error": 0.00852112631694628,
+        "information_ratio": 0.2433594381797774,
+        "hit_rate": 0.5,
+        "beta": 0.9697402908821462,
+        "alpha": 0.00765911008154499,
+        "best_month": 0.0044725110403337175,
+        "worst_month": -0.003546713217222039
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "3 years",
+      "months": 36,
+      "period_start": "2023-07-31",
+      "period_end": "2026-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.5431810536838066,
+        "return": 0.15559492939730357,
+        "stdev": 0.09401971834391094,
+        "max_drawdown": -0.07913324922729092,
+        "max_drawdown_peak": "2023-07-31",
+        "max_drawdown_trough": "2023-10-31",
+        "sharpe": 1.5927640058863772,
+        "sharpe_stderr": 0.607098028630733,
+        "downside_deviation": 0.047773729049577655,
+        "best_month": 0.0712441065627174,
+        "worst_month": -0.04519540576310992
+      },
+      "benchmark": {
+        "cumulative_return": 0.5425121959910224,
+        "return": 0.15542794958355755,
+        "stdev": 0.09740310999583371,
+        "max_drawdown": -0.08367849856528276,
+        "max_drawdown_peak": "2023-07-31",
+        "max_drawdown_trough": "2023-10-31",
+        "sharpe": 1.5390953915752912,
+        "sharpe_stderr": 0.6051723196326478,
+        "downside_deviation": 0.05003495857123061,
+        "best_month": 0.07615037054056617,
+        "worst_month": -0.04710494466711984
+      },
+      "active": {
+        "cumulative_return": 0.0006688576927842416,
+        "return": 0.00016697981374602655,
+        "arithmetic_return": -0.0001614544979323234,
+        "tracking_error": 0.007674268889538658,
+        "information_ratio": -0.02103842076115075,
+        "hit_rate": 0.5,
+        "beta": 0.9627634891217135,
+        "alpha": 0.005420770556769899,
+        "best_month": 0.0044725110403337175,
+        "worst_month": -0.004906263977848768
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "5 years",
+      "months": 60,
+      "period_start": "2021-07-31",
+      "period_end": "2026-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.5108694435342229,
+        "return": 0.0860389159834638,
+        "stdev": 0.11765453093853509,
+        "max_drawdown": -0.20697971910452628,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.7618690492421015,
+        "sharpe_stderr": 0.4525892586753198,
+        "downside_deviation": 0.07457204536127493,
+        "best_month": 0.07403201769367314,
+        "worst_month": -0.07964725964198212
+      },
+      "benchmark": {
+        "cumulative_return": 0.4872110392702622,
+        "return": 0.0826161965422918,
+        "stdev": 0.12329360585163587,
+        "max_drawdown": -0.22464589979062355,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.7066818690568059,
+        "sharpe_stderr": 0.4518425174037744,
+        "downside_deviation": 0.07896063772536466,
+        "best_month": 0.07920774438263702,
+        "worst_month": -0.0844424101039189
+      },
+      "active": {
+        "cumulative_return": 0.02365840426396071,
+        "return": 0.0034227194411720063,
+        "arithmetic_return": 0.002507989799179984,
+        "tracking_error": 0.009423086148292143,
+        "information_ratio": 0.26615375893963744,
+        "hit_rate": 0.55,
+        "beta": 0.952388352148754,
+        "alpha": 0.006656362006272787,
+        "best_month": 0.009175815158642978,
+        "worst_month": -0.006632409553214556
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "FY2022",
+      "months": 12,
+      "period_start": "2021-07-31",
+      "period_end": "2022-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": -0.11075089091891577,
+        "return": -0.11075089091891577,
+        "stdev": 0.1172185676605193,
+        "max_drawdown": -0.14676093149533542,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-06-30",
+        "sharpe": -0.9419567044658123,
+        "sharpe_stderr": 1.018317289148461,
+        "downside_deviation": 0.10679141357508216,
+        "best_month": 0.0374844045239042,
+        "worst_month": -0.06524417864381221
+      },
+      "benchmark": {
+        "cumulative_return": -0.12969896317410734,
+        "return": -0.12969896317410734,
+        "stdev": 0.12036515008063403,
+        "max_drawdown": -0.16388738191776986,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-06-30",
+        "sharpe": -1.0912913351346223,
+        "sharpe_stderr": 1.0245103866835592,
+        "downside_deviation": 0.11359065434538987,
+        "best_month": 0.0372102393999265,
+        "worst_month": -0.06625650810429058
+      },
+      "active": {
+        "cumulative_return": 0.018948072255191573,
+        "return": 0.018948072255191573,
+        "arithmetic_return": 0.0209386296394687,
+        "tracking_error": 0.010155085720819598,
+        "information_ratio": 2.0618860554314242,
+        "hit_rate": 0.8333333333333334,
+        "beta": 0.9706406661106862,
+        "alpha": 0.017082179980361573,
+        "best_month": 0.009175815158642978,
+        "worst_month": -0.001266213518309238
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "FY2023",
+      "months": 12,
+      "period_start": "2022-07-31",
+      "period_end": "2023-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.10099821923402041,
+        "return": 0.10099821923402041,
+        "stdev": 0.16649609451843328,
+        "max_drawdown": -0.11472076850479651,
+        "max_drawdown_peak": "2022-07-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.6567593941019771,
+        "sharpe_stderr": 1.008946085893204,
+        "downside_deviation": 0.10564452371896903,
+        "best_month": 0.07403201769367314,
+        "worst_month": -0.07964725964198212
+      },
+      "benchmark": {
+        "cumulative_return": 0.10783349824571076,
+        "return": 0.10783349824571076,
+        "stdev": 0.17709428806180866,
+        "max_drawdown": -0.12225766658503612,
+        "max_drawdown_peak": "2022-07-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.6621455304369686,
+        "sharpe_stderr": 1.009092758857299,
+        "downside_deviation": 0.11212758731834406,
+        "best_month": 0.07920774438263702,
+        "worst_month": -0.0844424101039189
+      },
+      "active": {
+        "cumulative_return": -0.006835279011690343,
+        "return": -0.006835279011690343,
+        "arithmetic_return": -0.007914317149771814,
+        "tracking_error": 0.011960162300210528,
+        "information_ratio": -0.6617232234074701,
+        "hit_rate": 0.4166666666666667,
+        "beta": 0.9396652609243062,
+        "alpha": -0.0008393334338776121,
+        "best_month": 0.0047951504619367785,
+        "worst_month": -0.006632409553214556
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "FY2024",
+      "months": 12,
+      "period_start": "2023-07-31",
+      "period_end": "2024-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.1424299196184009,
+        "return": 0.1424299196184009,
+        "stdev": 0.1166101210337982,
+        "max_drawdown": -0.07913324922729092,
+        "max_drawdown_peak": "2023-07-31",
+        "max_drawdown_trough": "2023-10-31",
+        "sharpe": 1.201073578772887,
+        "sharpe_stderr": 1.0296151736940826,
+        "downside_deviation": 0.05822555623345947,
+        "best_month": 0.0712441065627174,
+        "worst_month": -0.03462737756208911
+      },
+      "benchmark": {
+        "cumulative_return": 0.13764652061000682,
+        "return": 0.13764652061000682,
+        "stdev": 0.12120714243027085,
+        "max_drawdown": -0.08367849856528276,
+        "max_drawdown_peak": "2023-07-31",
+        "max_drawdown_trough": "2023-10-31",
+        "sharpe": 1.1245484105163435,
+        "sharpe_stderr": 1.0260078201374092,
+        "downside_deviation": 0.061779757864739604,
+        "best_month": 0.07615037054056617,
+        "worst_month": -0.03748086207809653
+      },
+      "active": {
+        "cumulative_return": 0.004783399008394085,
+        "return": 0.004783399008394085,
+        "arithmetic_return": 0.003754036028014409,
+        "tracking_error": 0.007777794604249422,
+        "information_ratio": 0.482660730840511,
+        "hit_rate": 0.5833333333333334,
+        "beta": 0.9607333851071671,
+        "alpha": 0.009106205192731254,
+        "best_month": 0.0031887640911007556,
+        "worst_month": -0.004906263977848768
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "FY2025",
+      "months": 12,
+      "period_start": "2024-07-31",
+      "period_end": "2025-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.1267860803092251,
+        "return": 0.1267860803092251,
+        "stdev": 0.07502009757645194,
+        "max_drawdown": -0.02883194932547062,
+        "max_drawdown_peak": "2024-09-30",
+        "max_drawdown_trough": "2024-12-31",
+        "sharpe": 1.6334304399282298,
+        "sharpe_stderr": 1.0541207829688393,
+        "downside_deviation": 0.04011609686021082,
+        "best_month": 0.03670003856090841,
+        "worst_month": -0.02683251979549887
+      },
+      "benchmark": {
+        "cumulative_return": 0.13358629461724525,
+        "return": 0.13358629461724525,
+        "stdev": 0.07839348529014442,
+        "max_drawdown": -0.0263768336431347,
+        "max_drawdown_peak": "2024-09-30",
+        "max_drawdown_trough": "2024-12-31",
+        "sharpe": 1.6436596299530033,
+        "sharpe_stderr": 1.0547830934039084,
+        "downside_deviation": 0.04132492574068256,
+        "best_month": 0.03870309127172393,
+        "worst_month": -0.02495730028409495
+      },
+      "active": {
+        "cumulative_return": -0.006800214308020136,
+        "return": -0.006800214308020136,
+        "arithmetic_return": -0.0063120960349623435,
+        "tracking_error": 0.007000040509149427,
+        "information_ratio": -0.9017227867056049,
+        "hit_rate": 0.4166666666666667,
+        "beta": 0.953907695853447,
+        "alpha": -0.00037300091891631637,
+        "best_month": 0.00393454034977813,
+        "worst_month": -0.004127050733149833
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "FY2026",
+      "months": 12,
+      "period_start": "2025-07-31",
+      "period_end": "2026-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.19879753374631526,
+        "return": 0.19879753374631526,
+        "stdev": 0.09327772614591417,
+        "max_drawdown": -0.045195405763109764,
+        "max_drawdown_peak": "2026-02-28",
+        "max_drawdown_trough": "2026-03-31",
+        "sharpe": 2.001080332879442,
+        "sharpe_stderr": 1.0802068185197395,
+        "downside_deviation": 0.04756511199460919,
+        "best_month": 0.06702782214347941,
+        "worst_month": -0.04519540576310992
+      },
+      "benchmark": {
+        "cumulative_return": 0.19609776003651724,
+        "return": 0.19609776003651724,
+        "stdev": 0.09583282708539445,
+        "max_drawdown": -0.047104944667119786,
+        "max_drawdown_peak": "2026-02-28",
+        "max_drawdown_trough": "2026-03-31",
+        "sharpe": 1.9260887149731603,
+        "sharpe_stderr": 1.0745118608378053,
+        "downside_deviation": 0.04940834499866679,
+        "best_month": 0.07057453536070145,
+        "worst_month": -0.04710494466711984
+      },
+      "active": {
+        "cumulative_return": 0.0026997737097980146,
+        "return": 0.0026997737097980146,
+        "arithmetic_return": 0.0020736965131509626,
+        "tracking_error": 0.00852112631694628,
+        "information_ratio": 0.2433594381797774,
+        "hit_rate": 0.5,
+        "beta": 0.9697402908821462,
+        "alpha": 0.00765911008154499,
+        "best_month": 0.0044725110403337175,
+        "worst_month": -0.003546713217222039
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    },
+    {
+      "label": "Since inception",
+      "months": 60,
+      "period_start": "2021-07-31",
+      "period_end": "2026-06-30",
+      "annualised": true,
+      "portfolio": {
+        "cumulative_return": 0.5108694435342229,
+        "return": 0.0860389159834638,
+        "stdev": 0.11765453093853509,
+        "max_drawdown": -0.20697971910452628,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.7618690492421015,
+        "sharpe_stderr": 0.4525892586753198,
+        "downside_deviation": 0.07457204536127493,
+        "best_month": 0.07403201769367314,
+        "worst_month": -0.07964725964198212
+      },
+      "benchmark": {
+        "cumulative_return": 0.4872110392702622,
+        "return": 0.0826161965422918,
+        "stdev": 0.12329360585163587,
+        "max_drawdown": -0.22464589979062355,
+        "max_drawdown_peak": "2021-12-31",
+        "max_drawdown_trough": "2022-09-30",
+        "sharpe": 0.7066818690568059,
+        "sharpe_stderr": 0.4518425174037744,
+        "downside_deviation": 0.07896063772536466,
+        "best_month": 0.07920774438263702,
+        "worst_month": -0.0844424101039189
+      },
+      "active": {
+        "cumulative_return": 0.02365840426396071,
+        "return": 0.0034227194411720063,
+        "arithmetic_return": 0.002507989799179984,
+        "tracking_error": 0.009423086148292143,
+        "information_ratio": 0.26615375893963744,
+        "hit_rate": 0.55,
+        "beta": 0.952388352148754,
+        "alpha": 0.006656362006272787,
+        "best_month": 0.009175815158642978,
+        "worst_month": -0.006632409553214556
+      },
+      "drawdown_limit": -0.2,
+      "te_budget_bps": 200.0
+    }
+  ],
+  "scorecard": {
+    "decisions": 20,
+    "helped": 10,
+    "hurt": 8,
+    "too_small_to_tell": 2,
+    "gross_active_bps_total": 108.8,
+    "net_active_bps_per_year": 21.8,
+    "turnover_cost_bps_total": 13.2,
+    "turnover_cost_bps_per_year": 2.6,
+    "binding_constraint_frequency": {
+      "drawdown_realised": 15,
+      "drawdown_stress": 3,
+      "leverage_gross": 2
+    },
+    "decision_kind_frequency": {
+      "tilt": 13,
+      "unwind": 7
+    },
+    "quarters_failing_compliance": 0,
+    "quarters_fund_in_breach": 17,
+    "quarters_needing_remediation": 2
+  }
+}

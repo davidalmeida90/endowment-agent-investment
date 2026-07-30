@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "DFII10",
+  "label": "US 10y TIPS real yield",
+  "publication_lag_days": 0,
+  "rows": 4454,
+  "pulled_at": "2026-07-28T23:26:22"
+}

@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "BAMLH0A0HYM2",
+  "label": "US high yield OAS",
+  "publication_lag_days": 1,
+  "rows": 793,
+  "pulled_at": "2026-07-28T23:26:24"
+}

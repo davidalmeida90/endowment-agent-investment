@@ -1,0 +1,490 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+body{max-width:1100px;margin:0 auto;padding:60px 70px;font-family:'Segoe UI',system-ui,sans-serif;color:#1a2233;background:#fff;font-size:22px;line-height:1.6}
+h1{font-size:44px;border-bottom:3px solid #0B2545;padding-bottom:12px;color:#0B2545}
+h2{font-size:32px;color:#0B2545;margin-top:38px} h3{font-size:26px;color:#334} h4{font-size:23px;color:#556}
+code{background:#f1efe9;padding:2px 7px;border-radius:5px;font-family:'IBM Plex Mono',monospace;font-size:0.9em;color:#8a5a1a}
+b{color:#0B2545} li{margin:6px 0} p{margin:12px 0}
+</style></head><body><h1>Audit note</h1>
+
+<p><b>Ashcroft University Endowment — tactical asset allocation study</b></p>
+<p>Prepared before publication. Nothing in this note changes a result. It records</p>
+<p>what a reader should and should not trust, and why.</p>
+
+<p>Every mechanical figure below is produced by <code>tests/audit.py</code> and written to</p>
+<p><code>outputs/audit.json</code>, so this note can be checked rather than believed:</p>
+
+<p><code>`</code></p>
+<p>py -3 tests/audit.py     # first pass: what is missing</p>
+<p>py -3 tests/audit2.py    # second pass: what is tilted</p>
+<p><code>`</code></p>
+
+<p>The findings the script <b>cannot</b> produce are marked <b>[judgement]</b>. Those are</p>
+<p>the ones that matter most, because a check that could detect them would already</p>
+<p>have been written.</p>
+
+<p>---</p>
+
+<h2>Short version</h2>
+
+<p>| | |</p>
+<p>|---|---|</p>
+<p>| Can you trust that no decision used future data? | <b>Yes</b>, within the limits at §1. Enforced, tested, and the enforcement was broken on purpose to prove the tests fire. |</p>
+<p>| Can you trust the five-year track record? | <b>It is not a track record.</b> It is a simulation of a rule. See §2. |</p>
+<p>| Can you trust that the programme added +34bps a year? | <b>No.</b> Indistinguishable from zero, the sign flips with the window, and §9.1 shows the benchmark it was measured against was about 30bps a year too easy. |</p>
+<p>| Can you trust the recommendation? | <b>Yes, but on a narrower base than the report first implied.</b> It rests on the 202bps valuation gap and the drawdown incompatibility. The cost argument is weaker than presented; see §9.3. |</p>
+<p>| Can you trust the committee minutes? | <b>The reasoning, yes. The meeting, no.</b> No committee met. See §4. |</p>
+
+<p>---</p>
+
+<h2>1. Look-ahead: what was enforced and what could not be</h2>
+
+<h3>What was enforced, and verified</h3>
+
+<p>Every historical read passes through <code>taa/pitdata.py</code>, which takes an as-of date</p>
+<p>and refuses anything published after it. Verified this run:</p>
+
+<p>| Check | Result |</p>
+<p>|---|---|</p>
+<p>| Decision fields referencing a date later than that meeting | <b>0</b> |</p>
+<p>| Point-in-time access log entries | <b>over 9,000</b> (the audit&#x27;s own reads append to it, so the exact count rises each run) |</p>
+<p>| Reads returning an observation after their as-of date | <b>0</b> |</p>
+<p>| Meeting/series reads not using that meeting&#x27;s own ALFRED vintage | <b>0 of 140</b> |</p>
+<p>| Current-vintage (anachronistic) inputs admitted to a historical decision | <b>0</b> |</p>
+<p>| Deliberate mutations of the enforcement caught by the test suite | <b>7 of 7</b> |</p>
+
+<p>The macro series are read from the ALFRED vintage current on each meeting date,</p>
+<p>so a decision in September 2022 sees the September 2022 vintage and nothing</p>
+<p>later. This is not cosmetic: 2022 Q2 real GDP printed <b>(0.93)%</b> and now reads</p>
+<p><b>+0.63%</b>, and the sign did not cross zero until <b>791 days</b> after the print.</p>
+
+<p>The Macro desk added six BEA release dates to the ingestion layer. A reader</p>
+<p>might reasonably ask whether choosing *which* extra vintages to fetch, knowing</p>
+<p>where the interesting revision was, leaks anything into the decisions. It does</p>
+<p>not, and this was tested rather than argued: all 140 meeting-and-series reads</p>
+<p>resolve to that meeting&#x27;s own dated vintage file, so an extra vintage sitting</p>
+<p>between two meetings can never be served to one. The extra vintages are used</p>
+<p>only for the published-print demonstration.</p>
+
+<h3>What could not be enforced <b>[judgement]</b></h3>
+
+<p>**The specification of the study was chosen in 2026, with knowledge of what</p>
+<p>2021 to 2026 contained.** No point-in-time layer can fix this. Specifically:</p>
+
+<li>which five signals to build, and their lookbacks and standardisation</li>
+<li>the regime classification rule, its indicators and its thresholds</li>
+<li>the 50/50 reconciliation rule between the two desks</li>
+<li>the corridor formula and the choice of stress episodes</li>
+<li>the decision to run quarterly rather than monthly or annually</li>
+
+<p>This is the residual look-ahead in every backtest of a rule designed after the</p>
+<p>fact, and it is present here. Three things reduce how much it should worry you,</p>
+<p>and one thing should:</p>
+
+<li>The <b>opportunity set is not mine</b>. The nine lines, their weights, ranges and</li>
+<p>  vehicles are fixed by the Investment Policy Statement.</p>
+<li>The signals are taken from published literature rather than fitted to this</li>
+<p>  window, and the parameter count is stated in <code>taa/signals.py</code>.</p>
+<li><b>The direction of the bias runs against the conclusion.</b> Specification</li>
+<p>  choices made with hindsight generally make a strategy look *better*. This</p>
+<p>  study concludes the signals do not work, on a composite out-of-sample R² of</p>
+<p>  <b>(1.61)%</b>. A bias that flatters, applied to a result this poor, means the</p>
+<p>  honest result is poorer still. The conclusion is robust to the bias; a</p>
+<p>  positive conclusion would not have been.</p>
+<li><b>But</b>: if you are reading the five-year record as evidence that this</li>
+<p>  *particular* rule is good, that reading is not supported, for exactly this</p>
+<p>  reason.</p>
+
+<p><b>Prices are back-adjusted.</b> Yahoo Finance adjusted closes are restated</p>
+<p>retroactively when a distribution is paid, so the *level* of a past adjusted</p>
+<p>close is not what a screen showed that day. Returns between two past dates are</p>
+<p>correct, and no return in this study is computed across the as-of boundary, so</p>
+<p>no look-ahead is introduced. Stated because it is a real property of the data</p>
+<p>rather than because it causes a problem here.</p>
+
+<p>---</p>
+
+<h2>2. The five-year record is a simulation, not a track record</h2>
+
+<p>This is the most important thing in this note.</p>
+
+<p>| | |</p>
+<p>|---|---|</p>
+<p>| Committee meetings actually held | <b>0</b> |</p>
+<p>| Historical decisions that involved deliberation | <b>0 of 20</b> |</p>
+<p>| Live decisions that involved deliberation | <b>1</b> (the FY2027 recommendation) |</p>
+<p>| Transaction costs | <b>modelled</b>, static per-line vector |</p>
+<p>| Execution, slippage, market impact beyond that vector | <b>not modelled</b> |</p>
+
+<p>No office ran. No money was managed. The twenty quarterly entries are a</p>
+<p>pre-committed rule applied to point-in-time inputs, and the report and record</p>
+<p>both say so at the top rather than in a footnote. The reasons attached to each</p>
+<p>decision are the readings that drove the rule, not an account of a discussion.</p>
+
+<p>Returns are <b>net of modelled trading costs and gross of the 0.40% cost load</b></p>
+<p>in the IPS 3.2 return requirement, which is an office and custody cost rather</p>
+<p>than a trading cost. A GIPS-compliant net-of-fees presentation for a real</p>
+<p>composite would deduct it.</p>
+
+<p>The benchmark is the policy portfolio <b>rebalanced monthly</b>. That is a</p>
+<p>modelling choice and a GIPS 24.C.27 disclosure item. It works against the fund</p>
+<p>rather than for it, since a monthly-rebalanced blend is harder to beat than a</p>
+<p>drifting one.</p>
+
+<p>---</p>
+
+<h2>3. The performance numbers are indistinguishable from zero</h2>
+
+<p>| Statistic | Value | Interval |</p>
+<p>|---|---:|---|</p>
+<p>| Monthly observations | 60 | five years, one or two regimes |</p>
+<p>| Sharpe ratio | 0.762 | 95%: <b>[(0.13), +1.65]</b> — contains zero |</p>
+<p>| Information ratio | 0.266 | 95%: <b>[(0.61), +1.14]</b> — contains zero |</p>
+
+<p><b>Active return a year, same programme, different window:</b></p>
+
+<p>| Window | 12m | 24m | 36m | 48m | 60m |</p>
+<p>|---|---:|---:|---:|---:|---:|</p>
+<p>| Active return a year, bps | <b>+27</b> | <b>(22)</b> | <b>+2</b> | <b>(16)</b> | <b>+34</b> |</p>
+
+<p>The sign flips four times. Any headline drawn from this record is a statement</p>
+<p>about the window it was measured on, and the report quotes the five-year and</p>
+<p>three-year figures side by side for that reason rather than the flattering one.</p>
+
+<p><b>Do not quote the +34bps as a result.</b> If you quote anything, quote the</p>
+<p>interval.</p>
+
+<p>The out-of-sample evidence is on roughly 130 monthly observations per line</p>
+<p>against the 900 in the studies it is compared to, so every R² here carries a</p>
+<p>standard error several times theirs.</p>
+
+<p>---</p>
+
+<h2>4. Judgement calls with a large presentational effect <b>[judgement]</b></h2>
+
+<p>These changed how the study reads. Each is defensible and each is a call a</p>
+<p>reader is entitled to disagree with.</p>
+
+<h3>4.1 Reclassifying two compliance failures as fund state rather than allocation defects</h3>
+
+<p>**Effect: the headline moved from &quot;20 of 20 allocations failed&quot; to &quot;0 of 20</p>
+<p>failed, 17 of 20 quarters with the fund in breach&quot;.**</p>
+
+<p>A realised drawdown beyond the (20.00)% limit cannot be remedied by choosing</p>
+<p>different weights, because it has already happened; IPS 3.3 answers it by</p>
+<p>reducing the distribution and IPS 2.3 escalates it. The same applies to an</p>
+<p>ex-ante drawdown failure at or below policy-equivalent risk, because the Board&#x27;s</p>
+<p>own policy portfolio reads (21.60)% against the (20.00)% limit, so the gate sits</p>
+<p>on top of policy.</p>
+
+<p>Treating either as a rejected allocation would report twenty rejections for one</p>
+<p>event in October 2022 and would blame the desks for the mandate. That is the</p>
+<p>argument. The counter-argument is that it is a reclassification that turns a</p>
+<p>failing control into a passing one, and it is implemented in <code>taa/simulate.py</code></p>
+<p>where a reader can see it.</p>
+
+<h3>4.2 The risk desk&#x27;s ex-ante drawdown gate</h3>
+
+<p>The gate is set at the <b>looser</b> of the mandate limit and the policy</p>
+<p>portfolio&#x27;s own ex-ante figure. Without that, the policy portfolio fails at</p>
+<p>every meeting and the test gates nothing. The Risk desk names this as the most</p>
+<p>questionable choice in its module and the office did not overrule it. It means</p>
+<p><b>the office can never take a risk-increasing position</b>, which is a strong</p>
+<p>constraint arrived at by calibration rather than by the Statement.</p>
+
+<h3>4.3 The committee is a construct</h3>
+
+<p>Seven members, a quorum, a chair who does not vote, and a recorded dissent. **No</p>
+<p>such body met.** The dissent recorded in the minutes is a real and sourced</p>
+<p>counter-argument — Sneddon (2020) on whether correlation across bets raises or</p>
+<p>lowers the achievable information ratio, which appears in the Systematic desk&#x27;s</p>
+<p>own paper — but its attribution to &quot;a member with professional investment</p>
+<p>experience&quot; is fiction. The reasoning is genuine; the meeting is not.</p>
+
+<p>If you publish the minutes, say this. They read as a record of a deliberation.</p>
+
+<h3>4.4 The top-decisions note is selected on outcome</h3>
+
+<p><code>outputs/top_decisions.html</code> sorts twenty decisions by what they earned and</p>
+<p>keeps three. That is hindsight applied deliberately, and the note says so in its</p>
+<p>first paragraph. Selecting the best three from twenty coin flips produces three</p>
+<p>impressive coin flips.</p>
+
+<p>---</p>
+
+<h2>5. Data limitations</h2>
+
+<p>| Limitation | Extent | What was done |</p>
+<p>|---|---|---|</p>
+<p>| ICE BofA option-adjusted spreads served for a rolling three-year window only, from 31 July 2023 | <b>8 of 20</b> meetings ran on three liquidity indicators rather than four | Four public-domain long-history substitutes added (BAA10Y, AAA10Y, T10Y2Y, T10Y3M). Nothing interpolated, nothing carried backwards. The dashboard shows which quarters. |</p>
+<p>| Price cache begins 1 July 2009 | The <b>2008 crisis is outside</b> the stress replay | Not worked around. The desk did not reach past the point-in-time layer to obtain it, so the worst episode the risk model can see is not the worst that occurred, and the ex-ante drawdown estimate is optimistic by an unknown margin. |</p>
+<p>| Shiller CAPE has no vintage history | Excluded from all historical work | A dividend-yield construction from price data is used instead, which is point-in-time clean and weaker. |</p>
+<p>| Yahoo Finance is an unofficial interface | All price data | No paid vendor was used. Data is not guaranteed and adjusted closes are vendor-computed. |</p>
+<p>| Six agents appending to one log concurrently | 2 lines corrupted during the desk phase, since removed | The current log shows 0 corrupted, but that is after cleaning. The failure mode is real: shared mutable state, no locking. |</p>
+<p>| Months with a missing line return | <b>0</b> | All nine lines have a complete series across the window and every vehicle was investable throughout, so nothing is spliced. |</p>
+
+<p>---</p>
+
+<h2>6. What was independently verified, and what was taken on trust <b>[judgement]</b></h2>
+
+<p>Six desks produced roughly 11,000 lines of code and six papers. The coordinating</p>
+<p>office did not re-derive all of it.</p>
+
+<p><b>Independently verified by the office:</b></p>
+
+<li>the 2022 Q2 GDP vintage claim, recomputed from ALFRED rather than accepted</li>
+<li>the compliance module&#x27;s behaviour on the case IPS 4.1 names, run directly</li>
+<li>the unit boundary between <code>costs.py</code> and the rest of the study</li>
+<li>the look-ahead enforcement, including under deliberate mutation</li>
+<li>the Capital Markets check, run and shown failing under <code>--demo-fail</code></li>
+<li>that MANDATE.md agrees with the IPS on all 9 weights, 9 ranges, 3 sleeve</li>
+<p>  ranges and 11 scalar limits</p>
+
+<p><b>Taken on trust, checked only by the desk&#x27;s own tests:</b></p>
+
+<li>the 688 Macro desk assertions</li>
+<li>the 53 Implementation desk assertions</li>
+<li>the Ledoit-Wolf shrinkage implementation and its Monte Carlo validation</li>
+<li>every individual cell of the out-of-sample R² table</li>
+<li>the vehicle-level exclusion holdings, said to be from SEC N-PORT filings</li>
+<li>the transaction cost vector&#x27;s derivation from quoted spreads</li>
+
+<p><b>Marked by the desks themselves as recalled rather than verified:</b></p>
+
+<li><b>8 of 40</b> Systematic desk claims (20%)</li>
+<li>two Capital Markets inputs, including the long-run real earnings growth</li>
+<p>  assumption in the bottom-up equity cross-check</p>
+<li>Research Affiliates figures, taken from Morningstar because the primary tool</li>
+<p>  requires a login</p>
+
+<p>All 8 capital-market houses carry an openable URL. No paywalled source was used</p>
+<p>anywhere and no credential was required.</p>
+
+<p>---</p>
+
+<h2>7. Errors found during the build, and what that implies</h2>
+
+<p>Recorded because the ones found suggest the rate, and the rate is not zero.</p>
+
+<p>| Found | What it was | How it was found |</p>
+<p>|---|---|---|</p>
+<p>| Unit mismatch at the cost interface | Would have made <b>all twenty decisions holds</b> | A two-line smoke test |</p>
+<p>| Publication-lag test dated on Good Friday | Test passed regardless of the code | The mutation test |</p>
+<p>| Anachronism test failing on a missing file | Passed without reaching its check | The mutation test |</p>
+<p>| Prose saying 16.3pp where the files said 16.5pp | Four sentences across three documents | <b>By hand</b> |</p>
+<p>| A wrong causal claim about the Dec-2025 EM sale | Called a view reversal; it was drift correction | <b>By hand</b>, while writing this audit |</p>
+<p>| The benchmark claim, stated backwards | Report said the benchmark was harder to beat; it is <b>29.7bps a year easier</b> | <b>The second audit pass</b>, testing a claim never tested |</p>
+<p>| “Three independent findings” | Two of the three share a prior; the honest count is two | <b>The second audit pass</b> |</p>
+<p>| A check too blunt to tell prose from code | The static guard failed on a *sentence about* config.RAW in the audit script | <b>The suite itself</b>, third instance of this class |</p>
+
+<p><b>A pattern worth naming.</b> Three separate checks in this study were written too</p>
+<p>bluntly and failed clean work: a hindsight check matching &quot;0.1&quot; inside an unrelated</p>
+<p>signal reading, a figure-drift check reading a table cell as a prose claim, and a</p>
+<p>static guard reading a sentence *about* <code>config.RAW</code> as an access to it. Each was</p>
+<p>tightened rather than loosened, and each took a real failure to notice. A check that</p>
+<p>fires on correct work is not merely noisy: it is the thing that gets a guard switched</p>
+<p>off by someone who is right to switch it off.</p>
+
+<p>Two of the errors in the table above were found by reading rather than by a test,</p>
+<p>which means the detection rate for that class is unknown. A check for the</p>
+<p>first now exists (<code>tests/check_figures.py</code>, 9 assertions, goes red on demand).</p>
+<p><b>No check exists for the second class</b>: a hand-written causal interpretation</p>
+<p>of the record that is wrong. Some of the interpretive prose has been spot-checked</p>
+<p>against the data. Not all of it has.</p>
+
+<p>---</p>
+
+<h2>8. If you publish this, say these six things</h2>
+
+<p>1. <b>The five-year record is a simulation of a rule, not a track record.</b> No</p>
+<p>   office ran and no committee met.</p>
+<p>2. <b>The performance numbers cannot be separated from zero</b>, the sign of the</p>
+<p>   active return flips depending on the measurement window, and the benchmark</p>
+<p>   they were measured against is about <b>30bps a year too easy</b> (§9.1). Against</p>
+<p>   a drifting benchmark the programme&#x27;s active return is negative.</p>
+<p>3. <b>The recommendation does not depend on either of those.</b> It rests on a</p>
+<p>   202bps gap between what the policy portfolio is priced to earn and what the</p>
+<p>   spending rule requires. That finding is forward-looking, independent of the</p>
+<p>   record, and is the strongest thing in the study.</p>
+<p>4. **The claim that the tactical programme fails to clear its costs is true</p>
+<p>   ex ante and false on the realised numbers** for this window (§9.3).</p>
+<p>   Preferring the ex-ante figure is a defensible judgement, not a fact.</p>
+<p>5. <b>The committee minutes are a construct.</b> The reasoning and the dissent are</p>
+<p>   genuine and sourced; the meeting and its members are not.</p>
+<p>6. <b>The point-in-time discipline is real and was tested to destruction</b>, but</p>
+<p>   it cannot cover the fact that the study&#x27;s own specification was chosen in</p>
+<p>   2026 with knowledge of the period it is applied to.</p>
+
+<p>The one conclusion that strengthened under audit is the **drawdown</p>
+<p>incompatibility**: 32% of rolling five-year windows since 2009 breach the</p>
+<p>Board&#x27;s (20)% limit on policy weights alone (§9.4).</p>
+
+<p>---</p>
+
+<h2>9. Second pass: bias, and claims this office asserted without testing</h2>
+
+<p>Run by <code>tests/audit2.py</code> into <code>outputs/audit2.json</code>. The first pass asked what</p>
+<p>was missing. This one asked what was tilted, and it tested five claims the</p>
+<p>report made in prose and had never checked. <b>Two of them were wrong.</b> Both are</p>
+<p>now corrected in the report and both are recorded here rather than quietly</p>
+<p>fixed.</p>
+
+<h3>9.1 The benchmark choice flatters the fund. The report said the opposite.</h3>
+
+<p>The report asserted, twice, that a monthly-rebalanced blend is harder to beat</p>
+<p>than a drifting one, and that the choice therefore worked against the fund. That</p>
+<p>was never tested. It is wrong:</p>
+
+<p>| Benchmark construction | Annualised, five years |</p>
+<p>|---|---:|</p>
+<p>| Policy portfolio, rebalanced monthly (the one used) | <b>8.262%</b> |</p>
+<p>| Policy portfolio, never rebalanced | <b>8.558%</b> |</p>
+
+<p>The benchmark this study uses is <b>29.7bps a year easier to beat</b>. Every active</p>
+<p>return in the report is flattered by roughly that amount, which is larger than</p>
+<p>the +21.8bps a year the programme is credited with. Measured against the harder</p>
+<p>benchmark, the active return is negative.</p>
+
+<p>The benchmark was not changed, because it is the IPS 4.1 blend and the choice</p>
+<p>was made before the comparison was run. The report now discloses the direction</p>
+<p>and the size of the effect.</p>
+
+<h3>9.2 The 50/50 reconciliation rule gave one desk roughly twice the weight</h3>
+
+<p>Equal weight on two *active vectors* is not equal weight on two *opinions*.</p>
+
+<p>| | Quantitative | Macro |</p>
+<p>|---|---:|---:|</p>
+<p>| Mean size of the active vector | <b>14.1pp</b> | <b>7.7pp</b> |</p>
+<p>| Quarters it was the larger view | <b>20 of 20</b> | 0 of 20 |</p>
+<p>| Mean cosine similarity to the adopted allocation | <b>+0.911</b> | +0.659 |</p>
+
+<p>The adopted allocation resembles the model desk far more closely than the macro</p>
+<p>desk, by a factor of about 1.8 to 1 in position size. The rule was pre-committed</p>
+<p>and has not been changed, because altering it after seeing the record is the</p>
+<p>failure the pre-commitment exists to prevent. But **the report describing it as</p>
+<p>equal weighting was misleading**, and it now says so.</p>
+
+<h3>9.3 The cost argument: ex ante says no, realised says yes</h3>
+
+<p>| | |</p>
+<p>|---|---:|</p>
+<p>| Systematic desk assumed turnover cost | 6.4bps/yr |</p>
+<p>| <b>Realised turnover cost in the simulation</b> | <b>2.6bps/yr</b> |</p>
+<p>| Ratio, assumed to realised | 2.5x |</p>
+<p>| Systematic desk expected alpha | 4.2bps/yr |</p>
+<p>| <b>Realised active return</b> | <b>+21.8bps/yr</b> |</p>
+<p>| Clears its costs, ex ante | <b>NO</b> |</p>
+<p>| Clears its costs, realised on this window | <b>YES</b> |</p>
+
+<p>The recommendation leads with the ex-ante arithmetic, which is the unfavourable</p>
+<p>one. The realised experience over these five years says the opposite. Leading</p>
+<p>with the number that supports the conclusion while the other one exists is</p>
+<p>exactly the selective presentation an audit should catch, so it is now stated in</p>
+<p>the report beside the fundamental-law section.</p>
+
+<p>The office still prefers the ex-ante number, because +21.8bps sits inside a</p>
+<p>noise band of roughly plus or minus 45bps, and the same programme returns</p>
+<p>(22)bps a year measured over two years. **That preference is a judgement and not</p>
+<p>a fact.**</p>
+
+<h3>9.4 The drawdown finding is robust, and it is the one that survived</h3>
+
+<p>The second amendment question rests on the policy portfolio breaching its own</p>
+<p>(20)% limit. That would be weak if it depended on the chosen window. It does</p>
+<p>not:</p>
+
+<p>| | |</p>
+<p>|---|---:|</p>
+<p>| Policy portfolio worst drawdown, full cache from 2009 | <b>(22.46)%</b> |</p>
+<p>| Rolling five-year windows breaching the (20)% limit | <b>46 of 144, 32%</b> |</p>
+<p>| Worst twelve-month loss | (18.57)% |</p>
+
+<p>Caveat: those 144 windows overlap heavily and the breaches cluster on two</p>
+<p>episodes, 2020 and 2022, so this is not 46 independent observations. The honest</p>
+<p>statement is that **any five-year window containing either episode breaches the</p>
+<p>limit**, and two such episodes occurred in fifteen years.</p>
+
+<h3>9.5 Three independent findings is really two</h3>
+
+<p>The report said three findings, each from a different desk working</p>
+<p>independently. The Systematic and Quantitative desks both update from the same</p>
+<p>replication literature, so the second corroborates the first rather than</p>
+<p>standing apart from it. The genuinely disjoint pair is Capital Markets against</p>
+<p>Systematic: a valuation gap and a breadth-and-cost arithmetic share no input.</p>
+<p>Corrected in the report.</p>
+
+<h3>9.6 Coordinator anchoring: four diagnoses sent, four adopted, zero pushback</h3>
+
+<p>| Desk | What the office sent | What it contained |</p>
+<p>|---|---|---|</p>
+<p>| Quantitative | <code>config.RAW</code> in signals.py | the diagnosis <b>and</b> the fix |</p>
+<p>| Implementation | unit contract | the diagnosis <b>and</b> the adapter |</p>
+<p>| Risk | <code>range_breach_inside_te</code> | the root cause, the fix, <b>and</b> the forbidden fixes |</p>
+<p>| Macro | credit series limitation | the problem <b>and</b> the substitute series |</p>
+
+<p>**Every diagnosis the office sent was adopted as sent. No desk pushed back on</p>
+<p>one.** In each case the office supplied the answer alongside the problem, which</p>
+<p>is efficient and is also the shape of an anchoring effect. Where the office was</p>
+<p>right this is invisible. Had it been wrong, nothing in the process would have</p>
+<p>surfaced it, because each desk received the conclusion at the same moment as the</p>
+<p>question.</p>
+
+<p>The one place the office deliberately guarded against this is the instruction to</p>
+<p>the Macro desk to report a disagreement with the office own GDP computation</p>
+<p>rather than reconcile to it. That instruction was given once, to one desk, about</p>
+<p>one number.</p>
+
+<h3>9.7 Self-written, self-passed desk checks</h3>
+
+<p>| Desk | Assertions | Written by | Reviewed line by line by the office |</p>
+<p>|---|---:|---|---|</p>
+<p>| Macro | 688 | the desk | no |</p>
+<p>| Implementation | 53 | the desk | no |</p>
+<p>| Systematic | 26 | the desk | no |</p>
+<p>| Capital Markets | 5 | the desk | no |</p>
+<p>| Risk | 13 mutants killed | the desk | no |</p>
+
+<p>Every check was re-run by the office and every one passes. **None had its</p>
+<p>assertions reviewed.** A desk that writes 688 assertions and passes 688 of them</p>
+<p>has demonstrated internal consistency, not correctness. The Risk desk mutation</p>
+<p>harness is the strongest of the five, because killing a mutant requires a check</p>
+<p>to detect a deliberate break rather than merely to agree with its author.</p>
+
+<p>---</p>
+
+<h2>10. Revised summary after the second pass</h2>
+
+<p>Two claims in the report were wrong and are corrected. One material tension was</p>
+<p>under-reported and is now stated. One finding got stronger.</p>
+
+<p>| | |</p>
+<p>|---|---|</p>
+<p>| Active returns in the report | <b>Flattered by about 30bps a year</b> by the benchmark construction. Against a drifting benchmark the active return is negative. |</p>
+<p>| The 50/50 rule | Gave the Quantitative desk about 1.8x the influence. Disclosed, not changed. |</p>
+<p>| The programme does not clear its costs | True ex ante, <b>false on realised experience over this window</b>. Both now in the report. |</p>
+<p>| The policy portfolio breaches its drawdown limit | <b>Robust.</b> 32% of rolling five-year windows since 2009 breach it. |</p>
+<p>| Three independent findings | <b>Two.</b> Corrected. |</p>
+<p>| Desk work | Internally consistent; not independently re-derived. |</p>
+
+<p><b>The recommendation is unchanged</b>, and after this pass it rests on a narrower</p>
+<p>base than the report originally implied: the 202bps valuation gap, which is the</p>
+<p>strongest single finding and is independent of everything else here, and the</p>
+<p>drawdown incompatibility, which survives the window test.</p>
+
+<p>The evidence that the tactical programme is worthless is **weaker than the report</p>
+<p>first presented it**, because the realised numbers on this window are positive</p>
+<p>and the benchmark that produced them was the easy one. What carries the</p>
+<p>recommendation is the forward-looking arithmetic, not the record.</p>
+
+<p>---</p>
+
+<h2>What would change this note</h2>
+
+<li>An error found in a desk&#x27;s work that its own tests passed</li>
+<li>Any interpretive claim in the report shown to be wrong, as two already were</li>
+<li>A rerun on a different window producing a materially different conclusion,</li>
+<p>  which for the *performance* numbers it already does and for the</p>
+<p>  *recommendation* it should not</p>
+
+<p>Re-run <code>py -3 tests/audit.py</code> after any change. It writes <code>outputs/audit.json</code></p>
+<p>and takes about a minute.</p></body></html>

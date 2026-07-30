@@ -1,0 +1,6 @@
+# Versions this study was produced and verified with.
+# Only datapull needs yfinance; everything after the first pull runs offline.
+numpy==2.4.2
+pandas==3.0.1
+scipy==1.17.1
+yfinance==1.2.0

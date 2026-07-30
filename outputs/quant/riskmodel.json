@@ -1,0 +1,571 @@
+{
+  "as_of": "2026-06-30",
+  "estimator": "Ledoit-Wolf (2003/2004) shrinkage of the sample covariance toward a constant-correlation target, implemented from the published formulae; the intensity is analytical, not chosen",
+  "window_months": 60,
+  "lines": [
+    "us_equity",
+    "dev_ex_us",
+    "em_equity",
+    "ust_duration",
+    "us_ig",
+    "us_hy",
+    "commodities",
+    "listed_re",
+    "cash"
+  ],
+  "current": {
+    "delta": 0.16165103517586527,
+    "mean_sample_correlation": 0.4653630375419604,
+    "n_obs": 60,
+    "first_obs": "2021-07-31",
+    "last_obs": "2026-06-30",
+    "cond_cov_sample": 4574.3642567956595,
+    "cond_cov_shrunk": 4059.842414437384,
+    "cond_corr_sample": 182.7032615981973,
+    "cond_corr_shrunk": 46.73922418909478,
+    "min_eigenvalue_sample": 2.3685295232706996e-05,
+    "min_eigenvalue_shrunk": 2.5703909716590288e-05,
+    "annualised_vol": {
+      "us_equity": 0.15879436009253253,
+      "dev_ex_us": 0.15551161150990628,
+      "em_equity": 0.17722388150797333,
+      "ust_duration": 0.07580509564829926,
+      "us_ig": 0.09662684768857228,
+      "us_hy": 0.07635280941942435,
+      "commodities": 0.16698401591351522,
+      "listed_re": 0.1918862755535748,
+      "cash": 0.005565465120422934
+    },
+    "covariance": {
+      "us_equity": {
+        "us_equity": 0.025215648797196885,
+        "dev_ex_us": 0.01826874842821767,
+        "em_equity": 0.017395975567846073,
+        "ust_duration": 0.006347024802092216,
+        "us_ig": 0.010358452262696915,
+        "us_hy": 0.009247304719009164,
+        "commodities": 0.0043151581241360985,
+        "listed_re": 0.02293023310528699,
+        "cash": 0.00019475582346098344
+      },
+      "dev_ex_us": {
+        "us_equity": 0.01826874842821767,
+        "dev_ex_us": 0.024183861314408014,
+        "em_equity": 0.020420560276674403,
+        "ust_duration": 0.007747205129438337,
+        "us_ig": 0.011426424529132976,
+        "us_hy": 0.009120341407936692,
+        "commodities": 0.0038411416797326783,
+        "listed_re": 0.02223699737270955,
+        "cash": 0.00021561456303077452
+      },
+      "em_equity": {
+        "us_equity": 0.017395975567846073,
+        "dev_ex_us": 0.020420560276674403,
+        "em_equity": 0.031408304176752166,
+        "ust_duration": 0.007237369413735213,
+        "us_ig": 0.010888744748803147,
+        "us_hy": 0.00755099765544872,
+        "commodities": 0.005467467186348033,
+        "listed_re": 0.019666138276813416,
+        "cash": 0.0003061150377088991
+      },
+      "ust_duration": {
+        "us_equity": 0.006347024802092216,
+        "dev_ex_us": 0.007747205129438337,
+        "em_equity": 0.007237369413735213,
+        "ust_duration": 0.005746412526247799,
+        "us_ig": 0.00627101560070374,
+        "us_hy": 0.003865234509033953,
+        "commodities": -0.0010268098714786046,
+        "listed_re": 0.009093201535195975,
+        "cash": 9.756702902556931e-05
+      },
+      "us_ig": {
+        "us_equity": 0.010358452262696915,
+        "dev_ex_us": 0.011426424529132976,
+        "em_equity": 0.010888744748803147,
+        "ust_duration": 0.00627101560070374,
+        "us_ig": 0.009336747694230547,
+        "us_hy": 0.005817730201268057,
+        "commodities": 0.0002904060354130871,
+        "listed_re": 0.013140057510024004,
+        "cash": 0.00015159270171333765
+      },
+      "us_hy": {
+        "us_equity": 0.009247304719009164,
+        "dev_ex_us": 0.009120341407936692,
+        "em_equity": 0.00755099765544872,
+        "ust_duration": 0.003865234509033953,
+        "us_ig": 0.005817730201268057,
+        "us_hy": 0.005829751506238936,
+        "commodities": 0.0019535839242160605,
+        "listed_re": 0.01039407112240086,
+        "cash": 0.00011817889012010328
+      },
+      "commodities": {
+        "us_equity": 0.0043151581241360985,
+        "dev_ex_us": 0.0038411416797326783,
+        "em_equity": 0.005467467186348033,
+        "ust_duration": -0.0010268098714786046,
+        "us_ig": 0.0002904060354130871,
+        "us_hy": 0.0019535839242160605,
+        "commodities": 0.02788366157060511,
+        "listed_re": 0.0049582676666514525,
+        "cash": -9.235636659750845e-05
+      },
+      "listed_re": {
+        "us_equity": 0.02293023310528699,
+        "dev_ex_us": 0.02223699737270955,
+        "em_equity": 0.019666138276813416,
+        "ust_duration": 0.009093201535195975,
+        "us_ig": 0.013140057510024004,
+        "us_hy": 0.01039407112240086,
+        "commodities": 0.0049582676666514525,
+        "listed_re": 0.03682034274582243,
+        "cash": 0.00013566583296249524
+      },
+      "cash": {
+        "us_equity": 0.00019475582346098344,
+        "dev_ex_us": 0.00021561456303077452,
+        "em_equity": 0.0003061150377088991,
+        "ust_duration": 9.756702902556931e-05,
+        "us_ig": 0.00015159270171333765,
+        "us_hy": 0.00011817889012010328,
+        "commodities": -9.235636659750845e-05,
+        "listed_re": 0.00013566583296249524,
+        "cash": 3.097440200664426e-05
+      }
+    },
+    "correlation": {
+      "us_equity": {
+        "us_equity": 0.9999999999999999,
+        "dev_ex_us": 0.7397941623304307,
+        "em_equity": 0.6181465809006804,
+        "ust_duration": 0.5272744433054946,
+        "us_ig": 0.6750904802899742,
+        "us_hy": 0.7627023309389145,
+        "commodities": 0.1627371625953868,
+        "listed_re": 0.7525398158317456,
+        "cash": 0.22037073172767052
+      },
+      "dev_ex_us": {
+        "us_equity": 0.7397941623304307,
+        "dev_ex_us": 1.0,
+        "em_equity": 0.740939226539886,
+        "ust_duration": 0.6571792363854373,
+        "us_ig": 0.7604133312316261,
+        "us_hy": 0.7681097049512968,
+        "commodities": 0.14791853708770936,
+        "listed_re": 0.7451941029940231,
+        "cash": 0.24912298757167864
+      },
+      "em_equity": {
+        "us_equity": 0.6181465809006804,
+        "dev_ex_us": 0.740939226539886,
+        "em_equity": 0.9999999999999998,
+        "ust_duration": 0.5387162755184868,
+        "us_ig": 0.6358545182534847,
+        "us_hy": 0.5580293860325803,
+        "commodities": 0.18475195370116615,
+        "listed_re": 0.5782996519221271,
+        "cash": 0.31035657832486
+      },
+      "ust_duration": {
+        "us_equity": 0.5272744433054946,
+        "dev_ex_us": 0.6571792363854373,
+        "em_equity": 0.5387162755184868,
+        "ust_duration": 0.9999999999999999,
+        "us_ig": 0.8561338519249282,
+        "us_hy": 0.6678092442987713,
+        "commodities": -0.08111790647186455,
+        "listed_re": 0.6251359907204898,
+        "cash": 0.23126143454262288
+      },
+      "us_ig": {
+        "us_equity": 0.6750904802899742,
+        "dev_ex_us": 0.7604133312316261,
+        "em_equity": 0.6358545182534847,
+        "ust_duration": 0.8561338519249282,
+        "us_ig": 1.0,
+        "us_hy": 0.7885527373461994,
+        "commodities": 0.017998359612233946,
+        "listed_re": 0.7086887538758844,
+        "cash": 0.28188957591589864
+      },
+      "us_hy": {
+        "us_equity": 0.7627023309389145,
+        "dev_ex_us": 0.7681097049512968,
+        "em_equity": 0.5580293860325803,
+        "ust_duration": 0.6678092442987713,
+        "us_ig": 0.7885527373461994,
+        "us_hy": 1.0000000000000002,
+        "commodities": 0.1532258889856511,
+        "listed_re": 0.7094417604417568,
+        "cash": 0.2781079603869295
+      },
+      "commodities": {
+        "us_equity": 0.1627371625953868,
+        "dev_ex_us": 0.14791853708770936,
+        "em_equity": 0.18475195370116615,
+        "ust_duration": -0.08111790647186455,
+        "us_ig": 0.017998359612233946,
+        "us_hy": 0.1532258889856511,
+        "commodities": 1.0000000000000002,
+        "listed_re": 0.15474305016592899,
+        "cash": -0.09937805032102114
+      },
+      "listed_re": {
+        "us_equity": 0.7525398158317456,
+        "dev_ex_us": 0.7451941029940231,
+        "em_equity": 0.5782996519221271,
+        "ust_duration": 0.6251359907204898,
+        "us_ig": 0.7086887538758844,
+        "us_hy": 0.7094417604417568,
+        "commodities": 0.15474305016592899,
+        "listed_re": 0.9999999999999998,
+        "cash": 0.1270355016515089
+      },
+      "cash": {
+        "us_equity": 0.22037073172767052,
+        "dev_ex_us": 0.24912298757167864,
+        "em_equity": 0.31035657832486,
+        "ust_duration": 0.23126143454262288,
+        "us_ig": 0.28188957591589864,
+        "us_hy": 0.2781079603869295,
+        "commodities": -0.09937805032102114,
+        "listed_re": 0.1270355016515089,
+        "cash": 0.9999999999999998
+      }
+    },
+    "sample_correlation": {
+      "us_equity": {
+        "us_equity": 1.0000000000000002,
+        "dev_ex_us": 0.7927101642197386,
+        "em_equity": 0.647606410849841,
+        "ust_duration": 0.5392122439717931,
+        "us_ig": 0.7155302728435624,
+        "us_hy": 0.8200355019605557,
+        "commodities": 0.10438462921284986,
+        "listed_re": 0.8079134435653375,
+        "cash": 0.17313114355294196
+      },
+      "dev_ex_us": {
+        "us_equity": 0.7927101642197386,
+        "dev_ex_us": 1.0,
+        "em_equity": 0.7940760205128822,
+        "ust_duration": 0.6941653703315229,
+        "us_ig": 0.8173051357248576,
+        "us_hy": 0.8264855296211929,
+        "commodities": 0.08670866594523136,
+        "listed_re": 0.7991513252280609,
+        "cash": 0.20742742952741045
+      },
+      "em_equity": {
+        "us_equity": 0.647606410849841,
+        "dev_ex_us": 0.7940760205128822,
+        "em_equity": 0.9999999999999998,
+        "ust_duration": 0.5528602982941272,
+        "us_ig": 0.6687288050983016,
+        "us_hy": 0.5758973763182468,
+        "commodities": 0.13064432777453125,
+        "listed_re": 0.60007616908839,
+        "cash": 0.28046812418136846
+      },
+      "ust_duration": {
+        "us_equity": 0.5392122439717931,
+        "dev_ex_us": 0.6941653703315229,
+        "em_equity": 0.5528602982941272,
+        "ust_duration": 0.9999999999999999,
+        "us_ig": 0.9314825543292711,
+        "us_hy": 0.7068450638235568,
+        "commodities": -0.18649074524223308,
+        "listed_re": 0.6559435235714814,
+        "cash": 0.18612179932030135
+      },
+      "us_ig": {
+        "us_equity": 0.7155302728435624,
+        "dev_ex_us": 0.8173051357248576,
+        "em_equity": 0.6687288050983016,
+        "ust_duration": 0.9314825543292711,
+        "us_ig": 1.0,
+        "us_hy": 0.8508704018553837,
+        "commodities": -0.06826281123996389,
+        "listed_re": 0.7556069890985391,
+        "cash": 0.2465120944092877
+      },
+      "us_hy": {
+        "us_equity": 0.8200355019605557,
+        "dev_ex_us": 0.8264855296211929,
+        "em_equity": 0.5758973763182468,
+        "ust_duration": 0.7068450638235568,
+        "us_ig": 0.8508704018553837,
+        "us_hy": 0.9999999999999999,
+        "commodities": 0.09303938515719466,
+        "listed_re": 0.7565051909183865,
+        "cash": 0.24200130512267776
+      },
+      "commodities": {
+        "us_equity": 0.10438462921284986,
+        "dev_ex_us": 0.08670866594523136,
+        "em_equity": 0.13064432777453125,
+        "ust_duration": -0.18649074524223308,
+        "us_ig": -0.06826281123996389,
+        "us_hy": 0.09303938515719466,
+        "commodities": 1.0000000000000002,
+        "listed_re": 0.09484908641995722,
+        "cash": -0.20827182283083262
+      },
+      "listed_re": {
+        "us_equity": 0.8079134435653375,
+        "dev_ex_us": 0.7991513252280609,
+        "em_equity": 0.60007616908839,
+        "ust_duration": 0.6559435235714814,
+        "us_ig": 0.7556069890985391,
+        "us_hy": 0.7565051909183865,
+        "commodities": 0.09484908641995722,
+        "listed_re": 0.9999999999999998,
+        "cash": 0.061798948974827246
+      },
+      "cash": {
+        "us_equity": 0.17313114355294196,
+        "dev_ex_us": 0.20742742952741045,
+        "em_equity": 0.28046812418136846,
+        "ust_duration": 0.18612179932030135,
+        "us_ig": 0.2465120944092877,
+        "us_hy": 0.24200130512267776,
+        "commodities": -0.20827182283083262,
+        "listed_re": 0.061798948974827246,
+        "cash": 0.9999999999999998
+      }
+    }
+  },
+  "shrinkage_path": [
+    {
+      "date": "2021-09-30",
+      "delta": 0.3272,
+      "n_obs": 60,
+      "rbar": 0.3039,
+      "cond_cov_sample": 17521.3,
+      "cond_cov_shrunk": 13701.9,
+      "cond_corr_sample": 98.2,
+      "cond_corr_shrunk": 15.97,
+      "policy_vol_bps": 1043.6
+    },
+    {
+      "date": "2021-12-31",
+      "delta": 0.2863,
+      "n_obs": 60,
+      "rbar": 0.2861,
+      "cond_cov_sample": 17168.9,
+      "cond_cov_shrunk": 13893.0,
+      "cond_corr_sample": 84.72,
+      "cond_corr_shrunk": 17.32,
+      "policy_vol_bps": 1058.4
+    },
+    {
+      "date": "2022-03-31",
+      "delta": 0.2947,
+      "n_obs": 60,
+      "rbar": 0.2914,
+      "cond_cov_sample": 17694.5,
+      "cond_cov_shrunk": 14112.4,
+      "cond_corr_sample": 82.13,
+      "cond_corr_shrunk": 16.69,
+      "policy_vol_bps": 1080.3
+    },
+    {
+      "date": "2022-06-30",
+      "delta": 0.2715,
+      "n_obs": 60,
+      "rbar": 0.3263,
+      "cond_cov_sample": 20081.9,
+      "cond_cov_shrunk": 16201.2,
+      "cond_corr_sample": 91.86,
+      "cond_corr_shrunk": 19.58,
+      "policy_vol_bps": 1173.5
+    },
+    {
+      "date": "2022-09-30",
+      "delta": 0.2407,
+      "n_obs": 60,
+      "rbar": 0.3505,
+      "cond_cov_sample": 20640.5,
+      "cond_cov_shrunk": 16487.6,
+      "cond_corr_sample": 95.22,
+      "cond_corr_shrunk": 23.28,
+      "policy_vol_bps": 1274.6
+    },
+    {
+      "date": "2022-12-31",
+      "delta": 0.2406,
+      "n_obs": 60,
+      "rbar": 0.3747,
+      "cond_cov_sample": 17813.2,
+      "cond_cov_shrunk": 13495.8,
+      "cond_corr_sample": 97.2,
+      "cond_corr_shrunk": 24.38,
+      "policy_vol_bps": 1338.0
+    },
+    {
+      "date": "2023-03-31",
+      "delta": 0.2454,
+      "n_obs": 60,
+      "rbar": 0.4034,
+      "cond_cov_sample": 13991.5,
+      "cond_cov_shrunk": 10601.5,
+      "cond_corr_sample": 105.45,
+      "cond_corr_shrunk": 25.98,
+      "policy_vol_bps": 1361.6
+    },
+    {
+      "date": "2023-06-30",
+      "delta": 0.2363,
+      "n_obs": 60,
+      "rbar": 0.4113,
+      "cond_cov_sample": 10187.0,
+      "cond_cov_shrunk": 7808.8,
+      "cond_corr_sample": 107.49,
+      "cond_corr_shrunk": 27.39,
+      "policy_vol_bps": 1375.1
+    },
+    {
+      "date": "2023-09-30",
+      "delta": 0.216,
+      "n_obs": 60,
+      "rbar": 0.4106,
+      "cond_cov_sample": 7323.5,
+      "cond_cov_shrunk": 5970.0,
+      "cond_corr_sample": 112.0,
+      "cond_corr_shrunk": 29.72,
+      "policy_vol_bps": 1397.9
+    },
+    {
+      "date": "2023-12-31",
+      "delta": 0.2463,
+      "n_obs": 60,
+      "rbar": 0.4437,
+      "cond_cov_sample": 6128.5,
+      "cond_cov_shrunk": 5003.4,
+      "cond_corr_sample": 144.98,
+      "cond_corr_shrunk": 30.25,
+      "policy_vol_bps": 1395.2
+    },
+    {
+      "date": "2024-03-31",
+      "delta": 0.2553,
+      "n_obs": 60,
+      "rbar": 0.436,
+      "cond_cov_sample": 5070.6,
+      "cond_cov_shrunk": 4138.2,
+      "cond_corr_sample": 139.37,
+      "cond_corr_shrunk": 28.46,
+      "policy_vol_bps": 1373.9
+    },
+    {
+      "date": "2024-06-30",
+      "delta": 0.2626,
+      "n_obs": 60,
+      "rbar": 0.4415,
+      "cond_cov_sample": 4355.8,
+      "cond_cov_shrunk": 3627.1,
+      "cond_corr_sample": 141.42,
+      "cond_corr_shrunk": 28.34,
+      "policy_vol_bps": 1357.2
+    },
+    {
+      "date": "2024-09-30",
+      "delta": 0.2715,
+      "n_obs": 60,
+      "rbar": 0.454,
+      "cond_cov_sample": 3974.7,
+      "cond_cov_shrunk": 3342.1,
+      "cond_corr_sample": 136.94,
+      "cond_corr_shrunk": 28.35,
+      "policy_vol_bps": 1358.1
+    },
+    {
+      "date": "2024-12-31",
+      "delta": 0.2511,
+      "n_obs": 60,
+      "rbar": 0.4508,
+      "cond_cov_sample": 3755.0,
+      "cond_cov_shrunk": 3190.0,
+      "cond_corr_sample": 142.99,
+      "cond_corr_shrunk": 30.23,
+      "policy_vol_bps": 1371.6
+    },
+    {
+      "date": "2025-03-31",
+      "delta": 0.1724,
+      "n_obs": 60,
+      "rbar": 0.4518,
+      "cond_cov_sample": 3017.7,
+      "cond_cov_shrunk": 2611.8,
+      "cond_corr_sample": 162.26,
+      "cond_corr_shrunk": 42.41,
+      "policy_vol_bps": 1266.0
+    },
+    {
+      "date": "2025-06-30",
+      "delta": 0.1949,
+      "n_obs": 60,
+      "rbar": 0.463,
+      "cond_cov_sample": 3092.7,
+      "cond_cov_shrunk": 2678.2,
+      "cond_corr_sample": 184.28,
+      "cond_corr_shrunk": 40.14,
+      "policy_vol_bps": 1234.0
+    },
+    {
+      "date": "2025-09-30",
+      "delta": 0.1925,
+      "n_obs": 60,
+      "rbar": 0.4663,
+      "cond_cov_sample": 3361.0,
+      "cond_cov_shrunk": 2869.6,
+      "cond_corr_sample": 191.93,
+      "cond_corr_shrunk": 41.27,
+      "policy_vol_bps": 1215.4
+    },
+    {
+      "date": "2025-12-31",
+      "delta": 0.1838,
+      "n_obs": 60,
+      "rbar": 0.4626,
+      "cond_cov_sample": 3551.6,
+      "cond_cov_shrunk": 2949.1,
+      "cond_corr_sample": 207.47,
+      "cond_corr_shrunk": 43.01,
+      "policy_vol_bps": 1149.5
+    },
+    {
+      "date": "2026-03-31",
+      "delta": 0.1686,
+      "n_obs": 60,
+      "rbar": 0.4594,
+      "cond_cov_sample": 3937.5,
+      "cond_cov_shrunk": 3360.8,
+      "cond_corr_sample": 196.33,
+      "cond_corr_shrunk": 45.46,
+      "policy_vol_bps": 1178.4
+    },
+    {
+      "date": "2026-06-30",
+      "delta": 0.1617,
+      "n_obs": 60,
+      "rbar": 0.4654,
+      "cond_cov_sample": 4574.4,
+      "cond_cov_shrunk": 4059.8,
+      "cond_corr_sample": 182.7,
+      "cond_corr_shrunk": 46.74,
+      "policy_vol_bps": 1213.2
+    }
+  ],
+  "condition_number_note": "the covariance condition number is dominated by the cash line, whose annualised variance is three orders of magnitude below the equity lines; that is scale, not conditioning. The correlation condition number is the one shrinkage is meant to move and it is reported beside it.",
+  "halflife_variant": {
+    "halflife_months": 24,
+    "delta": 0.232286354604496,
+    "note": "reported as a robustness check; not used in the allocation"
+  }
+}

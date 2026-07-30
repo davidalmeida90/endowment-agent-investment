@@ -1,0 +1,53 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Fund cards and callout tag" subtitle="Grey panel, navy ticker, status tag, clay button flush to the bottom edge" viewport="820x290" -->
+<html><head><meta charset="utf-8"><title>Fund cards</title>
+<link rel="stylesheet" href="../colors_and_type.css">
+<link rel="stylesheet" href="_card.css">
+<style>
+  body { width:820px; }
+  .head { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+  h4 { font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:.04em; color:#0A1B3D; margin:0; }
+  .callout { background:#C08878; color:#fff; font-size:11px; padding:5px 14px; }
+  .row { display:flex; gap:14px; }
+  .card { flex:1; background:#E4EAEA; display:flex; flex-direction:column; }
+  .top { padding:14px 16px 12px; flex:1; }
+  .tk { display:flex; justify-content:space-between; align-items:flex-start; }
+  .tk .t { font-size:23px; font-weight:700; color:#0A1B3D; line-height:1; }
+  .tag { font-size:9px; font-weight:600; color:#fff; padding:2px 6px; border-radius:2px; }
+  .d { font-size:11.5px; color:#1A1F28; line-height:1.45; margin-top:9px; text-align:justify; }
+  .st { display:flex; gap:14px; margin-top:12px; font-size:10px; color:#0A1B3D; }
+  .st b { display:block; font-size:14px; font-weight:600; font-variant-numeric:tabular-nums; }
+  .btn { background:#C08878; color:#fff; text-align:center; font-size:12px; padding:8px; }
+</style></head>
+<body>
+  <div class="head">
+    <h4>The Coldbrook range</h4>
+    <div class="callout">Live dashboard →</div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="top">
+        <div class="tk"><div class="t">CBFIX</div><div class="tag" style="background:#0A1B3D">INST</div></div>
+        <div class="d">Mutual fund, Class I. Concentrated US equity, 25 to 35 quality businesses held for the long term.</div>
+        <div class="st"><div>Minimum<b>$100k</b></div><div>Net fee<b>0.72%</b></div></div>
+      </div>
+      <div class="btn">Learn more</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="tk"><div class="t">CBFNX</div><div class="tag" style="background:#4F86B0">RETAIL</div></div>
+        <div class="d">Mutual fund, Class N. Same portfolio, lower minimum, available through most platforms.</div>
+        <div class="st"><div>Minimum<b>$2,500</b></div><div>Net fee<b>0.97%</b></div></div>
+      </div>
+      <div class="btn">Learn more</div>
+    </div>
+    <div class="card">
+      <div class="top">
+        <div class="tk"><div class="t">SMA</div><div class="tag" style="background:#A45E52">QUAL</div></div>
+        <div class="d">Separately managed account. Same strategy with tax management and holdings-level customisation.</div>
+        <div class="st"><div>Minimum<b>$5m</b></div><div>Net fee<b>0.60%</b></div></div>
+      </div>
+      <div class="btn">Learn more</div>
+    </div>
+  </div>
+</body></html>

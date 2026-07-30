@@ -1,0 +1,74 @@
+{
+  "governs": "IPS v7.2, effective 1 July 2026, adopted 18 June 2026",
+  "numeric_conflicts": [],
+  "numeric_checks_passed": true,
+  "omissions": [
+    {
+      "ips": "2.1",
+      "topic": "Risk function holds no allocation authority and its test gates the Committee",
+      "extract": "absent",
+      "consequence": "An office working from the extract alone has no compliance veto. The IPS is explicit that an allocation which fails does not proceed to the Committee and that the remedy is never an adjustment to the test."
+    },
+    {
+      "ips": "2.2",
+      "topic": "Investment Committee composition, quorum and the CIO's non-voting chair",
+      "extract": "absent",
+      "consequence": "Seven members, at least four independent of University management, at least three with professional investment experience, quorum of four, CIO chairs the investment agenda and does not vote. None of this is derivable from the extract."
+    },
+    {
+      "ips": "2.2",
+      "topic": "Minutes record dissent, and a decision recorded as unanimous was unanimous",
+      "extract": "absent",
+      "consequence": "The Board reads the minutes as the primary evidence that the Committee deliberated rather than ratified. An extract-only office would not know the minutes carry that weight."
+    },
+    {
+      "ips": "2.3",
+      "topic": "An unattainable objective is escalated to the Board as an amendment question",
+      "extract": "absent",
+      "consequence": "This is the operative instruction when the return objective cannot be met. The IPS forbids resolving it inside the portfolio by taking risk the Statement does not permit. The extract's 'best efforts' ranking alone does not say where the finding goes."
+    },
+    {
+      "ips": "2.5",
+      "topic": "Capital market assumptions from multiple named houses, with dispersion disclosed",
+      "extract": "absent",
+      "consequence": "The IPS states plainly that a single-source assumption is not acceptable and that the Committee is told which houses, of what vintage, and what the dispersion is. An extract-only office could table one forecast."
+    },
+    {
+      "ips": "3.3",
+      "topic": "A recommendation claiming both objectives are satisfied has not understood one of them",
+      "extract": "partial",
+      "consequence": "The extract asks which objective is being given ground on. The IPS goes further and rejects the answer 'neither'."
+    },
+    {
+      "ips": "3.4",
+      "topic": "The campaign inflow is staged into policy weights and is not timed against a market view",
+      "extract": "absent",
+      "consequence": "The extract records the USD 60m inflow but not the prohibition on timing it. Tactically staging that inflow would breach the IPS while looking compliant against the extract."
+    },
+    {
+      "ips": "3.5",
+      "topic": "Board exclusions are assessed at the vehicle level and incidental index exposure is disclosed rather than deemed compliant by silence",
+      "extract": "partial",
+      "consequence": "This is the most consequential omission. The extract lists the exclusions with no disclosure obligation, so a broad index vehicle carrying incidental tobacco or thermal coal exposure would pass silently. Every equity vehicle in the opportunity set is a broad index vehicle."
+    },
+    {
+      "ips": "3.5",
+      "topic": "Leverage is defined as gross exposure exceeding net asset value",
+      "extract": "partial",
+      "consequence": "The extract says 'no leverage at the fund level (UBTI)' without a testable definition. The IPS gives one, which is what makes it checkable by code."
+    },
+    {
+      "ips": "4.3",
+      "topic": "Presentation follows GIPS, including risk statistics for the benchmark and blended-benchmark disclosure",
+      "extract": "absent",
+      "consequence": "The extract carries no reporting standard at all. An extract-only office would not know it must show the benchmark's risk statistics and not only the portfolio's."
+    },
+    {
+      "ips": "4.5",
+      "topic": "Rebalancing on band breach rather than calendar, corridors set by volatility and cost, annual reset",
+      "extract": "absent",
+      "consequence": "The extract carries the 50bps minimum trade but not the rebalancing policy it interacts with, nor the requirement that the Committee be told what the corridors are and what determined them."
+    }
+  ],
+  "conclusion": "The extract and the Statement agree on every number this study depends on: the nine policy weights, the nine permitted ranges, the three sleeve ranges and all eleven scalar limits are identical. They differ in coverage rather than in substance. MANDATE.md carries the arithmetic and omits the governance, which is Section 2 of the Statement in its entirety, together with four operative obligations elsewhere. Where this report follows the Statement and not the extract, it says so at that point."
+}

@@ -1,0 +1,208 @@
+{
+  "as_of": "2026-06-30",
+  "meta": {
+    "as_of": "2026-06-30",
+    "last_observation": "2026-06-30",
+    "last_monthly_return": "2026-06-30",
+    "lines": [
+      "us_equity",
+      "dev_ex_us",
+      "em_equity",
+      "ust_duration",
+      "us_ig",
+      "us_hy",
+      "commodities",
+      "listed_re",
+      "cash"
+    ],
+    "signals": [
+      "momentum",
+      "trend",
+      "carry",
+      "reversal",
+      "volatility"
+    ],
+    "n_z_available": 45,
+    "params": {
+      "momentum_lookback_m": 12,
+      "momentum_skip_m": 1,
+      "trend_ma_months": 10,
+      "carry_window_m": 12,
+      "reversal_start_m": 60,
+      "reversal_end_m": 13,
+      "vol_halflife_m": 6,
+      "vol_window_m": 36,
+      "z_min_obs": 36,
+      "winsor_z": 2.5
+    },
+    "degrees_of_freedom": 10,
+    "standardisation": "expanding own-history z, winsorised, then cross-sectional demean at composite",
+    "carry_sources": {
+      "us_equity": "vehicle distribution yield",
+      "dev_ex_us": "vehicle distribution yield",
+      "em_equity": "vehicle distribution yield",
+      "ust_duration": "DFII10",
+      "us_ig": "AAA10Y",
+      "us_hy": "BAA10Y",
+      "commodities": "vehicle distribution yield",
+      "listed_re": "vehicle distribution yield",
+      "cash": "DGS3MO"
+    }
+  },
+  "citations": {
+    "momentum": "Moskowitz, Ooi & Pedersen (2012), JFE 104(2) 228-250",
+    "trend": "Faber (2007), Journal of Wealth Management 9(4) 69-79",
+    "carry": "Koijen, Moskowitz, Pedersen & Vrugt (2018), JFE 127(2) 197-225",
+    "reversal": "De Bondt & Thaler (1985), JF 40(3); Asness, Moskowitz & Pedersen (2013), JF 68(3)",
+    "volatility": "Moreira & Muir (2017), JF 72(4) 1611-1644",
+    "carry_dy": "robustness variant of carry; does not enter the composite"
+  },
+  "sign_prior": {
+    "momentum": 1.0,
+    "trend": 1.0,
+    "carry": 1.0,
+    "reversal": 1.0,
+    "volatility": -1.0
+  },
+  "z_scores": {
+    "us_equity": {
+      "momentum": 0.8790620587884354,
+      "trend": 0.47732895361237243,
+      "carry": -2.2485352228733086,
+      "reversal": 1.3754053989320616,
+      "volatility": 0.25485971846315936
+    },
+    "dev_ex_us": {
+      "momentum": 0.8926337196179902,
+      "trend": 0.5787641685586228,
+      "carry": 1.0523844913505402,
+      "reversal": -0.05028628734774865,
+      "volatility": -0.400409323625
+    },
+    "em_equity": {
+      "momentum": 2.2983177051923387,
+      "trend": 1.6454962052681723,
+      "carry": -0.44876621998318494,
+      "reversal": 1.1547105657936478,
+      "volatility": 0.8856467840938353
+    },
+    "ust_duration": {
+      "momentum": -0.031096787827935637,
+      "trend": -0.3431429003611981,
+      "carry": 1.7719944814947763,
+      "reversal": 1.5180672906514754,
+      "volatility": -0.9170635819528242
+    },
+    "us_ig": {
+      "momentum": 0.017896297269834622,
+      "trend": -0.2770886694163955,
+      "carry": -0.8220362713983121,
+      "reversal": 1.7523036619083665,
+      "volatility": -0.817023511127295
+    },
+    "us_hy": {
+      "momentum": -0.02244217026556613,
+      "trend": -0.1869549671383619,
+      "carry": -1.4841236259497663,
+      "reversal": 0.6922445310543128,
+      "volatility": -1.3930434889532803
+    },
+    "commodities": {
+      "momentum": 1.751390992588202,
+      "trend": 0.39973214916810107,
+      "carry": 1.400163334429949,
+      "reversal": -0.322116260804216,
+      "volatility": 1.6055258776953674
+    },
+    "listed_re": {
+      "momentum": 0.12149149932219531,
+      "trend": 0.40786212082790274,
+      "carry": -0.4876562358703292,
+      "reversal": 1.6056706191610015,
+      "volatility": -0.6112690354246548
+    },
+    "cash": {
+      "momentum": 1.4213807489451722,
+      "trend": 1.2252506035747333,
+      "carry": 1.2723847579635064,
+      "reversal": -2.5,
+      "volatility": 1.5132380044585132
+    }
+  },
+  "raw": {
+    "us_equity": {
+      "momentum": 0.23476016588226867,
+      "trend": 0.07747891977134724,
+      "carry": 0.010943953646490479,
+      "reversal": -0.45274844487988114,
+      "volatility": 0.15452005152147036
+    },
+    "dev_ex_us": {
+      "momentum": 0.19363494126655958,
+      "trend": 0.06596619485475719,
+      "carry": 0.03396589603330247,
+      "reversal": -0.252611367570981,
+      "volatility": 0.1366744751199762
+    },
+    "em_equity": {
+      "momentum": 0.44240685456669426,
+      "trend": 0.1552278384853516,
+      "carry": 0.019596744694655888,
+      "reversal": 0.09823502059392884,
+      "volatility": 0.21552024189725685
+    },
+    "ust_duration": {
+      "momentum": 0.023367779265029174,
+      "trend": -0.0013974533295746383,
+      "carry": 0.022000000000000002,
+      "reversal": 0.09415250668543691,
+      "volatility": 0.048994454500359684
+    },
+    "us_ig": {
+      "momentum": 0.039797519226905095,
+      "trend": 0.005283442755348089,
+      "carry": 0.0111,
+      "reversal": 0.07309535491000893,
+      "volatility": 0.04888579154949187
+    },
+    "us_hy": {
+      "momentum": 0.05055661221327008,
+      "trend": 0.01449655564840402,
+      "carry": 0.0155,
+      "reversal": -0.11790515760847588,
+      "volatility": 0.03599530800003464
+    },
+    "commodities": {
+      "momentum": 0.3971654445846089,
+      "trend": 0.048283119580349476,
+      "carry": 0.03263432634594676,
+      "reversal": -0.20596749794036692,
+      "volatility": 0.23267970435790947
+    },
+    "listed_re": {
+      "momentum": 0.10642032717268023,
+      "trend": 0.06118264626788372,
+      "carry": 0.037096046219886936,
+      "reversal": -0.013795954952324732,
+      "volatility": 0.1481924484485113
+    },
+    "cash": {
+      "momentum": 0.035438172426835335,
+      "trend": 0.013220191996348829,
+      "carry": 0.0387,
+      "reversal": -0.1381627268836552,
+      "volatility": 0.01124498204216436
+    }
+  },
+  "composite": {
+    "us_equity": -0.3180359125031545,
+    "dev_ex_us": 0.21106487665844614,
+    "em_equity": 0.3891060879329928,
+    "ust_duration": 0.4028609266795537,
+    "us_ig": -0.06609650060427713,
+    "us_hy": -0.28536275517165505,
+    "commodities": -0.03898733896510098,
+    "listed_re": 0.08801120127065015,
+    "cash": -0.38256058529745507
+  }
+}

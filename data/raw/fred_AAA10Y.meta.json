@@ -1,0 +1,8 @@
+{
+  "source": "FRED fredgraph.csv (no key)",
+  "series": "AAA10Y",
+  "label": "Moody's Aaa corporate yield less 10y Treasury",
+  "publication_lag_days": 1,
+  "rows": 4454,
+  "pulled_at": "2026-07-28T23:29:07"
+}

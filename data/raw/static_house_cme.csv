@@ -1,0 +1,10 @@
+date,line,expected_return
+2026-07-28,us_equity,0.059
+2026-07-28,dev_ex_us,0.072
+2026-07-28,em_equity,0.07085
+2026-07-28,ust_duration,0.046
+2026-07-28,us_ig,0.052
+2026-07-28,us_hy,0.055
+2026-07-28,commodities,0.056
+2026-07-28,listed_re,0.0659
+2026-07-28,cash,0.033
