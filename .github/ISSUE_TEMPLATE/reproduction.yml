@@ -1,0 +1,43 @@
+name: Cannot reproduce
+description: The commands in the README do not produce the published numbers
+labels: ["reproduction"]
+body:
+  - type: textarea
+    id: command
+    attributes:
+      label: Which command
+      description: The exact command you ran.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: output
+    attributes:
+      label: What happened
+      description: Error output, or the number you got against the one published.
+      render: text
+    validations:
+      required: true
+
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.11.9"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux]
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        Note: `taa.datapull` reads live public sources, so prices past the study
+        window will differ. The published window ends 30 June 2026.

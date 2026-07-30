@@ -1,0 +1,50 @@
+name: Found an error
+description: A number, a claim or a method in the study looks wrong
+labels: ["error"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        This is the issue the repository exists for. `AUDIT.md` already records
+        two claims the study got wrong and corrected, and says the error rate is
+        not zero. If you have found a third, it belongs here.
+
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: File and section, or the report heading.
+      placeholder: "AUDIT.md §9.1, or report/annual_report.html, risk table"
+    validations:
+      required: true
+
+  - type: textarea
+    id: claim
+    attributes:
+      label: What it says
+      description: Quote the claim or paste the number as published.
+    validations:
+      required: true
+
+  - type: textarea
+    id: wrong
+    attributes:
+      label: Why it is wrong
+      description: >
+        Your reasoning, and the source or calculation behind it. If you re-ran
+        something and got a different figure, say which command and what you got.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of error
+      options:
+        - A computed number is wrong
+        - A method is misapplied
+        - An interpretation of the data does not follow
+        - A citation does not support the claim
+        - Look-ahead: the study used information it should not have had
+    validations:
+      required: true
