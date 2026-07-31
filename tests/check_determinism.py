@@ -13,14 +13,26 @@ randomises string hashing per process, so the same values serialised in a
 different order on every run. It is fixed by sorting, and this check exists so it
 cannot come back quietly.
 
-Two things are asserted, and the second is the one that matters:
+Two things are asserted, and they are deliberately held to different standards:
 
   1. Two fresh runs under DIFFERENT hash seeds produce byte-identical records.
-     One process cannot catch this on its own: within a single process the seed
-     is fixed, so an in-process double-run would pass while the defect was live.
+     Exact, no tolerance. One process cannot catch this on its own: within a
+     single process the seed is fixed, so an in-process double-run would pass
+     while the defect was live.
 
-  2. A fresh run matches the record committed to the repository. This is the
-     reproduction claim itself, tested rather than asserted.
+  2. A fresh run matches the record committed to the repository, to a numeric
+     tolerance, with key order still compared exactly. This is the reproduction
+     claim itself, tested rather than asserted.
+
+The second is not byte-exact for a reason that is a fact about hardware rather
+than about this study. Windows and Linux link different math libraries and
+different BLAS backends, so the last one or two bits of a float64 are not
+portable. The committed record was generated on Windows and a Linux run of the
+same code reproduces every decision, every weight and every rounded figure while
+landing about 1e-15 away on the unrounded signal readings. Asserting byte
+equality there would fail honest work on the wrong machine, which is how a check
+gets switched off by someone right to switch it off. The gate is at 1e-9 and the
+observed deviation is printed, so drift is visible rather than hidden.
 
 Both runs write to their own temporary directory via TAA_OUTPUT_DIR, so the
 check never touches the published outputs.
@@ -63,6 +75,72 @@ def _canonical(path: Path) -> str:
     """
     return json.dumps(_strip(json.loads(path.read_text(encoding="utf-8"))),
                       indent=2, default=str)
+
+
+# Float64 carries about 16 significant digits, and the last one or two are not
+# portable: Windows and Linux link different math libraries and different BLAS
+# backends, so exp, log and every matrix operation can land a unit or two apart
+# in the last place. Accumulated through a pipeline that shrinks a covariance
+# matrix and solves a constrained optimisation, that noise stays around 1e-15
+# relative. This gate sits six orders of magnitude above it, so last-bit drift
+# passes and any change with a real cause does not. The observed maximum is
+# printed either way, so the number is visible instead of hidden by the gate.
+NUMERIC_TOL = 1e-9
+
+
+def _compare(expected, actual, path="") -> tuple[float, list[str]]:
+    """Compare two decoded records. Returns (max relative deviation, mismatches).
+
+    Key order is compared exactly, because that is the defect this file was
+    written for. Numbers are compared to NUMERIC_TOL. Everything else must be
+    equal outright.
+    """
+    worst, bad = 0.0, []
+
+    if isinstance(expected, dict):
+        if not isinstance(actual, dict):
+            return worst, [f"{path}: expected an object, got {type(actual).__name__}"]
+        if list(expected) != list(actual):
+            missing = [k for k in expected if k not in actual]
+            extra = [k for k in actual if k not in expected]
+            if missing or extra:
+                bad.append(f"{path}: keys differ (missing {missing}, extra {extra})")
+            else:
+                bad.append(f"{path}: same keys in a different order, which breaks "
+                           f"byte-stability")
+            return worst, bad
+        for k in expected:
+            w, b = _compare(expected[k], actual[k], f"{path}.{k}" if path else k)
+            worst = max(worst, w)
+            bad += b
+        return worst, bad
+
+    if isinstance(expected, list):
+        if not isinstance(actual, list) or len(expected) != len(actual):
+            n = len(actual) if isinstance(actual, list) else "n/a"
+            return worst, [f"{path}: list length {len(expected)} became {n}"]
+        for i, (x, y) in enumerate(zip(expected, actual)):
+            w, b = _compare(x, y, f"{path}[{i}]")
+            worst = max(worst, w)
+            bad += b
+        return worst, bad
+
+    if isinstance(expected, bool) or isinstance(actual, bool):
+        return worst, ([] if expected == actual
+                       else [f"{path}: {expected!r} became {actual!r}"])
+
+    if isinstance(expected, (int, float)) and isinstance(actual, (int, float)):
+        if expected == actual:
+            return worst, bad
+        scale = max(abs(expected), abs(actual))
+        rel = abs(expected - actual) / scale if scale else abs(expected - actual)
+        if rel > NUMERIC_TOL:
+            bad.append(f"{path}: {expected!r} became {actual!r} "
+                       f"(relative {rel:.2e}, gate {NUMERIC_TOL:.0e})")
+        return rel, bad
+
+    return worst, ([] if expected == actual
+                   else [f"{path}: {expected!r} became {actual!r}"])
 
 
 def _report_diff(expected: str, actual: str, limit: int = 6) -> None:
@@ -135,6 +213,7 @@ def main(demo: bool = False) -> int:
     print("  hash seeds. This takes a few minutes.\n")
 
     failures = []
+    drift = 0.0
 
     with tempfile.TemporaryDirectory() as tmp:
         a_dir, b_dir = Path(tmp) / "a", Path(tmp) / "b"
@@ -163,20 +242,33 @@ def main(demo: bool = False) -> int:
             print("         values may be identical and only the order moved. "
                   "That still breaks\n         reproduction, because a reader "
                   "cannot tell the two cases apart.")
+            _report_diff(text_a, text_b)
 
         published = ROOT / "outputs" / RECORD
         if not published.exists():
             failures.append(f"outputs/{RECORD} is missing from the repository")
             print(f"  [FAIL] outputs/{RECORD} not found")
-        elif _canonical(published) == text_a:
-            print("  [PASS] a fresh run matches the record committed here")
         else:
-            failures.append("a fresh run does not match the committed record")
-            print("  [FAIL] a fresh run does not match the committed record")
-            print("         either the code moved and the record was not "
-                  "regenerated, the record\n         was edited by hand, or "
-                  "this platform computes different numbers.")
-            _report_diff(_canonical(published), text_a)
+            want = _strip(json.loads(published.read_text(encoding="utf-8")))
+            got = _strip(json.loads(a.read_text(encoding="utf-8")))
+            worst, bad = _compare(want, got)
+            drift = worst
+            if bad:
+                failures.append("a fresh run does not match the committed record")
+                print("  [FAIL] a fresh run does not match the committed record")
+                for line in bad[:8]:
+                    print(f"         {line}")
+                if len(bad) > 8:
+                    print(f"         ... and {len(bad) - 8} more")
+            elif worst == 0.0:
+                print("  [PASS] a fresh run matches the committed record exactly")
+            else:
+                print("  [PASS] a fresh run matches the committed record")
+                print(f"         largest relative deviation {worst:.2e}, "
+                      f"gate {NUMERIC_TOL:.0e}")
+                print("         last-bit float noise. The committed record was "
+                      "generated on Windows;\n         a different platform "
+                      "links a different libm and will not match bit for bit.")
 
     print()
     if failures:
@@ -186,7 +278,12 @@ def main(demo: bool = False) -> int:
               f"{2 - len(failures)} passed, {len(failures)} failed\n")
         return 1
 
-    print("  2 of 2 passed. The record reproduces byte for byte.\n")
+    if drift == 0.0:
+        print("  2 of 2 passed. The record reproduces byte for byte.\n")
+    else:
+        print(f"  2 of 2 passed. The record reproduces to {drift:.0e} relative, "
+              f"which is\n  last-bit float noise from a different platform, not "
+              f"a different answer.\n")
     return 0
 
 

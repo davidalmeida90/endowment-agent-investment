@@ -306,6 +306,38 @@ a sentence promising the study reproduces with no network at all.
 Neither correction moves a number in the study. The recommendation, the record
 and every figure in the report are unchanged.
 
+### 7.2 The record is byte-stable on one machine, not across two
+
+Writing the determinism check surfaced something the study never stated. Running
+it in CI on Linux against a record generated on Windows, **138 fields differ**,
+all of them in the 16th significant digit:
+
+```
+committed: "observed": -0.5591320674983576
+Linux run: "observed": -0.559132067498358
+```
+
+Every decision, every weight, every rounded figure and every compliance outcome
+is identical. What moves is the last bit or two of the unrounded signal readings,
+because Windows and Linux link different math libraries and different BLAS
+backends, and `exp`, `log` and a matrix solve are each free to land a unit apart
+in the last place. Through a pipeline that shrinks a covariance matrix and solves
+a constrained optimisation, that noise stays around **1e-15 relative**.
+
+This is a property of float64 on real hardware, not a defect in the study, and no
+amount of care in this code would remove it. It is recorded because the README
+says you get the same numbers, and a reader who runs this on Linux and diffs the
+result byte for byte will find 138 differences and deserves to know in advance
+which kind they are.
+
+`tests/check_determinism.py` holds the two claims to different standards for
+that reason. Two runs on the same machine must be **byte-identical**, with no
+tolerance, because that is what catches a real defect like the one in §7.1. A
+run against the committed record is compared **numerically**, at a gate of 1e-9,
+six orders of magnitude above the observed noise, with key order still compared
+exactly. The observed deviation is printed on every run, so the drift is visible
+rather than absorbed.
+
 **A pattern worth naming.** Three separate checks in this study were written too
 bluntly and failed clean work: a hindsight check matching "0.1" inside an unrelated
 signal reading, a figure-drift check reading a table cell as a prose claim, and a
