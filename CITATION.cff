@@ -8,7 +8,6 @@ type: software
 authors:
   - given-names: David
     family-names: Arias
-    orcid: null
 repository-code: "https://github.com/davidalmeida90/endowment-agent-investment"
 url: "https://davidalmeida90.github.io/endowment-agent-investment"
 abstract: >-
