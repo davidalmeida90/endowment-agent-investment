@@ -1,0 +1,859 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Claude Opus 5 ran a real endowment</title>
+<style>
+  :root{
+    --paper:#FBFAF7; --panel:#FFFFFF; --ink:#14213A; --navy:#1E3159; --slate:#4A5568;
+    --mute:#8A8578; --gold:#B8893D; --line:#E6E1D6; --line2:#D9D3C6; --burg:#8B2635; --green:#1F5E3A;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+    --mono:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{ --paper:#12141A; --panel:#181B22; --ink:#EEE9DE; --navy:#C9D4E8; --slate:#B4AE9F;
+      --mute:#7E7A6E; --gold:#D2A24C; --line:#2A2D36; --line2:#333742; --burg:#D98090; --green:#6FBF8F; }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px}
+  a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--line2)}
+  a:hover{border-color:var(--gold)}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;letter-spacing:-0.01em;line-height:1.14;color:var(--ink)}
+  .kick{font-family:var(--mono);font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);font-weight:600}
+  .rule{height:1px;background:var(--line);border:0;margin:0}
+  /* header */
+  header{border-bottom:2px solid var(--ink);padding:64px 0 30px}
+  header h1{font-size:clamp(34px,6vw,58px);margin:14px 0 0}
+  header .sub{font-size:clamp(18px,2.4vw,22px);color:var(--slate);margin:16px 0 0;max-width:660px}
+  .meta{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:26px;font-family:var(--mono);font-size:13px;color:var(--mute)}
+  .meta b{color:var(--ink);font-weight:600}
+  /* sections */
+  section{padding:52px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(24px,3.4vw,32px);margin:10px 0 18px}
+  p{margin:0 0 16px}
+  .lead{font-size:19px;color:var(--slate)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+  @media(max-width:760px){.grid2{grid-template-columns:1fr}}
+  /* desk table */
+  table{width:100%;border-collapse:collapse;margin:8px 0 4px;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--mute);font-weight:600}
+  td b{color:var(--ink)}
+  .desk-name{white-space:nowrap;color:var(--navy);font-weight:600}
+  /* figure */
+  figure{margin:26px 0 6px}
+  figure img{width:100%;display:block;border:1px solid var(--line2)}
+  figcaption{font-family:var(--mono);font-size:12.5px;color:var(--mute);margin-top:9px}
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  @media(max-width:760px){.figrow{grid-template-columns:1fr}}
+  /* verdict cards */
+  .verdict{margin:6px 0}
+  .verdict .row{display:grid;grid-template-columns:1fr auto;gap:16px;align-items:baseline;padding:15px 0;border-bottom:1px solid var(--line)}
+  .verdict .q{color:var(--ink)}
+  .verdict .a{font-family:var(--mono);font-size:13px;font-weight:600;white-space:nowrap}
+  .yes{color:var(--green)} .no{color:var(--burg)} .part{color:var(--gold)}
+  .verdict .note{grid-column:1/-1;color:var(--slate);font-size:15px;margin-top:-4px}
+  /* facts */
+  .facts{list-style:none;padding:0;margin:8px 0;display:grid;grid-template-columns:1fr 1fr;gap:0 34px}
+  @media(max-width:760px){.facts{grid-template-columns:1fr}}
+  .facts li{padding:13px 0;border-bottom:1px solid var(--line);display:flex;gap:12px;align-items:baseline}
+  .facts .n{font-family:var(--mono);color:var(--gold);font-weight:600;font-size:14px;min-width:74px}
+  /* prompt */
+  .promptbox{border:1px solid var(--line2);background:var(--panel)}
+  .promptbox summary{cursor:pointer;list-style:none;padding:18px 22px;display:flex;justify-content:space-between;
+    align-items:center;font-family:var(--mono);font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);font-weight:600}
+  .promptbox summary::-webkit-details-marker{display:none}
+  .promptbox summary .hint{color:var(--mute);font-weight:400;letter-spacing:0;text-transform:none}
+  .promptbox summary .chev{color:var(--gold);transition:transform .2s}
+  .promptbox[open] summary .chev{transform:rotate(90deg)}
+  .promptbox[open] summary{border-bottom:1px solid var(--line)}
+  .promptbody{padding:8px 26px 26px}
+  pre.prompt{font-family:var(--serif);white-space:pre-wrap;word-wrap:break-word;font-size:15.5px;
+    line-height:1.62;color:var(--ink);margin:16px 0 0;max-height:none}
+  .fade{position:relative}
+  .cta{display:inline-block;margin-top:6px;font-family:var(--mono);font-size:13px}
+  footer{padding:40px 0 70px;color:var(--mute);font-size:14px}
+  footer .disc{font-style:italic;color:var(--slate);margin-bottom:10px}
+  .tags{font-family:var(--mono);font-size:12.5px;color:var(--mute);margin-top:8px}
+  /* hero media: video + repo */
+  .watch{padding:40px 0 46px}
+  .grid-media{display:grid;grid-template-columns:1.55fr 1fr;gap:26px;align-items:stretch}
+  @media(max-width:760px){.grid-media{grid-template-columns:1fr}}
+  .video{position:relative;padding-top:56.25%;height:0;border:1px solid var(--line2);background:#000}
+  .video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .repo{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:26px 24px;
+    border:1px solid var(--line2);background:var(--panel);text-decoration:none}
+  .repo:hover{border-color:var(--gold)}
+  .repo .octo{width:56px;height:56px;fill:var(--ink);margin-bottom:10px}
+  .repo:hover .octo{fill:var(--gold)}
+  .repo .kick{margin-bottom:6px}
+  .repo h3{font-size:22px;margin:0 0 8px;color:var(--ink)}
+  .repo p{color:var(--slate);font-size:15px;line-height:1.55;margin:0 0 14px}
+  .repo .repo-url{font-family:var(--mono);font-size:12.5px;color:var(--navy);word-break:break-all}
+  .repo:hover .repo-url{color:var(--gold)}
+  /* references */
+  .subhead{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--navy);margin:28px 0 2px;font-weight:600}
+  .reflist{list-style:none;padding:0;margin:6px 0 0}
+  .reflist li{padding:13px 0;border-bottom:1px solid var(--line)}
+  .reflist .cite{color:var(--ink);font-size:15.5px}
+  .reflist .cite b{color:var(--ink)}
+  .reflist .cite em{font-style:italic;color:var(--slate)}
+  .reflist .use{display:block;color:var(--slate);font-size:14px;margin-top:4px}
+  .reflist .use b{color:var(--gold);font-weight:600;font-family:var(--mono);font-size:13px}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="kick">Claude Opus 5 &middot; agentic finance</div>
+    <h1>An AI agent ran a real endowment, and had to survive the audit.</h1>
+    <p class="sub">One written brief. No follow-up. Claude Opus 5 was made Chief Investment Officer of an $850M university endowment, told to staff an investment office, and made to prove its own work.</p>
+    <div class="meta">
+      <span><b>Model</b> &nbsp;Claude Opus 5</span>
+      <span><b>Mandate</b> &nbsp;$850M endowment, 5-year record</span>
+      <span><b>Office</b> &nbsp;6 desks, spawned as subagents</span>
+      <span><b>Output</b> &nbsp;report + dashboard + methods + audit</span>
+    </div>
+  </div>
+</header>
+
+<section id="watch" class="watch">
+  <div class="wrap">
+    <div class="grid-media">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/33fLjqGuJJo"
+          title="Claude Opus 5 built an agentic investment committee"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <a class="repo" href="https://github.com/davidalmeida90/endowment-agent-investment" target="_blank" rel="noopener">
+        <svg class="octo" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        <div class="kick">Everything is in the open</div>
+        <h3>Read the repository</h3>
+        <p>The full prompt, every desk's code, the point-in-time data wall, the tests and both audits are all here. I'd recommend starting with the documentation.</p>
+        <span class="repo-url">github.com/davidalmeida90/endowment-agent-investment &rarr;</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="what">
+  <div class="wrap">
+    <div class="kick">What this is</div>
+    <h2>A mandate, not a chat</h2>
+    <p class="lead">The agent was handed two governing documents (an Investment Policy Statement and a mandate extract) and a ~5,000 word brief. It was not told the recommendation, the methods, the file layout, or the tests. Those are the agent's work.</p>
+    <p>From that brief it constituted an investment office of six independent desks, ran them concurrently as subagents, kept the Quantitative and Macro desks blind to each other, gave the Risk desk a compliance test that can only pass or fail, and built a point-in-time data wall so no decision could ever see a number published after its own date. Then it simulated five years of quarterly decisions, wrote the trustee report, built an interactive dashboard, and audited itself, twice.</p>
+    <div class="figrow" style="margin-top:28px">
+      <figure style="margin:0"><img src="assets/mandate_8_ips.png" alt="Investment Policy Statement: return requirement and risk tolerance" loading="lazy" /><figcaption>The Investment Policy Statement it was handed. An 8.10% nominal required return set against a hard &minus;20% peak-to-trough drawdown limit, and a line stating plainly that the two are in tension by construction.</figcaption></figure>
+      <figure style="margin:0"><img src="assets/mandate_14_ips.png" alt="Policy portfolio, tactical budget and evidence standard" loading="lazy" /><figcaption>The policy portfolio (nine lines, 70 / 25 / 5 across equity, fixed income and real assets), a 200bps tracking-error budget, and the evidence standard: public data only, point-in-time, and every deviation must name its own falsifier.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="office">
+  <div class="wrap">
+    <div class="kick">How it works</div>
+    <h2>The office it built</h2>
+    <p>A desk exists only if its work can run without waiting on another desk, and if its output can be checked by something other than the desk that produced it. The agent chose the split and named it in the report.</p>
+    <figure>
+      <img src="assets/office_tree.gif" alt="The agent office running: orchestrator spawning six desks as subagents" loading="lazy" />
+      <figcaption>The orchestrator (Chief Investment Officer) spawning the desks as concurrent subagents, each with its own context window, tool-call count and live trace.</figcaption>
+    </figure>
+    <table>
+      <thead><tr><th>Desk</th><th>Owns</th><th>Its check, which can fail</th></tr></thead>
+      <tbody>
+        <tr><td class="desk-name">Capital Markets</td><td>Long-horizon return forecasts for all nine lines, and what the policy portfolio is priced to earn</td><td>Numbers reconcile to at least three published house forecasts</td></tr>
+        <tr><td class="desk-name">Systematic</td><td>What predicts returns out of sample, whether vol management works, the fundamental-law ceiling</td><td>Every figure survives a look-ahead test that fails loudly</td></tr>
+        <tr><td class="desk-name">Implementation</td><td>Real transaction costs, rebalancing rule design, the reporting standard</td><td>Costs reconcile to quoted spreads on the named vehicles</td></tr>
+        <tr><td class="desk-name">Quantitative</td><td>An allocation from the signals alone, reached blind to the macro view</td><td>Its own out-of-sample stats, reported including when negative</td></tr>
+        <tr><td class="desk-name">Macro</td><td>An allocation from the regime and what is priced, reached blind to the model</td><td>Every deviation from consensus carries a named falsifier and a date</td></tr>
+        <tr><td class="desk-name">Risk</td><td>The compliance test, as code, run against every proposed allocation</td><td>The test itself, shown rejecting a non-compliant allocation</td></tr>
+      </tbody>
+    </table>
+    <div class="figrow" style="margin-top:26px">
+      <figure style="margin:0"><img src="assets/agents_spawn.gif" alt="Subagents spawning and working in parallel" loading="lazy" /><figcaption>Desks working in parallel, each reading its own literature.</figcaption></figure>
+      <figure style="margin:0"><img src="assets/desks.png" alt="Desk cards with context, turns, tool calls and last action" loading="lazy" /><figcaption>Per-desk context window, turn count, tool calls and last action.</figcaption></figure>
+    </div>
+    <p style="margin-top:20px"><b>The two views must not meet.</b> The Quantitative and Macro desks each produced an allocation in writing before reconciliation, blind to each other. They disagreed by <b>16.5 percentage points</b> on Treasury duration. That disagreement is reported, not smoothed over, which is the whole reason for running them blind.</p>
+    <p><b>The wall.</b> Every read of historical data passes through a single function that takes an as-of date and refuses anything published after it. A decision in September 2022 sees the September 2022 data vintage and nothing later, because 2022 Q2 GDP first printed at (0.93)% and did not cross zero until 791 days after the print. Under most regime frameworks that revision reverses the tilt.</p>
+  </div>
+</section>
+
+<section id="literature">
+  <div class="wrap">
+    <div class="kick">The evidence base</div>
+    <h2>The literature it stood on</h2>
+    <p class="lead">The desks were told to cite, and to prefer work that reports when a result fails. These are the papers the memos actually lean on, pulled from the desk write-ups. The out-of-sample test the whole engine is built around is Campbell&ndash;Thompson and Welch&ndash;Goyal. The reason the agent ends up trusting almost none of its own signals is the replication literature in the second block.</p>
+
+    <div class="subhead">The out-of-sample test &mdash; the part that can fail</div>
+    <ul class="reflist">
+      <li><span class="cite"><b>Campbell, J. Y. &amp; Thompson, S. B. (2008).</b> Predicting excess stock returns out of sample: can anything beat the historical average? <em>Review of Financial Studies</em> 21(4), 1509&ndash;1531.</span><span class="use">The benchmark the model has to beat: next month equals the average of every month so far. Most signals do not.</span></li>
+      <li><span class="cite"><b>Welch, I. &amp; Goyal, A. (2008).</b> A comprehensive look at the empirical performance of equity premium prediction. <em>Review of Financial Studies</em> 21(4), 1455&ndash;1508.</span><span class="use">The paper that showed most published equity-premium predictors fail out of sample. The desk applies its own R&sup2;<sub>oos</sub> in the same spirit.</span></li>
+      <li><span class="cite"><b>Clark, T. E. &amp; West, K. D. (2007).</b> Approximately normal tests for equal predictive accuracy in nested models. <em>Journal of Econometrics</em> 138(1), 291&ndash;311.</span><span class="use">The adjustment used so a weak signal is not mistaken for none, and vice versa.</span></li>
+    </ul>
+
+    <div class="subhead">How much published alpha actually survives</div>
+    <ul class="reflist">
+      <li><span class="cite"><b>McLean, R. D. &amp; Pontiff, J. (2016).</b> Does academic research destroy stock return predictability? <em>Journal of Finance</em> 71(1), 5&ndash;32.</span><span class="use"><b>74%</b> of return survives out of sample, <b>42%</b> after publication &mdash; 97 predictors.</span></li>
+      <li><span class="cite"><b>Jensen, T. I., Kelly, B. &amp; Pedersen, L. H. (2023).</b> Is there a replication crisis in finance? <em>Journal of Finance</em>.</span><span class="use"><b>82.4%</b> of 153 factors replicate across 93 countries; <b>75.6%</b> under a stricter multiple-testing correction.</span></li>
+      <li><span class="cite"><b>Hou, K., Xue, C. &amp; Zhang, L. (2020).</b> Replicating anomalies. <em>Review of Financial Studies</em> 33(5), 2019&ndash;2133.</span><span class="use">Of 452 anomalies, <b>35%</b> clear |t|&gt;1.96 and only <b>17.9%</b> clear |t|&gt;2.78.</span></li>
+      <li><span class="cite"><b>Chen, A. Y. &amp; Zimmermann, T. (2022).</b> Open source cross-sectional asset pricing. <em>Critical Finance Review</em> 11(2).</span><span class="use"><b>74%</b> of in-sample return persists in the first three years out of sample; the open dataset the desk reconciles against.</span></li>
+      <li><span class="cite"><b>Goyal, A., Welch, I. &amp; Zafirov, A. (2024).</b> A comprehensive 2022 look at the empirical performance of equity premium prediction (II). <em>Review of Financial Studies</em>.</span><span class="use">Of 46 predictors, more than a third fail in sample and about half the rest fail out of sample.</span></li>
+    </ul>
+
+    <div class="subhead">Volatility, position sizing, and the limits of skill</div>
+    <ul class="reflist">
+      <li><span class="cite"><b>Moreira, A. &amp; Muir, T. (2017).</b> Volatility-managed portfolios. <em>Journal of Finance</em> 72(4), 1611&ndash;1644.</span><span class="use">The basis for scaling exposure to a volatility forecast, tested here and reported when it does not help.</span></li>
+      <li><span class="cite"><b>Corsi, F. (2009).</b> A simple approximate long-memory model of realized volatility. <em>Journal of Financial Econometrics</em> 7(2), 174&ndash;196.</span><span class="use">The HAR (1, 3, 12-month) volatility model used by the evidence engine.</span></li>
+      <li><span class="cite"><b>Ledoit, O. &amp; Wolf, M. (2004).</b> Honey, I shrunk the sample covariance matrix. <em>Journal of Portfolio Management</em> 30(4), 110&ndash;119.</span><span class="use">Covariance shrinkage toward a constant-correlation target, for the risk model.</span></li>
+      <li><span class="cite"><b>Grinold, R. C. (1989).</b> The fundamental law of active management. <em>Journal of Portfolio Management</em> 15(3), 30&ndash;37.</span><span class="use">The information-ratio ceiling the systematic desk holds its own signals against.</span></li>
+      <li><span class="cite"><b>Sneddon, L. (2020).</b> Strategy design and the fallacies of breadth. <em>Journal of Asset Management</em> 21, 626&ndash;635.</span><span class="use">Why nominal breadth overstates the fundamental-law ceiling once bets correlate.</span></li>
+      <li><span class="cite"><b>Lo, A. W. (2002).</b> The statistics of Sharpe ratios. <em>Financial Analysts Journal</em> 58(4), 36&ndash;52.</span><span class="use">Why a Sharpe ratio from five years of data carries a wide error bar &mdash; the reason the +34bps result is called indistinguishable from zero.</span></li>
+    </ul>
+    <p style="margin-top:22px;color:var(--slate);font-size:15px">Full citations, with the survival percentages and the falsifiers each desk attached, are in <a href="https://github.com/davidalmeida90/endowment-agent-investment/tree/main/desks" target="_blank" rel="noopener">the desk memos</a>.</p>
+  </div>
+</section>
+
+<section id="prompt">
+  <div class="wrap">
+    <div class="kick">The brief</div>
+    <h2>The prompt, unedited</h2>
+    <p class="lead">This is the whole of what the agent was told. About 5,000 words. It sets the role, the two governing documents, the office structure, the independence rule, the risk veto, the standards of proof, and the deliverables, then gets out of the way.</p>
+    <details class="promptbox">
+      <summary><span>Expand the full prompt <span class="hint">&nbsp;&mdash; it is long</span></span><span class="chev">&#9656;</span></summary>
+      <div class="promptbody">
+        <pre class="prompt">You are the Chief Investment Officer of the Ashcroft University Endowment. You
+owe the trustees a tactical asset allocation recommendation for the coming
+twelve months, delivered as a full report, and you owe it through a process
+they can audit.
+
+Two documents govern, and read both before anything else.
+
+`IPS.pdf` is the Investment Policy Statement the Board adopted, and it is the
+authority. It carries the objectives and the constraints, and it also carries
+the governance: who determines policy, who executes it, who monitors it, how
+the Committee is composed, what it may and may not approve, and what happens
+when a limit is breached. Section 2 is the part most analyses skip and it is
+the part that tells you how this office is meant to work.
+
+`MANDATE.md` is the working extract the office keeps beside it, the same
+numbers in a form you can compute against. The two are meant to agree. If you
+find a place where they do not, the IPS governs and you say so in the report.
+
+The 8.1% required return, the −20% drawdown limit, the 200bps tracking-error
+budget, the opportunity set and the constraint hierarchy all bind on what you
+can recommend. Where an analysis conflicts with them, they win.
+
+## How this office is constituted
+
+You are not doing this alone. The endowment runs a real investment office and
+the trustees will read the process as closely as the recommendation.
+
+The office has independent desks. A desk exists because its work can be done
+without waiting on another desk, and because its output can be checked by
+something other than the person who produced it. A desk that only reviews
+someone else&#x27;s work is not a desk, it is a delay, and the trustees have seen
+that structure before and did not like paying for it.
+
+Four to six desks is the right size for this mandate. Fewer and you are doing
+sequentially what could run in parallel. More and you are paying for
+coordination you do not need. Decide the split yourself, and open the report by
+saying what you chose and what independent work each desk owned.
+
+**Staff them before you start, not once you are stuck.** There is a long list
+of instructions below covering data, evidence, compliance and what gets
+written, and reading it will make this feel like a careful job for one person.
+It is not. It is a wide job for an office, and the desks are how it gets done.
+If you reach the end of this brief and have run the whole thing yourself, you
+have staffed no office and the report cannot honestly describe one.
+
+**Each desk owes a written paper and a check that can fail.** The paper is
+tabled at committee. The check is a test someone else can run that says pass or
+fail without a judgement call. A desk that cannot name what would prove it
+wrong has not finished its work.
+
+**The desks this mandate actually needs.** Staff these unless you can argue for
+better. Each one is here because its work runs without waiting on the others
+and because something outside it can say it is wrong. Spawn them as subagents,
+concurrently, and name them in the report.
+
+| Desk | Owns | Its check, which can fail |
+|---|---|---|
+| **Capital Markets** | Current long-horizon return forecasts for all nine lines, and what the policy portfolio is therefore priced to earn | Numbers reconcile to at least three published house forecasts a reader can open |
+| **Systematic** | What predicts returns out of sample, whether vol management works, and what the fundamental law caps this programme at | Every figure survives a look-ahead test that fails loudly when violated |
+| **Implementation &amp; Operations** | Real transaction costs on the actual vehicles, rebalancing rule design, and the reporting standard | Cost assumptions reconcile to quoted spreads on the named instruments |
+| **Quantitative** | An allocation derived from the signals alone, reached without sight of the macro view | Its own out-of-sample statistics, reported including when negative |
+| **Macro** | An allocation derived from the regime and from what is already priced, reached without sight of the model output | Every deviation from consensus carries a named falsifier and a date |
+| **Risk** | The compliance test, as code, run against every proposed allocation | The test itself, shown rejecting a non-compliant allocation |
+
+The Quantitative and Macro desks are the pair that must not see each other&#x27;s
+work. The other three are research and can run alongside them from the start.
+
+You keep reconciliation, portfolio construction and the writing. Those need
+everything in one head, which is exactly why they are yours and the six above
+are not.
+
+## The two independent estimates
+
+The quantitative view and the macro view must be reached **without either one
+seeing the other&#x27;s work first**. This is the part of the process the trustees
+care most about, because an office where the macro view is written after the
+model output is an office with one opinion and two documents.
+
+Independence here means separate working, not a promise to be fair. Two desks
+that share everything they know and then write two sections have produced one
+view twice. If you are going to claim the estimates were reached
+independently, the trustees expect that to be structurally true, and you should
+say in the report what made it true.
+
+Each side produces its own allocation, in writing, before reconciliation. Both
+drafts go in the appendix, including the parts that turned out to be wrong.
+
+Where they agree, say whether that is confirmation or a shared assumption doing
+the work in both. Where they disagree, the disagreement is the finding, and
+reconciliation means deciding on evidence and recording what the evidence was.
+
+## The risk desk holds a veto
+
+Risk does not advise. Risk rejects.
+
+The risk desk owns a compliance test that runs against any proposed allocation
+and returns pass or fail on every binding constraint: the drawdown limit, the
+tracking-error budget, the permitted range on each line, the liquidity minimum,
+the board exclusions, the leverage prohibition, and the minimum trade size
+against the corridor width. It is code, not prose, and it either passes or it
+does not.
+
+**No allocation reaches the committee until it passes.** If the recommendation
+you want to make fails the test, the recommendation changes or the report
+explains to the trustees why the mandate cannot be met as written. Both are
+acceptable answers. Editing the test is not.
+
+Show the test rejecting something. A compliance test that has only ever passed
+is not evidence that the portfolio complies, it is evidence that the test was
+written to agree.
+
+## The committee
+
+The committee meets, ratifies policy rather than approving individual trades,
+and records dissent.
+
+Dissent is only worth minuting when it happened. If the desks agreed on
+everything, say so plainly and let the trustees judge whether that is comfort
+or groupthink. Do not manufacture a dissenting view to make the minutes look
+serious.
+
+The minutes carry: what was tabled and by which desk, what the compliance test
+returned, where the two independent estimates disagreed and how it was
+resolved, what was decided, who dissented and on what grounds, and what would
+cause the committee to revisit it before the next scheduled meeting.
+
+## What each desk has to establish for itself
+
+**This is the work the desks do, and they do it at the same time.** Each
+question below is a separate literature with its own sources, and nothing in
+one is needed to start another. Send them out together and get on with the
+modelling while they run. Working through them yourself, one search after
+another, is the slowest available way to reach the same answer, and it puts
+every page any of them read into one context window.
+
+I am not going to tell you what the literature says. Find out, and cite what
+you find with a source I can open. Where you are reporting something you
+remember rather than something you checked, label it as such, because your
+training data has a cutoff and several of these numbers have moved.
+
+**Is the mandate achievable at all?** What do the major houses currently
+forecast for a ten-year horizon across these asset classes, and what does the
+policy portfolio&#x27;s expected return come to against the 8.1% the spending rule
+requires? Several published sources exist and they are free. Take more than
+one.
+
+**Does the policy portfolio survive its own drawdown limit?** Test it against
+history before tilting anything.
+
+**What actually predicts asset class returns, and how well?** There is a large
+literature and a large literature attacking it. Find both. Establish what
+fraction of published predictors survive out of sample, because that fraction
+is the prior you are updating from, and it is not the fraction most
+practitioner writing implies.
+
+**Does volatility management work?** Separate two claims that get conflated:
+whether volatility is forecastable, and whether scaling exposure by a
+volatility forecast improves risk-adjusted returns. Those have different
+answers.
+
+**How much can a tactical programme earn?** There is a standard result relating
+the information ratio to skill and to the number of independent decisions.
+Apply it to this mandate honestly, with the tracking-error budget as given,
+before recommending any position. If the arithmetic says the programme cannot
+clear its costs, that is the finding and the committee should hear it.
+
+**How should the portfolio be rebalanced?** What sets the optimal corridor
+width, which way does each determinant push, and should corridors be uniform
+across lines. Does threshold rebalancing beat calendar rebalancing, by how
+much, and does the destination matter as well as the trigger.
+
+**What does implementation cost?** Real transaction cost estimates for index
+vehicles. Figures quoted for institutional single-stock trading do not apply.
+Budget turnover against expected alpha explicitly.
+
+**What standard governs presenting performance against a benchmark?** There is
+a formal global one, including which risk statistics must be shown for the
+benchmark and not only the strategy, and how a blended benchmark must be
+disclosed. Find it and follow it.
+
+## The study window, and what the office has been doing in it
+
+**The last five years, ending today.** Sixty monthly observations, which is
+very thin, and you should say how few genuinely independent observations sit
+behind any statistic you quote. A five-year window contains one or two regimes
+at most, so establish which ones this one holds and be honest that a Sharpe
+ratio computed on it carries a standard error wide enough to contain most
+answers.
+
+Treat those five years as **years this office has already run**, not as a
+backtest of a rule. The committee has met quarterly throughout, twenty meetings
+in all, and each meeting took a decision: hold, tilt, or unwind. The trustees
+are asking to see that record.
+
+**The window is a parameter, not a constant baked into the analysis.** Start
+and end live in one place, every stage reads them from there, and changing them
+and rerunning reproduces the entire study on the new window with no other edit.
+Someone should be able to ask for three years, or ten, or a specific crisis,
+and get a coherent answer rather than a traceback. Say in the report what
+happens to your conclusions when the window moves, because on sixty
+observations it will move them.
+
+The dashboard carries the same control: the reader picks the window and the
+performance comparison redraws.
+
+**Returns are reported monthly against the benchmark**, as a series a reader
+can take away and check, with the strategy, the benchmark and the active
+difference in the same table for every month in the window. Annual and
+since-inception summaries sit on top of that series rather than replacing it.
+
+## The record over five years
+
+The deliverable the trustees actually read first is the log of what was decided
+and why, meeting by meeting. **Every allocation change over the five years
+needs a reason attached to it**, and a reason means something a trustee could
+disagree with.
+
+For each quarterly decision, the record carries:
+
+- the date, and the allocation before and after
+- **what changed and why**: which signal moved, what it read, what the macro
+  view was, and what tipped the decision
+- which mandate constraint was binding at that moment, cited by name
+- what the compliance test returned on the allocation that was adopted
+- whether the two desks agreed, and if not, who was overruled and on what
+- what the committee said it would watch before the next meeting, and whether
+  that thing subsequently happened
+
+A decision recorded without a reason is a number in a spreadsheet. A reason
+that just restates the number (&quot;reduced equity because the equity signal fell&quot;)
+is not a reason either. What matters is why the committee found that
+persuasive when it had the option to ignore it.
+
+**Where a decision was mechanical, say so.** If the allocation moved because a
+corridor was breached and the rule rebalanced it, that is an honest entry and
+better than inventing deliberation that did not occur. The trustees can tell
+the difference and would rather know which decisions were judgement and which
+were the rule running.
+
+**The compliance test runs on every allocation in the record, not only on the
+current one.** An office that gates today&#x27;s proposal and never checked the
+twenty that came before it has a control that has never been tested against
+its own history. Report how many quarters breached, which constraint, by how
+much, and whether the breach was material or a boundary.
+
+## Each meeting knows only what it knew
+
+Guarding the data layer is necessary and it is not sufficient, because the
+harder leak is in the writing. You will run the whole five years, see how it
+turned out, and only then sit down to record twenty decisions. Everything you
+write is therefore written by someone who knows the answer, and hindsight does
+not feel like cheating from the inside. It feels like clarity.
+
+So the discipline is explicit.
+
+**A decision&#x27;s reason is built only from what was on the table that day.** The
+signal readings as they stood, the macro data as published by then, the
+allocation coming in. If a reason could not have been written on the meeting
+date by someone who had only the papers tabled at it, it is not the reason,
+it is a story assembled afterwards to fit an outcome.
+
+**The outcome is a separate column, filled in last, and it never appears in a
+reason.** Record what the decision earned. Never let it explain why the
+decision was taken. &quot;We trimmed equity because valuations were stretched&quot; is a
+reason. The same sentence written because you already know the trim worked is
+hindsight wearing a reason&#x27;s clothes, and the second is indistinguishable from
+the first unless the discipline is imposed before you start.
+
+**Test it rather than assert it.** No field in a decision entry other than the
+outcome may reference a date later than that meeting. That is mechanical, so
+check it mechanically across all twenty and report the result.
+
+**Watch items are resolved forward, never backward.** What a meeting said it
+would watch is written at that meeting and the text is never revised. The next
+meeting records whether it happened. A watch list edited after the fact to
+match events is worse than no watch list, because it reads as foresight.
+
+**Say where the inputs are anachronistic.** Some things genuinely cannot be
+reconstructed as they stood: a published house forecast from three years ago is
+often simply gone. Where you have used a current-vintage input in a historical
+decision, say so at that decision and say what it would have changed. An
+acknowledged anachronism is a limitation. An unacknowledged one is a backtest
+that cannot be trusted anywhere.
+
+## Standards
+
+**Historical analysis must use only what was knowable at the time.** Hard
+requirement, and how you meet it is your problem to solve.
+
+Here is why the office cares, with a number. US real GDP for 2022 Q2 was first
+published at −0.9% on 28 July 2022. It reads positive today. The revision did
+not cross zero until an annual benchmark revision more than two years later. So
+a desk backtesting off today&#x27;s values spends those two years believing the
+economy grew in a quarter where every person actually trading it saw a
+contraction. Under most regime frameworks that flips the reading and reverses
+the tilt. The backtest looks clean the entire time. Check the actual vintages
+rather than taking my version of this on trust, and put what you find in the
+report, because it is the clearest thing you will show the trustees all year.
+
+That failure is invisible from inside the analysis. Which is why I do not want
+care taken. I want a wall.
+
+**One choke point.** Every read of historical data goes through a single
+function that takes an as-of date and refuses to hand back anything published
+after it. Not a convention the desks agree to follow. The only route in. If any
+module can reach a series without passing that date, the wall has a hole, and
+the hole is where the leak will be.
+
+One choke point means one module, not one worker. Build it once, early, and
+every desk imports it. It is a reason to centralise the *code*, and it is not a
+reason to keep the *work* in one place, so it changes nothing about how the
+office is staffed.
+
+Two things make this harder than it sounds and both have caught people who
+thought they had it handled. Economic statistics get revised, sometimes years
+later. And a figure released after your trade date is a look-ahead even when the
+observation is correctly dated earlier, because publication lags the period it
+describes: an unemployment print for March that lands in April is April&#x27;s
+information.
+
+**Then prove the wall stands.** Plant a violation, show it caught. Then do the
+part that actually convinces me: break the enforcement on purpose, rerun the
+suite, and show it going red. A guard nobody has watched fail is a guard nobody
+has tested, and if deleting the check leaves the tests green then the tests were
+never checking anything. Both outputs go in the verification artifacts.
+
+**Build it in this folder.** Whatever this study needs, you write here. If a
+helper or a small library would be useful, build it. Do not go looking for one
+elsewhere on this machine and import it. An analysis that only reproduces on the
+machine it was written on has not been reproduced, and a trustee handed this
+folder should get the same numbers on their own laptop with nothing else
+installed.
+
+**Public data only.** Nothing behind a paywall, and more is free than people
+assume. If something genuinely needs credentials, say so in the report and work
+around it. Do not go looking for keys on this machine and do not read `.env`
+files or credential stores. An analysis that needs a subscription is out of
+scope by design, not blocked.
+
+**Out of sample means out of sample.** Strict chronological order, no overlap,
+nothing tuned on the test period. Report R²_oos against the expanding
+historical mean and say plainly when it is negative.
+
+**An asset class needs an investable vehicle to have existed at the time.**
+Either respect those dates or state that implementation is assumed. Silently
+mixing the two is the quiet look-ahead that makes long backtests of modern
+portfolios look better than anything anyone could have held.
+
+**Process data with scripts, never by reading it.** Pull to disk, compute in
+Python, read back only summaries.
+
+## Deliverables
+
+**A full report, designed like an institution wrote it.**
+
+**Look for a house design system before you write a line of CSS.** A design
+skill, a synced design project, a folder holding a tokens file and component
+previews, a brand document. Look properly: `ds/`, `design-system/`,
+`colors_and_type.css`, `*brand*.md`, `preview/`, and any design skill available
+to you.
+
+If you find one, **read the tokens file and use the tokens**, not your memory of
+the two colours somebody mentioned. A system typically carries twenty or more
+named values covering panels, hairlines, slate text, chart series and the
+benchmark line, and a report built from the two you remember lands close enough
+to look plausible and wrong enough to look off beside the real thing. If it
+ships component previews, follow them rather than reinventing the same
+components worse. Say in the report which system you used.
+
+Do not paraphrase a design system that is sitting right there, and do not invent
+a second one alongside it.
+
+**Use the brand assets if they exist.** A wordmark, a symbol, imagery. A report
+carrying the firm&#x27;s actual mark reads as the firm&#x27;s document. One that opens on
+a bare heading reads as a draft.
+
+**If there is no house system, choose one and commit to it.** One restrained
+palette, roughly two colours plus ink and paper, one typeface used throughout.
+Write the choice down at the top of your stylesheet so every artifact reads as
+the same document rather than as four documents that met once. Say in the report
+that you picked it and why, because a reader should never wonder whether the
+look was deliberate.
+
+Either way, these hold, and they are the difference between a report that looks
+institutional and one that looks generated:
+
+- Print-first, dense, modelled on a monthly fund report rather than a web page
+- Tabular lining numerals with no exceptions, so columns of figures line up
+- **No red and green anywhere.** Direction comes from parentheses on negatives
+  and position relative to a zero axis. Roughly one man in twelve cannot
+  separate them, and a trustee document is the wrong place to find out
+- No rounded corners, no drop shadows, no gradients used as decoration, no
+  three-up card grids, no icons, no centred body text, no pill tags or coloured
+  status badges
+- Separate blocks with a section head, a hairline rule and whitespace, never a
+  box
+
+Those last two lines are the tells. Every one of them is a default that arrives
+when nobody made a decision, and a reader who works in finance clocks them
+immediately.
+
+**The report is charted, not tabulated.** This is where reports like this
+usually fail: everything becomes a table, because a table is what falls out of
+the analysis. A monthly fund report is mostly pictures with tables supporting
+them, and the ratio matters. Expect somewhere around a dozen charts.
+
+The rule: **if a number series has more than about eight points and a reader
+would look for a shape in it, it is a chart.** Cumulative performance against
+the benchmark, the rolling drawdown against the limit, active weights as a
+diverging bar around zero, the annual return grid, tracking error over time,
+the corridor position of each line. Those are shapes. A reader cannot see a
+shape in a column of sixty numbers and will not try.
+
+Keep tables for what tables are good at: the allocation with its ranges, the
+compliance results, the decision log, anything a reader needs to read a single
+row of precisely.
+
+Draw the charts inline as SVG you generate from the data. No chart library
+loaded from a CDN, nothing that needs the network to render, no image of a
+chart. The report has to open from disk on a machine that has never seen it and
+look exactly the same.
+
+**The first page carries the numbers that matter, in a form you can read
+standing up.** The recommendation, the period return against the benchmark, the
+drawdown against its limit, tracking error against its budget, and whether
+compliance passed. A trustee who reads only page one should leave knowing the
+position. Anyone who has to hunt for it on page four has been given a document
+that was written for the author.
+
+**The report covers the trailing twelve months.** It is the annual report to
+trustees, so it reports the year: what the office did over the last four
+quarters, how the portfolio performed against the benchmark, and what is
+recommended for the next twelve months. The five-year record sits behind it as
+the separate document described below, referenced rather than reproduced.
+
+The report carries, in this order: the recommendation for the coming year on
+page one with no hunting; the office structure and what each desk owned; the
+trailing twelve months against the benchmark, quarter by quarter; the four
+decisions taken this year and what each was based on; whether the mandate is
+achievable and by what margin; capital market expectations line by line with
+sources; the systematic evidence including the full R²_oos table; the macro
+view with every deviation, its source and its falsifier; the two independent
+allocations side by side before reconciliation; the reconciled allocation with
+active weights and ex-ante tracking error; the compliance test output; this
+quarter&#x27;s committee minutes; the risk table; the rebalancing policy and
+operating calendar; and the assumptions.
+
+**Performance against the benchmark is the centrepiece**, presented to whatever
+standard your research establishes as the professional one. Strategy and
+benchmark side by side for every period, never the strategy alone. Show the
+trailing year in the report and the full five years in the record, and say
+plainly where the five-year number disagrees with the one-year number, because
+it usually does and the trustees will have noticed.
+
+**The five-year decision record, as its own document.** Twenty quarterly
+entries in the format set out above, each with its reason, its binding
+constraint and its compliance result. This is the document a trustee reads to
+decide whether the office has been thinking or drifting, and it should survive
+being read on its own.
+
+It closes with the honest scorecard: how many of the twenty decisions helped,
+how many hurt, how many were too small to tell, and what the office got
+consistently wrong. If the five years say the tactical programme added nothing
+after costs, the record says so in a sentence a trustee cannot miss.
+
+**The committee minutes are a real deliverable**, not a flourish. A trustee
+should be able to read them alone and understand what was decided and why.
+
+**A dashboard, and it is the five-year decision log rather than a snapshot.**
+Interactive, self-contained, one HTML file that opens from disk with no network.
+Same design system.
+
+A snapshot dashboard answers &quot;where are we&quot;. This one has to answer **&quot;has this
+office been thinking, and has it been right&quot;**, which is a question about twenty
+decisions and not about today&#x27;s weights.
+
+It carries:
+
+- **The twenty meetings as the spine.** One row each: date, hold or tilt or
+  unwind, what moved and by how much, the signal reading that drove it, the
+  constraint that bound, whether compliance passed, and what it earned. Openable
+  to the full reasoning for that meeting. Sortable and filterable by decision
+  type, by binding constraint, and by whether it helped or hurt.
+- **The active return path with the decisions marked on it**, so a reader can
+  see which meeting preceded which move. Cumulative, against the benchmark.
+- **Which constraint bound, as a frequency.** If the same constraint bound every
+  quarter, that is the most important fact in the whole record and a reader
+  should see it without counting. It means the signal was never what set
+  position size.
+- **The scorecard.** How many decisions helped, how many hurt, how many were too
+  small to tell, and the net in basis points a year against the turnover it
+  cost. State the net plainly, including when it is negative or indistinguishable
+  from zero.
+- **What the office got consistently wrong.** Group the losing decisions and say
+  whether they share a cause. Five unrelated bad calls and five instances of the
+  same bad call are different findings, and only the second one is fixable.
+- **Current position** last, not first. It is one quarter of twenty.
+
+**Say what is missing.** If a data series failed to load for some quarters, the
+dashboard shows which and how many, rather than rendering a gap as though it
+were a zero. A record that silently drops an input for half its span is telling
+the reader something untrue about how much evidence sits behind it.
+
+**The code.** Every algorithm as a runnable Python file. Data pulls, signal
+construction, risk model, optimiser, the five-year simulation, rebalancing, and
+the compliance test. Someone should clone the folder and reproduce every
+number.
+
+The simulation emits the decision record as data rather than as prose written
+afterwards: one row per quarterly meeting carrying the date, the weights before
+and after, the signal readings that drove it, the binding constraint, and the
+compliance result. The written record is that table with reasoning attached. A
+record composed by hand from memory of what the backtest probably did is the
+thing this is designed to prevent.
+
+**The verification artifacts.** The look-ahead test, its output showing it
+passed, and evidence it catches a planted violation. The compliance test, and
+evidence of it rejecting a non-compliant allocation. A test that has never
+failed is not evidence of anything.
+
+**A methods notebook, and every method tied to the paper it comes from.** A
+single Jupyter notebook a reader works through top to bottom, covering the
+quantitative machinery: how signals are built and standardised, how
+out-of-sample R² is computed and against what benchmark forecast, the
+volatility model, the fundamental law arithmetic applied to this mandate, the
+covariance estimate and any shrinkage, the optimiser and its constraints, and
+the rebalancing simulation.
+
+For each method, in this order: **the paper**, named with author and year and a
+link a reader can open; **what it claims**, in two or three sentences; **the
+implementation**, as a cell that runs against this study&#x27;s own data rather than
+a toy example; **the output**, the number this study actually uses; and **where
+your implementation departs from the paper**, which is the part usually left
+out and the part a reader most needs.
+
+That last one matters. Almost every implementation deviates from its source,
+through a shorter window, a different standardisation, a shrinkage the original
+did not use. A deviation stated is a modelling choice. A deviation unstated is
+a citation doing work it has not earned, and a reader who knows the paper will
+find it.
+
+The notebook runs start to finish on a clean kernel and reproduces the figures
+quoted in the report. If a number in the report cannot be traced to a cell in
+here, one of the two is wrong.
+
+Prose between the cells, not just code with comments. A reader should be able
+to follow the argument without executing anything, then execute it and get the
+same answer.
+
+**The evidence appendix.** Every claim taken from the literature, with a source
+I can open, marked according to whether you verified it or recalled it. Plus
+both pre-reconciliation allocations.
+
+## Say where you land against the base rate
+
+Once you have established what fraction of published signals survive out of
+sample, state plainly whether your conclusion sits with that prior or against
+it. If you found a signal that works, you are claiming membership of a
+minority, and I want to see why yours belongs there. If you found nothing, say
+so, and the recommendation is policy weights.
+
+Both answers are acceptable. An unexamined one is not.
+
+## One thing I do not want
+
+Confidence the evidence does not support, and a committee that exists to
+approve. If the honest answer is that the signals are weak, the macro view is
+close to consensus, and the endowment should sit at policy weights while the
+trustees revisit the spending rule, that is the answer I want, written plainly,
+minuted properly, and backed by the numbers.
+</pre>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section id="doing">
+  <div class="wrap">
+    <div class="kick">How it is doing</div>
+    <h2>It audited itself, and the answer was often no</h2>
+    <p class="lead">The point of the exercise was not a good-looking report. It was whether an agent given a real mandate and an obligation to be audited produces work that survives being audited. Here is the honest scorecard it wrote about its own study.</p>
+    <div class="verdict">
+      <div class="row"><span class="q">Can you trust that no decision used future data?</span><span class="a yes">YES</span>
+        <span class="note">Enforced through one choke point, tested, and the enforcement was broken on purpose. 7 of 7 planted mutations were caught; 0 decision fields reference a date later than their meeting.</span></div>
+      <div class="row"><span class="q">Can you trust the five-year track record?</span><span class="a no">NOT A TRACK RECORD</span>
+        <span class="note">It is a simulation of a rule, not money that was managed. Stated plainly rather than dressed as history.</span></div>
+      <div class="row"><span class="q">Can you trust that the programme added +34bps a year?</span><span class="a no">NO</span>
+        <span class="note">Indistinguishable from zero, the sign flips with the window, and the benchmark it beat was about 30bps a year too easy.</span></div>
+      <div class="row"><span class="q">Can you trust the recommendation?</span><span class="a part">YES, NARROWLY</span>
+        <span class="note">It rests on the 202bps valuation gap and the drawdown incompatibility, not on the tactical alpha. The cost argument is weaker than the report first implied, and it says so.</span></div>
+      <div class="row"><span class="q">Can you trust the committee minutes?</span><span class="a part">REASONING YES, MEETING NO</span>
+        <span class="note">No committee met. The reasoning is real; the meeting is a device, and the audit refuses to pretend otherwise.</span></div>
+    </div>
+    <div class="figrow" style="margin-top:30px">
+      <figure style="margin:0"><img src="assets/report.png" alt="The trustee report first page" loading="lazy" /><figcaption>The trustee report, built from a house design system it found on disk.</figcaption></figure>
+      <figure style="margin:0"><img src="assets/dashboard.png" alt="The five-year decision dashboard" loading="lazy" /><figcaption>The dashboard: twenty meetings, which constraint bound, and the honest scorecard.</figcaption></figure>
+    </div>
+    <figure><img src="assets/audit.png" alt="The AUDIT.md note on GitHub" loading="lazy" /><figcaption>AUDIT.md: the pre-publication note that states what cannot be trusted before what can.</figcaption></figure>
+  </div>
+</section>
+
+<section id="built">
+  <div class="wrap">
+    <div class="kick">The receipts</div>
+    <h2>What it actually produced, and where it ran</h2>
+    <ul class="facts">
+      <li><span class="n">~20</span><span>Python modules in <code>taa/</code>, the study itself</span></li>
+      <li><span class="n">3,883</span><span>lines of desk papers across six desks</span></li>
+      <li><span class="n">14</span><span>verification scripts, each a check that can fail</span></li>
+      <li><span class="n">2</span><span>audit passes: what is missing, and what is tilted</span></li>
+      <li><span class="n">0</span><span>API keys used anywhere in the study</span></li>
+      <li><span class="n">100%</span><span>public data (Yahoo, FRED, ALFRED vintages, house forecasts)</span></li>
+    </ul>
+    <p style="margin-top:22px">The tests were written to fail, then shown failing, then shown passing. A mutation test removes the look-ahead protection one piece at a time and requires the suite to go red; its first run found three surviving mutations, and two of those turned out to be defects in the tests rather than the code. The study reproduces from the folder alone, and the analysis window is a parameter, so asking for three years or ten reruns the whole thing with no other edit.</p>
+    <p>Stated plainly: the <b>study</b> is reproducible from the repository. The <b>process</b> that generated it ran in a configured environment (a global instruction file, installed skills, MCP servers), not a clean room, and that is said so no one mistakes it for a bare-install result.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="disc">Not investment advice. Ashcroft University Endowment is an illustrative mandate, not a real fund. This is one attempt at a harder question, whether an agent given a real mandate produces work that survives an audit.</p>
+    <p>Built by David Arias, CFA &middot; Claude Opus 5 &middot; <span id="yr"></span></p>
+    <div class="tags">#ClaudeOpus5 &nbsp; #AgenticAI &nbsp; #AIinFinance &nbsp; #Endowment</div>
+  </div>
+</footer>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,4 +1,4 @@
-# Ashcroft University Endowment — tactical asset allocation study
+# Ashcroft University Endowment: tactical asset allocation study
 
 Year ended 30 June 2026. Recommendation for the year to 30 June 2027.
 
@@ -11,8 +11,8 @@ same numbers.
 > unedited, and everything except it, `IPS.pdf` and `MANDATE.md` is the agent's
 > work. It ran on my own machine inside my normal working setup, which already
 > had a global instruction file, installed skills, MCP servers and plugins
-> available. It was not a clean room, and I am not claiming the *process*
-> reproduces from a bare install. The *study* does: no keys, no private data, no
+> available. That was not a clean room, so I make no claim that the process
+> reproduces from a bare install. The study does. No keys, no private data, no
 > paywalled sources, and the commands below regenerate every number.
 > `HOW_THIS_WAS_BUILT.md` records the process, `AUDIT.md` records what to trust.
 
@@ -38,6 +38,8 @@ drawdown limit in this window, reaching (22.46)%.
 | `report/dashboard.html` | The record as an interactive tool. Opens from disk. |
 | `methods.ipynb` | Every method tied to the paper it comes from. |
 | `desks/` | The six desk papers, as tabled. |
+| `outputs/agent_dynamics.html` | How six concurrent desks behaved as a system, with times. |
+| `outputs/top_decisions.html` | The three best decisions by outcome, and how each was reached. Hindsight, labelled. |
 | `AUDIT.md` | **Read before publishing.** What in this study can and cannot be trusted. |
 | `HOW_THIS_WAS_BUILT.md` | The brief, the order of work, and the environment it ran in. |
 | `brief/PROMPT.md` | The brief itself, unedited. |
@@ -54,9 +56,6 @@ on purpose, so a reader does not have to take my word for where it sits.
 | `brief/IPS.pdf` the governing policy | `desks/` six desk papers |
 | `brief/MANDATE.md` the working extract | `report/`, `outputs/`, `methods.ipynb` |
 | `ds/` the design system | `AUDIT.md`, `README.md` |
-| `tests/` | The verification artifacts. |
-| `outputs/agent_dynamics.html` | How six concurrent desks behaved as a system, with times. |
-| `outputs/top_decisions.html` | The three best decisions by outcome, and how each was reached. Hindsight, labelled. |
 
 ---
 
@@ -74,9 +73,9 @@ py -3 build_notebook.py      # regenerates methods.ipynb
 
 Everything after the first pull runs offline. `data/raw/` ships with the
 repository, 438 files, so the study reproduces with no network at all. That cache
-is part of the evidence rather than a convenience: the ALFRED macro vintages in
-it are what make the point-in-time wall checkable, and they are the one input a
-reader cannot easily reconstruct after the fact.
+is part of the evidence. The ALFRED macro vintages in it are what make the
+point-in-time wall checkable, and they are the one input a reader cannot easily
+reconstruct after the fact.
 
 Run the tests one at a time on a machine with limited memory. Several build
 covariance matrices, and running the suite back to back on a box with about 2 GB
@@ -121,8 +120,7 @@ dashboard carries the same control.
 
 This matters more than it sounds. On sixty monthly observations the study's
 headline active return is **+22bps a year over five years** and **(6)bps a year
-over three**, on the same programme. The report says so rather than quoting
-whichever number reads better.
+over three**, on the same programme. Both figures are in the report.
 
 ---
 
@@ -148,8 +146,8 @@ reverses the tilt.
 
 `tests/mutation_test.py` then removes the enforcement on purpose, one piece at a
 time, in a sandbox copy, and requires the suite to go red. Its first run found
-three surviving mutations and two were defects in the tests rather than the
-code.
+three surviving mutations. Two of them turned out to be defects in the tests
+themselves.
 
 ---
 
@@ -171,8 +169,7 @@ fail without a judgement call.
 The Quantitative and Macro desks ran concurrently and blind to each other, on
 disjoint briefs, writing to separate directories. Both pre-reconciliation drafts
 are in the report's evidence appendix unchanged. They disagreed by 16.5
-percentage points on Treasury duration, which is the finding rather than an
-embarrassment.
+percentage points on Treasury duration. That disagreement is the finding.
 
 ---
 
@@ -207,18 +204,18 @@ taa/dashboard.py    the interactive record                (CIO)
 
 All public, all free, no key:
 
-- **Prices** — Yahoo Finance daily adjusted closes, via `yfinance`
-- **Market rates and spreads** — FRED `fredgraph.csv`
-- **Macro vintages** — ALFRED `alfredgraph.csv?vintage_date=`, which is what
-  makes the point-in-time wall real rather than aspirational
-- **Capital market assumptions** — seven published house forecasts, each with a
-  URL in the evidence appendix
-- **Vehicle spreads** — issuer-published 30-day medians under SEC Rule 6c-11
+| | |
+|---|---|
+| **Prices** | Yahoo Finance daily adjusted closes, via `yfinance` |
+| **Market rates and spreads** | FRED `fredgraph.csv` |
+| **Macro vintages** | ALFRED `alfredgraph.csv?vintage_date=`. The vintage parameter is what makes the point-in-time wall checkable. |
+| **Capital market assumptions** | Seven published house forecasts, each with a URL in the evidence appendix |
+| **Vehicle spreads** | Issuer-published 30-day medians under SEC Rule 6c-11 |
 
-Two limitations are recorded rather than worked around. The ICE BofA
+Two limitations are recorded here, and neither was worked around. The ICE BofA
 option-adjusted spread series are served for a rolling three-year window only,
-so eight of twenty meetings run on three liquidity indicators rather than four.
-And the price cache begins July 2009, so the 2008 crisis is outside the stress
+so eight of twenty meetings run on three liquidity indicators instead of four.
+And the price cache begins July 2009, so the 2008 crisis falls outside the stress
 replay.
 
 ---
@@ -230,8 +227,8 @@ The **Coldbrook Capital** design system shipped in `ds/`. Tokens from
 recorded in the report: the stylesheet's Google Fonts import is dropped so the
 documents render identically from disk with no network; the stylesheet's
 `--navy` has drifted from the value every preview uses and the tokens file
-governs; and the wordmark is Ashcroft's rather than Coldbrook's, since Coldbrook
-is the fictional firm the system was authored for.
+governs; and the wordmark is Ashcroft's, since Coldbrook is the fictional firm
+the system was authored for.
 
 No red and green anywhere. Direction is carried by navy against clay, by
 parentheses on negatives, and by position relative to a zero axis.

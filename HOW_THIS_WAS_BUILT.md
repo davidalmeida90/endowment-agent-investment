@@ -14,9 +14,9 @@ trust; this one tells you where it came from.
 It does three things. It appoints a role and an obligation, Chief Investment
 Officer owing a recommendation the trustees can audit. It names two governing
 documents, `IPS.pdf` and `MANDATE.md`, and says which wins when they disagree.
-And it constitutes an office rather than a task list: independent desks, each
-one existing only if its work can proceed without waiting on another desk and if
-its output can be checked by something other than the desk that produced it.
+And it constitutes an office: independent desks, each one existing only if its
+work can proceed without waiting on another desk and if its output can be checked
+by something other than the desk that produced it.
 
 What the brief deliberately does not contain: the recommendation, the window, the
 methods, the file layout, or the tests. Those are the agent's work, which is the
@@ -43,8 +43,8 @@ The six desks ran as separate units of work. Two of them, Quantitative and Macro
 were run concurrently and blind to each other on disjoint briefs, writing to
 separate output directories. Their pre-reconciliation drafts are preserved
 unchanged in the report's evidence appendix. They disagreed by 16.5 percentage
-points on Treasury duration. That disagreement is reported rather than smoothed
-over, which is the reason for running them blind in the first place.
+points on Treasury duration. That disagreement is reported in full, and it is the
+reason for running them blind in the first place.
 
 ---
 
@@ -62,10 +62,10 @@ over, which is the reason for running them blind in the first place.
 4. **Break the enforcement on purpose.** `tests/mutation_test.py` removes the
    look-ahead protection one piece at a time in a sandbox copy and requires the
    suite to go red. Its first run found three surviving mutations, and two of
-   those turned out to be defects in the tests rather than in the code.
+   those turned out to be defects in the tests themselves.
 5. **Audit before publishing, twice.** `tests/audit.py` asks what is missing.
    `tests/audit2.py` asks what is tilted. Both write JSON that `AUDIT.md` quotes,
-   so the audit note can be recomputed rather than believed.
+   so the audit note can be recomputed.
 
 The sequence matters more than any individual step. The tests were written to
 fail, then shown failing, then shown passing. A check that has only ever passed
@@ -76,13 +76,13 @@ that for themselves with `--demo-fail`.
 
 ## The environment it ran in
 
-Stated plainly, because it affects how far the result generalises.
+This affects how far the result generalises, so here it is in full.
 
-This was **run on my own machine, inside my normal working setup**, not in a
-clean room. That environment already had a global instruction file, a set of
-installed skills, several MCP servers, and plugins available to the agent. I did
-not stand up a fresh sandbox for it, and I am not claiming the result is
-reproducible from a bare install of any particular tool.
+The study was **run on my own machine, inside my normal working setup**. That
+environment already had a global instruction file, a set of installed skills,
+several MCP servers, and plugins available to the agent. I did not stand up a
+fresh sandbox for it, so the result carries no claim of being reproducible from a
+bare install of any particular tool.
 
 What that does **not** mean, and what the repository is arranged to prove:
 
@@ -122,8 +122,10 @@ and the six desk papers carry the reasoning the report only summarises.
 
 ## What this is not
 
-It is not a live strategy, not investment advice, and not a claim that an agent
-can replace an investment office. It is one attempt at a harder question: whether
-an agent given a real mandate, real constraints and an obligation to be audited
-produces work that survives being audited. `AUDIT.md` is where that question is
-answered honestly, including the places where the answer is no.
+This is one attempt at a single question. Does an agent given a real mandate,
+real constraints and an obligation to be audited produce work that survives being
+audited? `AUDIT.md` answers it honestly, including the places where the answer is
+no.
+
+It is no more than that. Not a live strategy, not investment advice, and no claim
+that an agent can replace an investment office.

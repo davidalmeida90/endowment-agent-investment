@@ -1,11 +1,11 @@
 # Audit note
 
-**Ashcroft University Endowment — tactical asset allocation study**
+**Ashcroft University Endowment: tactical asset allocation study**
 Prepared before publication. Nothing in this note changes a result. It records
 what a reader should and should not trust, and why.
 
 Every mechanical figure below is produced by `tests/audit.py` and written to
-`outputs/audit.json`, so this note can be checked rather than believed:
+`outputs/audit.json`, so this note can be checked:
 
 ```
 py -3 tests/audit.py     # first pass: what is missing
@@ -92,8 +92,8 @@ and one thing should:
 retroactively when a distribution is paid, so the *level* of a past adjusted
 close is not what a screen showed that day. Returns between two past dates are
 correct, and no return in this study is computed across the as-of boundary, so
-no look-ahead is introduced. Stated because it is a real property of the data
-rather than because it causes a problem here.
+no look-ahead is introduced. It is recorded here because it is a real property of
+the data, and not because it causes a problem.
 
 ---
 
@@ -131,8 +131,8 @@ drifting one.
 | Statistic | Value | Interval |
 |---|---:|---|
 | Monthly observations | 60 | five years, one or two regimes |
-| Sharpe ratio | 0.762 | 95%: **[(0.13), +1.65]** — contains zero |
-| Information ratio | 0.266 | 95%: **[(0.61), +1.14]** — contains zero |
+| Sharpe ratio | 0.762 | 95%: **[(0.13), +1.65]**, contains zero |
+| Information ratio | 0.266 | 95%: **[(0.61), +1.14]**, contains zero |
 
 **Active return a year, same programme, different window:**
 
@@ -141,8 +141,8 @@ drifting one.
 | Active return a year, bps | **+27** | **(22)** | **+2** | **(16)** | **+34** |
 
 The sign flips four times. Any headline drawn from this record is a statement
-about the window it was measured on, and the report quotes the five-year and
-three-year figures side by side for that reason rather than the flattering one.
+about the window it was measured on, and for that reason the report quotes the
+five-year and three-year figures side by side.
 
 **Do not quote the +34bps as a result.** If you quote anything, quote the
 interval.
@@ -189,10 +189,10 @@ constraint arrived at by calibration rather than by the Statement.
 
 Seven members, a quorum, a chair who does not vote, and a recorded dissent. **No
 such body met.** The dissent recorded in the minutes is a real and sourced
-counter-argument — Sneddon (2020) on whether correlation across bets raises or
+counter-argument, Sneddon (2020) on whether correlation across bets raises or
 lowers the achievable information ratio, which appears in the Systematic desk's
-own paper — but its attribution to "a member with professional investment
-experience" is fiction. The reasoning is genuine; the meeting is not.
+own paper. Its attribution to "a member with professional investment experience"
+is fiction. The reasoning is genuine; the meeting is not.
 
 If you publish the minutes, say this. They read as a record of a deliberation.
 
