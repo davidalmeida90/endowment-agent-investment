@@ -1,5 +1,8 @@
 # Ashcroft University Endowment: tactical asset allocation study
 
+[![verify](https://github.com/davidalmeida90/endowment-agent-investment/actions/workflows/verify.yml/badge.svg)](https://github.com/davidalmeida90/endowment-agent-investment/actions/workflows/verify.yml)
+[![License](https://img.shields.io/github/license/davidalmeida90/endowment-agent-investment?color=1E3159)](LICENSE)
+
 Year ended 30 June 2026. Recommendation for the year to 30 June 2027.
 
 ### Look at it without cloning

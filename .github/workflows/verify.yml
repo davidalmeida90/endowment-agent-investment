@@ -1,0 +1,90 @@
+name: verify
+
+# The study ships its own data cache, so every check below runs offline. Nothing
+# here touches the network or needs a key. taa.datapull is the only module that
+# does, and it is deliberately not run: re-pulling would move the numbers this
+# suite is checking.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # The wall. These two carry the study's central claim, so they run first
+      # and everything after them is only meaningful if they pass.
+      - name: Look-ahead, 12 tests including planted violations
+        run: python tests/test_lookahead.py
+
+      - name: Mutation test, the wall broken on purpose
+        run: python tests/mutation_test.py
+
+      # A check that only ever passes proves nothing. This step requires one to
+      # FAIL on demand, so the greens above mean something. Note that the two
+      # --demo-fail conventions in this suite differ: check_implementation plants
+      # a violation and exits 1, while check_macro corrupts each check in turn
+      # and exits 0 to report that all the corruptions were caught. Both are
+      # asserted here in the form each one actually uses.
+      - name: A check fails when a violation is planted
+        run: |
+          if python tests/check_implementation.py --demo-fail; then
+            echo "::error::--demo-fail exited 0. The check did not catch a planted violation."
+            exit 1
+          fi
+          echo "Planted violation caught, as required."
+
+      - name: Every macro check goes red under corruption
+        run: python tests/check_macro.py --demo-fail
+
+      - name: Compliance, 13 planted breaches rejected
+        run: python tests/test_compliance.py
+
+      - name: Hindsight, 7 checks across all twenty decisions
+        run: python tests/check_hindsight.py
+
+      - name: Units, the percentage-point / fraction boundary
+        run: python tests/check_units.py
+
+      - name: Mandate extract against the IPS
+        run: python tests/check_mandate.py
+
+      - name: Desk, Capital Markets
+        run: python tests/check_capital_markets.py
+
+      - name: Desk, Systematic
+        run: python tests/check_systematic.py
+
+      - name: Desk, Implementation
+        run: python tests/check_implementation.py
+
+      - name: Desk, Quantitative
+        run: python tests/check_quant.py
+
+      - name: Desk, Macro
+        run: python tests/check_macro.py
+
+      - name: Prose figures against the data behind them
+        run: python tests/check_figures.py
+
+      - name: Audit pass 1, what is missing
+        run: python tests/audit.py
+
+      - name: Audit pass 2, what is tilted
+        run: python tests/audit2.py
