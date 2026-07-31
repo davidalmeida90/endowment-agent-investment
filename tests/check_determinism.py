@@ -65,6 +65,32 @@ def _canonical(path: Path) -> str:
                       indent=2, default=str)
 
 
+def _report_diff(expected: str, actual: str, limit: int = 6) -> None:
+    """Show the first few differing lines, so a failure names what moved.
+
+    A check that only says "these differ" sends the reader back to the shell to
+    do the work the check already did. The distinction that matters here is
+    whether a value moved or only its position did, and the lines say which.
+    """
+    exp, act = expected.splitlines(), actual.splitlines()
+    if len(exp) != len(act):
+        print(f"         line counts differ: committed {len(exp)}, "
+              f"this run {len(act)}")
+    shown = 0
+    for n, (x, y) in enumerate(zip(exp, act), 1):
+        if x == y:
+            continue
+        print(f"         line {n}\n"
+              f"           committed: {x.strip()[:110]}\n"
+              f"           this run : {y.strip()[:110]}")
+        shown += 1
+        if shown >= limit:
+            break
+    total = sum(1 for x, y in zip(exp, act) if x != y)
+    if total > shown:
+        print(f"         ... and {total - shown} more differing lines")
+
+
 def _run(seed: int, out_dir: Path) -> Path:
     """Run the simulation in its own process with a fixed hash seed."""
     env = dict(os.environ)
@@ -148,7 +174,9 @@ def main(demo: bool = False) -> int:
             failures.append("a fresh run does not match the committed record")
             print("  [FAIL] a fresh run does not match the committed record")
             print("         either the code moved and the record was not "
-                  "regenerated, or the\n         record was edited by hand.")
+                  "regenerated, the record\n         was edited by hand, or "
+                  "this platform computes different numbers.")
+            _report_diff(_canonical(published), text_a)
 
     print()
     if failures:
