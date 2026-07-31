@@ -322,7 +322,8 @@ is identical. What moves is the last bit or two of the unrounded signal readings
 because Windows and Linux link different math libraries and different BLAS
 backends, and `exp`, `log` and a matrix solve are each free to land a unit apart
 in the last place. Through a pipeline that shrinks a covariance matrix and solves
-a constrained optimisation, that noise stays around **1e-15 relative**.
+a constrained optimisation, that noise amplifies to a measured maximum of
+**1.33e-12 relative**, which CI prints on every run.
 
 This is a property of float64 on real hardware, not a defect in the study, and no
 amount of care in this code would remove it. It is recorded because the README
@@ -334,7 +335,7 @@ which kind they are.
 that reason. Two runs on the same machine must be **byte-identical**, with no
 tolerance, because that is what catches a real defect like the one in §7.1. A
 run against the committed record is compared **numerically**, at a gate of 1e-9,
-six orders of magnitude above the observed noise, with key order still compared
+three orders of magnitude above the observed noise, with key order still compared
 exactly. The observed deviation is printed on every run, so the drift is visible
 rather than absorbed.
 
