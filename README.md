@@ -90,8 +90,10 @@ py -3 build_notebook.py      # regenerates methods.ipynb
 ```
 
 Everything after the first pull runs offline. `data/raw/` ships with the
-repository, 438 files, so the study reproduces with no network at all. That cache
-is part of the evidence. The ALFRED macro vintages in it are what make the
+repository, 438 files, so the study as published reproduces with no network at
+all. It covers the published window and not an arbitrary one, which is the
+constraint set out under [the window is a parameter](#the-window-is-a-parameter).
+That cache is part of the evidence. The ALFRED macro vintages in it are what make the
 point-in-time wall checkable, and they are the one input a reader cannot easily
 reconstruct after the fact.
 
@@ -104,6 +106,7 @@ free produced allocation failures that disappeared on a second run.
 ```
 py -3 tests/test_lookahead.py     # 12 tests: static, runtime, planted violations
 py -3 tests/mutation_test.py      # breaks the wall on purpose, requires it to go red
+py -3 tests/check_determinism.py  # reruns the study twice, requires the same bytes
 py -3 tests/check_hindsight.py    # 7 checks across all twenty decision entries
 py -3 tests/check_units.py        # the percentage-point / fraction boundary
 py -3 tests/check_mandate.py      # MANDATE.md against the IPS
@@ -130,11 +133,23 @@ from there. Change it and rerun and the whole study reproduces on the new window
 with no other edit:
 
 ```
-TAA_WINDOW_START=2016-07-01 TAA_WINDOW_END=2026-06-30 py -3 -m taa.simulate
+TAA_WINDOW_START=2023-07-01 TAA_WINDOW_END=2026-06-30 py -3 -m taa.simulate
 ```
 
 or write `outputs/window.json`, or edit the two dates in `config.py`. The
 dashboard carries the same control.
+
+**How far back you can go offline.** The shipped ALFRED vintage cache begins
+**2021-09-30**, which covers the published five-year window and no more. Ask for
+a window that starts earlier and the point-in-time layer refuses to guess:
+
+```
+FileNotFoundError: no cached ALFRED vintage for GDPC1 at or before 2016-09-30.
+```
+
+That is the wall behaving correctly. Reaching further back means running
+`py -3 -m taa.datapull` first, which needs the network and will pull vintages
+this study was not built on.
 
 This matters more than it sounds. On sixty monthly observations the study's
 headline active return is **+22bps a year over five years** and **(6)bps a year

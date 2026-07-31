@@ -1,5 +1,5 @@
 {
-  "generated": "2026-07-29T00:26:43",
+  "generated": "2026-07-31T17:50:18",
   "window": {
     "start": "2021-07-01",
     "end": "2026-06-30",
@@ -967,14 +967,14 @@
         "cash": 79.4
       },
       "trades_pp": {
-        "commodities": 1.037,
-        "us_equity": -1.921,
-        "ust_duration": -1.042,
-        "us_hy": 0.641,
-        "listed_re": 0.547,
         "cash": 0.794,
+        "commodities": 1.037,
+        "dev_ex_us": 0.71,
+        "listed_re": 0.547,
+        "us_equity": -1.921,
+        "us_hy": 0.641,
         "us_ig": -0.766,
-        "dev_ex_us": 0.71
+        "ust_duration": -1.042
       },
       "turnover_pp": 3.729,
       "cost_bps": 0.51,
@@ -1130,8 +1130,8 @@
         "cash": 80.6
       },
       "trades_pp": {
-        "us_equity": -1.212,
-        "dev_ex_us": 1.212
+        "dev_ex_us": 1.212,
+        "us_equity": -1.212
       },
       "turnover_pp": 1.212,
       "cost_bps": 0.07,
@@ -1300,12 +1300,12 @@
         "cash": 797.8
       },
       "trades_pp": {
-        "commodities": 1.255,
-        "us_equity": -2.764,
-        "ust_duration": -5.737,
         "cash": 7.153,
+        "commodities": 1.255,
+        "dev_ex_us": 2.053,
+        "us_equity": -2.764,
         "us_ig": -1.959,
-        "dev_ex_us": 2.053
+        "ust_duration": -5.737
       },
       "turnover_pp": 10.46,
       "cost_bps": 0.8,
@@ -1472,13 +1472,13 @@
         "cash": 776.0
       },
       "trades_pp": {
-        "commodities": -2.157,
-        "us_equity": 1.081,
-        "ust_duration": 2.264,
-        "us_hy": -1.411,
-        "listed_re": -0.625,
         "cash": -0.504,
-        "em_equity": 1.352
+        "commodities": -2.157,
+        "em_equity": 1.352,
+        "listed_re": -0.625,
+        "us_equity": 1.081,
+        "us_hy": -1.411,
+        "ust_duration": 2.264
       },
       "turnover_pp": 4.697,
       "cost_bps": 0.94,
@@ -1653,9 +1653,9 @@
         "cash": 824.5
       },
       "trades_pp": {
-        "ust_duration": 0.645,
         "us_hy": -1.212,
-        "us_ig": 0.566
+        "us_ig": 0.566,
+        "ust_duration": 0.645
       },
       "turnover_pp": 1.212,
       "cost_bps": 0.2,
@@ -1833,11 +1833,11 @@
         "cash": 666.6
       },
       "trades_pp": {
-        "us_equity": 0.53,
-        "us_hy": 2.028,
         "cash": -1.398,
         "dev_ex_us": -2.246,
-        "em_equity": 1.085
+        "em_equity": 1.085,
+        "us_equity": 0.53,
+        "us_hy": 2.028
       },
       "turnover_pp": 3.643,
       "cost_bps": 0.44,
@@ -2020,8 +2020,8 @@
         "cash": 678.0
       },
       "trades_pp": {
-        "ust_duration": -0.763,
-        "em_equity": 0.763
+        "em_equity": 0.763,
+        "ust_duration": -0.763
       },
       "turnover_pp": 0.763,
       "cost_bps": 0.08,
@@ -2204,11 +2204,11 @@
         "cash": 669.3
       },
       "trades_pp": {
+        "dev_ex_us": -0.84,
         "us_equity": 0.585,
-        "ust_duration": 2.041,
         "us_hy": -1.145,
         "us_ig": -0.641,
-        "dev_ex_us": -0.84
+        "ust_duration": 2.041
       },
       "turnover_pp": 2.626,
       "cost_bps": 0.28,
@@ -2391,11 +2391,11 @@
         "cash": 549.5
       },
       "trades_pp": {
-        "commodities": -0.803,
-        "us_equity": -0.949,
-        "us_hy": 2.026,
         "cash": -0.989,
-        "dev_ex_us": 0.716
+        "commodities": -0.803,
+        "dev_ex_us": 0.716,
+        "us_equity": -0.949,
+        "us_hy": 2.026
       },
       "turnover_pp": 2.741,
       "cost_bps": 0.5,
@@ -2563,10 +2563,10 @@
       },
       "trades_pp": {
         "commodities": -3.049,
-        "ust_duration": 1.788,
-        "us_hy": -2.834,
+        "em_equity": 2.844,
         "listed_re": 1.252,
-        "em_equity": 2.844
+        "us_hy": -2.834,
+        "ust_duration": 1.788
       },
       "turnover_pp": 5.884,
       "cost_bps": 1.45,
@@ -2731,11 +2731,11 @@
       },
       "trades_pp": {
         "commodities": 3.132,
-        "us_equity": -2.175,
-        "ust_duration": 2.135,
-        "us_hy": -1.113,
         "dev_ex_us": -0.859,
-        "em_equity": -1.12
+        "em_equity": -1.12,
+        "us_equity": -2.175,
+        "us_hy": -1.113,
+        "ust_duration": 2.135
       },
       "turnover_pp": 5.267,
       "cost_bps": 1.14,
@@ -2905,12 +2905,12 @@
         "cash": 434.8
       },
       "trades_pp": {
-        "commodities": -2.646,
-        "ust_duration": 2.166,
         "cash": -0.755,
-        "us_ig": 1.092,
+        "commodities": -2.646,
         "dev_ex_us": -1.315,
-        "em_equity": 1.458
+        "em_equity": 1.458,
+        "us_ig": 1.092,
+        "ust_duration": 2.166
       },
       "turnover_pp": 4.716,
       "cost_bps": 0.97,
@@ -3079,9 +3079,9 @@
         "cash": 84.5
       },
       "trades_pp": {
+        "cash": -3.326,
         "us_equity": -2.384,
-        "ust_duration": 5.709,
-        "cash": -3.326
+        "ust_duration": 5.709
       },
       "turnover_pp": 5.709,
       "cost_bps": 0.24,
@@ -3249,11 +3249,11 @@
         "cash": 202.6
       },
       "trades_pp": {
-        "commodities": 4.708,
-        "ust_duration": -3.931,
-        "listed_re": -0.526,
         "cash": 1.184,
-        "em_equity": -1.435
+        "commodities": 4.708,
+        "em_equity": -1.435,
+        "listed_re": -0.526,
+        "ust_duration": -3.931
       },
       "turnover_pp": 5.892,
       "cost_bps": 1.45,
@@ -3413,15 +3413,15 @@
         "cash": 75.0
       },
       "trades_pp": {
-        "commodities": -0.558,
-        "us_equity": -4.294,
-        "ust_duration": 1.926,
-        "us_hy": 1.834,
-        "listed_re": 1.771,
         "cash": -1.276,
-        "us_ig": -0.526,
+        "commodities": -0.558,
         "dev_ex_us": 0.522,
-        "em_equity": 0.601
+        "em_equity": 0.601,
+        "listed_re": 1.771,
+        "us_equity": -4.294,
+        "us_hy": 1.834,
+        "us_ig": -0.526,
+        "ust_duration": 1.926
       },
       "turnover_pp": 6.654,
       "cost_bps": 0.68,
@@ -3584,11 +3584,11 @@
       },
       "trades_pp": {
         "commodities": -3.117,
-        "ust_duration": 4.819,
-        "us_hy": -1.502,
+        "dev_ex_us": -0.665,
         "listed_re": -1.155,
+        "us_hy": -1.502,
         "us_ig": 1.619,
-        "dev_ex_us": -0.665
+        "ust_duration": 4.819
       },
       "turnover_pp": 6.438,
       "cost_bps": 1.29,
@@ -3756,12 +3756,12 @@
         "cash": 149.7
       },
       "trades_pp": {
-        "commodities": 2.966,
-        "us_equity": 1.888,
-        "ust_duration": -3.797,
-        "listed_re": -0.527,
         "cash": 0.791,
-        "us_ig": -1.321
+        "commodities": 2.966,
+        "listed_re": -0.527,
+        "us_equity": 1.888,
+        "us_ig": -1.321,
+        "ust_duration": -3.797
       },
       "turnover_pp": 5.645,
       "cost_bps": 1.0,
@@ -3929,13 +3929,13 @@
         "cash": 197.3
       },
       "trades_pp": {
-        "us_equity": -2.242,
-        "ust_duration": -0.589,
-        "listed_re": -0.791,
         "cash": 0.533,
-        "us_ig": 0.563,
         "dev_ex_us": 4.317,
-        "em_equity": -1.79
+        "em_equity": -1.79,
+        "listed_re": -0.791,
+        "us_equity": -2.242,
+        "us_ig": 0.563,
+        "ust_duration": -0.589
       },
       "turnover_pp": 5.413,
       "cost_bps": 0.45,
@@ -4104,12 +4104,12 @@
       },
       "trades_pp": {
         "commodities": -0.739,
-        "us_equity": 1.984,
-        "ust_duration": 1.639,
-        "listed_re": 0.556,
-        "us_ig": 0.756,
         "dev_ex_us": -2.333,
-        "em_equity": -1.862
+        "em_equity": -1.862,
+        "listed_re": 0.556,
+        "us_equity": 1.984,
+        "us_ig": 0.756,
+        "ust_duration": 1.639
       },
       "turnover_pp": 4.934,
       "cost_bps": 0.58,
@@ -4277,10 +4277,10 @@
         "cash": 349.3
       },
       "trades_pp": {
-        "ust_duration": -1.625,
-        "listed_re": 0.773,
         "cash": 1.696,
-        "em_equity": -0.844
+        "em_equity": -0.844,
+        "listed_re": 0.773,
+        "ust_duration": -1.625
       },
       "turnover_pp": 2.469,
       "cost_bps": 0.17,

@@ -471,12 +471,21 @@ def turnover_pp(w_from: dict, w_to: dict) -> float:
 
 
 def trades_pp(w_from: dict, w_to: dict) -> dict:
-    """Per-line trade sizes, signed, in pp of NAV. Positive is a purchase."""
+    """Per-line trade sizes, signed, in pp of NAV. Positive is a purchase.
+
+    The return is built in sorted key order, not set order. Python randomises
+    string hashing per process, so iterating the set directly serialised this
+    dict differently on every run. No value moved, but decision_record.json came
+    back byte-different from a clean rerun and a reader following the README's
+    reproduce instructions saw a 66-line diff that meant nothing. Sorting costs
+    nothing and makes the record diffable, which is the only way a reader can
+    check a rerun against the published file. See AUDIT.md §7.
+    """
     keys = set(w_from) | set(w_to)
     for line in keys:
         _check_line(line)
     return {k: float(w_to.get(k, 0.0)) - float(w_from.get(k, 0.0))
-            for k in keys}
+            for k in sorted(keys)}
 
 
 def apply_min_trade(w_from: dict, w_to: dict,

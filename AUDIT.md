@@ -269,6 +269,42 @@ Recorded because the ones found suggest the rate, and the rate is not zero.
 | The benchmark claim, stated backwards | Report said the benchmark was harder to beat; it is **29.7bps a year easier** | **The second audit pass**, testing a claim never tested |
 | “Three independent findings” | Two of the three share a prior; the honest count is two | **The second audit pass** |
 | A check too blunt to tell prose from code | The static guard failed on a *sentence about* config.RAW in the audit script | **The suite itself**, third instance of this class |
+| `trades_pp` serialised in set order | The record came back byte-different from a clean rerun. **No value moved**, only key order | **Reproducing the study from a fresh clone**, after publication |
+| The README's own window example could not run | It asked for 2016, the shipped vintage cache starts 2021-09-30, so the documented command failed on a clean clone | **The same fresh-clone run** |
+
+### 7.1 Two corrections made after publication, by the author
+
+Both rows above were found by cloning the published repository and following the
+README, which is the one test the office never ran on itself: it verified its
+work in the folder it built it in. Recorded here in full because they are the
+first changes to this repository **not made by the agent**, and the repository's
+boundary claim is worth more than the appearance of one.
+
+**`taa/costs.py`, `trades_pp` now iterates `sorted(keys)`.** Python randomises
+string hashing per process, so a dict built by iterating a set serialises in a
+different order every run. Every value was identical across runs; only the order
+moved. The effect was that `git diff` on `outputs/decision_record.json` after a
+clean rerun showed 66 changed lines, so a reader following the reproduce
+instructions saw what looked like a failed reproduction and had no easy way to
+tell it was cosmetic. `tests/check_determinism.py` now runs the simulation twice
+under different hash seeds and requires byte-identical output, so this class
+cannot return silently.
+
+The fix reached one sentence of prose. The dashboard names the trades in a
+quarter in order of size, and one quarter moved 1.21pp between two lines in
+opposite directions. Equal magnitudes, so the sort tie used to break on whatever
+order the set produced, and that sentence could flip between runs on its own.
+It now reads the same way every time. No figure changed.
+
+**The README's window example now starts 2023-07-01, and the cache boundary is
+stated.** The old example asked for a ten-year window. The shipped ALFRED
+vintages begin 2021-09-30, so it raised `FileNotFoundError` on a clean clone.
+The point-in-time layer was behaving correctly by refusing to guess; the
+documentation was wrong about what it shipped with, and it sat one screen below
+a sentence promising the study reproduces with no network at all.
+
+Neither correction moves a number in the study. The recommendation, the record
+and every figure in the report are unchanged.
 
 **A pattern worth naming.** Three separate checks in this study were written too
 bluntly and failed clean work: a hindsight check matching "0.1" inside an unrelated

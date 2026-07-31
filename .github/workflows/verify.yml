@@ -88,3 +88,17 @@ jobs:
 
       - name: Audit pass 2, what is tilted
         run: python tests/audit2.py
+
+      # Last because it is the slowest: it runs the whole simulation twice, in
+      # separate processes under different hash seeds, and requires the record
+      # to come back byte-identical and to match the copy committed here.
+      - name: The record reproduces byte for byte
+        run: python tests/check_determinism.py
+
+      - name: Reordering a record is detected
+        run: |
+          if python tests/check_determinism.py --demo-fail; then
+            echo "::error::--demo-fail exited 0. Reordered keys went undetected."
+            exit 1
+          fi
+          echo "Reordered record caught, as required."
