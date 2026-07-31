@@ -29,7 +29,7 @@ than about this study. Windows and Linux link different math libraries and
 different BLAS backends, so the last one or two bits of a float64 are not
 portable. The committed record was generated on Windows and a Linux run of the
 same code reproduces every decision, every weight and every rounded figure while
-landing about 1e-15 away on the unrounded signal readings. Asserting byte
+landing about 1e-12 away on the unrounded signal readings. Asserting byte
 equality there would fail honest work on the wrong machine, which is how a check
 gets switched off by someone right to switch it off. The gate is at 1e-9 and the
 observed deviation is printed, so drift is visible rather than hidden.
@@ -81,8 +81,8 @@ def _canonical(path: Path) -> str:
 # portable: Windows and Linux link different math libraries and different BLAS
 # backends, so exp, log and every matrix operation can land a unit or two apart
 # in the last place. Accumulated through a pipeline that shrinks a covariance
-# matrix and solves a constrained optimisation, that noise stays around 1e-15
-# relative. This gate sits six orders of magnitude above it, so last-bit drift
+# matrix and solves a constrained optimisation, it amplifies to a measured
+# 1.33e-12 relative. This gate sits three orders of magnitude above that, so
 # passes and any change with a real cause does not. The observed maximum is
 # printed either way, so the number is visible instead of hidden by the gate.
 NUMERIC_TOL = 1e-9
