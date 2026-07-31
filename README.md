@@ -2,6 +2,21 @@
 
 Year ended 30 June 2026. Recommendation for the year to 30 June 2027.
 
+### Look at it without cloning
+
+**[davidalmeida90.github.io/endowment-agent-investment](https://davidalmeida90.github.io/endowment-agent-investment)**
+opens every document the agent wrote. The trustee report, the five-year decision
+record, the interactive dashboard, and the note on how six concurrent desks
+behaved as a system.
+
+| | |
+|---|---|
+| **Watch the run** | [youtu.be/33fLjqGuJJo](https://youtu.be/33fLjqGuJJo), the office building itself, 9 minutes |
+| **The write-up** | [davidariasfinance.com/scripts/agentic-investment-committee](https://davidariasfinance.com/scripts/agentic-investment-committee/), with the full brief |
+| **What not to trust** | [`AUDIT.md`](AUDIT.md), read before quoting any number from this |
+
+---
+
 Everything here was built in this folder. Nothing is imported from elsewhere on
 the machine it was written on, no API key is used anywhere, and no paywalled
 source was consulted. Clone the folder, run the commands below, and you get the

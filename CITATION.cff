@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+title: "Ashcroft University Endowment: tactical asset allocation study"
+message: >-
+  An AI agent, given a real mandate and an obligation to be audited, produced
+  this study. If you cite it, cite AUDIT.md alongside it: the study's own audit
+  note records which of its results are indistinguishable from zero.
+type: software
+authors:
+  - given-names: David
+    family-names: Arias
+    orcid: null
+repository-code: "https://github.com/davidalmeida90/endowment-agent-investment"
+url: "https://davidalmeida90.github.io/endowment-agent-investment"
+abstract: >-
+  A five-year tactical asset allocation study for a fictional USD 850m
+  university endowment, produced end to end by an AI agent working from a single
+  written brief. The agent constituted an investment office of six independent
+  desks, ran the Quantitative and Macro desks blind to each other, enforced a
+  point-in-time data wall through a single choke point, and audited its own
+  output twice before publication. Public data only, no API keys, no paywalled
+  sources. The analysis window is a parameter, so the whole study reproduces on
+  a different window with no other edit.
+keywords:
+  - agentic-ai
+  - asset-allocation
+  - endowment
+  - point-in-time-data
+  - look-ahead-bias
+  - reproducibility
+license: MIT
+date-released: "2026-07-30"

@@ -106,6 +106,17 @@
   .reflist .cite em{font-style:italic;color:var(--slate)}
   .reflist .use{display:block;color:var(--slate);font-size:14px;margin-top:4px}
   .reflist .use b{color:var(--gold);font-weight:600;font-family:var(--mono);font-size:13px}
+  /* the documents themselves, opened live */
+  .docs{display:grid;grid-template-columns:repeat(auto-fit,minmax(268px,1fr));gap:1px;
+    background:var(--line2);border:1px solid var(--line2);margin-top:26px}
+  .doc{display:block;padding:22px 22px 20px;background:var(--panel);text-decoration:none}
+  .doc:hover{background:#FFFDF8}
+  .doc .dk{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--mute);display:block;margin-bottom:7px}
+  .doc h4{font-family:var(--serif);font-size:19px;margin:0 0 7px;color:var(--ink);font-weight:600}
+  .doc:hover h4{color:var(--gold)}
+  .doc p{margin:0;color:var(--slate);font-size:14.5px;line-height:1.5}
+  @media(max-width:640px){.docs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -844,6 +855,46 @@ minuted properly, and backed by the numbers.
     </ul>
     <p style="margin-top:22px">The tests were written to fail, then shown failing, then shown passing. A mutation test removes the look-ahead protection one piece at a time and requires the suite to go red; its first run found three surviving mutations, and two of those turned out to be defects in the tests rather than the code. The study reproduces from the folder alone, and the analysis window is a parameter, so asking for three years or ten reruns the whole thing with no other edit.</p>
     <p>Stated plainly: the <b>study</b> is reproducible from the repository. The <b>process</b> that generated it ran in a configured environment (a global instruction file, installed skills, MCP servers), not a clean room, and that is said so no one mistakes it for a bare-install result.</p>
+  </div>
+</section>
+
+<section id="documents">
+  <div class="wrap">
+    <div class="kick">The documents</div>
+    <h2>Open what it wrote</h2>
+    <p class="lead">Every document below is the file the agent produced, opened live. Nothing to install, nothing to clone.</p>
+    <div class="docs">
+      <a class="doc" href="report/annual_report.html">
+        <span class="dk">The position</span>
+        <h4>Annual report to trustees</h4>
+        <p>Page one carries the recommendation. Behind it, the valuation gap, the cost argument and the evidence appendix with both blind desk drafts.</p>
+      </a>
+      <a class="doc" href="report/decision_record.html">
+        <span class="dk">Five years</span>
+        <h4>Decision record</h4>
+        <p>Twenty quarterly entries. What each meeting saw, which constraint bound, and what it did about it.</p>
+      </a>
+      <a class="doc" href="report/dashboard.html">
+        <span class="dk">Interactive</span>
+        <h4>Decision dashboard</h4>
+        <p>The same record as a tool. Change the window and every figure recomputes.</p>
+      </a>
+      <a class="doc" href="outputs/agent_dynamics.html">
+        <span class="dk">The office</span>
+        <h4>Agent dynamics</h4>
+        <p>How six concurrent desks behaved as a system, with times. Where they waited, where they collided, where one caught another.</p>
+      </a>
+      <a class="doc" href="outputs/top_decisions.html">
+        <span class="dk">Hindsight, labelled</span>
+        <h4>Top three decisions</h4>
+        <p>The best calls by outcome and how each was reached. Selected on outcome, which the note says on its own first line.</p>
+      </a>
+      <a class="doc" href="https://github.com/davidalmeida90/endowment-agent-investment/blob/main/AUDIT.md">
+        <span class="dk">Read this one</span>
+        <h4>The audit note</h4>
+        <p>What in the study cannot be trusted, stated before what can. It opens by admitting the performance is indistinguishable from zero.</p>
+      </a>
+    </div>
   </div>
 </section>
 
